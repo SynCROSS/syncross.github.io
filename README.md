@@ -1,2 +1,2 @@
-# SynCROSS.github.io
+# syncross.github.io
 Personal Site
