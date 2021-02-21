@@ -4,13 +4,8 @@ import styled from 'styled-components';
 const FooterBlock = styled.div`
   width: 100%;
   padding: 20px 50px;
-
-  hr {
-    width: 50%;
-    height: 1px;
-    background-color: #ccc;
-    border: none;
-  }
+  background-color: #333;
+  color: #eee;
 `;
 
 const Footer = () => {
@@ -18,7 +13,6 @@ const Footer = () => {
 
   return (
     <FooterBlock className="flex jc-center ai-center flex-direction-col">
-      <hr />
       <p>
         Copyright &copy;&nbsp;<span className="year">{year}</span>&nbsp;Made
         by&nbsp;

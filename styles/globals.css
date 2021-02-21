@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
-html,
+html {
+  scroll-behavior: smooth;
+}
 body {
+  height: 100%;
   min-height: 100vh;
   font-family: 'Nanum Gothic', sans-serif;
   background: linear-gradient(165deg, #f5f5f5 28%, #fff 28%);

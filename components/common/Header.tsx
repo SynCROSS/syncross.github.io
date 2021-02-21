@@ -19,7 +19,7 @@ const HeaderBlock = styled.div`
 
   & > ul {
     list-style: none;
-    color: #333;
+    color: gray;
   }
 
   & > ul > li {
@@ -36,7 +36,7 @@ const HeaderBlock = styled.div`
     color: gray;
   }
   .fa-icon:hover {
-    color: #000;
+    color: #505050;
   }
 `;
 
