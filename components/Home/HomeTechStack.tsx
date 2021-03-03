@@ -24,7 +24,7 @@ const HomeTechStackBlock = styled.section`
   }
 
   & > .tech_list > img:hover {
-    background-color: #f8f8f8;
+    background-color: #f4f4f4;
   }
 `;
 

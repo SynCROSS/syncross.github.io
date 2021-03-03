@@ -9,13 +9,13 @@ const HomeHeaderBlock = styled.header`
   min-height: 80vh;
 
   & > h1 {
-    font-weight: 100;
+    font-weight: 900;
     font-size: 5rem;
     margin: 10px auto 20px;
   }
   & > h3 {
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 100;
     color: #aaa;
   }
 
@@ -24,7 +24,7 @@ const HomeHeaderBlock = styled.header`
     color: #fff;
     border: none;
     border-radius: 50px;
-    padding: 20px 40px 20px 20px;
+    padding: 17px 40px 17px 20px;
     position: relative;
     width: 140px;
   }
