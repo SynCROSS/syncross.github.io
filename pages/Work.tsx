@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 const WorkBlock = styled.div`
   align-items: baseline;
+  margin: auto;
 `;
 
 const Work = () => {

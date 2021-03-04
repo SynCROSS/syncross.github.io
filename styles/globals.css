@@ -43,3 +43,9 @@ a {
 .jc-center {
   justify-content: center;
 }
+
+#__next > div {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
