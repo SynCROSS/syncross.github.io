@@ -26,11 +26,13 @@ const About = () => {
       </Head>
       <AboutTitle>About</AboutTitle>
       <AboutContext>
-        This is My Personal Site. The App built with Next.js and Typescript. And
-        This is My Portfolio and My First Personal Project. So I'm Very Excited
-        to Make This Site. Many People might be wondering why I chose Next
-        instead of Gatsby to make this site. Because I didn't know Gatsby when I
-        started this project.
+        This Is My Personal Site. The App Built With Next.js And Typescript. And
+        This Is My Portfolio And My First Personal Project. So I'm Very Excited
+        to Make This Site. Many People Might Be Wondering Why I Chose Next
+        Instead Of Gatsby to Make This Site. Because I Didn't Know Gatsby When I
+        Started This Project. Now I Already Know Gatsby But I Won't Change Next
+        Into Gatsby. Because I Will Add Dynamic Contents When I Have A Chance
+        Later.
       </AboutContext>
     </AboutBlock>
   );
