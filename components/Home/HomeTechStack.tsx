@@ -3,27 +3,30 @@ import styled from 'styled-components';
 const HomeTechStackBlock = styled.section`
   width: 30%;
   margin: 20px auto;
+`;
 
-  & > h1 {
+const TechStackTitle = styled.h1`
     font-size: 3rem;
     margin: 20px auto;
   }
+`;
 
-  & > .tech_list {
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
+const TechList = styled.div`
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+`;
 
-  & > .tech_list > img {
-    border-radius: 50%;
-    background: #f0f0f0;
-    box-shadow: 10px 10px 20px #cccccc, -10px -10px 20px #ffffff;
-    padding: 30px;
-    margin: 15px;
-    transition: all 0.2s ease-in-out;
-  }
+const TechListImage = styled.img`
+  width: 100;
+  height: 100;
+  border-radius: 50%;
+  background: #f0f0f0;
+  box-shadow: 10px 10px 20px #cccccc, -10px -10px 20px #ffffff;
+  padding: 30px;
+  margin: 15px;
+  transition: all 0.2s ease-in-out;
 
-  & > .tech_list > img:hover {
+  &:hover {
     background-color: #f4f4f4;
   }
 `;
@@ -51,21 +54,20 @@ const HomeTechStack = () => {
     'svelte',
     'gatsby',
   ];
+
   return (
     <HomeTechStackBlock>
-      <h1 id="Tech Stack">Tech Stack</h1>
-      <div className="tech_list flex ai-center ">
+      <TechStackTitle>Tech Stack</TechStackTitle>
+      <TechList className="flex ai-center ">
         {techStacks?.map(techStack => (
-          <img
+          <TechListImage
             key={`${techStack}`}
-            height="100"
-            width="100"
             src={`https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/${techStack}.svg`}
             title={`${techStack}`}
             alt={`${techStack}`}
           />
         ))}
-      </div>
+      </TechList>
     </HomeTechStackBlock>
   );
 };
