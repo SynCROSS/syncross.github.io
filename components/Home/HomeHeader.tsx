@@ -44,7 +44,7 @@ const FontAwesomeIconBlock = styled(FontAwesomeIcon)`
   opacity: 0.5;
 
   ${props =>
-    props.right === 'true' &&
+    props.right === true &&
     css`
       right: 25px;
       opacity: 1;
@@ -68,7 +68,7 @@ const HomeHeader = () => {
           <FontAwesomeIconBlock
             icon={faArrowRight}
             className="fa-icon"
-            right={right.toString()}
+            right={right}
           />
         </RouterLink>
       </Link>
