@@ -44,7 +44,7 @@ const FontAwesomeIconBlock = styled(FontAwesomeIcon)`
   opacity: 0.5;
 
   ${props =>
-    props.right === true &&
+    props.right &&
     css`
       right: 25px;
       opacity: 1;
