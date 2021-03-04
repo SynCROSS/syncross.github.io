@@ -17,8 +17,8 @@ const TechList = styled.div`
 `;
 
 const TechListImage = styled.img`
-  width: 100;
-  height: 100;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background: #f0f0f0;
   box-shadow: 10px 10px 20px #cccccc, -10px -10px 20px #ffffff;
