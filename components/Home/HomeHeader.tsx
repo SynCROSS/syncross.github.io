@@ -23,14 +23,13 @@ const Job = styled.h3`
 `;
 
 const RouterLink = styled.a`
-    background-color: #111;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    padding: 17px 40px 17px 20px;
-    position: relative;
-    width: 140px;
-  }
+  background-color: #111;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 17px 40px 17px 20px;
+  position: relative;
+  width: 140px;
 `;
 
 const FontAwesomeIconBlock = styled(FontAwesomeIcon)`
