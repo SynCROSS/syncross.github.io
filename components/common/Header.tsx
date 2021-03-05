@@ -9,9 +9,10 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 const HeaderBlock = styled.div`
+  width: 100%;
   justify-content: space-between;
   background: transparent;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;

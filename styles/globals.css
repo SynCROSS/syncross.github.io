@@ -8,8 +8,7 @@ body {
   height: 100%;
   min-height: 100vh;
   font-family: 'Noto Sans KR', 'Nanum Gothic', sans-serif;
-  background: linear-gradient(165deg, #f5f5f5 28%, #fff 28%);
-  text-align: center;
+  text-align: centers;
 }
 
 a {
