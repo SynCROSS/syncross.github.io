@@ -8,7 +8,6 @@ const HomeHeaderBlock = styled.header`
   min-height: 80vh;
   min-width: 99.16vw;
   background: linear-gradient(165deg, #f5f5f5 50%, #fff 50%);
-  text-align: center;
 `;
 
 const HeadLine = styled.h1`
