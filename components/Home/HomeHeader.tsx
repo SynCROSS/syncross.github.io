@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 const HomeHeaderBlock = styled.header`
   min-height: 95vh;
-  min-width: 99vw;
+  min-width: 100vw;
   background: linear-gradient(165deg, #f5f5f5 50%, #fff 50%);
 `;
 
