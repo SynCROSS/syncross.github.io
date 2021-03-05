@@ -3,21 +3,23 @@ import Image from 'next/image';
 
 const HomeIntroduceBlock = styled.section`
   width: 100%;
-  min-height: 50vh;
   text-align: left;
-  padding: 50px;
   background-color: #111;
   color: #fefefe;
+  padding: 100px;
 `;
 
 const IntroWrapper = styled.div`
-  width: 25%;
+  width: 50rem;
+  margin: auto;
 `;
 
 const IntroduceTitle = styled.h1`
   font-size: 3rem;
-  margin: 20px 0;
+  /* margin: 20px 0; */
 `;
+
+const IntroContext = styled.div``;
 
 const Introduce = styled.p`
   color: #acacac;
@@ -33,16 +35,18 @@ const ImgBlock = styled(Image)`
 const HomeIntroduce = () => {
   return (
     <HomeIntroduceBlock className="flex jc-center ai-center">
-      <IntroWrapper className="flex jc-center flex-direction-col">
-        <IntroduceTitle>Introduce</IntroduceTitle>
-        <Introduce>
-          Hello, I'm SynCROSS. I'm a Frontend developer and I love learning
-          things. That's why I've been learning many frameworks, libraries, and
-          other technologies since I first started developing them. Recently,
-          I've been studying trends mainly.
-        </Introduce>
+      <IntroWrapper className="flex jc-center ai-center">
+        <IntroContext className="flex flex-direction-col">
+          <IntroduceTitle>Introduce</IntroduceTitle>
+          <Introduce>
+            Hello, I'm SynCROSS. I'm a Frontend developer and I love learning
+            things. That's why I've been learning many frameworks, libraries,
+            and other technologies since I first started developing them.
+            Recently, I've been studying trends mainly.
+          </Introduce>
+        </IntroContext>
+        <ImgBlock src="/icon.svg" width={700} height={700} />
       </IntroWrapper>
-      <ImgBlock src="/icon.svg" width={200} height={200} />
     </HomeIntroduceBlock>
   );
 };

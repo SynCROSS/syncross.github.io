@@ -27,7 +27,7 @@ const RouterLink = styled.a`
   color: #fff;
   border: none;
   border-radius: 50px;
-  padding: 17px 40px 17px 20px;
+  padding: 15px 40px 15px 20px;
   position: relative;
   width: 140px;
 `;
@@ -60,8 +60,8 @@ const HomeHeader = () => {
             className="fa-icon"
             style={
               right && right
-                ? { right: '25px', opacity: '1' }
-                : { right: '30px', opacity: '.5' }
+                ? { right: '20px', opacity: '1' }
+                : { right: '25px', opacity: '.5' }
             }
           />
         </RouterLink>
