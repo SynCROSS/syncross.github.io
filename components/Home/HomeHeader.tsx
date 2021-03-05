@@ -5,8 +5,8 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
 const HomeHeaderBlock = styled.header`
-  min-height: 80vh;
-  min-width: 99.16vw;
+  min-height: 95vh;
+  min-width: 99vw;
   background: linear-gradient(165deg, #f5f5f5 50%, #fff 50%);
 `;
 

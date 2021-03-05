@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
 const HomeTechStackBlock = styled.section`
-  width: 30%;
+  width: 50%;
   margin: 20px auto;
 `;
 
 const TechStackTitle = styled.h1`
-    font-size: 3rem;
-    margin: 20px auto;
-  }
+  font-size: 3rem;
+  margin: 20px auto;
 `;
 
 const TechList = styled.div`
@@ -17,48 +16,27 @@ const TechList = styled.div`
 `;
 
 const TechListImage = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
-  background: #f0f0f0;
+  background: #f8f8f8;
   box-shadow: 10px 10px 20px #cccccc, -10px -10px 20px #ffffff;
-  padding: 30px;
+  padding: 40px;
   margin: 15px;
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background-color: #f4f4f4;
+    background-color: #fcfcfc;
   }
 `;
 
 const HomeTechStack = () => {
-  const techStacks = [
-    'mongodb',
-    'express',
-    'react',
-    'node-dot-js',
-    'redux',
-    'typescript',
-    'styled-components',
-    'socket-dot-io',
-    'sass',
-    'mysql',
-    'oracle',
-    'jest',
-    'go',
-    'python',
-    'graphql',
-    'apollographql',
-    'next-dot-js',
-    'vercel',
-    'svelte',
-    'gatsby',
-  ];
+  const techStacks = ['mongodb', 'express', 'react', 'node-dot-js'];
 
   return (
     <HomeTechStackBlock>
       <TechStackTitle>Tech Stack</TechStackTitle>
-      <TechList className="flex ai-center ">
+      <TechList className="flex ai-center">
         {techStacks?.map(techStack => (
           <TechListImage
             key={`${techStack}`}
