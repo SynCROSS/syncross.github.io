@@ -32,7 +32,7 @@ const About = () => {
         Instead Of Gatsby to Make This Site. Because I Didn't Know Gatsby When I
         Started This Project. Now I Already Know Gatsby But I Won't Change Next
         Into Gatsby. Because I Will Add Dynamic Contents When I Have A Chance
-        Later.
+        Later. I Hope You Feel Good. :)
       </AboutContext>
     </AboutBlock>
   );
