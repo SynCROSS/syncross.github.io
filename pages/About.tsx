@@ -9,7 +9,7 @@ const AboutBlock = styled.div`
 
 const AboutTitle = styled.h1`
   margin: 1rem;
-  font-size: 3rem;
+  font-size: 5rem;
 `;
 
 const AboutContext = styled.p`

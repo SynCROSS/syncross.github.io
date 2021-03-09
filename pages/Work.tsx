@@ -10,7 +10,7 @@ const Work = () => {
   return (
     <WorkBlock>
       <Head>My Works</Head>
-      Works
+      <h1>My Works</h1>
     </WorkBlock>
   );
 };

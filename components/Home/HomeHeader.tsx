@@ -28,9 +28,10 @@ const RouterLink = styled.a`
   color: #fff;
   border: none;
   border-radius: 50px;
-  padding: 15px 40px 15px 20px;
+  padding: 1.2rem 40px 1.2em 20px;
   position: relative;
   width: 140px;
+  font-size: 1.2rem;
 `;
 
 const FontAwesomeIconBlock = styled(FontAwesomeIcon)`
