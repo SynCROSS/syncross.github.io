@@ -25,13 +25,12 @@ const TechListItem = styled.ul`
 
   &:hover {
     background-color: #fcfcfc;
-    width: 20rem;
   }
 `;
 
 const TechListImage = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 5rem;
+  height: 5rem;
 `;
 
 const HomeTechStack = () => {
@@ -40,7 +39,7 @@ const HomeTechStack = () => {
   return (
     <HomeTechStackBlock>
       <TechStackTitle>Tech Stack</TechStackTitle>
-      <TechList className="flex flex-direction-col">
+      <TechList className="flex jc-center ai-center">
         {techStacks?.map(techStack => (
           <TechListItem key={`${techStack}`}>
             <TechListImage

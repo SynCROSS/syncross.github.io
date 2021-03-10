@@ -6,26 +6,27 @@ const HomeIntroduceBlock = styled.section`
   text-align: left;
   background-color: #111;
   color: #fefefe;
-  padding: 100px;
+  padding: 10rem;
+  min-height: 100vh;
 `;
 
 const IntroWrapper = styled.div`
-  width: 50rem;
+  width: 60rem;
   margin: auto;
 `;
 
 const IntroduceTitle = styled.h1`
-  font-size: 3rem;
-  /* margin: 20px 0; */
+  font-size: 5rem;
 `;
 
-const IntroContext = styled.div``;
+const IntroContext = styled.div`
+  margin-right: 5rem;
+`;
 
 const Introduce = styled.p`
   color: #acacac;
-  width: 80%;
   font-size: 1.2rem;
-  margin: 10px 0;
+  padding: 0 7px;
 `;
 
 const ImgBlock = styled(Image)`
@@ -45,7 +46,7 @@ const HomeIntroduce = () => {
             Recently, I've been studying trends mainly.
           </Introduce>
         </IntroContext>
-        <ImgBlock src="/icon.svg" width={700} height={700} />
+        <ImgBlock src="/icon.svg" width={1000} height={1000} />
       </IntroWrapper>
     </HomeIntroduceBlock>
   );

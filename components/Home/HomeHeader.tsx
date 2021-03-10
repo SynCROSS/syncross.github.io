@@ -5,7 +5,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
 const HomeHeaderBlock = styled.header`
-  min-height: 95vh;
+  min-height: 100vh;
   min-width: 100vw;
   background: linear-gradient(165deg, #f5f5f5 50%, #fff 50%);
 `;
@@ -28,9 +28,9 @@ const RouterLink = styled.a`
   color: #fff;
   border: none;
   border-radius: 50px;
-  padding: 1.2rem 40px 1.2em 20px;
+  padding: 1rem 40px 1rem 20px;
   position: relative;
-  width: 140px;
+  width: 10rem;
   font-size: 1.2rem;
 `;
 
