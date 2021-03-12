@@ -55,15 +55,15 @@ const HomeHeader = () => {
         SynCROSS, <br /> The Knowledge Explorer
       </HeadLine>
       <Link href="/Work">
-        <RouterLink onMouseOver={toggleRight} onMouseLeave={toggleRight}>
+        <RouterLink onMouseOver={toggleRight} onMouseOut={toggleRight}>
           My Work{' '}
           <FontAwesomeIconBlock
             icon={faArrowRight}
             className="fa-icon"
             style={
               right && right
-                ? { right: '20px', opacity: '1' }
-                : { right: '25px', opacity: '.5' }
+                ? { right: '1.2rem', opacity: '1' }
+                : { right: '1.5rem', opacity: '.5' }
             }
           />
         </RouterLink>
