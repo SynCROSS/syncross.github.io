@@ -41,9 +41,9 @@ const HomeIntroduce = () => {
           <IntroduceTitle>Introduce</IntroduceTitle>
           <Introduce>
             Hello, I'm SynCROSS. I'm a Frontend developer and I love learning
-            things. That's why I've been learning many frameworks, libraries,
-            and other technologies since I first started developing them.
-            Recently, I've been studying trends mainly.
+            new things. That's why I've been learning many frameworks,
+            libraries, and other technologies since I first started developing
+            them. Recently, I've been studying trends mainly.
           </Introduce>
         </IntroContext>
         <ImgBlock src="/icon.svg" width={1000} height={1000} />
