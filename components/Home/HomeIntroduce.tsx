@@ -3,10 +3,11 @@ import Image from 'next/image';
 
 const HomeIntroduceBlock = styled.section`
   width: 100%;
+  padding: 10rem;
+
   text-align: left;
   background-color: #111;
   color: #fefefe;
-  padding: 10rem;
   min-height: 100vh;
 `;
 
@@ -26,6 +27,7 @@ const IntroContext = styled.div`
 const Introduce = styled.p`
   color: #acacac;
   font-size: 1.2rem;
+
   padding: 0 7px;
 `;
 
