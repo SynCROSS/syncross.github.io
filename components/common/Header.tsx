@@ -36,6 +36,7 @@ const IconItem = styled.li`
 const FontAwesomeIconBlock = styled(FontAwesomeIcon)`
   font-size: 1.5rem;
   color: gray;
+
   &:hover {
     color: #505050;
   }
@@ -68,7 +69,7 @@ const Header = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={faLinkedin} className="fa-icon" />
+            <FontAwesomeIconBlock icon={faLinkedin} className="fa-icon" />
           </a>
         </IconItem>
         <IconItem>
@@ -77,7 +78,7 @@ const Header = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={faTwitterSquare} className="fa-icon" />
+            <FontAwesomeIconBlock icon={faTwitterSquare} className="fa-icon" />
           </a>
         </IconItem>
         <IconItem>
@@ -86,7 +87,7 @@ const Header = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={faGithub} className="fa-icon" />
+            <FontAwesomeIconBlock icon={faGithub} className="fa-icon" />
           </a>
         </IconItem>
         <IconItem>
@@ -95,7 +96,10 @@ const Header = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={faInstagramSquare} className="fa-icon" />
+            <FontAwesomeIconBlock
+              icon={faInstagramSquare}
+              className="fa-icon"
+            />
           </a>
         </IconItem>
       </IconList>
