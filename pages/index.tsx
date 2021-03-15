@@ -8,6 +8,10 @@ const Home = () => {
     <div className="flex jc-center ai-center flex-direction-col">
       <Head>
         <title>SynCROSS</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        ></meta>
       </Head>
       <HomeHeader />
       <HomeIntroduce />

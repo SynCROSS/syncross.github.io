@@ -56,7 +56,6 @@ const ArrowButton = styled.button`
   font-size: 2rem;
   color: #f8f8f8;
   background-color: #000;
-  border: none;
 
   &:hover {
     background-color: #1c1c1c;
