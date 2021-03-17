@@ -52,7 +52,7 @@ const ArrowButton = styled.button`
   height: 5rem;
   position: absolute;
   top: 92vh;
-  z-index: 20;
+  /* z-index: 10; */
 
   font-size: 2rem;
   color: #f8f8f8;
@@ -69,8 +69,6 @@ const HomeHeader = () => {
   const toggleRight = () => setRight(!right);
 
   function movePresentScroll(event: { pageX: number; pageY: number }) {
-    console.log(event);
-
     window.scrollTo(event.pageX, event.pageY + 10);
   }
 

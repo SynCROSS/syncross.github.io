@@ -46,7 +46,7 @@ const HeaderList = styled.div`
 
   /* Small devices (portrait tablets and large phones, 600px and up) */
   @media only screen and (min-width: 600px) {
-    width: 100% !important;
+    width: 100%;
   }
 `;
 
@@ -120,16 +120,20 @@ const Outside = styled.div`
 const Header = () => {
   const openMenu = () => {
     document.getElementById('header').style.width = '100px';
+    document.getElementById('headerblock').style.width = '100%';
     document.getElementById('outside_modal').style.width = '100%';
   };
 
   const closeMenu = () => {
     document.getElementById('header').style.width = '0';
+    document.getElementById('header').removeAttribute('style');
+    document.getElementById('headerblock').style.width = '0';
+    document.getElementById('headerblock').removeAttribute('style');
     document.getElementById('outside_modal').style.width = '0';
   };
 
   return (
-    <HeaderBlock>
+    <HeaderBlock id="headerblock">
       <MenuButton aria-labelledby="Menu" onClick={openMenu}>
         ☰
       </MenuButton>
