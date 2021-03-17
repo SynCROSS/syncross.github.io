@@ -17,6 +17,10 @@ const HeaderBlock = styled.div`
   left: 0;
   z-index: 10;
   padding: 15px 20px;
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+  }
 `;
 
 const HeaderList = styled.div`
@@ -37,7 +41,7 @@ const HeaderList = styled.div`
     overflow-x: hidden;
 
     background-color: #111;
-    transition: 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
 
   /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -83,6 +87,7 @@ const MenuButton = styled.button`
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
     display: block;
+    margin: 15px 20px;
   }
 `;
 
@@ -99,13 +104,28 @@ const CloseButton = styled.button`
   }
 `;
 
+const Outside = styled.div`
+  display: none;
+  min-height: 100vh;
+  width: 0;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+
+  @media only screen and (max-width: 600px) {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+`;
+
 const Header = () => {
   const openMenu = () => {
     document.getElementById('header').style.width = '100px';
+    document.getElementById('outside_modal').style.width = '100%';
   };
 
   const closeMenu = () => {
     document.getElementById('header').style.width = '0';
+    document.getElementById('outside_modal').style.width = '0';
   };
 
   return (
@@ -173,6 +193,7 @@ const Header = () => {
           </IconItem>
         </IconList>
       </HeaderList>
+      <Outside id="outside_modal" onClick={closeMenu} />
     </HeaderBlock>
   );
 };
