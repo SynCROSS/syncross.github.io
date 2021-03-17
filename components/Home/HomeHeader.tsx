@@ -73,7 +73,10 @@ const HomeHeader = () => {
   }
 
   return (
-    <HomeHeaderBlock className="flex jc-center ai-center flex-direction-col">
+    <HomeHeaderBlock
+      role="Header"
+      className="flex jc-center ai-center flex-direction-col"
+    >
       <Job>Frontend Developer</Job>
       <HeadLine>
         SynCROSS, <br /> The Knowledge Explorer

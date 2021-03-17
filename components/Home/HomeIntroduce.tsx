@@ -37,7 +37,7 @@ const ImgBlock = styled(Image)`
 
 const HomeIntroduce = () => {
   return (
-    <HomeIntroduceBlock className="flex jc-center ai-center">
+    <HomeIntroduceBlock role="Introduce" className="flex jc-center ai-center">
       <IntroWrapper className="flex jc-center ai-center">
         <IntroContext className="flex flex-direction-col">
           <IntroduceTitle>Introduce</IntroduceTitle>

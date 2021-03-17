@@ -134,34 +134,39 @@ const Header = () => {
   };
 
   return (
-    <HeaderBlock id="headerblock">
-      <MenuButton aria-labelledby="Menu" onClick={openMenu}>
+    <HeaderBlock role="HeaderMenu" id="headerblock">
+      <MenuButton role="MenuButton" aria-labelledby="Menu" onClick={openMenu}>
         ☰
       </MenuButton>
       <HeaderList className="flex ai-center" id="header">
-        <CloseButton aria-labelledby="Close" onClick={closeMenu}>
+        <CloseButton
+          role="CloseButton"
+          aria-labelledby="Close"
+          onClick={closeMenu}
+        >
           <FontAwesomeIcon icon={faTimes} />
         </CloseButton>
         <IconList>
           <IconItem>
             <Link href="/">
-              <a>Home</a>
+              <a role="link">Home</a>
             </Link>
           </IconItem>
           <IconItem>
             <Link href="/About">
-              <a>About</a>
+              <a role="link">About</a>
             </Link>
           </IconItem>
           <IconItem>
             <Link href="/Work">
-              <a>My Works</a>
+              <a role="link">My Works</a>
             </Link>
           </IconItem>
         </IconList>
         <IconList>
           <IconItem>
             <a
+              role="link"
               href="https://www.linkedin.com/in/%EC%A4%80%EC%84%9D-%EB%B0%95-4a9866194/?locale=en_US"
               target="_blank"
               rel="noopener noreferrer"
@@ -171,6 +176,7 @@ const Header = () => {
           </IconItem>
           <IconItem>
             <a
+              role="link"
               href="https://twitter.com/1MD3V3L0P3R"
               target="_blank"
               rel="noopener noreferrer"
@@ -180,6 +186,7 @@ const Header = () => {
           </IconItem>
           <IconItem>
             <a
+              role="link"
               href="http://github.com/SynCROSS"
               target="_blank"
               rel="noopener noreferrer"
@@ -189,6 +196,7 @@ const Header = () => {
           </IconItem>
           <IconItem>
             <a
+              role="link"
               href="https://www.instagram.com/junseok3125/"
               target="_blank"
               rel="noopener noreferrer"
@@ -198,7 +206,7 @@ const Header = () => {
           </IconItem>
         </IconList>
       </HeaderList>
-      <Outside id="outside_modal" onClick={closeMenu} />
+      <Outside role="OutsideModal" id="outside_modal" onClick={closeMenu} />
     </HeaderBlock>
   );
 };
