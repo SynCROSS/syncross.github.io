@@ -12,6 +12,14 @@ const Home = () => {
           name="viewport"
           content="width=device-width, initial-scale=1.0"
         ></meta>
+        <meta charSet="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="keywords" content="syncross" />
+        <meta
+          name="description"
+          content="SynCROSS's Portfolio Site. This App Built with Nextjs and TypeScript. I Hope You Feel Good. :)"
+        />
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
       </Head>
       <HomeHeader />
       <HomeIntroduce />

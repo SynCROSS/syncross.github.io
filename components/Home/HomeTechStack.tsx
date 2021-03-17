@@ -15,7 +15,7 @@ const TechList = styled.ul`
   list-style: none;
 `;
 
-const TechListItem = styled.ul`
+const TechListItem = styled.li`
   border-radius: 50px;
   background: #f8f8f8;
   box-shadow: 10px 10px 20px #cccccc, -10px -10px 20px #ffffff;
