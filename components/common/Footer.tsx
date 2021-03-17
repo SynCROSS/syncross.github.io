@@ -8,6 +8,12 @@ const FooterBlock = styled.div`
   color: #eee;
 `;
 
+const GithubLink = styled.a`
+  &:hover {
+    color: #dfdfdf;
+  }
+`;
+
 const Footer = () => {
   const year = new Date().getFullYear();
 
@@ -16,12 +22,13 @@ const Footer = () => {
       <p>
         Copyright &copy;&nbsp;<span className="year">{year}</span>&nbsp;Made
         by&nbsp;
-        <a
+        <GithubLink
           href="http://github.com/SynCROSS"
           target="_blank"
-          rel="noopener noreferrer">
+          rel="noopener noreferrer"
+        >
           SynCROSS
-        </a>
+        </GithubLink>
       </p>
     </FooterBlock>
   );

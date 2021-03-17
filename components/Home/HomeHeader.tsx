@@ -67,7 +67,7 @@ const HomeHeader = () => {
   const [right, setRight] = useState(false);
   const toggleRight = () => setRight(!right);
 
-  function movePresentScroll(event) {
+  function movePresentScroll(event: { pageX: number; pageY: number }) {
     window.scrollTo(event.pageX, event.pageY + 10);
   }
 

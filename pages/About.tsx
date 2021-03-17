@@ -5,6 +5,10 @@ import styled from 'styled-components';
 const AboutBlock = styled.div`
   width: 50%;
   margin: auto;
+
+  @media only screen and (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
 const AboutTitle = styled.h1`
@@ -16,6 +20,10 @@ const AboutContext = styled.p`
   text-align: left;
   font-size: 2rem;
   margin: 1rem;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const About = () => {
