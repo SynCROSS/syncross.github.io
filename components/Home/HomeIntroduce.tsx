@@ -48,7 +48,7 @@ const HomeIntroduce = () => {
             them. Recently, I've been studying trends mainly.
           </Introduce>
         </IntroContext>
-        <ImgBlock src="/icon.svg" width={1000} height={1000} />
+        <ImgBlock src="/icon.svg" width={1000} height={1000} alt="" />
       </IntroWrapper>
     </HomeIntroduceBlock>
   );
