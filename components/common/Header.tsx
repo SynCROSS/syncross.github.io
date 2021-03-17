@@ -110,9 +110,11 @@ const Header = () => {
 
   return (
     <HeaderBlock>
-      <MenuButton onClick={openMenu}>☰</MenuButton>
+      <MenuButton aria-labelledby="Menu" onClick={openMenu}>
+        ☰
+      </MenuButton>
       <HeaderList className="flex ai-center" id="header">
-        <CloseButton onClick={closeMenu}>
+        <CloseButton aria-labelledby="Close" onClick={closeMenu}>
           <FontAwesomeIcon icon={faTimes} />
         </CloseButton>
         <IconList>

@@ -90,7 +90,7 @@ const HomeHeader = () => {
           />
         </RouterLink>
       </Link>
-      <ArrowButton onClick={movePresentScroll}>
+      <ArrowButton aria-labelledby="ArrowDown" onClick={movePresentScroll}>
         <FontAwesomeIcon icon={faArrowDown}></FontAwesomeIcon>
       </ArrowButton>
     </HomeHeaderBlock>
