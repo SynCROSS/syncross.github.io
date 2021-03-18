@@ -134,35 +134,34 @@ const Header = () => {
   };
 
   return (
-    <HeaderBlock role="menubar" id="headerblock">
-      <MenuButton role="button" aria-labelledby="Menu" onClick={openMenu}>
+    <HeaderBlock id="headerblock">
+      <MenuButton aria-labelledby="Menu" onClick={openMenu}>
         ☰
       </MenuButton>
-      <HeaderList role="menu" className="flex ai-center" id="header">
-        <CloseButton role="button" aria-labelledby="Close" onClick={closeMenu}>
+      <HeaderList className="flex ai-center" id="header">
+        <CloseButton aria-labelledby="Close" onClick={closeMenu}>
           <FontAwesomeIcon icon={faTimes} />
         </CloseButton>
         <IconList>
           <IconItem>
             <Link href="/">
-              <a role="link">Home</a>
+              <a>Home</a>
             </Link>
           </IconItem>
           <IconItem>
             <Link href="/About">
-              <a role="link">About</a>
+              <a>About</a>
             </Link>
           </IconItem>
           <IconItem>
             <Link href="/Work">
-              <a role="link">My Works</a>
+              <a>My Works</a>
             </Link>
           </IconItem>
         </IconList>
         <IconList>
           <IconItem>
             <a
-              role="link"
               href="https://www.linkedin.com/in/%EC%A4%80%EC%84%9D-%EB%B0%95-4a9866194/?locale=en_US"
               target="_blank"
               rel="noopener noreferrer"
@@ -172,7 +171,6 @@ const Header = () => {
           </IconItem>
           <IconItem>
             <a
-              role="link"
               href="https://twitter.com/1MD3V3L0P3R"
               target="_blank"
               rel="noopener noreferrer"
@@ -182,7 +180,6 @@ const Header = () => {
           </IconItem>
           <IconItem>
             <a
-              role="link"
               href="http://github.com/SynCROSS"
               target="_blank"
               rel="noopener noreferrer"
@@ -192,7 +189,6 @@ const Header = () => {
           </IconItem>
           <IconItem>
             <a
-              role="link"
               href="https://www.instagram.com/junseok3125/"
               target="_blank"
               rel="noopener noreferrer"
