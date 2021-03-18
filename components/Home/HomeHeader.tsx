@@ -74,7 +74,7 @@ const HomeHeader = () => {
 
   return (
     <HomeHeaderBlock
-      role="Header"
+      role="sectionhead"
       className="flex jc-center ai-center flex-direction-col"
     >
       <Job>Frontend Developer</Job>

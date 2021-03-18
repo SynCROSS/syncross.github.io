@@ -134,16 +134,12 @@ const Header = () => {
   };
 
   return (
-    <HeaderBlock role="HeaderMenu" id="headerblock">
-      <MenuButton role="MenuButton" aria-labelledby="Menu" onClick={openMenu}>
+    <HeaderBlock role="menubar" id="headerblock">
+      <MenuButton role="button" aria-labelledby="Menu" onClick={openMenu}>
         ☰
       </MenuButton>
-      <HeaderList className="flex ai-center" id="header">
-        <CloseButton
-          role="CloseButton"
-          aria-labelledby="Close"
-          onClick={closeMenu}
-        >
+      <HeaderList role="menu" className="flex ai-center" id="header">
+        <CloseButton role="button" aria-labelledby="Close" onClick={closeMenu}>
           <FontAwesomeIcon icon={faTimes} />
         </CloseButton>
         <IconList>
@@ -206,7 +202,7 @@ const Header = () => {
           </IconItem>
         </IconList>
       </HeaderList>
-      <Outside role="OutsideModal" id="outside_modal" onClick={closeMenu} />
+      <Outside id="outside_modal" onClick={closeMenu} />
     </HeaderBlock>
   );
 };
