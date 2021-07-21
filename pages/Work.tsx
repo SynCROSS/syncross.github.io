@@ -9,7 +9,9 @@ const WorkBlock = styled.div`
 const Work = () => {
   return (
     <WorkBlock>
-      <Head>My Works</Head>
+      <Head>
+        <title>My Works</title>
+      </Head>
       <h1>My Works</h1>
     </WorkBlock>
   );
