@@ -80,7 +80,7 @@ const HomeHeader = () => {
       </HeadLine>
       <Link href="/Work">
         <RouterLink onMouseOver={toggleRight} onMouseOut={toggleRight}>
-          My Work{' '}
+          My Works{' '}
           <FontAwesomeIconBlock
             icon={faArrowRight}
             style={
