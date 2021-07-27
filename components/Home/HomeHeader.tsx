@@ -69,7 +69,7 @@ const HomeHeader = () => {
   const toggleRight = () => setRight(!right);
 
   function movePresentScroll(event: { pageX: number; pageY: number }) {
-    window.scrollTo(event.pageX, event.pageY + 10);
+    window.scrollTo(event.pageX, 840);
   }
 
   return (
