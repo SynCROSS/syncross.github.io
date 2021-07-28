@@ -84,7 +84,7 @@ const HomeHeader = () => {
           onMouseOut={toggleRight}
           className="flex ai-center"
         >
-          <b
+          <span
             style={{
               lineHeight: '1rem',
               height: '1rem',
@@ -92,7 +92,7 @@ const HomeHeader = () => {
             }}
           >
             My Works
-          </b>
+          </span>
           &nbsp;
           <FontAwesomeIconBlock
             icon={faArrowRight}
