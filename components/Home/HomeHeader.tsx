@@ -66,7 +66,6 @@ const ArrowButton = styled.button`
 
 const HomeHeader = () => {
   const [right, setRight] = useState(false);
-  const toggleRight = () => setRight(!right);
 
   function moveCurrentScroll(event: { clientX: number }) {
     window.scrollTo(
@@ -86,8 +85,8 @@ const HomeHeader = () => {
       </HeadLine>
       <Link href="/Work">
         <RouterLink
-          onMouseOver={toggleRight}
-          onMouseOut={toggleRight}
+          onMouseOver={() => setRight(right => !right)}
+          onMouseOut={() => setRight(right => !right)}
           className="flex ai-center"
         >
           <span
@@ -103,7 +102,7 @@ const HomeHeader = () => {
           <FontAwesomeIconBlock
             icon={faArrowRight}
             style={
-              right && right
+              right
                 ? { right: '1.2rem', opacity: '1' }
                 : { right: '1.5rem', opacity: '.5' }
             }
