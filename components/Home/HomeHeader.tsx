@@ -34,7 +34,7 @@ const RouterLink = styled.a`
   cursor: pointer;
   padding: 1rem 40px 1rem 20px;
   position: relative;
-  width: 10rem;
+  width: auto;
 `;
 
 const FontAwesomeIconBlock = styled(FontAwesomeIcon)`
@@ -79,8 +79,21 @@ const HomeHeader = () => {
         SynCROSS, <br /> The Knowledge Explorer
       </HeadLine>
       <Link href="/Work">
-        <RouterLink onMouseOver={toggleRight} onMouseOut={toggleRight}>
-          My Works{' '}
+        <RouterLink
+          onMouseOver={toggleRight}
+          onMouseOut={toggleRight}
+          className="flex ai-center"
+        >
+          <b
+            style={{
+              lineHeight: '1rem',
+              height: '1rem',
+              display: 'inline-block',
+            }}
+          >
+            My Works
+          </b>
+          &nbsp;
           <FontAwesomeIconBlock
             icon={faArrowRight}
             style={
