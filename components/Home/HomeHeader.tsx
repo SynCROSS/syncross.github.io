@@ -68,12 +68,18 @@ const HomeHeader = () => {
   const [right, setRight] = useState(false);
   const toggleRight = () => setRight(!right);
 
-  function movePresentScroll(event: { pageX: number; pageY: number }) {
-    window.scrollTo(event.pageX, 840);
+  function moveCurrentScroll(event: { clientX: number }) {
+    window.scrollTo(
+      event.clientX,
+      document.getElementById('HomeHeader').offsetHeight + 10,
+    );
   }
 
   return (
-    <HomeHeaderBlock className="flex jc-center ai-center flex-direction-col">
+    <HomeHeaderBlock
+      id="HomeHeader"
+      className="flex jc-center ai-center flex-direction-col"
+    >
       <Job>Frontend Developer</Job>
       <HeadLine>
         SynCROSS, <br /> The Knowledge Explorer
@@ -104,7 +110,7 @@ const HomeHeader = () => {
           />
         </RouterLink>
       </Link>
-      <ArrowButton aria-labelledby="ArrowDown" onClick={movePresentScroll}>
+      <ArrowButton aria-labelledby="ArrowDown" onClick={moveCurrentScroll}>
         <FontAwesomeIcon icon={faArrowDown}></FontAwesomeIcon>
       </ArrowButton>
     </HomeHeaderBlock>
