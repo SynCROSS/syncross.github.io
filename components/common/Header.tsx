@@ -121,20 +121,18 @@ const Outside = styled.div`
 const Header = () => {
   const openMenu = () => {
     document.getElementById('header').style.width = '100px';
-    document.getElementById('headerblock').style.width = '100%';
-    document.getElementById('outside_modal').style.width = '100%';
+    document.getElementById('headerBlock').style.width = '100%';
+    document.getElementById('outsideOfModal').style.width = '100%';
   };
 
   const closeMenu = () => {
-    document.getElementById('header').style.width = '0';
     document.getElementById('header').removeAttribute('style');
-    document.getElementById('headerblock').style.width = '0';
-    document.getElementById('headerblock').removeAttribute('style');
-    document.getElementById('outside_modal').style.width = '0';
+    document.getElementById('headerBlock').removeAttribute('style');
+    document.getElementById('outsideOfModal').style.width = '0';
   };
 
   return (
-    <HeaderBlock id="headerblock">
+    <HeaderBlock id="headerBlock">
       <MenuButton aria-labelledby="Menu" onClick={openMenu}>
         ☰
       </MenuButton>
@@ -198,7 +196,7 @@ const Header = () => {
           </IconItem>
         </IconList>
       </HeaderList>
-      <Outside id="outside_modal" onClick={closeMenu} />
+      <Outside id="outsideOfModal" onClick={closeMenu} />
     </HeaderBlock>
   );
 };
