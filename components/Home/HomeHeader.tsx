@@ -51,7 +51,7 @@ const ArrowButton = styled.button`
   width: 5rem;
   height: 5rem;
   position: absolute;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   top: 92vh;
   /* z-index: 10; */
 
@@ -68,12 +68,11 @@ const ArrowButton = styled.button`
 const HomeHeader = () => {
   const [right, setRight] = useState(false);
 
-  function moveCurrentScroll(event: { clientX: number }) {
-    window.scrollTo(
-      event.clientX,
-      document.getElementById('HomeHeader').offsetHeight + 10,
-    );
-  }
+  const moveCurrentScroll = () =>
+    window.scrollTo({
+      top: document.getElementById('HomeHeader').offsetHeight + 10,
+      behavior: 'smooth',
+    });
 
   return (
     <HomeHeaderBlock
