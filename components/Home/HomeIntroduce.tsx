@@ -32,17 +32,18 @@ const Introduce = styled.p`
 `;
 
 const ImgBlock = styled(Image)`
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
 `;
 
 const HomeIntroduce = () => {
   return (
-    <HomeIntroduceBlock className="flex jc-center ai-center">
+    <HomeIntroduceBlock id="HomeIntroduce" className="flex jc-center ai-center">
       <IntroWrapper className="flex jc-center ai-center">
         <IntroContext className="flex flex-direction-col">
           <IntroduceTitle>Introduce</IntroduceTitle>
           <Introduce>
-            Hello, I'm SynCROSS. I'm a Frontend developer and I love learning
+            Hello, I'm SynCROSS. I'm a Frontend Developer and I love learning
             new things. That's why I've been learning many frameworks,
             libraries, and other technologies since I first started developing
             them. Recently, I've been studying trends mainly.
