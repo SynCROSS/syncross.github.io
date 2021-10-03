@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const HomeTechStackBlock = styled.section`
-  width: 50%;
+  /* width: 50%; */
   margin: 20px auto;
 `;
 
@@ -12,6 +12,7 @@ const TechStackTitle = styled.h1`
 
 const TechList = styled.ul`
   flex-wrap: wrap;
+  flex-direction: column;
   list-style: none;
 `;
 
