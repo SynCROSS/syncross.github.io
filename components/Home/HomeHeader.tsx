@@ -51,10 +51,11 @@ const ArrowButton = styled.button`
   width: 5rem;
   height: 5rem;
   position: absolute;
-  transition: all 0.2s ease-in-out;
   top: 92vh;
   /* z-index: 10; */
 
+  transition: all 0.2s ease-in-out;
+  scroll-behavior: smooth;
   font-size: 2rem;
   color: #f8f8f8;
   background-color: #000;
@@ -109,7 +110,12 @@ const HomeHeader = () => {
           />
         </RouterLink>
       </Link>
-      <ArrowButton aria-labelledby="ArrowDown" onClick={moveCurrentScroll}>
+      <ArrowButton
+        id="arrowScrollButton"
+        className="flex jc-center ai-center"
+        aria-labelledby="ArrowDown"
+        onClick={moveCurrentScroll}
+      >
         <FontAwesomeIcon icon={faArrowDown}></FontAwesomeIcon>
       </ArrowButton>
     </HomeHeaderBlock>
