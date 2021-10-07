@@ -46,7 +46,7 @@ const About = () => {
         <br />
         Many People Might Be Wondering
         <br />
-        Why I Chose Next Instead Of Gatsby to Make This Site.
+        Why I Chose Next Instead Of Gatsby to Make This.
         <br />
         Because I Didn't Know Gatsby When I Started This Project.
         <br />
