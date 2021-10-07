@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="keywords" content="syncross" />
         <meta
           name="description"
-          content="SynCROSS's Portfolio Site. This App Built with Nextjs and TypeScript. I Hope You Feel Good. :)"
+          content="SynCROSS's Portfolio. This App Built with Next.js and TypeScript. I Hope You Feel Good And Please Contact Me. (●'◡'●)"
         />
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
       </Head>
