@@ -7,7 +7,7 @@ import { useState } from 'react';
 const HomeHeaderBlock = styled.header`
   min-height: 95vh;
   min-width: 100vw;
-  background: linear-gradient(165deg, #f5f5f5 50%, #fff 50%);
+  background: linear-gradient(165deg, #ccc 50%, #fff 50%);
 `;
 
 const HeadLine = styled.h1`
@@ -105,7 +105,7 @@ const HomeHeader = () => {
             style={
               right
                 ? { right: '1.2rem', opacity: '1' }
-                : { right: '1.5rem', opacity: '.5' }
+                : { right: '1.4rem', opacity: '.5' }
             }
           />
         </RouterLink>
@@ -113,7 +113,8 @@ const HomeHeader = () => {
       <ArrowButton
         id="arrowScrollButton"
         className="flex jc-center ai-center"
-        aria-labelledby="ArrowDown"
+        aria-details="Scroll Down Button"
+        aria-label="Scroll Down Button"
         onClick={moveCurrentScroll}
       >
         <FontAwesomeIcon icon={faArrowDown}></FontAwesomeIcon>

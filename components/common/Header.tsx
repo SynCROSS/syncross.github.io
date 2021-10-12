@@ -133,11 +133,19 @@ const Header = () => {
 
   return (
     <HeaderBlock id="headerBlock">
-      <MenuButton aria-labelledby="Menu" onClick={openMenu}>
+      <MenuButton
+        aria-details="Menu Icon"
+        aria-label="Menu Icon"
+        onClick={openMenu}
+      >
         ☰
       </MenuButton>
       <HeaderList className="flex ai-center" id="header">
-        <CloseButton aria-labelledby="Close" onClick={closeMenu}>
+        <CloseButton
+          aria-details="Close Menu Button"
+          aria-label="Close Menu Button"
+          onClick={closeMenu}
+        >
           <FontAwesomeIcon icon={faTimes} />
         </CloseButton>
         <IconList>
