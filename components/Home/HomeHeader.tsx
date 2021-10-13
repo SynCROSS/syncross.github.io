@@ -7,7 +7,7 @@ import { useState } from 'react';
 const HomeHeaderBlock = styled.header`
   min-height: 95vh;
   min-width: 100vw;
-  background: linear-gradient(165deg, #ccc 50%, #fff 50%);
+  background: linear-gradient(165deg, #e9e9e9 50%, #fff 50%);
 `;
 
 const HeadLine = styled.h1`
