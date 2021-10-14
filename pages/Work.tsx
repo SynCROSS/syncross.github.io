@@ -6,13 +6,16 @@ const WorkBlock = styled.div`
   margin: auto;
 `;
 
-const Work = () => {
+const Work = ({ data }) => {
   return (
     <WorkBlock>
       <Head>
         <title>My Works</title>
       </Head>
       <h1>My Works</h1>
+      <div style={{ margin: '2rem auto' }}>
+        {data ? <p>There is a Data.</p> : <p>Oops! There is No Works.</p>}
+      </div>
     </WorkBlock>
   );
 };
