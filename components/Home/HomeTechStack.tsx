@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const HomeTechStackBlock = styled.div`
-  /* width: 50%; */
   margin: 20px auto;
 `;
 

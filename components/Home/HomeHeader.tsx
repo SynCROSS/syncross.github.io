@@ -52,7 +52,6 @@ const ArrowButton = styled.button`
   height: 5rem;
   position: absolute;
   top: 92vh;
-  /* z-index: 10; */
 
   transition: all 0.2s ease-in-out;
   scroll-behavior: smooth;
