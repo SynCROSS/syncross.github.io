@@ -9,8 +9,9 @@ const FooterBlock = styled.div`
 `;
 
 const GithubLink = styled.a`
+  color: #dc143c;
   &:hover {
-    color: #dfdfdf;
+    color: #ff2970;
   }
 `;
 
