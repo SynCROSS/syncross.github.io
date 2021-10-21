@@ -38,25 +38,26 @@ const About = () => {
       </Head>
       <AboutTitle>About</AboutTitle>
       <AboutContext>
-        This App Built With Next.js And Typescript.
+        Hello, I'm <b>SynCROSS</b>
         <br />
-        And This Is My Portfolio And My First Personal Project.
+        The Frontend Developer (<b>MERN</b> Stack).
+        <br />I Love <b>Learning New Things</b>
         <br />
-        So I'm Very Excited to Make This Site.
+        But Also <b>Making Projects</b>&nbsp;Too.
+        <br />I Think Fixing Error is <b>Hard</b>,
         <br />
-        Many People Might Be Wondering
+        But It's&nbsp;
+        <b>Necessary</b> & <b>Important</b>
+        .
         <br />
-        Why I Chose Next Instead Of Gatsby to Make This.
+        So I Will <b>Try</b> To <b>Fix</b> The Error & <b>Improve</b> UX.
         <br />
-        Because I Didn't Know Gatsby When I Started This Project.
+        If&nbsp;
+        <b>U Wanna Hire</b>
+        &nbsp;The Frontend Developer
         <br />
-        And Next.js Can Change Rendering Solution Between CSR & SSR.
-        <br />
-        Anyway,
-        <br />
-        If U Wanna Hire Some Frontend Engineers
-        <br />
-        Please Contact Me.
+        Please&nbsp;
+        <b>Contact Me</b>.
         <br />I Hope You Feel So Good. (●'◡'●)
       </AboutContext>
     </AboutBlock>
