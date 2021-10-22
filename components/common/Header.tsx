@@ -61,7 +61,7 @@ const IconItem = styled.li`
   margin: 0 1rem;
 
   &:hover {
-    color: #000;
+    color: #eee;
   }
 
   @media only screen and (max-width: 600px) {
