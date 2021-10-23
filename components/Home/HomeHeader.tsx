@@ -112,8 +112,7 @@ const HomeHeader = () => {
       <ArrowButton
         id="arrowScrollButton"
         className="flex jc-center ai-center"
-        aria-details="Scroll Down Button"
-        aria-label="Scroll Down Button"
+        title="Scroll Down Button"
         onClick={moveCurrentScroll}
       >
         <FontAwesomeIcon icon={faArrowDown}></FontAwesomeIcon>
