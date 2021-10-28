@@ -37,10 +37,11 @@ const RouterLink = styled.a`
   width: auto;
 `;
 
-const FontAwesomeIconBlock = styled(FontAwesomeIcon)`
+const ArrowRightIcon = styled(FontAwesomeIcon)`
+  width: 1rem;
   margin-left: 10px;
   position: absolute;
-  top: 50.5%;
+  top: 50%;
 
   transition: all 0.15s ease-in-out;
   opacity: 0.5;
@@ -63,6 +64,10 @@ const ArrowButton = styled.button`
     background-color: #1c1c1c;
     color: #fff;
   }
+`;
+
+const ArrowDownIcon = styled(FontAwesomeIcon)`
+  width: 2rem;
 `;
 
 const HomeHeader = () => {
@@ -99,7 +104,7 @@ const HomeHeader = () => {
             My Works
           </span>
           &nbsp;
-          <FontAwesomeIconBlock
+          <ArrowRightIcon
             icon={faArrowRight}
             style={
               right
@@ -115,7 +120,7 @@ const HomeHeader = () => {
         title="Scroll Down Button"
         onClick={moveCurrentScroll}
       >
-        <FontAwesomeIcon icon={faArrowDown}></FontAwesomeIcon>
+        <ArrowDownIcon icon={faArrowDown}></ArrowDownIcon>
       </ArrowButton>
     </HomeHeaderBlock>
   );
