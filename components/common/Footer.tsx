@@ -16,12 +16,11 @@ const GithubLink = styled.a`
 `;
 
 const Footer = () => {
-  const year = new Date().getFullYear();
-
   return (
     <FooterBlock className="flex jc-center ai-center flex-direction-col">
       <p>
-        Copyright &copy;&nbsp;<span className="year">{year}</span>&nbsp;Made
+        Copyright &copy;&nbsp;
+        <span className="year">{new Date().getFullYear()}</span>&nbsp;Made
         by&nbsp;
         <GithubLink
           href="http://github.com/SynCROSS"
