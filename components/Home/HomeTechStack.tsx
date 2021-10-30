@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Image from 'next/image';
 
 const HomeTechStackBlock = styled.div`
   margin: 20px auto;
@@ -28,24 +29,27 @@ const TechListItem = styled.li`
   }
 `;
 
-const TechListImage = styled.img`
-  width: 5rem;
-  height: 5rem;
-`;
-
 const HomeTechStack = () => {
-  const techStacks = ['mongodb', 'express', 'react', 'node-dot-js'];
+  const techStacks = ['mongodb', 'express', 'react', 'nodedotjs'];
+
+  const getIconURL = (techStack: string) =>
+    `https://unpkg.com/simple-icons@v5/icons/${techStack}.svg`;
 
   return (
     <HomeTechStackBlock>
       <TechStackTitle>Tech Stack</TechStackTitle>
       <TechList className="flex jc-center ai-center">
-        {techStacks?.map(techStack => (
+        {techStacks?.map?.(techStack => (
           <TechListItem key={`${techStack}`}>
-            <TechListImage
-              src={`https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/${techStack}.svg`}
+            <Image
+              src={getIconURL(`${techStack}`)}
               title={`${techStack}`}
               alt={`${techStack}`}
+              width={70}
+              height={70}
+              layout={'fixed'}
+              quality={100}
+              loading={'lazy'}
             />
           </TechListItem>
         ))}
