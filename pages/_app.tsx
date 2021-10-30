@@ -2,6 +2,14 @@ import '../styles/globals.css';
 import Layout from '../components/Layout';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
+config.autoAddCss = false;
+
+export function reportWebVitals(metric: any): void {
+  console.log(metric);
+}
 
 export default function App({ Component, pageProps }: AppProps) {
   const TITLE = 'SynCROSS';
@@ -38,6 +46,15 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:url" content="https://syncross.vercel.app" />
 
         <link rel="canonical" href="https://syncross.vercel.app/" />
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <Component {...pageProps} />
     </Layout>
