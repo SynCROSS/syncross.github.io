@@ -5,7 +5,7 @@ import {
   faLinkedin,
   faTwitterSquare,
   faGithub,
-  faInstagramSquare,
+  faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
@@ -51,17 +51,19 @@ const HeaderList = styled.div`
   }
 `;
 
-const IconList = styled.ul`
+const ItemList = styled.ul`
   list-style: none;
-  color: gray;
 `;
 
-const IconItem = styled.li`
+const LinkItem = styled.li`
   display: inline-flex;
   margin: 0 1rem;
 
+  color: gray;
+  transition: 0.2s all ease-in-out;
+
   &:hover {
-    color: #eee;
+    color: #505050;
   }
 
   @media only screen and (max-width: 600px) {
@@ -71,11 +73,6 @@ const IconItem = styled.li`
 
 const FontAwesomeIconBlock = styled(FontAwesomeIcon)`
   font-size: 1.5rem;
-  color: gray;
-
-  &:hover {
-    color: #505050;
-  }
 `;
 
 const MenuButton = styled.button`
@@ -140,25 +137,25 @@ const Header = () => {
         <CloseButton title="Close Menu Button" onClick={closeMenu}>
           <FontAwesomeIcon icon={faTimes} />
         </CloseButton>
-        <IconList>
-          <IconItem>
+        <ItemList>
+          <LinkItem>
             <Link href="/">
               <a>Home</a>
             </Link>
-          </IconItem>
-          <IconItem>
+          </LinkItem>
+          <LinkItem>
             <Link href="/About">
               <a>About</a>
             </Link>
-          </IconItem>
-          <IconItem>
+          </LinkItem>
+          <LinkItem>
             <Link href="/Work">
               <a>My Works</a>
             </Link>
-          </IconItem>
-        </IconList>
-        <IconList>
-          <IconItem>
+          </LinkItem>
+        </ItemList>
+        <ItemList>
+          <LinkItem>
             <a
               href="https://www.linkedin.com/in/%EC%A4%80%EC%84%9D-%EB%B0%95-4a9866194/?locale=en_US"
               target="_blank"
@@ -167,8 +164,8 @@ const Header = () => {
             >
               <FontAwesomeIconBlock icon={faLinkedin} />
             </a>
-          </IconItem>
-          <IconItem>
+          </LinkItem>
+          <LinkItem>
             <a
               href="https://twitter.com/1MD3V3L0P3R"
               target="_blank"
@@ -177,8 +174,8 @@ const Header = () => {
             >
               <FontAwesomeIconBlock icon={faTwitterSquare} />
             </a>
-          </IconItem>
-          <IconItem>
+          </LinkItem>
+          <LinkItem>
             <a
               href="http://github.com/SynCROSS"
               target="_blank"
@@ -187,18 +184,18 @@ const Header = () => {
             >
               <FontAwesomeIconBlock icon={faGithub} />
             </a>
-          </IconItem>
-          <IconItem>
+          </LinkItem>
+          <LinkItem>
             <a
               href="https://www.instagram.com/junseok3125/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
             >
-              <FontAwesomeIconBlock icon={faInstagramSquare} />
+              <FontAwesomeIconBlock icon={faInstagram} />
             </a>
-          </IconItem>
-        </IconList>
+          </LinkItem>
+        </ItemList>
       </HeaderList>
       <Outside id="outsideOfModal" onClick={closeMenu} />
     </HeaderBlock>
