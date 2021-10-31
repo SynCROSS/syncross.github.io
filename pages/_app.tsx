@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta
           httpEquiv="Content-Security-Policy"
-          content="default-src 'self' 'unsafe-inline'; script-src 'unsafe-eval'; script-src-elem 'self' 'unsafe-inline'; font-src https://fonts.googleapis.com/  https://fonts.gstatic.com/; style-src-elem https://fonts.googleapis.com/ 'unsafe-inline'; img-src 'self' data:"
+          content="default-src 'self' 'unsafe-inline'; script-src 'unsafe-eval'; script-src-elem 'self' 'unsafe-inline'; font-src https://fonts.googleapis.com/  https://fonts.gstatic.com/; style-src-elem 'self' https://fonts.googleapis.com/ 'unsafe-inline'; img-src 'self' data:"
         />
         <meta name="title" content={`${TITLE}`} />
         <meta name="description" content={`${DESCRIPTION}`} key="desc" />
