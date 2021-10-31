@@ -108,8 +108,8 @@ const HomeHeader = () => {
             icon={faArrowRight}
             style={
               right
-                ? { right: '1.2rem', opacity: '1' }
-                : { right: '1.4rem', opacity: '.5' }
+                ? { right: '1rem', opacity: '1' }
+                : { right: '1.2rem', opacity: '.5' }
             }
           />
         </RouterLink>
