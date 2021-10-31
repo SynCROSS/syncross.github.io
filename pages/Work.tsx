@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { getRandomTheme } from '../lib/theme/GithubRepository';
 import { useCallback } from 'react';
+import { FixedSizeList } from 'react-window';
 
 const WorkBlock = styled.div`
   align-items: baseline;
@@ -21,28 +22,45 @@ const Work = () => {
       '' +
       `&hide_border=true&show_icons=true&count_private=true`;
 
+  const rowWidth = 300;
+  const rowHeight = 90;
+  const itemCount = githubRepoArray?.length || 0;
+  const rowCount = itemCount > 5 ? 5 : itemCount;
+
+  const repoRow = useCallback(({ index, style }): JSX.Element => {
+    const repo = githubRepoArray[index];
+
+    return (
+      <div style={style}>
+        <Image
+          src={getRepoImgURL(`${repo}`)}
+          alt={`${repo}`}
+          title={`${repo}`}
+          width={rowWidth}
+          height={rowHeight}
+          quality={100}
+        />
+      </div>
+    );
+  }, []);
+
   return (
     <WorkBlock>
       <Head>
         <title>My Works</title>
+        <link rel="canonical" href="https://syncross.vercel.app/Work" />
       </Head>
       <h1>My Works</h1>
       <p>(Theme is Random)</p>
       <div style={{ margin: '2rem auto' }}>
-        <ul className="flex flex-direction-col jc-center ai-center">
-          {githubRepoArray?.map?.(repo => (
-            <li key={repo} style={{ margin: '5px auto' }}>
-              <Image
-                src={getRepoImgURL(`${repo}`)}
-                // sizes={'2w'}
-                // layout={'responsive'}
-                width={300}
-                height={90}
-                quality={100}
-              />
-            </li>
-          ))}
-        </ul>
+        <FixedSizeList
+          width={rowWidth}
+          height={rowHeight * rowCount}
+          itemCount={itemCount}
+          itemSize={rowHeight}
+        >
+          {repoRow}
+        </FixedSizeList>
       </div>
     </WorkBlock>
   );
