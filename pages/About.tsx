@@ -35,6 +35,7 @@ const About = () => {
     <AboutBlock className="flex ai-center jc-center flex-direction-col">
       <Head>
         <title>About</title>
+        <link rel="canonical" href="https://syncross.vercel.app/About" />
       </Head>
       <AboutTitle>About</AboutTitle>
       <AboutContext>
