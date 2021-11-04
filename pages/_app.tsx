@@ -16,6 +16,15 @@ export default function App({ Component, pageProps }: AppProps) {
   const DESCRIPTION =
     "I'm MERN Stack Developer. I Hope You Feel Good And Please Contact Me. (●'◡'●)";
 
+  const structuredData = {
+    '@context': 'http://schema.org/',
+    type: 'Person',
+    jobTitle: 'Frontend Developer',
+    name: 'SynCROSS',
+    telephone: '+82-10-9874-2668',
+    url: 'https://syncross.vercel.app',
+  };
+
   return (
     <Layout>
       <Head>
@@ -55,6 +64,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
           rel="stylesheet"
+        />
+
+        <script
+          type={'application/ld+json'}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </Head>
       <Component {...pageProps} />
