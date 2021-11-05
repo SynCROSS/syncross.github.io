@@ -57,6 +57,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
         <meta name="twitter:card" content="summary" />
 
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+
         <link
           href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
           rel="stylesheet"
