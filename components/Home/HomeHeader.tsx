@@ -73,11 +73,14 @@ const ArrowDownIcon = styled(FontAwesomeIcon)`
 const HomeHeader = () => {
   const [right, setRight] = useState(false);
 
+  // TODO Add Optional Chaining To `window` And `window?.scrollTo`
   const moveCurrentScroll = () =>
     window.scrollTo({
       top: document.getElementById('HomeHeader').offsetHeight + 10,
       behavior: 'smooth',
     });
+
+  // TODO const toggleRight = useCallBack(() => setRight(right => !right), []);
 
   return (
     <HomeHeaderBlock
@@ -88,7 +91,7 @@ const HomeHeader = () => {
       <HeadLine>
         SynCROSS, <br /> The Knowledge Explorer
       </HeadLine>
-      <Link href="/Work">
+      <Link href="/Work" passHref>
         <RouterLink
           onMouseOver={() => setRight(right => !right)}
           onMouseOut={() => setRight(right => !right)}
