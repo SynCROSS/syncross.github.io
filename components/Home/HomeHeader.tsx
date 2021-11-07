@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 const HomeHeaderBlock = styled.header`
   min-height: 95vh;
@@ -73,14 +73,13 @@ const ArrowDownIcon = styled(FontAwesomeIcon)`
 const HomeHeader = () => {
   const [right, setRight] = useState(false);
 
-  // TODO Add Optional Chaining To `window` And `window?.scrollTo`
   const moveCurrentScroll = () =>
-    window.scrollTo({
+    window?.scrollTo({
       top: document.getElementById('HomeHeader').offsetHeight + 10,
       behavior: 'smooth',
     });
 
-  // TODO const toggleRight = useCallBack(() => setRight(right => !right), []);
+  const toggleRight = useCallback(() => setRight(right => !right), []);
 
   return (
     <HomeHeaderBlock
@@ -93,8 +92,8 @@ const HomeHeader = () => {
       </HeadLine>
       <Link href="/Work" passHref>
         <RouterLink
-          onMouseOver={() => setRight(right => !right)}
-          onMouseOut={() => setRight(right => !right)}
+          onMouseOver={toggleRight}
+          onMouseOut={toggleRight}
           className="flex ai-center"
         >
           <span
