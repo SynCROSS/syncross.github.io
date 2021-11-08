@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -22,13 +23,11 @@ const Footer = () => {
         Copyright &copy;&nbsp;
         <span className="year">{new Date().getFullYear()}</span>&nbsp;Made
         by&nbsp;
-        <GithubLink
-          href="http://github.com/SynCROSS"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          SynCROSS
-        </GithubLink>
+        <Link href="http://github.com/SynCROSS" passHref>
+          <GithubLink target="_blank" rel="noopener noreferrer">
+            SynCROSS
+          </GithubLink>
+        </Link>
       </p>
     </FooterBlock>
   );

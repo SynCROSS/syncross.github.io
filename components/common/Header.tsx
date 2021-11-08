@@ -156,44 +156,40 @@ const Header = () => {
         </ItemList>
         <ItemList>
           <LinkItem>
-            <a
-              href="https://www.linkedin.com/in/%EC%A4%80%EC%84%9D-%EB%B0%95-4a9866194/?locale=en_US"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <FontAwesomeIconBlock icon={faLinkedin} />
-            </a>
+            <Link href="https://www.linkedin.com/in/%EC%A4%80%EC%84%9D-%EB%B0%95-4a9866194/?locale=en_US">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <FontAwesomeIconBlock icon={faLinkedin} />
+              </a>
+            </Link>
           </LinkItem>
           <LinkItem>
-            <a
-              href="https://twitter.com/1MD3V3L0P3R"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter"
-            >
-              <FontAwesomeIconBlock icon={faTwitterSquare} />
-            </a>
+            <Link href="https://twitter.com/1MD3V3L0P3R">
+              <a target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <FontAwesomeIconBlock icon={faTwitterSquare} />
+              </a>
+            </Link>
           </LinkItem>
           <LinkItem>
-            <a
-              href="http://github.com/SynCROSS"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Github"
-            >
-              <FontAwesomeIconBlock icon={faGithub} />
-            </a>
+            <Link href="http://github.com/SynCROSS">
+              <a target="_blank" rel="noopener noreferrer" aria-label="Github">
+                <FontAwesomeIconBlock icon={faGithub} />
+              </a>
+            </Link>
           </LinkItem>
           <LinkItem>
-            <a
-              href="https://www.instagram.com/junseok3125/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <FontAwesomeIconBlock icon={faInstagram} />
-            </a>
+            <Link href="https://www.instagram.com/junseok3125/">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <FontAwesomeIconBlock icon={faInstagram} />
+              </a>
+            </Link>
           </LinkItem>
         </ItemList>
       </HeaderList>
