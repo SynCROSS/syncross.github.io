@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import React from 'react';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const AboutBlock = styled.div`
@@ -31,6 +32,26 @@ const AboutContext = styled.p`
 `;
 
 const About = () => {
+  const [loading, setLoading] = useState(true);
+  const { isReady } = useRouter();
+
+  useEffect(() => {
+    if (isReady) {
+      setLoading(() => false);
+    }
+  }, [isReady]);
+
+  if (loading) {
+    return (
+      <AboutBlock className="flex jc-center ai-center flex-direction-col">
+        <Head>
+          <title>About</title>
+          <link rel="canonical" href="https://syncross.vercel.app/About" />
+        </Head>
+        <div>Loading . . .</div>
+      </AboutBlock>
+    );
+  }
   return (
     <AboutBlock className="flex ai-center jc-center flex-direction-col">
       <Head>
