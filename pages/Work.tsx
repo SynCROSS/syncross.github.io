@@ -2,8 +2,10 @@ import styled from 'styled-components';
 import Head from 'next/head';
 import Image from 'next/image';
 import { getRandomTheme } from '../lib/theme/GithubRepository';
-import { useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { FixedSizeList } from 'react-window';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const WorkBlock = styled.div`
   align-items: baseline;
@@ -14,6 +16,7 @@ const Work = () => {
   const githubRepoArray = ['nextjs-typescript-setting'];
 
   const GITHUB_USERNAME = 'SynCROSS';
+
   const getRepoImgURL = (repo: string): string =>
     repo &&
     `https://github-readme-stats.vercel.app/api/pin/` +
@@ -21,6 +24,9 @@ const Work = () => {
       `?username=${GITHUB_USERNAME}&repo=${repo}&theme=${getRandomTheme()}` +
       '' +
       `&hide_border=true&show_icons=true&count_private=true`;
+
+  const getRepoURL = (repo: string): string =>
+    repo && `https://github.com/${GITHUB_USERNAME}/${repo}`;
 
   const rowWidth = 300;
   const rowHeight = 90;
@@ -31,18 +37,40 @@ const Work = () => {
     const repo = githubRepoArray[index];
 
     return (
-      <div style={style}>
-        <Image
-          src={getRepoImgURL(`${repo}`)}
-          alt={`${repo}`}
-          title={`${repo}`}
-          width={rowWidth}
-          height={rowHeight}
-          quality={100}
-        />
-      </div>
+      <Link href={getRepoURL(`${repo}`)}>
+        <a style={style} target="_blank" rel="noopener noreferrer">
+          <Image
+            src={getRepoImgURL(`${repo}`)}
+            alt={`${repo}`}
+            title={`${repo}`}
+            width={rowWidth}
+            height={rowHeight}
+            quality={100}
+          />
+        </a>
+      </Link>
     );
   }, []);
+
+  const [loading, setLoading] = useState(true);
+  const { isReady } = useRouter();
+
+  useEffect(() => {
+    if (isReady) {
+      setLoading(() => false);
+    }
+  }, [isReady]);
+
+  if (loading) {
+    return (
+      <WorkBlock className="flex jc-center ai-center flex-direction-col">
+        <Head>
+          <title>My Works</title>
+          <link rel="canonical" href="https://syncross.vercel.app/Work" />
+        </Head>
+      </WorkBlock>
+    );
+  }
 
   return (
     <WorkBlock>
