@@ -117,15 +117,19 @@ const Outside = styled.div`
 
 const Header = () => {
   const openMenu = () => {
-    document.getElementById('header').style.width = '100px';
-    document.getElementById('headerBlock').style.width = '100%';
-    document.getElementById('outsideOfModal').style.width = '100%';
+    if (typeof document !== 'undefined') {
+      document.getElementById('header').style.width = '100px';
+      document.getElementById('headerBlock').style.width = '100%';
+      document.getElementById('outsideOfModal').style.width = '100%';
+    }
   };
 
   const closeMenu = () => {
-    document.getElementById('header').removeAttribute('style');
-    document.getElementById('headerBlock').removeAttribute('style');
-    document.getElementById('outsideOfModal').style.width = '0';
+    if (typeof document !== 'undefined') {
+      document.getElementById('header').removeAttribute('style');
+      document.getElementById('headerBlock').removeAttribute('style');
+      document.getElementById('outsideOfModal').style.width = '0';
+    }
   };
 
   return (

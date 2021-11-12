@@ -74,8 +74,9 @@ const HomeHeader = () => {
   const [right, setRight] = useState(false);
 
   const moveCurrentScroll = () =>
+    typeof document !== 'undefined' &&
     window?.scrollTo({
-      top: document.getElementById('HomeHeader').offsetHeight + 10,
+      top: document?.getElementById?.('HomeHeader')?.offsetHeight + 10,
       behavior: 'smooth',
     });
 
