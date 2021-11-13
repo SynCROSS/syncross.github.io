@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { CSSProperties } from 'styled-components';
 import Head from 'next/head';
 import Image from 'next/image';
 import { getRandomTheme } from '../lib/theme/GithubRepository';
@@ -17,13 +17,14 @@ const Work = () => {
 
   const GITHUB_USERNAME = 'SynCROSS';
 
-  const getRepoImgURL = (repo: string): string =>
-    repo &&
-    `https://github-readme-stats.vercel.app/api/pin/` +
-      '' +
-      `?username=${GITHUB_USERNAME}&repo=${repo}&theme=${getRandomTheme()}` +
-      '' +
-      `&hide_border=true&show_icons=true&count_private=true`;
+  const getRepoImgURL = (repo: string = ''): string =>
+    !!repo
+      ? `https://github-readme-stats.vercel.app/api/pin/` +
+        '' +
+        `?username=${GITHUB_USERNAME}&repo=${repo}&theme=${getRandomTheme()}` +
+        '' +
+        `&hide_border=true&show_icons=true&count_private=true`
+      : '';
 
   const getRepoURL = (repo: string): string =>
     repo && `https://github.com/${GITHUB_USERNAME}/${repo}`;
@@ -33,24 +34,33 @@ const Work = () => {
   const itemCount = githubRepoArray?.length || 0;
   const rowCount = itemCount > 5 ? 5 : itemCount;
 
-  const repoRow = useCallback(({ index, style }): JSX.Element => {
-    const repo = githubRepoArray[index];
+  const repoRow = useCallback(
+    ({
+      index = 0,
+      style = {},
+    }: {
+      index: number;
+      style: CSSProperties;
+    }): JSX.Element => {
+      const repo = githubRepoArray?.[index] ?? '';
 
-    return (
-      <Link href={getRepoURL(`${repo}`)}>
-        <a style={style} target="_blank" rel="noopener noreferrer">
-          <Image
-            src={getRepoImgURL(`${repo}`)}
-            alt={`${repo}`}
-            title={`${repo}`}
-            width={rowWidth}
-            height={rowHeight}
-            quality={100}
-          />
-        </a>
-      </Link>
-    );
-  }, []);
+      return (
+        <Link href={getRepoURL(`${repo}`)}>
+          <a style={style} target="_blank" rel="noopener noreferrer">
+            <Image
+              src={getRepoImgURL(`${repo}`)}
+              alt={`${repo}`}
+              title={`${repo}`}
+              width={rowWidth}
+              height={rowHeight}
+              quality={100}
+            />
+          </a>
+        </Link>
+      );
+    },
+    [],
+  );
 
   const [loading, setLoading] = useState(true);
   const { isReady } = useRouter();
@@ -79,7 +89,7 @@ const Work = () => {
         <link rel="canonical" href="https://syncross.vercel.app/Work" />
       </Head>
       <h1>My Works</h1>
-      <p>(Theme is Random)</p>
+      <p>&#x28;Theme is Random&#x29;</p>
       <div style={{ margin: '2rem auto' }}>
         <FixedSizeList
           width={rowWidth}
