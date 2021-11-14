@@ -12,6 +12,15 @@ const WorkBlock = styled.div`
   margin: auto;
 `;
 
+const WorkTitle = styled.h1`
+  margin: 0 auto;
+  font-size: 3rem;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 2.4rem;
+  }
+`;
+
 const Work = () => {
   const githubRepoArray = ['nextjs-typescript-setting'];
 
@@ -88,7 +97,7 @@ const Work = () => {
         <title>My Works</title>
         <link rel="canonical" href="https://syncross.vercel.app/Work" />
       </Head>
-      <h1>My Works</h1>
+      <WorkTitle>My Works</WorkTitle>
       <p>&#x28;Theme is Random&#x29;</p>
       <div style={{ margin: '2rem auto' }}>
         <FixedSizeList
