@@ -52,6 +52,7 @@ const About = () => {
       </AboutBlock>
     );
   }
+
   return (
     <AboutBlock className="flex ai-center jc-center flex-direction-col">
       <Head>
