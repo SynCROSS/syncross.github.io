@@ -1,7 +1,7 @@
 import styled, { CSSProperties } from 'styled-components';
 import Head from 'next/head';
 import Image from 'next/image';
-import { getRandomTheme } from '../lib/theme/GithubRepository';
+import { getRandomTheme } from '../lib/theme/work/github/GithubRepository';
 import { useCallback, useEffect, useState } from 'react';
 import { FixedSizeList } from 'react-window';
 import Link from 'next/link';
