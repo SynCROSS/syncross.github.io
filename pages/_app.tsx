@@ -58,6 +58,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:card" content="summary" />
 
         <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <meta
+          name="google-site-verification"
+          content="yPjEuhxg0wZLY4uNjzQnetrY9IDRmyer0VTV3aDVJZo"
+        />
 
         <link
           href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
