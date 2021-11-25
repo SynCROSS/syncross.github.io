@@ -63,13 +63,21 @@ export default function App({ Component, pageProps }: AppProps) {
           content="yPjEuhxg0wZLY4uNjzQnetrY9IDRmyer0VTV3aDVJZo"
         />
 
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
-          rel="stylesheet"
+          rel="preload"
+          as="font"
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
-          rel="stylesheet"
+          rel="preload"
+          as="font"
         />
 
         <script
