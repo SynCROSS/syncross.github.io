@@ -11,7 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     if (isReady) {
-      setLoading(() => false);
+      setLoading(false);
     }
   }, [isReady]);
 
