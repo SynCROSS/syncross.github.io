@@ -41,7 +41,7 @@ module.exports = {
   async headers() {
     return [
       {
-        // * Apply these headers to all routes in your application.
+        // * Apply these headers to all routes in application.
         source: '/(.*)',
         headers: securityHeaders,
       },
