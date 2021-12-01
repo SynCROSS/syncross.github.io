@@ -76,12 +76,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <link
           href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
           rel="stylesheet preload prefetch"
-          as="font"
+          as="style"
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
           rel="stylesheet preload prefetch"
-          as="font"
+          as="style"
         />
 
         <script
