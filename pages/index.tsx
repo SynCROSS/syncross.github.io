@@ -1,9 +1,8 @@
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import HomeHeader from '../components/Home/HomeHeader';
-import HomeIntroduce from '../components/Home/HomeIntroduce';
-import HomeTechStack from '../components/Home/HomeTechStack';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -26,6 +25,17 @@ const Home = () => {
       </div>
     );
   }
+  // TODO Make Custom Skeleton UI For HomeIntroduce
+  const HomeIntroduce = dynamic(
+    () => import('../components/Home/HomeIntroduce'),
+    { loading: () => <p>Loading . . .</p> },
+  );
+
+  // TODO Make Custom Skeleton UI For HomeTechStack
+  const HomeTechStack = dynamic(
+    () => import('../components/Home/HomeTechStack'),
+    { loading: () => <p>Loading . . .</p> },
+  );
 
   return (
     <div className="flex jc-center ai-center flex-direction-col">
