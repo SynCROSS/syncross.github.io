@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import Layout from '../components/Layout';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import Script from 'next/script';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
@@ -84,7 +85,7 @@ export default function App({ Component, pageProps }: AppProps) {
           as="style"
         />
 
-        <script
+        <Script
           type={'application/ld+json'}
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
