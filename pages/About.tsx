@@ -1,6 +1,6 @@
-import Head from 'next/head';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const AboutBlock = styled.div`
