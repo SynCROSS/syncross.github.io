@@ -1,11 +1,11 @@
 import styled, { CSSProperties } from 'styled-components';
+import { getRandomTheme } from '../lib/theme/work/github/GithubRepository';
+import { useEffect, useState } from 'react';
+import { FixedSizeList } from 'react-window';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
-import { getRandomTheme } from '../lib/theme/work/github/GithubRepository';
-import { useCallback, useEffect, useState } from 'react';
-import { FixedSizeList } from 'react-window';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 const WorkBlock = styled.div`
   align-items: baseline;
@@ -43,33 +43,30 @@ const Work = () => {
   const itemCount = githubRepoArray?.length || 0;
   const rowCount = itemCount > 5 ? 5 : itemCount;
 
-  const repoRow = useCallback(
-    ({
-      index = 0,
-      style = {},
-    }: {
-      index: number;
-      style: CSSProperties;
-    }): JSX.Element => {
-      const repo = githubRepoArray?.[index] ?? '';
+  const repoRow = ({
+    index = 0,
+    style = {},
+  }: {
+    index: number;
+    style: CSSProperties;
+  }): JSX.Element => {
+    const repo = githubRepoArray?.[index] ?? '';
 
-      return (
-        <Link href={getRepoURL(`${repo}`)}>
-          <a style={style} target="_blank" rel="noopener noreferrer">
-            <Image
-              src={getRepoImgURL(`${repo}`)}
-              alt={`${repo}`}
-              title={`${repo}`}
-              width={rowWidth}
-              height={rowHeight}
-              quality={100}
-            />
-          </a>
-        </Link>
-      );
-    },
-    [],
-  );
+    return (
+      <Link href={getRepoURL(`${repo}`)}>
+        <a style={style} target="_blank" rel="noopener noreferrer">
+          <Image
+            src={getRepoImgURL(`${repo}`)}
+            alt={`${repo}`}
+            title={`${repo}`}
+            width={rowWidth}
+            height={rowHeight}
+            quality={100}
+          />
+        </a>
+      </Link>
+    );
+  };
 
   const [loading, setLoading] = useState(true);
   const { isReady } = useRouter();
