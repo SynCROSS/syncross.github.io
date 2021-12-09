@@ -84,6 +84,7 @@ const Work = () => {
           <title>My Works</title>
           <link rel="canonical" href="https://syncross.vercel.app/Work" />
         </Head>
+        <div>Loading . . .</div>
       </WorkBlock>
     );
   }
