@@ -26,6 +26,11 @@ export default function App({ Component, pageProps }: AppProps) {
     url: 'https://syncross.vercel.app',
   };
 
+  const IPHONE_RETINA_ICON_SIZE = '120x120';
+  const IPAD_ICON_SIZE = '157x157';
+  const IPAD_RETINA_ICON_SIZE = '167x167';
+  const IPHONE_ICON_SIZE = '180x180';
+
   return (
     <Layout>
       <Head>
@@ -64,6 +69,8 @@ export default function App({ Component, pageProps }: AppProps) {
           content="yPjEuhxg0wZLY4uNjzQnetrY9IDRmyer0VTV3aDVJZo"
         />
 
+        <meta name="theme-color" content="#333333" />
+
         <link
           rel="preconnect"
           href="https://fonts.googleapis.com"
@@ -83,6 +90,27 @@ export default function App({ Component, pageProps }: AppProps) {
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
           rel="stylesheet preload prefetch"
           as="style"
+        />
+
+        <link
+          rel="apple-touch-icon"
+          sizes={IPHONE_ICON_SIZE}
+          href={`apple-touch-icon-${IPHONE_ICON_SIZE}.png`}
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes={IPAD_ICON_SIZE}
+          href={`apple-touch-icon-${IPAD_ICON_SIZE}.png`}
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes={IPHONE_RETINA_ICON_SIZE}
+          href={`apple-touch-icon-${IPHONE_RETINA_ICON_SIZE}.png`}
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes={IPAD_RETINA_ICON_SIZE}
+          href={`apple-touch-icon-${IPAD_RETINA_ICON_SIZE}.png`}
         />
 
         <Script
