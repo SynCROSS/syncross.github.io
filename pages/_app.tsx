@@ -71,6 +71,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
         <meta name="theme-color" content="#333333" />
 
+        <link rel="manifest" href="/manifest.json" />
+
         <link
           rel="preconnect"
           href="https://fonts.googleapis.com"
