@@ -62,6 +62,13 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:url" content="https://syncross.vercel.app" />
 
         <meta name="twitter:card" content="summary" />
+        <meta property="twitter:url" content="https://syncross.vercel.app/" />
+        <meta property="twitter:title" content={`${TITLE}`} />
+        <meta property="twitter:description" content={`${DESCRIPTION}`} />
+        <meta
+          property="twitter:image"
+          content="https://syncross.vercel.app/icon.jpg"
+        />
 
         <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta
@@ -84,12 +91,7 @@ export default function App({ Component, pageProps }: AppProps) {
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
-          rel="stylesheet preload prefetch"
-          as="style"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap&family=Noto+Sans+KR&display=swap"
           rel="stylesheet preload prefetch"
           as="style"
         />
