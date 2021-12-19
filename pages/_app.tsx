@@ -91,7 +91,7 @@ export default function App({ Component, pageProps }: AppProps) {
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap&family=Noto+Sans+KR&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap&family=Poppins&display=swap"
           rel="stylesheet preload prefetch"
           as="style"
         />
