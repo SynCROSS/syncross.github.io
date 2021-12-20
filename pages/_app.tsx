@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import Layout from '../components/Layout';
-import type { AppProps } from 'next/app';
+import type { AppProps, NextWebVitalsMetric } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
 import { config } from '@fortawesome/fontawesome-svg-core';
@@ -8,7 +8,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 
 config.autoAddCss = false;
 
-export function reportWebVitals(metric: any): void {
+export function reportWebVitals(metric: NextWebVitalsMetric): void {
   console.log(metric);
 }
 
