@@ -43,10 +43,8 @@ const HomeIntroduce = () => {
         <IntroContext className="flex flex-direction-col">
           <IntroduceTitle>Introduce</IntroduceTitle>
           <Introduce>
-            Hello, I'm a Junior Frontend Developer and I love learning new
-            things. <br />
-            That's why I've been learning many frameworks, libraries, and other
-            technologies since I first started developing. <br />
+            Hello, I'm a Junior Frontend Developer <br /> and I love learning
+            new things. <br />
             I Can Code With 'NextJS', 'TypeScript', 'Express', 'NestJS',
             'MongoDB', 'MySQL', 'Oracle', 'Spring Boot', and more. <br />{' '}
             Recently, I've been studying trends mainly.
