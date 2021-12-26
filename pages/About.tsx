@@ -37,7 +37,7 @@ const About = () => {
 
   useEffect(() => {
     if (isReady) {
-      setLoading(() => false);
+      setLoading(false);
     }
   }, [isReady]);
 
