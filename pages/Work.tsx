@@ -26,7 +26,7 @@ const Work = () => {
 
   const GITHUB_USERNAME = 'SynCROSS';
 
-  const getRepoImgURL = (repo: string = ''): string =>
+  const getRepoImgURL = (repo: string): string =>
     !!repo
       ? `https://github-readme-stats.vercel.app/api/pin/` +
         '' +
@@ -73,7 +73,7 @@ const Work = () => {
 
   useEffect(() => {
     if (isReady) {
-      setLoading(() => false);
+      setLoading(false);
     }
   }, [isReady]);
 
