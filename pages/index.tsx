@@ -21,9 +21,7 @@ const Home = () => {
           <title>SynCROSS</title>
           <link rel="canonical" href="https://syncross.vercel.app/" />
         </Head>
-        <div style={{ height: `calc(100vh-${64 + 56}}px)` }}>
-          Loading Index . . .
-        </div>
+        <div>Loading Index . . .</div>
       </div>
     );
   }
