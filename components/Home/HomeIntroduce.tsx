@@ -57,7 +57,7 @@ const HomeIntroduce = () => {
           src="/icon.svg"
           width={1000}
           height={1000}
-          alt=""
+          alt="SynCROSS"
           loading="eager"
         />
       </IntroWrapper>
