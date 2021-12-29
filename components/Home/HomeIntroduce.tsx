@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import FadeIn from '../animation/FadeIn';
+import { useRef } from 'react';
+import gsap from 'gsap';
 
 const HomeIntroduceBlock = styled.section`
   width: 100%;
@@ -20,10 +23,6 @@ const IntroduceTitle = styled.h1`
   font-size: 5rem;
 `;
 
-const IntroContext = styled.div`
-  margin-right: 5rem;
-`;
-
 const Introduce = styled.p`
   color: #acacac;
   font-size: 1.2rem;
@@ -37,10 +36,18 @@ const ImgBlock = styled(Image)`
 `;
 
 const HomeIntroduce = () => {
+  const animation = useRef<HTMLDivElement>(null);
+
   return (
     <HomeIntroduceBlock id="HomeIntroduce" className="flex jc-center ai-center">
       <IntroWrapper className="flex jc-center ai-center">
-        <IntroContext className="flex flex-direction-col">
+        <FadeIn
+          stagger={-0.1}
+          x={-100}
+          style={{ marginRight: '5rem' }}
+          className="flex flex-direction-col"
+          ref={animation}
+        >
           <IntroduceTitle>Introduce</IntroduceTitle>
           <Introduce>
             Hello, I'm a Junior Frontend Developer <br /> and I love learning
@@ -52,7 +59,7 @@ const HomeIntroduce = () => {
             Every time I codes, I think What Makes Better UX & Good Codes.{' '}
             <br />
           </Introduce>
-        </IntroContext>
+        </FadeIn>
         <ImgBlock
           src="/icon.svg"
           width={1000}
