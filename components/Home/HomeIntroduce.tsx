@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import FadeIn from '../animation/FadeIn';
-import { useRef } from 'react';
-import gsap from 'gsap';
 
 const HomeIntroduceBlock = styled.section`
   width: 100%;
@@ -36,17 +33,12 @@ const ImgBlock = styled(Image)`
 `;
 
 const HomeIntroduce = () => {
-  const animation = useRef<HTMLDivElement>(null);
-
   return (
     <HomeIntroduceBlock id="HomeIntroduce" className="flex jc-center ai-center">
       <IntroWrapper className="flex jc-center ai-center">
-        <FadeIn
-          stagger={-0.1}
-          x={-100}
+        <div
           style={{ marginRight: '5rem' }}
           className="flex flex-direction-col"
-          ref={animation}
         >
           <IntroduceTitle>Introduce</IntroduceTitle>
           <Introduce>
@@ -59,7 +51,7 @@ const HomeIntroduce = () => {
             Every time I codes, I think What Makes Better UX & Good Codes.{' '}
             <br />
           </Introduce>
-        </FadeIn>
+        </div>
         <ImgBlock
           src="/icon.svg"
           width={1000}
