@@ -1,3 +1,5 @@
+const withOffline = require('next-offline');
+
 const securityHeaders = [
   {
     key: 'X-DNS-Prefetch-Control',
@@ -34,7 +36,25 @@ const securityHeaders = [
   },
 ];
 
-module.exports = {
+module.exports = withOffline({
+  workboxOpts: {
+    runtimeCaching: [
+      {
+        urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+        handler: 'CacheFirst',
+      },
+      {
+        urlPattern: /^https?.*/,
+        handler: 'NetworkFirst',
+        options: {
+          cacheName: 'offlineCache',
+          expiration: {
+            maxEntries: 200,
+          },
+        },
+      },
+    ],
+  },
   images: {
     domains: ['unpkg.com', 'github-readme-stats.vercel.app'],
   },
@@ -47,4 +67,4 @@ module.exports = {
       },
     ];
   },
-};
+});
