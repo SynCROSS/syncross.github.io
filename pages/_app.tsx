@@ -115,6 +115,8 @@ export default function App({ Component, pageProps }: AppProps) {
           href={`apple-touch-icon-${IPAD_RETINA_ICON_SIZE}.png`}
         />
 
+        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
         <Script
           type={'application/ld+json'}
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
