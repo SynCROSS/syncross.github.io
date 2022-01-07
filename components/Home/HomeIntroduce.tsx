@@ -42,13 +42,16 @@ const HomeIntroduce = () => {
         >
           <IntroduceTitle>Introduce</IntroduceTitle>
           <Introduce>
-            Hello, I'm a Junior Frontend Developer <br /> and I love learning
-            new things. <br />
-            I Can Code With 'NextJS', 'TypeScript', 'Express', 'NestJS',
-            'MongoDB', 'MySQL', 'Oracle', 'Spring Boot', and more. <br />{' '}
-            Recently, I've been studying trends mainly.
+            Hello, I'm a Junior Frontend Developer
             <br />
-            Every time I codes, I think What Makes Better UX & Good Codes.{' '}
+            and I love gaining knowledge of new things.
+            <br />
+            I Can Code With 'NextJS', 'TypeScript', 'Express', 'NestJS',
+            'MongoDB', 'MySQL', 'Oracle', 'Spring Boot', and more.
+            <br />
+            Recently, I've been analyzing tendencies mainly.
+            <br />
+            Every time I codes, I assume What Makes Better UX & Good Codes.
             <br />
           </Introduce>
         </div>
