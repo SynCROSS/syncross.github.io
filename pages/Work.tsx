@@ -26,14 +26,22 @@ const Work = () => {
 
   const GITHUB_USERNAME = 'SynCROSS';
 
-  const getRepoImgURL = (repo: string): string =>
-    !!repo
-      ? `https://github-readme-stats.vercel.app/api/pin/` +
-        '' +
-        `?username=${GITHUB_USERNAME}&repo=${repo}&theme=${getRandomTheme()}` +
-        '' +
-        `&hide_border=true&show_icons=true&count_private=true`
-      : '';
+  const getRepoImgURL = (repo: string): string => {
+    if (!repo) {
+      return '';
+    }
+
+    const params = new URLSearchParams({
+      username: GITHUB_USERNAME,
+      repo: repo,
+      theme: getRandomTheme(),
+      hide_border: 'true',
+      show_icons: 'true',
+      count_private: 'true',
+    }).toString();
+
+    return `https://github-readme-stats.vercel.app/api/pin${params}`;
+  };
 
   const getRepoURL = (repo: string): string =>
     repo && `https://github.com/${GITHUB_USERNAME}/${repo}`;
