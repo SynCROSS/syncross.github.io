@@ -21,61 +21,61 @@ const WorkTitle = styled.h1`
   }
 `;
 
+const githubRepoArray = ['nextjs-typescript-setting'];
+
+const GITHUB_USERNAME = 'SynCROSS';
+
+const getRepoImgURL = (repo: string): string => {
+  if (!repo) {
+    return '';
+  }
+
+  const params = new URLSearchParams({
+    username: GITHUB_USERNAME,
+    repo: repo,
+    theme: getRandomTheme(),
+    hide_border: 'true',
+    show_icons: 'true',
+    count_private: 'true',
+  }).toString();
+
+  return `https://github-readme-stats.vercel.app/api/pin${params}`;
+};
+
+const getRepoURL = (repo: string): string =>
+  repo && `https://github.com/${GITHUB_USERNAME}/${repo}`;
+
+const rowWidth = 300;
+const rowHeight = 90;
+const itemCount = githubRepoArray?.length || 0;
+const rowCount = itemCount > 5 ? 5 : itemCount;
+
+const repoRow = ({
+  index = 0,
+  style = {},
+}: {
+  index: number;
+  style: CSSProperties;
+}): JSX.Element => {
+  const repo = githubRepoArray?.[index] ?? '';
+
+  return (
+    <Link href={getRepoURL(`${repo}`)}>
+      <a style={style} target="_blank" rel="noopener noreferrer">
+        <Image
+          src={getRepoImgURL(`${repo}`)}
+          alt={`${repo}`}
+          title={`${repo}`}
+          width={rowWidth}
+          height={rowHeight}
+          quality={100}
+        />
+      </a>
+    </Link>
+  );
+};
+
 const Work = () => {
-  const githubRepoArray = ['nextjs-typescript-setting'];
-
-  const GITHUB_USERNAME = 'SynCROSS';
-
-  const getRepoImgURL = (repo: string): string => {
-    if (!repo) {
-      return '';
-    }
-
-    const params = new URLSearchParams({
-      username: GITHUB_USERNAME,
-      repo: repo,
-      theme: getRandomTheme(),
-      hide_border: 'true',
-      show_icons: 'true',
-      count_private: 'true',
-    }).toString();
-
-    return `https://github-readme-stats.vercel.app/api/pin${params}`;
-  };
-
-  const getRepoURL = (repo: string): string =>
-    repo && `https://github.com/${GITHUB_USERNAME}/${repo}`;
-
-  const rowWidth = 300;
-  const rowHeight = 90;
-  const itemCount = githubRepoArray?.length || 0;
-  const rowCount = itemCount > 5 ? 5 : itemCount;
-
-  const repoRow = ({
-    index = 0,
-    style = {},
-  }: {
-    index: number;
-    style: CSSProperties;
-  }): JSX.Element => {
-    const repo = githubRepoArray?.[index] ?? '';
-
-    return (
-      <Link href={getRepoURL(`${repo}`)}>
-        <a style={style} target="_blank" rel="noopener noreferrer">
-          <Image
-            src={getRepoImgURL(`${repo}`)}
-            alt={`${repo}`}
-            title={`${repo}`}
-            width={rowWidth}
-            height={rowHeight}
-            quality={100}
-          />
-        </a>
-      </Link>
-    );
-  };
-
   const [loading, setLoading] = useState(true);
   const { isReady } = useRouter();
 
