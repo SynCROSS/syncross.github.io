@@ -15,7 +15,7 @@ export function reportWebVitals(metric: NextWebVitalsMetric): void {
 export default function App({ Component, pageProps }: AppProps) {
   const TITLE = 'SynCROSS';
   const DESCRIPTION =
-    "I'm MERN Stack Developer. I Hope You Feel Good And Please Contact Me. (●'◡'●)";
+    "I'm MERN Stack Developer. Let's Work Together To Make Your Website Perfect.";
 
   const structuredData = {
     '@context': 'http://schema.org/',
