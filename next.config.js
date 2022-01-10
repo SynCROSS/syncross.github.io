@@ -1,3 +1,5 @@
+// @ts-check
+
 const withOffline = require('next-offline');
 
 const securityHeaders = [
@@ -12,7 +14,7 @@ const securityHeaders = [
   {
     key: 'Content-Security-Policy',
     value:
-      `default-src 'self' https://fonts.googleapis.com/ 'unsafe-inline'; ` +
+      `default-src 'self' https://fonts.googleapis.com/ vitals.vercel-insights.com 'unsafe-inline'; ` +
       `object-src 'none'; ` +
       `report-uri 'none'; ` +
       `script-src 'self' 'unsafe-eval'; ` +
@@ -36,7 +38,10 @@ const securityHeaders = [
   },
 ];
 
-module.exports = withOffline({
+/**
+ * @type {import('next').NextConfig}
+ **/
+const nextConfig = {
   workboxOpts: {
     runtimeCaching: [
       {
@@ -67,4 +72,6 @@ module.exports = withOffline({
       },
     ];
   },
-});
+};
+
+module.exports = withOffline(nextConfig);
