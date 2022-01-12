@@ -42,17 +42,12 @@ const HomeIntroduce = () => {
         >
           <IntroduceTitle>Introduce</IntroduceTitle>
           <Introduce>
-            Hello, I'm a Junior Frontend Developer
-            <br />
-            and I love gaining knowledge of new things.
-            <br />
-            I Can Code With 'NextJS', 'TypeScript', 'Express', 'NestJS',
-            'MongoDB', 'MySQL', 'Oracle', 'Spring Boot', and more.
-            <br />
-            Recently, I've been analyzing tendencies mainly.
-            <br />
-            Every time I codes, I assume What Makes Better UX & Good Codes.
-            <br />
+            Oh hi there! My name is SynCROSS, <br />
+            Frontend Developer and boy do I love learning new things. <br />{' '}
+            I've amassed a great deal of skills due to my passion for constantly
+            learning new languages, frameworks, and other technologies. I have
+            experience with: NextJS, TypeScript, Express, NestJS, MongoDB,
+            MySQL, Oracle, Spring Boot.
           </Introduce>
         </div>
         <ImgBlock
