@@ -59,7 +59,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:image:alt" content="SynCROSS" />
         <meta property="og:url" content="https://syncross.vercel.app" />
 
-        <meta name="twitter:card" content="summary" />
+        <meta property="twitter:card" content="summary" />
         <meta property="twitter:url" content="https://syncross.vercel.app/" />
         <meta property="twitter:title" content={`${TITLE}`} />
         <meta property="twitter:description" content={`${DESCRIPTION}`} />
