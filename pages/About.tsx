@@ -37,7 +37,7 @@ const About = () => {
 
   useEffect(() => {
     if (isReady) {
-      setLoading(() => false);
+      setLoading(false);
     }
   }, [isReady]);
 
@@ -48,7 +48,7 @@ const About = () => {
           <title>About</title>
           <link rel="canonical" href="https://syncross.vercel.app/About" />
         </Head>
-        <div>Loading . . .</div>
+        <div>Loading About . . .</div>
       </AboutBlock>
     );
   }

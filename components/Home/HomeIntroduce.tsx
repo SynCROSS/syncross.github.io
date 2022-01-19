@@ -20,10 +20,6 @@ const IntroduceTitle = styled.h1`
   font-size: 5rem;
 `;
 
-const IntroContext = styled.div`
-  margin-right: 5rem;
-`;
-
 const Introduce = styled.p`
   color: #acacac;
   font-size: 1.2rem;
@@ -40,20 +36,25 @@ const HomeIntroduce = () => {
   return (
     <HomeIntroduceBlock id="HomeIntroduce" className="flex jc-center ai-center">
       <IntroWrapper className="flex jc-center ai-center">
-        <IntroContext className="flex flex-direction-col">
+        <div
+          style={{ marginRight: '5rem' }}
+          className="flex flex-direction-col"
+        >
           <IntroduceTitle>Introduce</IntroduceTitle>
           <Introduce>
-            Hello, I'm SynCROSS. I'm a Frontend Developer and I love learning
-            new things. That's why I've been learning many frameworks,
-            libraries, and other technologies since I first started developing
-            them. Recently, I've been studying trends mainly.
+            Oh hi there! My name is SynCROSS, <br />
+            Frontend Developer and boy do I love learning new things. <br />{' '}
+            I've amassed a great deal of skills due to my passion for constantly
+            learning new languages, frameworks, and other technologies. I have
+            experience with: NextJS, TypeScript, Express, NestJS, MongoDB,
+            MySQL, Oracle, Spring Boot.
           </Introduce>
-        </IntroContext>
+        </div>
         <ImgBlock
           src="/icon.svg"
           width={1000}
           height={1000}
-          alt=""
+          alt="SynCROSS"
           loading="eager"
         />
       </IntroWrapper>

@@ -1,3 +1,7 @@
+// @ts-check
+
+const withOffline = require('next-offline');
+
 const securityHeaders = [
   {
     key: 'X-DNS-Prefetch-Control',
@@ -10,7 +14,7 @@ const securityHeaders = [
   {
     key: 'Content-Security-Policy',
     value:
-      `default-src 'self' https://fonts.googleapis.com/ 'unsafe-inline'; ` +
+      `default-src 'self' https://fonts.googleapis.com/ vitals.vercel-insights.com 'unsafe-inline'; ` +
       `object-src 'none'; ` +
       `report-uri 'none'; ` +
       `script-src 'self' 'unsafe-eval'; ` +
@@ -34,7 +38,28 @@ const securityHeaders = [
   },
 ];
 
-module.exports = {
+/**
+ * @type {import('next').NextConfig}
+ **/
+const nextConfig = {
+  workboxOpts: {
+    runtimeCaching: [
+      {
+        urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+        handler: 'CacheFirst',
+      },
+      {
+        urlPattern: /^https?.*/,
+        handler: 'NetworkFirst',
+        options: {
+          cacheName: 'offlineCache',
+          expiration: {
+            maxEntries: 200,
+          },
+        },
+      },
+    ],
+  },
   images: {
     domains: ['unpkg.com', 'github-readme-stats.vercel.app'],
   },
@@ -48,3 +73,5 @@ module.exports = {
     ];
   },
 };
+
+module.exports = withOffline(nextConfig);
