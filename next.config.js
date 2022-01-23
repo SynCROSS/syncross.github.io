@@ -2,6 +2,12 @@
 
 const withOffline = require('next-offline');
 
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process?.env?.ANALYZE === 'true',
+});
+
+const withPlugins = require('next-compose-plugins');
+
 const securityHeaders = [
   {
     key: 'X-DNS-Prefetch-Control',
@@ -74,4 +80,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withOffline(nextConfig);
+module.exports = withPlugins([withOffline, withBundleAnalyzer], nextConfig);
