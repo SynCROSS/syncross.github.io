@@ -39,7 +39,7 @@ const getRepoImgURL = (repo: string): string => {
     count_private: 'true',
   }).toString();
 
-  return `https://github-readme-stats.vercel.app/api/pin${params}`;
+  return `https://github-readme-stats.vercel.app/api/pin?${params}`;
 };
 
 const getRepoURL = (repo: string): string =>
