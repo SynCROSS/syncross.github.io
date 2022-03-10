@@ -27,7 +27,7 @@ const securityHeaders = [
       `script-src-elem 'self' 'unsafe-inline'; ` +
       `font-src https://fonts.googleapis.com/  https://fonts.gstatic.com/; ` +
       `style-src-elem 'self' https://fonts.googleapis.com/ 'unsafe-inline'; ` +
-      `img-src 'self' data:; ` +
+      `img-src 'self' https://unpkg.com github-readme-stats.vercel.app data:; ` +
       `frame-ancestors 'self'`,
   },
   {
