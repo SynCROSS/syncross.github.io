@@ -21,7 +21,10 @@ const WorkTitle = styled.h1`
   }
 `;
 
-const githubRepoArray = ['nextjs-typescript-setting'];
+const githubRepoArray = [
+  'nextjs-typescript-setting',
+  'react-typescript-setting',
+];
 
 const GITHUB_USERNAME = 'SynCROSS';
 
