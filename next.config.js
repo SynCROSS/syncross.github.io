@@ -1,6 +1,6 @@
 // @ts-check
 
-const withOffline = require('next-offline');
+const withPwa = require('next-pwa');
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process?.env?.ANALYZE === 'true',
@@ -48,24 +48,6 @@ const securityHeaders = [
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
-  workboxOpts: {
-    runtimeCaching: [
-      {
-        urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
-        handler: 'CacheFirst',
-      },
-      {
-        urlPattern: /^https?.*/,
-        handler: 'NetworkFirst',
-        options: {
-          cacheName: 'offlineCache',
-          expiration: {
-            maxEntries: 200,
-          },
-        },
-      },
-    ],
-  },
   images: {
     domains: ['unpkg.com', 'github-readme-stats.vercel.app'],
   },
@@ -80,4 +62,18 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins([withOffline, withBundleAnalyzer], nextConfig);
+module.exports = withPlugins(
+  [
+    [
+      withPwa,
+      {
+        pwa: {
+          dest: 'public',
+          sw: 'service-worker.js',
+        },
+      },
+    ],
+    [withBundleAnalyzer],
+  ],
+  nextConfig,
+);
