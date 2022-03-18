@@ -42,6 +42,17 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="title" content={`${TITLE}`} />
         <meta name="description" content={`${DESCRIPTION}`} key="desc" />
 
+        <meta name="application-name" content={`${TITLE}`} />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content={`${TITLE}`} />
+
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta name="msapplication-TileColor" content="#333333" />
+        <meta name="msapplication-tap-highlight" content="no" />
+
         <meta property="og:type" content="website" />
         <meta property="og:title" content={`${TITLE}`} />
         <meta property="og:description" content={`${DESCRIPTION}`} />
