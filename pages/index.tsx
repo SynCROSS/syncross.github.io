@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import HomeHeader from '../components/Home/HomeHeader';
 
-const Home = () => {
+function Home() {
   const [loading, setLoading] = useState(true);
   const { isReady } = useRouter();
 
@@ -28,13 +28,13 @@ const Home = () => {
   // TODO Make Custom Skeleton UI For HomeIntroduce
   const HomeIntroduce = dynamic(
     () => import('../components/Home/HomeIntroduce'),
-    { loading: () => <p>Loading Introduce. . .</p> },
+    // { loading: () => <p>Loading Introduce. . .</p> },
   );
 
   // TODO Make Custom Skeleton UI For HomeTechStack
   const HomeTechStack = dynamic(
     () => import('../components/Home/HomeTechStack'),
-    { loading: () => <p>Loading Tech Stack. . .</p> },
+    // { loading: () => <p>Loading Tech Stack. . .</p> },
   );
 
   return (
@@ -48,6 +48,6 @@ const Home = () => {
       <HomeTechStack />
     </div>
   );
-};
+}
 
 export default Home;

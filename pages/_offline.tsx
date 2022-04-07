@@ -1,9 +1,7 @@
-const _offline = () => {
+function _offline() {
   return (
-    <>
-      <p>You're Offline</p>
-    </>
+    <p>You're Offline</p>
   );
-};
+}
 
 export default _offline;

@@ -20,7 +20,11 @@ class MyDocument extends Document {
         originalRenderPage?.({
           enhanceApp:
             (App: AppType) =>
-            (props: PropsWithChildren<AppPropsType<NextRouter, {}>>) =>
+            (
+              props: PropsWithChildren<
+                AppPropsType<NextRouter, Record<string, unknown>>
+              >,
+            ) =>
               sheet?.collectStyles?.(<App {...props} />),
         });
 
@@ -44,11 +48,12 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang={'en-US'}>
-        <Head></Head>
+      <Html lang="en-US">
+        <Head />
         <body>
           <Main />
           <NextScript />
+          <noscript>Your Browser Is Too Old To Use Javascript</noscript>
         </body>
       </Html>
     );

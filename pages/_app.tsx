@@ -1,9 +1,9 @@
 import '../styles/globals.css';
-import Layout from '../components/Layout';
 import type { AppProps, NextWebVitalsMetric } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
 import { config } from '@fortawesome/fontawesome-svg-core';
+import Layout from '../components/Layout';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 config.autoAddCss = false;
@@ -129,7 +129,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
         <Script
-          type={'application/ld+json'}
+          type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </Head>

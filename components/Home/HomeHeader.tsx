@@ -70,7 +70,7 @@ const ArrowDownIcon = styled(FontAwesomeIcon)`
   width: 2rem;
 `;
 
-const HomeHeader = () => {
+function HomeHeader() {
   const [right, setRight] = useState(false);
 
   const moveCurrentScroll = () =>
@@ -123,10 +123,10 @@ const HomeHeader = () => {
         title="Scroll Down Button"
         onClick={moveCurrentScroll}
       >
-        <ArrowDownIcon icon={faArrowDown}></ArrowDownIcon>
+        <ArrowDownIcon icon={faArrowDown} />
       </ArrowButton>
     </HomeHeaderBlock>
   );
-};
+}
 
 export default HomeHeader;

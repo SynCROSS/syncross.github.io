@@ -1,11 +1,11 @@
 import styled, { CSSProperties } from 'styled-components';
-import { getRandomTheme } from '../lib/theme/work/github/GithubRepository';
 import { useEffect, useState } from 'react';
 import { FixedSizeList } from 'react-window';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getRandomTheme } from '../lib/theme/work/github/GithubRepository';
 
 const WorkBlock = styled.div`
   align-items: baseline;
@@ -35,7 +35,7 @@ const getRepoImgURL = (repo: string): string => {
 
   const params = new URLSearchParams({
     username: GITHUB_USERNAME,
-    repo: repo,
+    repo,
     theme: getRandomTheme(),
     hide_border: 'true',
     show_icons: 'true',
@@ -78,7 +78,7 @@ const repoRow = ({
   );
 };
 
-const Work = () => {
+function Work() {
   const [loading, setLoading] = useState(true);
   const { isReady } = useRouter();
 
@@ -120,6 +120,6 @@ const Work = () => {
       </div>
     </WorkBlock>
   );
-};
+}
 
 export default Work;

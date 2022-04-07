@@ -115,7 +115,7 @@ const Outside = styled.div`
   }
 `;
 
-const Header = () => {
+function Header() {
   const openMenu = () => {
     if (typeof document !== 'undefined') {
       document.getElementById('header').style.width = '100px';
@@ -200,6 +200,6 @@ const Header = () => {
       <Outside id="outsideOfModal" onClick={closeMenu} />
     </HeaderBlock>
   );
-};
+}
 
 export default Header;
