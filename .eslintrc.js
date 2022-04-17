@@ -20,7 +20,7 @@ module.exports = {
     },
     ecmaVersion: 13,
     sourceType: 'module',
-    project: './tsconfig.json',
+    project: ['./tsconfig.eslint.json', './tsconfig.json'],
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
@@ -30,6 +30,36 @@ module.exports = {
         components: ['Link'],
         specialLink: ['hrefLeft', 'hrefRight'],
         aspects: ['invalidHref', 'preferButton'],
+      },
+    ],
+    'lines-between-class-members': 'warn',
+    '@typescript-eslint/no-for-in-array': 'warn',
+    '@typescript-eslint/explicit-function-return-type': [
+      'warn',
+      {
+        allowExpressions: true,
+      },
+    ],
+    '@typescript-eslint/no-unused-vars': 'warn',
+    'react/react-in-jsx-scope': 'off',
+    'react/prefer-stateless-function': 'warn',
+    'react/jsx-filename-extension': [
+      'warn',
+      {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    ],
+    'react/jsx-props-no-spreading': 'warn',
+    'no-param-reassign': 'warn',
+    'no-nested-ternary': 'warn',
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
       },
     ],
   },
