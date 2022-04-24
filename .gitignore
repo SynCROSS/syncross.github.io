@@ -35,6 +35,6 @@ yarn-error.log*
 .dccache
 
 # pwa
-**/public/workbox-*.js
-**/public/service-worker.js
-**/public/fallback-*.js
+**/public/workbox-*.js*
+**/public/service-worker.js*
+**/public/fallback-*.js*
