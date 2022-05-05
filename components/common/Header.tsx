@@ -115,21 +115,45 @@ const Outside = styled.div`
   }
 `;
 
-function Header() {
-  const openMenu = () => {
-    if (typeof document !== 'undefined') {
-      document.getElementById('header').style.width = '100px';
-      document.getElementById('headerBlock').style.width = '100%';
-      document.getElementById('outsideOfModal').style.width = '100%';
+function Header(): JSX.Element {
+  const openMenu = (): void => {
+    if (typeof document === 'undefined') {
+      return;
     }
+
+    const header = document.getElementById('header');
+    const headerBlock = document.getElementById('headerBlock');
+    const outsideOfModal = document.getElementById('outsideOfModal');
+
+    if (
+      !header?.style?.width ||
+      !headerBlock?.style?.width ||
+      !outsideOfModal?.style?.width
+    ) {
+      return;
+    }
+
+    header.style.width = '100px';
+    headerBlock.style.width = '100%';
+    outsideOfModal.style.width = '100%';
   };
 
-  const closeMenu = () => {
-    if (typeof document !== 'undefined') {
-      document.getElementById('header').removeAttribute('style');
-      document.getElementById('headerBlock').removeAttribute('style');
-      document.getElementById('outsideOfModal').style.width = '0';
+  const closeMenu = (): void => {
+    if (typeof document === 'undefined') {
+      return;
     }
+
+    const header = document.getElementById?.('header');
+    const headerBlock = document.getElementById?.('headerBlock');
+    const outsideOfModal = document.getElementById?.('outsideOfModal');
+
+    if (!outsideOfModal?.style?.width) {
+      return;
+    }
+
+    header?.removeAttribute?.('style');
+    headerBlock?.removeAttribute?.('style');
+    outsideOfModal.style.width = '0';
   };
 
   return (
