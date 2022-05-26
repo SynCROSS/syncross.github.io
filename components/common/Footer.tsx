@@ -17,14 +17,13 @@ const GithubLink = styled.a`
   }
 `;
 
-function Footer() {
+function Footer(): JSX.Element {
   return (
     <FooterBlock className="flex jc-center ai-center flex-direction-col">
       <p>
         Copyright &copy;&nbsp;
         <span className="year">{new Date().getFullYear()}</span>
-&nbsp;Made
-        by&nbsp;
+        &nbsp;Made by&nbsp;
         <Link href="http://github.com/SynCROSS" passHref>
           <GithubLink target="_blank" rel="noopener noreferrer">
             SynCROSS
