@@ -38,3 +38,6 @@ yarn-error.log*
 **/public/workbox-*.js*
 **/public/service-worker.js*
 **/public/fallback-*.js*
+
+# JetBrains
+/.idea/
