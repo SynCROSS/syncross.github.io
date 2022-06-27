@@ -3,7 +3,8 @@
 const withPwa = require('next-pwa');
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process?.env?.ANALYZE === 'true',
+  // enabled: process?.env?.ANALYZE === 'true',
+  enabled: false,
 });
 
 const withPlugins = require('next-compose-plugins');
@@ -20,14 +21,14 @@ const securityHeaders = [
   {
     key: 'Content-Security-Policy',
     value:
-      `default-src 'self' https://fonts.googleapis.com/ vitals.vercel-insights.com 'unsafe-inline'; ` +
+      `default-src 'self' fonts.googleapis.com vitals.vercel-insights.com 'unsafe-inline'; ` +
       `object-src 'none'; ` +
       `report-uri 'none'; ` +
       `script-src 'self' 'unsafe-eval'; ` +
       `script-src-elem 'self' 'unsafe-inline'; ` +
-      `font-src https://fonts.googleapis.com/  https://fonts.gstatic.com/; ` +
-      `style-src-elem 'self' https://fonts.googleapis.com/ 'unsafe-inline'; ` +
-      `img-src 'self' https://unpkg.com github-readme-stats.vercel.app data:; ` +
+      `font-src fonts.googleapis.com fonts.gstatic.com; ` +
+      `style-src-elem 'self' fonts.googleapis.com 'unsafe-inline'; ` +
+      `img-src 'self' unpkg.com github-readme-stats.vercel.app data:; ` +
       `frame-ancestors 'self'`,
   },
   {
@@ -50,6 +51,11 @@ const securityHeaders = [
 const nextConfig = {
   images: {
     domains: ['unpkg.com', 'github-readme-stats.vercel.app'],
+    dangerouslyAllowSVG: true,
+    // contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+  compiler: {
+    styledComponents: true,
   },
   async headers() {
     return [
