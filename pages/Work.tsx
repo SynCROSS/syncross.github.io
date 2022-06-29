@@ -78,7 +78,7 @@ const repoRow = ({
   );
 };
 
-function Work() {
+function Work(): JSX.Element {
   const [loading, setLoading] = useState(true);
   const { isReady } = useRouter();
 

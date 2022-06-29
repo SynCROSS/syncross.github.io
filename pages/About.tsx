@@ -31,7 +31,7 @@ const AboutContext = styled.p`
   }
 `;
 
-function About() {
+function About(): JSX.Element {
   const [loading, setLoading] = useState(true);
   const { isReady } = useRouter();
 
@@ -61,47 +61,23 @@ function About() {
       </Head>
       <AboutTitle>About</AboutTitle>
       <AboutContext>
-        Hello, I'm
-        {' '}
-        <b>SynCROSS</b>
+        Hello, I&apos;m <b>SynCROSS</b>
         <br />
-        The Frontend Developer (
-        <b>MERN</b>
-        {' '}
-        Stack).
-        <br />
-        I Love
+        The Frontend Developer (<b>MERN</b> Stack).
+        <br />I Love
         <b>Learning New Things</b>
         <br />
-        But Also
-        {' '}
-        <b>Making Projects</b>
-&nbsp;Too.
-        <br />
-        I Think Fixing Error is
+        But Also <b>Making Projects</b>
+        &nbsp;Too.
+        <br />I Think Fixing Error is
         <b>Hard</b>
         ,
         <br />
-        But It's&nbsp;
-        <b>Necessary</b>
-        {' '}
-        &
-        <b>Important</b>
+        But It&apos;s&nbsp;
+        <b>Necessary</b> &<b>Important</b>
         .
         <br />
-        So I Will
-        {' '}
-        <b>Try</b>
-        {' '}
-        To
-        {' '}
-        <b>Fix</b>
-        {' '}
-        The Error &
-        {' '}
-        <b>Improve</b>
-        {' '}
-        UX.
+        So I Will <b>Try</b> To <b>Fix</b> The Error & <b>Improve</b> UX.
         <br />
         If&nbsp;
         <b>U Wanna Hire</b>
@@ -110,8 +86,7 @@ function About() {
         Please&nbsp;
         <b>Contact Me</b>
         .
-        <br />
-        I Hope You Feel So Good. (●'◡'●)
+        <br />I Hope You Feel So Good. (●&apos;◡&apos;●)
       </AboutContext>
     </AboutBlock>
   );

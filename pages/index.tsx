@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import HomeHeader from '../components/Home/HomeHeader';
 
-function Home() {
+function Home(): JSX.Element {
   const [loading, setLoading] = useState(true);
   const { isReady } = useRouter();
 
@@ -25,6 +25,7 @@ function Home() {
       </div>
     );
   }
+
   // TODO Make Custom Skeleton UI For HomeIntroduce
   const HomeIntroduce = dynamic(
     () => import('../components/Home/HomeIntroduce'),

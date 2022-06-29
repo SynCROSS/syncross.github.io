@@ -1,7 +1,5 @@
-function _offline() {
-  return (
-    <p>You're Offline</p>
-  );
+function Offline(): JSX.Element {
+  return <p>You&apos;re Offline</p>;
 }
 
-export default _offline;
+export default Offline;
