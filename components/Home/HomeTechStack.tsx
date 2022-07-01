@@ -29,16 +29,16 @@ const TechListItem = styled.li`
   }
 `;
 
-function HomeTechStack() {
-  const techStacks = ['mongodb', 'express', 'react', 'nodedotjs'];
+const techStacks = ['mongodb', 'express', 'react', 'nodedotjs'];
 
-  const getIconURL = (techStack: string) => `https://unpkg.com/simple-icons@v5/icons/${techStack}.svg`;
-
+const getIconURL = (techStack: string): string =>
+  `https://unpkg.com/simple-icons@v5/icons/${techStack}.svg`;
+function HomeTechStack(): JSX.Element {
   return (
     <HomeTechStackBlock>
       <TechStackTitle>Tech Stack</TechStackTitle>
       <TechList className="flex jc-center ai-center">
-        {techStacks?.map?.((techStack) => (
+        {techStacks?.map?.(techStack => (
           <TechListItem key={`${techStack}`}>
             <Image
               src={getIconURL(`${techStack}`)}

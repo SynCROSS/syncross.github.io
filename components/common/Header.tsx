@@ -115,47 +115,117 @@ const Outside = styled.div`
   }
 `;
 
+const openMenu = (): void => {
+  if (typeof document === 'undefined') {
+    return;
+  }
+
+  const header = document.getElementById('header');
+  const headerBlock = document.getElementById('headerBlock');
+  const outsideOfModal = document.getElementById('outsideOfModal');
+
+  if (
+    !header?.style?.width ||
+    !headerBlock?.style?.width ||
+    !outsideOfModal?.style?.width
+  ) {
+    return;
+  }
+
+  header.style.width = '100px';
+  headerBlock.style.width = '100%';
+  outsideOfModal.style.width = '100%';
+};
+
+const closeMenu = (): void => {
+  if (typeof document === 'undefined') {
+    return;
+  }
+
+  const header = document.getElementById?.('header');
+  const headerBlock = document.getElementById?.('headerBlock');
+  const outsideOfModal = document.getElementById?.('outsideOfModal');
+
+  if (!outsideOfModal?.style?.width) {
+    return;
+  }
+
+  header?.removeAttribute?.('style');
+  headerBlock?.removeAttribute?.('style');
+  outsideOfModal.style.width = '0';
+};
+
+const pages = [
+  {
+    name: 'Home',
+    href: '/',
+  },
+  {
+    name: 'About',
+    href: '/About',
+  },
+  {
+    name: 'My Works',
+    href: '/Work',
+  },
+];
+
+const snsPages = [
+  {
+    href: 'https://www.linkedin.com/in/%EC%A4%80%EC%84%9D-%EB%B0%95-4a9866194/?locale=en_US',
+    'aria-label': 'LinkedIn',
+    icon: faLinkedin,
+  },
+  {
+    href: 'https://twitter.com/1MD3V3L0P3R',
+    'aria-label': 'Twitter',
+    icon: faTwitterSquare,
+  },
+  {
+    href: 'http://github.com/SynCROSS',
+    'aria-label': 'Github',
+    icon: faGithub,
+  },
+  {
+    href: 'https://www.instagram.com/junseok3125/',
+    'aria-label': 'Instagram',
+    icon: faInstagram,
+  },
+];
+function NavigationList(): JSX.Element {
+  return (
+    <ItemList>
+      {pages?.map?.(page => (
+        <LinkItem key={page?.name}>
+          <Link href={page?.href}>
+            <a>{page?.name}</a>
+          </Link>
+        </LinkItem>
+      ))}
+    </ItemList>
+  );
+}
+function SnsNavigationList(): JSX.Element {
+  return (
+    <ItemList>
+      {snsPages?.map?.(page => (
+        <LinkItem key={page?.['aria-label']}>
+          <Link href={page?.href}>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={page?.['aria-label']}
+            >
+              <FontAwesomeIconBlock icon={page?.icon} />
+            </a>
+          </Link>
+        </LinkItem>
+      ))}
+    </ItemList>
+  );
+}
+
 function Header(): JSX.Element {
-  const openMenu = (): void => {
-    if (typeof document === 'undefined') {
-      return;
-    }
-
-    const header = document.getElementById('header');
-    const headerBlock = document.getElementById('headerBlock');
-    const outsideOfModal = document.getElementById('outsideOfModal');
-
-    if (
-      !header?.style?.width ||
-      !headerBlock?.style?.width ||
-      !outsideOfModal?.style?.width
-    ) {
-      return;
-    }
-
-    header.style.width = '100px';
-    headerBlock.style.width = '100%';
-    outsideOfModal.style.width = '100%';
-  };
-
-  const closeMenu = (): void => {
-    if (typeof document === 'undefined') {
-      return;
-    }
-
-    const header = document.getElementById?.('header');
-    const headerBlock = document.getElementById?.('headerBlock');
-    const outsideOfModal = document.getElementById?.('outsideOfModal');
-
-    if (!outsideOfModal?.style?.width) {
-      return;
-    }
-
-    header?.removeAttribute?.('style');
-    headerBlock?.removeAttribute?.('style');
-    outsideOfModal.style.width = '0';
-  };
-
   return (
     <HeaderBlock id="headerBlock">
       <MenuButton title="Menu Icon" onClick={openMenu}>
@@ -165,61 +235,8 @@ function Header(): JSX.Element {
         <CloseButton title="Close Menu Button" onClick={closeMenu}>
           <FontAwesomeIcon icon={faTimes} />
         </CloseButton>
-        <ItemList>
-          <LinkItem>
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-          </LinkItem>
-          <LinkItem>
-            <Link href="/About">
-              <a>About</a>
-            </Link>
-          </LinkItem>
-          <LinkItem>
-            <Link href="/Work">
-              <a>My Works</a>
-            </Link>
-          </LinkItem>
-        </ItemList>
-        <ItemList>
-          <LinkItem>
-            <Link href="https://www.linkedin.com/in/%EC%A4%80%EC%84%9D-%EB%B0%95-4a9866194/?locale=en_US">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <FontAwesomeIconBlock icon={faLinkedin} />
-              </a>
-            </Link>
-          </LinkItem>
-          <LinkItem>
-            <Link href="https://twitter.com/1MD3V3L0P3R">
-              <a target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <FontAwesomeIconBlock icon={faTwitterSquare} />
-              </a>
-            </Link>
-          </LinkItem>
-          <LinkItem>
-            <Link href="http://github.com/SynCROSS">
-              <a target="_blank" rel="noopener noreferrer" aria-label="Github">
-                <FontAwesomeIconBlock icon={faGithub} />
-              </a>
-            </Link>
-          </LinkItem>
-          <LinkItem>
-            <Link href="https://www.instagram.com/junseok3125/">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <FontAwesomeIconBlock icon={faInstagram} />
-              </a>
-            </Link>
-          </LinkItem>
-        </ItemList>
+        <NavigationList />
+        <SnsNavigationList />
       </HeaderList>
       <Outside id="outsideOfModal" onClick={closeMenu} />
     </HeaderBlock>

@@ -70,17 +70,20 @@ const ArrowDownIcon = styled(FontAwesomeIcon)`
   width: 2rem;
 `;
 
-function HomeHeader() {
-  const [right, setRight] = useState(false);
-
-  const moveCurrentScroll = () =>
-    typeof document !== 'undefined' &&
+const moveCurrentScroll = (): void => {
+  if (typeof document !== 'undefined') {
     window?.scrollTo({
-      top: document?.getElementById?.('HomeHeader')?.offsetHeight + 10,
+      top: document?.getElementById?.('HomeHeader')?.offsetHeight ?? 0 + 10,
       behavior: 'smooth',
     });
+  }
+};
+function HomeHeader(): JSX.Element {
+  const [right, setRight] = useState(false);
 
-  const toggleRight = useCallback(() => setRight(right => !right), []);
+  const toggleRight = useCallback(() => {
+    setRight(prevRight => !prevRight);
+  }, []);
 
   return (
     <HomeHeaderBlock
