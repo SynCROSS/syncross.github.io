@@ -32,7 +32,7 @@ const ImgBlock = styled(Image)`
   border-radius: 50%;
 `;
 
-function HomeIntroduce() {
+function HomeIntroduce(): JSX.Element {
   return (
     <HomeIntroduceBlock id="HomeIntroduce" className="flex jc-center ai-center">
       <IntroWrapper className="flex jc-center ai-center">
@@ -42,17 +42,12 @@ function HomeIntroduce() {
         >
           <IntroduceTitle>Introduce</IntroduceTitle>
           <Introduce>
-            Oh hi there! My name is SynCROSS,
-            {' '}
-            <br />
-            Frontend Developer and boy do I love learning new things.
-            {' '}
-            <br />
-            {' '}
-            I've amassed a great deal of skills due to my passion for constantly
-            learning new languages, frameworks, and other technologies. I have
-            experience with: NextJS, TypeScript, Express, NestJS, MongoDB,
-            MySQL, Oracle, Spring Boot.
+            Oh hi there! My name is SynCROSS, <br />
+            Frontend Developer and boy do I love learning new things. <br />{' '}
+            I&apos;ve amassed a great deal of skills due to my passion for
+            constantly learning new languages, frameworks, and other
+            technologies. I have experience with: NextJS, TypeScript, Express,
+            NestJS, MongoDB, MySQL, Oracle, Spring Boot.
           </Introduce>
         </div>
         <ImgBlock
