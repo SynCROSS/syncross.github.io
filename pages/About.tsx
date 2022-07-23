@@ -61,30 +61,31 @@ function About(): JSX.Element {
       </Head>
       <AboutTitle>About</AboutTitle>
       <AboutContext>
-        Hello, I&apos;m <b>SynCROSS</b>
+        Hello, I&apos;m <strong>SynCROSS</strong>
         <br />
-        The Frontend Developer (<b>MERN</b> Stack).
-        <br />I Love
-        <b>Learning New Things</b>
+        The Frontend Developer (<strong>MERN</strong> Stack).
+        <br />I Love&nbsp;
+        <strong>Learning New Things</strong>
         <br />
-        But Also <b>Making Projects</b>
+        But Also <strong>Making Projects</strong>
         &nbsp;Too.
         <br />I Think Fixing Error is
-        <b>Hard</b>
+        <strong>Hard</strong>
         ,
         <br />
         But It&apos;s&nbsp;
-        <b>Necessary</b> &<b>Important</b>
+        <strong>Necessary</strong> & <strong>Important</strong>
         .
         <br />
-        So I Will <b>Try</b> To <b>Fix</b> The Error & <b>Improve</b> UX.
+        So I Will <strong>Try</strong> To <strong>Fix</strong> The Error &{' '}
+        <strong>Improve</strong> UX.
         <br />
         If&nbsp;
-        <b>U Wanna Hire</b>
+        <strong>U Wanna Hire</strong>
         &nbsp;The Frontend Developer
         <br />
         Please&nbsp;
-        <b>Contact Me</b>
+        <strong>Contact Me</strong>
         .
         <br />I Hope You Feel So Good. (●&apos;◡&apos;●)
       </AboutContext>
