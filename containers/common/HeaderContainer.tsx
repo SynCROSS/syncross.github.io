@@ -18,10 +18,6 @@ function HeaderContainer(): JSX.Element {
 
     window.addEventListener('resize', () => {
       setScreen(window.screen);
-      console.log(
-        'file: HeaderContainer.tsx ~ line 21 ~ window.addEventListener ~ window.screen',
-        window.screen,
-      );
     });
   }, []);
 
