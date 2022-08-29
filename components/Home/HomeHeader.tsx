@@ -46,6 +46,14 @@ const ArrowRightIcon = styled(FontAwesomeIcon)`
   transition: all 0.15s ease-in-out;
   opacity: 0.5;
   transform: translate(0, -50%);
+
+  right: 1.2rem;
+  opacity: 0.5;
+
+  &:hover {
+    right: 1rem;
+    opacity: 1;
+  }
 `;
 
 const ArrowButton = styled.button`
@@ -79,27 +87,17 @@ const moveCurrentScroll = (): void => {
   }
 };
 function HomeHeader(): JSX.Element {
-  const [right, setRight] = useState(false);
-
-  const toggleRight = useCallback(() => {
-    setRight(prevRight => !prevRight);
-  }, []);
-
   return (
     <HomeHeaderBlock
       id="HomeHeader"
       className="flex jc-center ai-center flex-direction-col"
     >
-      <Job>Frontend Developer</Job>
+      <Job>MERN Stack Developer</Job>
       <HeadLine>
         SynCROSS, <br /> The Knowledge Explorer
       </HeadLine>
       <Link href="/Work" passHref>
-        <RouterLink
-          onMouseOver={toggleRight}
-          onMouseOut={toggleRight}
-          className="flex ai-center"
-        >
+        <RouterLink className="flex ai-center">
           <span
             style={{
               lineHeight: '1rem',
@@ -110,14 +108,7 @@ function HomeHeader(): JSX.Element {
             My Works
           </span>
           &nbsp;
-          <ArrowRightIcon
-            icon={faArrowRight}
-            style={
-              right
-                ? { right: '1rem', opacity: '1' }
-                : { right: '1.2rem', opacity: '.5' }
-            }
-          />
+          <ArrowRightIcon icon={faArrowRight} />
         </RouterLink>
       </Link>
       <ArrowButton
