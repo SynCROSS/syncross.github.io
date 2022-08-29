@@ -10,21 +10,22 @@ const FooterBlock = styled.div`
 `;
 
 const GithubLink = styled.a`
-  color: #ffaaff;
+  color: #ff6683;
 
   &:hover {
-    color: #ff1740;
+    color: #ff7090;
   }
 `;
 
 function Footer(): JSX.Element {
+  const year = new Date().getFullYear();
   return (
     <FooterBlock className="flex jc-center ai-center flex-direction-col">
       <p>
         Copyright &copy;&nbsp;
-        <span className="year">{new Date().getFullYear()}</span>
+        <span className="year">{year}</span>
         &nbsp;Made by&nbsp;
-        <Link href="http://github.com/SynCROSS" passHref>
+        <Link href="https://github.com/SynCROSS" passHref>
           <GithubLink target="_blank" rel="noopener noreferrer">
             SynCROSS
           </GithubLink>
