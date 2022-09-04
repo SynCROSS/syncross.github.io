@@ -2,7 +2,6 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { useState, useCallback } from 'react';
 
 const HomeHeaderBlock = styled.header`
   min-height: 95vh;
