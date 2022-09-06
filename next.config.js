@@ -1,13 +1,14 @@
 // @ts-check
 
-const withPwa = require('next-pwa');
-
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  // enabled: process?.env?.ANALYZE === 'true',
-  enabled: false,
+const withPwa = require('next-pwa')({
+  disable: process.env.NODE_ENV === 'development',
+  dest: 'public',
+  sw: 'service-worker.js',
 });
 
-const withPlugins = require('next-compose-plugins');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: false,
+});
 
 const securityHeaders = [
   {
@@ -68,18 +69,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins(
-  [
-    [
-      withPwa,
-      {
-        pwa: {
-          dest: 'public',
-          sw: 'service-worker.js',
-        },
-      },
-    ],
-    [withBundleAnalyzer],
-  ],
-  nextConfig,
-);
+module.exports = withBundleAnalyzer(withPwa(nextConfig));
