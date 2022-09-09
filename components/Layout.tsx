@@ -1,13 +1,17 @@
-import Header from './common/Header';
+import type { PropsWithChildren } from 'react';
 import Footer from './common/Footer';
+import HeaderContainer from '../containers/common/HeaderContainer';
 
-function Layout({ children }) {
+type LayoutProps<T = Record<string, unknown>> = PropsWithChildren<T>;
+
+// skipcq: JS-D1001
+function Layout({ children }: LayoutProps): JSX.Element {
   return (
-    <div>
-      <Header />
+    <>
+      <HeaderContainer />
       {children}
       <Footer />
-    </div>
+    </>
   );
 }
 
