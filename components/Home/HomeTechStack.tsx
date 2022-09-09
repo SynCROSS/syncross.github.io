@@ -33,6 +33,11 @@ const TechListItem = styled.li`
 
 const techStacks = ['mongodb', 'express', 'react', 'nodedotjs'];
 
+/**
+ * Get Tech Stack Icon URL
+ * @param techStack Tech Stack name
+ * @returns {string} Tech Stack Icon URL
+ */
 const getIconURL = (techStack: string): string =>
   `https://unpkg.com/simple-icons@v5/icons/${techStack}.svg`;
 function HomeTechStack(): JSX.Element {

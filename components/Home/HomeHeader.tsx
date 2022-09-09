@@ -83,7 +83,10 @@ const ArrowDownIcon = styled(FontAwesomeIcon)`
   width: 2rem;
 `;
 
-const moveCurrentScroll = (): void => {
+/**
+ * Scroll To 'HomeHeader' Component
+ */
+const scrollToHomeHeader = (): void => {
   if (typeof document !== 'undefined') {
     window?.scrollTo({
       top: document?.getElementById?.('HomeHeader')?.offsetHeight ?? 0 + 10,
@@ -116,7 +119,7 @@ function HomeHeader(): JSX.Element {
       <ArrowButton
         id="arrowScrollButton"
         title="Scroll Down Button"
-        onClick={moveCurrentScroll}
+        onClick={scrollToHomeHeader}
       >
         <ArrowDownIcon icon={faArrowDown} />
       </ArrowButton>

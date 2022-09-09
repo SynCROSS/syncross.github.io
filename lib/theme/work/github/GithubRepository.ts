@@ -55,10 +55,12 @@ const GithubRepoThemes: ReadonlyArray<string> = [
   'cobalt2',
 ];
 
-const getGithubRepoThemes = (): string[] => [...GithubRepoThemes];
-
-export const getRandomTheme = (): string => {
-  const themes = getGithubRepoThemes();
+/**
+ * Get Random Theme From GithubRandomThemes
+ * @returns {string} Random Theme From GithubRepoThemes
+ */
+const getRandomTheme = (): string => {
+  const themes = [...GithubRepoThemes];
 
   for (let i = themes.length - 1; i > 0; i -= 1) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -68,4 +70,4 @@ export const getRandomTheme = (): string => {
   return themes[Math.floor(Math.random() * themes.length)];
 };
 
-export default getGithubRepoThemes;
+export { GithubRepoThemes, getRandomTheme };

@@ -28,6 +28,11 @@ const githubRepoArray = [
 
 const GITHUB_USERNAME = 'SynCROSS';
 
+/**
+ * Get Repository Card Image URL
+ * @param {string} repo Repository name
+ * @returns {string} Repository Card Image URL
+ */
 const getRepoImgURL = (repo: string): string => {
   if (!repo) {
     return '';
@@ -45,6 +50,11 @@ const getRepoImgURL = (repo: string): string => {
   return `https://github-readme-stats.vercel.app/api/pin?${params}`;
 };
 
+/**
+ * Get Full Repository URL
+ * @param {string} repo Repository name
+ * @returns {string} Full repository url
+ */
 const getRepoURL = (repo: string): string =>
   repo && `https://github.com/${GITHUB_USERNAME}/${repo}`;
 
