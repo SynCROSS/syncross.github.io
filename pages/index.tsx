@@ -4,7 +4,8 @@ import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import HomeHeader from '../components/Home/HomeHeader';
 
-const Home = () => {
+// skipcq: JS-D1001
+function Home(): JSX.Element {
   const [loading, setLoading] = useState(true);
   const { isReady } = useRouter();
 
@@ -25,20 +26,21 @@ const Home = () => {
       </div>
     );
   }
+
   // TODO Make Custom Skeleton UI For HomeIntroduce
   const HomeIntroduce = dynamic(
     () => import('../components/Home/HomeIntroduce'),
-    { loading: () => <p>Loading Introduce. . .</p> },
+    // { loading: () => <p>Loading Introduce. . .</p> },
   );
 
   // TODO Make Custom Skeleton UI For HomeTechStack
   const HomeTechStack = dynamic(
     () => import('../components/Home/HomeTechStack'),
-    { loading: () => <p>Loading Tech Stack. . .</p> },
+    // { loading: () => <p>Loading Tech Stack. . .</p> },
   );
 
   return (
-    <div className="flex jc-center ai-center flex-direction-col">
+    <main className="flex jc-center ai-center flex-direction-col">
       <Head>
         <title>SynCROSS</title>
         <link rel="canonical" href="https://syncross.vercel.app/" />
@@ -46,8 +48,8 @@ const Home = () => {
       <HomeHeader />
       <HomeIntroduce />
       <HomeTechStack />
-    </div>
+    </main>
   );
-};
+}
 
 export default Home;

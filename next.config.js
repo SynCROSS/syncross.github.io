@@ -1,12 +1,14 @@
 // @ts-check
 
-const withOffline = require('next-offline');
-
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process?.env?.ANALYZE === 'true',
+const withPwa = require('next-pwa')({
+  disable: process.env.NODE_ENV === 'development',
+  dest: 'public',
+  sw: 'service-worker.js',
 });
 
-const withPlugins = require('next-compose-plugins');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: false,
+});
 
 const securityHeaders = [
   {
@@ -20,14 +22,14 @@ const securityHeaders = [
   {
     key: 'Content-Security-Policy',
     value:
-      `default-src 'self' https://fonts.googleapis.com/ vitals.vercel-insights.com 'unsafe-inline'; ` +
+      `default-src 'self' fonts.googleapis.com vitals.vercel-insights.com 'unsafe-inline'; ` +
       `object-src 'none'; ` +
       `report-uri 'none'; ` +
       `script-src 'self' 'unsafe-eval'; ` +
       `script-src-elem 'self' 'unsafe-inline'; ` +
-      `font-src https://fonts.googleapis.com/  https://fonts.gstatic.com/; ` +
-      `style-src-elem 'self' https://fonts.googleapis.com/ 'unsafe-inline'; ` +
-      `img-src 'self' data:; ` +
+      `font-src fonts.googleapis.com fonts.gstatic.com; ` +
+      `style-src-elem 'self' fonts.googleapis.com 'unsafe-inline'; ` +
+      `img-src 'self' unpkg.com github-readme-stats.vercel.app data:; ` +
       `frame-ancestors 'self'`,
   },
   {
@@ -48,26 +50,13 @@ const securityHeaders = [
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
-  workboxOpts: {
-    runtimeCaching: [
-      {
-        urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
-        handler: 'CacheFirst',
-      },
-      {
-        urlPattern: /^https?.*/,
-        handler: 'NetworkFirst',
-        options: {
-          cacheName: 'offlineCache',
-          expiration: {
-            maxEntries: 200,
-          },
-        },
-      },
-    ],
-  },
   images: {
     domains: ['unpkg.com', 'github-readme-stats.vercel.app'],
+    dangerouslyAllowSVG: true,
+    // contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+  compiler: {
+    styledComponents: true,
   },
   async headers() {
     return [
@@ -80,4 +69,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins([withOffline, withBundleAnalyzer], nextConfig);
+module.exports = withBundleAnalyzer(withPwa(nextConfig));
