@@ -1,58 +1,81 @@
-import type { AppPropsType, AppType } from 'next/dist/shared/lib/utils';
 import Document, {
-  Html,
+  DocumentContext,
   Head,
+  Html,
   Main,
   NextScript,
-  DocumentContext,
 } from 'next/document';
-import { NextRouter } from 'next/router';
-import { PropsWithChildren } from 'react';
+import type { DocumentInitialProps } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
-class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+export default class MyDocument extends Document {
+  /**
+   * getInitialProps Of Document
+   * @param ctx Context Of Document
+   * @returns {Promise<DocumentInitialProps>} Initial Props of Document
+   */
+  static async getInitialProps(
+    ctx: DocumentContext,
+  ): Promise<DocumentInitialProps> {
     const sheet = new ServerStyleSheet();
-    const originalRenderPage = ctx?.renderPage;
+    const originalRenderPage = ctx.renderPage;
 
     try {
       ctx.renderPage = () =>
-        originalRenderPage?.({
+        originalRenderPage({
           enhanceApp:
-            (App: AppType) =>
-            (props: PropsWithChildren<AppPropsType<NextRouter, {}>>) =>
-              sheet?.collectStyles?.(<App {...props} />),
+            App =>
+            ({ Component, pageProps, router, __N_RSC, __N_SSP, __N_SSG }) =>
+              sheet.collectStyles(
+                <App
+                  Component={Component}
+                  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                  pageProps={pageProps}
+                  router={router}
+                  __N_RSC={__N_RSC}
+                  __N_SSP={__N_SSP}
+                  __N_SSG={__N_SSG}
+                />,
+              ),
         });
 
-      const initialProps = await Document?.getInitialProps?.(ctx);
-
+      const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
-        styles: (
-          <>
-            {initialProps?.styles}
-            {sheet?.getStyleElement?.()}
-          </>
-        ),
+        styles: [initialProps.styles, sheet.getStyleElement()],
       };
-    } catch (e) {
-      console.error(e);
     } finally {
-      sheet?.seal?.();
+      sheet.seal();
     }
   }
 
-  render() {
+  // skipcq: JS-D1001
+  render(): JSX.Element {
     return (
-      <Html lang={'en-US'}>
-        <Head></Head>
+      <Html lang="en-US">
+        <Head>
+          <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap&family=Poppins&display=swap"
+            rel="stylesheet preload prefetch"
+            as="style"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
+          <noscript>Your Browser Is Too Old To Use Javascript</noscript>
         </body>
       </Html>
     );
   }
 }
-
-export default MyDocument;
