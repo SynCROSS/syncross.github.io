@@ -9,7 +9,10 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 config.autoAddCss = false;
 
 export function reportWebVitals(metric: NextWebVitalsMetric): void {
-  window?.console.log('file: _app.tsx ~ line 12 ~ reportWebVitals ~ metric', metric);
+  window?.console.log(
+    'file: _app.tsx ~ line 12 ~ reportWebVitals ~ metric',
+    metric,
+  );
 }
 
 const TITLE = 'SynCROSS';
@@ -30,7 +33,7 @@ const IPAD_ICON_SIZE = '157x157';
 const IPAD_RETINA_ICON_SIZE = '167x167';
 const IPHONE_ICON_SIZE = '180x180';
 
-export default function App({ Component, pageProps }: AppProps): JSX.Element {
+export default function App({ Component }: AppProps): JSX.Element {
   return (
     <Layout>
       <Head>
@@ -117,7 +120,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <Component {...pageProps} />
+      <Component />
     </Layout>
   );
 }
