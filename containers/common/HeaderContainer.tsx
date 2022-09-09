@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Header from '../../components/common/Header';
 
 function HeaderContainer(): JSX.Element {
   const [isOpened, setIsOpened] = useState(false);
   const [screen, setScreen] = useState({ width: 0, height: 0 });
 
-  const openMenu = (): void => {
+  const openMenu = useCallback(() => {
     setIsOpened(true);
-  };
+  }, []);
 
-  const closeMenu = (): void => {
+  const closeMenu = useCallback(() => {
     setIsOpened(false);
-  };
+  }, []);
 
   useEffect(() => {
     setScreen(window.screen);
