@@ -63,13 +63,14 @@ const rowHeight = 90;
 const itemCount = githubRepoArray?.length || 0;
 const rowCount = itemCount > 5 ? 5 : itemCount;
 
-const repoRow = ({
+// skipcq: JS-D1001
+function RepoRow({
   index = 0,
   style = {},
 }: {
   index: number;
   style: CSSProperties;
-}): JSX.Element => {
+}): JSX.Element {
   const repo = githubRepoArray?.[index] ?? '';
 
   return (
@@ -86,7 +87,7 @@ const repoRow = ({
       </a>
     </Link>
   );
-};
+}
 
 // skipcq: JS-D1001
 function Work(): JSX.Element {
@@ -126,7 +127,7 @@ function Work(): JSX.Element {
           itemCount={itemCount}
           itemSize={rowHeight}
         >
-          {repoRow}
+          {RepoRow}
         </FixedSizeList>
       </div>
     </WorkBlock>

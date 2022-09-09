@@ -48,6 +48,7 @@ export default class MyDocument extends Document {
     }
   }
 
+  // skipcq: JS-D1001
   render(): JSX.Element {
     return (
       <Html lang="en-US">
