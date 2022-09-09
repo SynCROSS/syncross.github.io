@@ -10,7 +10,9 @@ const TechStackTitle = styled.h1`
   margin: 20px auto;
 `;
 
-const TechList = styled.ul`
+const TechList = styled.ul.attrs(() => ({
+  className: 'flex jc-center ai-center',
+}))`
   flex-wrap: wrap;
   flex-direction: column;
   list-style: none;
@@ -31,13 +33,19 @@ const TechListItem = styled.li`
 
 const techStacks = ['mongodb', 'express', 'react', 'nodedotjs'];
 
+/**
+ * Get Tech Stack Icon URL
+ * @param techStack Tech Stack name
+ * @returns {string} Tech Stack Icon URL
+ */
 const getIconURL = (techStack: string): string =>
   `https://unpkg.com/simple-icons@v5/icons/${techStack}.svg`;
+// skipcq: JS-D1001
 function HomeTechStack(): JSX.Element {
   return (
     <HomeTechStackBlock>
       <TechStackTitle>Tech Stack</TechStackTitle>
-      <TechList className="flex jc-center ai-center">
+      <TechList>
         {techStacks?.map?.(techStack => (
           <TechListItem key={`${techStack}`}>
             <Image

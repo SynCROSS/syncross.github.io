@@ -7,7 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getRandomTheme } from '../lib/theme/work/github/GithubRepository';
 
-const WorkBlock = styled.div`
+const WorkBlock = styled.main`
   align-items: baseline;
   margin: auto;
 `;
@@ -28,6 +28,11 @@ const githubRepoArray = [
 
 const GITHUB_USERNAME = 'SynCROSS';
 
+/**
+ * Get Repository Card Image URL
+ * @param {string} repo Repository name
+ * @returns {string} Repository Card Image URL
+ */
 const getRepoImgURL = (repo: string): string => {
   if (!repo) {
     return '';
@@ -45,6 +50,11 @@ const getRepoImgURL = (repo: string): string => {
   return `https://github-readme-stats.vercel.app/api/pin?${params}`;
 };
 
+/**
+ * Get Full Repository URL
+ * @param {string} repo Repository name
+ * @returns {string} Full repository url
+ */
 const getRepoURL = (repo: string): string =>
   repo && `https://github.com/${GITHUB_USERNAME}/${repo}`;
 
@@ -53,13 +63,14 @@ const rowHeight = 90;
 const itemCount = githubRepoArray?.length || 0;
 const rowCount = itemCount > 5 ? 5 : itemCount;
 
-const repoRow = ({
+// skipcq: JS-D1001
+function RepoRow({
   index = 0,
   style = {},
 }: {
   index: number;
   style: CSSProperties;
-}): JSX.Element => {
+}): JSX.Element {
   const repo = githubRepoArray?.[index] ?? '';
 
   return (
@@ -76,8 +87,9 @@ const repoRow = ({
       </a>
     </Link>
   );
-};
+}
 
+// skipcq: JS-D1001
 function Work(): JSX.Element {
   const [loading, setLoading] = useState(true);
   const { isReady } = useRouter();
@@ -90,7 +102,7 @@ function Work(): JSX.Element {
 
   if (loading) {
     return (
-      <WorkBlock className="flex jc-center ai-center flex-direction-col">
+      <WorkBlock>
         <Head>
           <title>My Works</title>
           <link rel="canonical" href="https://syncross.vercel.app/Work" />
@@ -115,7 +127,7 @@ function Work(): JSX.Element {
           itemCount={itemCount}
           itemSize={rowHeight}
         >
-          {repoRow}
+          {RepoRow}
         </FixedSizeList>
       </div>
     </WorkBlock>

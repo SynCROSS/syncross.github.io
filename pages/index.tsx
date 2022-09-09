@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import HomeHeader from '../components/Home/HomeHeader';
 
+// skipcq: JS-D1001
 function Home(): JSX.Element {
   const [loading, setLoading] = useState(true);
   const { isReady } = useRouter();
@@ -39,7 +40,7 @@ function Home(): JSX.Element {
   );
 
   return (
-    <div className="flex jc-center ai-center flex-direction-col">
+    <main className="flex jc-center ai-center flex-direction-col">
       <Head>
         <title>SynCROSS</title>
         <link rel="canonical" href="https://syncross.vercel.app/" />
@@ -47,7 +48,7 @@ function Home(): JSX.Element {
       <HomeHeader />
       <HomeIntroduce />
       <HomeTechStack />
-    </div>
+    </main>
   );
 }
 
