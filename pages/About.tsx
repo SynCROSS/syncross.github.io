@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-const AboutBlock = styled.div.attrs(() => ({
+const AboutBlock = styled.main.attrs(() => ({
   className: 'flex jc-center ai-center flex-direction-col',
 }))`
   width: 50%;

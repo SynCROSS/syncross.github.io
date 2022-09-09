@@ -7,7 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getRandomTheme } from '../lib/theme/work/github/GithubRepository';
 
-const WorkBlock = styled.div`
+const WorkBlock = styled.main`
   align-items: baseline;
   margin: auto;
 `;

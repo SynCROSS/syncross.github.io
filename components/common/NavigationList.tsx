@@ -69,16 +69,28 @@ const snsPages = [
   },
 ];
 
+type NavigationItemProps = React.PropsWithChildren<{
+  key: React.Key;
+  href: string;
+}>;
+
+// skipcq: JS-D1001
+function NavigationItem({ children, href }: NavigationItemProps): JSX.Element {
+  return (
+    <LinkItem>
+      <Link href={href}>{children}</Link>
+    </LinkItem>
+  );
+}
+
 // skipcq: JS-D1001
 export function NavigationList(): JSX.Element {
   return (
     <ItemList>
       {pages?.map?.(page => (
-        <LinkItem key={page?.name}>
-          <Link href={page?.href}>
-            <a>{page?.name}</a>
-          </Link>
-        </LinkItem>
+        <NavigationItem key={page.name} href={page.href}>
+          <a>{page?.name}</a>
+        </NavigationItem>
       ))}
     </ItemList>
   );
@@ -89,17 +101,15 @@ export function SnsNavigationList(): JSX.Element {
   return (
     <ItemList>
       {snsPages?.map?.(page => (
-        <LinkItem key={page?.['aria-label']}>
-          <Link href={page?.href}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={page?.['aria-label']}
-            >
-              <FontAwesomeIconBlock icon={page?.icon} />
-            </a>
-          </Link>
-        </LinkItem>
+        <NavigationItem key={page?.['aria-label']} href={page?.href}>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={page?.['aria-label']}
+          >
+            <FontAwesomeIconBlock icon={page?.icon} />
+          </a>
+        </NavigationItem>
       ))}
     </ItemList>
   );

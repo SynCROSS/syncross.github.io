@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { NavigationList, SnsNavigationList } from './NavigationList';
 
-const HeaderBlock = styled.div<Pick<HeaderProps, 'isOpened'>>`
+const HeaderBlock = styled.header<Pick<HeaderProps, 'isOpened'>>`
   width: 100%;
   background: transparent;
   position: fixed;

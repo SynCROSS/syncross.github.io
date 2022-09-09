@@ -25,7 +25,7 @@ const IntroduceTitle = styled.h1`
   font-size: 5rem;
 `;
 
-const Introduce = styled.p`
+const IntroduceContent = styled.p`
   color: #acacac;
   font-size: 1.2rem;
 
@@ -37,25 +37,39 @@ const ImgBlock = styled(Image)`
   border-radius: 50%;
 `;
 
+const introduce =
+  'Oh hi there! My name is SynCROSS,\n' +
+  'Frontend Developer and boy do I love learning new things.\n' +
+  "I've amassed a great deal of skills due to my passion for " +
+  'constantly learning new languages, frameworks, and other technologies. ' +
+  'I have experience with: ' +
+  'NextJS, TypeScript, Express, NestJS, MongoDB, MySQL, Oracle, Spring Boot.';
+
+// skipcq: JS-D1001
+function IntroduceText(): JSX.Element[] {
+  return introduce.split('\n').map(str => (
+    <>
+      {str} <br />
+    </>
+  ));
+}
+
+// skipcq: JS-D1001
+function Intro(): JSX.Element {
+  return (
+    <div style={{ marginRight: '5rem' }} className="flex flex-direction-col">
+      <IntroduceTitle>Introduce</IntroduceTitle>
+      <IntroduceContent>{IntroduceText()}</IntroduceContent>
+    </div>
+  );
+}
+
 // skipcq: JS-D1001
 function HomeIntroduce(): JSX.Element {
   return (
     <HomeIntroduceBlock id="HomeIntroduce">
       <IntroWrapper>
-        <div
-          style={{ marginRight: '5rem' }}
-          className="flex flex-direction-col"
-        >
-          <IntroduceTitle>Introduce</IntroduceTitle>
-          <Introduce>
-            Oh hi there! My name is SynCROSS, <br />
-            MERN Stack Developer and boy do I love learning new things. <br />{' '}
-            I&apos;ve amassed a great deal of skills due to my passion for
-            constantly learning new languages, frameworks, and other
-            technologies. I have experience with: NextJS, TypeScript, Express,
-            NestJS, MongoDB, MySQL, Oracle, Spring Boot.
-          </Introduce>
-        </div>
+        <Intro />
         <ImgBlock
           src="/icon.svg"
           width={1000}

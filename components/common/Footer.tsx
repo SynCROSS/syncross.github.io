@@ -2,8 +2,8 @@ import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 
-const FooterBlock = styled.div.attrs(() => ({
-  className: 'flex jc-center ai-center flex-direction-col',
+const FooterBlock = styled.footer.attrs(() => ({
+  className: 'flex jc-center ai-center',
 }))`
   width: 100%;
   padding: 20px 50px;
@@ -24,16 +24,14 @@ function Footer(): JSX.Element {
   const year = new Date().getFullYear();
   return (
     <FooterBlock>
-      <p>
-        Copyright &copy;&nbsp;
-        <span className="year">{year}</span>
-        &nbsp;Made by&nbsp;
-        <Link href="https://github.com/SynCROSS" passHref>
-          <GithubLink target="_blank" rel="noopener noreferrer">
-            SynCROSS
-          </GithubLink>
-        </Link>
-      </p>
+      Copyright &copy;&nbsp;
+      <span className="year">{year}</span>
+      &nbsp;Made by&nbsp;
+      <Link href="https://github.com/SynCROSS" passHref>
+        <GithubLink target="_blank" rel="noopener noreferrer">
+          SynCROSS
+        </GithubLink>
+      </Link>
     </FooterBlock>
   );
 }

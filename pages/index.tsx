@@ -40,7 +40,7 @@ function Home(): JSX.Element {
   );
 
   return (
-    <div className="flex jc-center ai-center flex-direction-col">
+    <main className="flex jc-center ai-center flex-direction-col">
       <Head>
         <title>SynCROSS</title>
         <link rel="canonical" href="https://syncross.vercel.app/" />
@@ -48,7 +48,7 @@ function Home(): JSX.Element {
       <HomeHeader />
       <HomeIntroduce />
       <HomeTechStack />
-    </div>
+    </main>
   );
 }
 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-const HomeHeaderBlock = styled.header.attrs(props => ({
+const HomeHeaderBlock = styled.div.attrs(props => ({
   ...props,
   className: 'flex jc-center ai-center flex-direction-col',
 }))`
@@ -94,6 +94,28 @@ const scrollToHomeHeader = (): void => {
     });
   }
 };
+
+// skipcq: JS-D1001
+function MyWorksButton(): JSX.Element {
+  return (
+    <Link href="/Work" passHref>
+      <RouterLink>
+        <span
+          style={{
+            lineHeight: '1rem',
+            height: '1rem',
+            display: 'inline-block',
+          }}
+        >
+          My Works
+        </span>
+        &nbsp;
+        <ArrowRightIcon icon={faArrowRight} />
+      </RouterLink>
+    </Link>
+  );
+}
+
 // skipcq: JS-D1001
 function HomeHeader(): JSX.Element {
   return (
@@ -102,21 +124,7 @@ function HomeHeader(): JSX.Element {
       <HeadLine>
         SynCROSS, <br /> The Knowledge Explorer
       </HeadLine>
-      <Link href="/Work" passHref>
-        <RouterLink>
-          <span
-            style={{
-              lineHeight: '1rem',
-              height: '1rem',
-              display: 'inline-block',
-            }}
-          >
-            My Works
-          </span>
-          &nbsp;
-          <ArrowRightIcon icon={faArrowRight} />
-        </RouterLink>
-      </Link>
+      <MyWorksButton />
       <ArrowButton
         id="arrowScrollButton"
         title="Scroll Down Button"
