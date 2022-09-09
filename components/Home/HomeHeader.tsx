@@ -94,6 +94,7 @@ const scrollToHomeHeader = (): void => {
     });
   }
 };
+// skipcq: JS-D1001
 function HomeHeader(): JSX.Element {
   return (
     <HomeHeaderBlock id="HomeHeader">

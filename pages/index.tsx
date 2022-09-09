@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import HomeHeader from '../components/Home/HomeHeader';
 
+// skipcq: JS-D1001
 function Home(): JSX.Element {
   const [loading, setLoading] = useState(true);
   const { isReady } = useRouter();

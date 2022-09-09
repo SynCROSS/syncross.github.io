@@ -33,6 +33,7 @@ const AboutContext = styled.p`
   }
 `;
 
+// skipcq: JS-D1001
 function About(): JSX.Element {
   const [loading, setLoading] = useState(true);
   const { isReady } = useRouter();

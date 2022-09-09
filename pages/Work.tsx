@@ -88,6 +88,7 @@ const repoRow = ({
   );
 };
 
+// skipcq: JS-D1001
 function Work(): JSX.Element {
   const [loading, setLoading] = useState(true);
   const { isReady } = useRouter();

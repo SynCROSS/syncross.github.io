@@ -37,6 +37,7 @@ const ImgBlock = styled(Image)`
   border-radius: 50%;
 `;
 
+// skipcq: JS-D1001
 function HomeIntroduce(): JSX.Element {
   return (
     <HomeIntroduceBlock id="HomeIntroduce">

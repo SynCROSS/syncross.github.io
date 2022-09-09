@@ -96,6 +96,7 @@ type HeaderProps = {
   closeMenu: VoidFunction;
 };
 
+// skipcq: JS-D1001
 function Header({
   isOpened,
   screen,

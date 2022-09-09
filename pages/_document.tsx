@@ -9,6 +9,11 @@ import type { DocumentInitialProps } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
+  /**
+   * getInitialProps Of Document
+   * @param ctx Context Of Document
+   * @returns {Promise<DocumentInitialProps>} Initial Props of Document
+   */
   static async getInitialProps(
     ctx: DocumentContext,
   ): Promise<DocumentInitialProps> {

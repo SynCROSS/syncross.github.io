@@ -8,6 +8,10 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 
 config.autoAddCss = false;
 
+/**
+ * Log Metrics
+ * @param metric Metrics Of Website
+ */
 export function reportWebVitals(metric: NextWebVitalsMetric): void {
   window?.console.log(
     'file: _app.tsx ~ line 12 ~ reportWebVitals ~ metric',
@@ -33,6 +37,7 @@ const IPAD_ICON_SIZE = '157x157';
 const IPAD_RETINA_ICON_SIZE = '167x167';
 const IPHONE_ICON_SIZE = '180x180';
 
+// skipcq: JS-D1001
 export default function App({ Component }: AppProps): JSX.Element {
   return (
     <Layout>

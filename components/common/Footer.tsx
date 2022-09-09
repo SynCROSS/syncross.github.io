@@ -19,6 +19,7 @@ const GithubLink = styled.a`
   }
 `;
 
+// skipcq: JS-D1001
 function Footer(): JSX.Element {
   const year = new Date().getFullYear();
   return (

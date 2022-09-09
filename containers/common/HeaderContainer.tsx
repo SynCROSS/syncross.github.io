@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import Header from '../../components/common/Header';
 
+// skipcq: JS-D1001
 function HeaderContainer(): JSX.Element {
   const [isOpened, setIsOpened] = useState(false);
   const [screen, setScreen] = useState({ width: 0, height: 0 });
