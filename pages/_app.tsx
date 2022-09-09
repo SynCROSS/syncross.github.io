@@ -8,29 +8,37 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 
 config.autoAddCss = false;
 
+/**
+ * Log Metrics
+ * @param metric Metrics Of Website
+ */
 export function reportWebVitals(metric: NextWebVitalsMetric): void {
-  console.log(metric);
+  window?.console.log(
+    'file: _app.tsx ~ line 12 ~ reportWebVitals ~ metric',
+    metric,
+  );
 }
 
-export default function App({ Component, pageProps }: AppProps) {
-  const TITLE = 'SynCROSS';
-  const DESCRIPTION =
-    "I'm MERN Stack Developer. Let's Work Together To Make Your Website Perfect.";
+const TITLE = 'SynCROSS';
+const DESCRIPTION =
+  "I'm MERN Stack Developer. Let's Work Together To Make Your Website Perfect.";
 
-  const structuredData = {
-    '@context': 'http://schema.org/',
-    type: 'Person',
-    jobTitle: 'Frontend Developer',
-    name: 'SynCROSS',
-    telephone: '+82-10-9874-2668',
-    url: 'https://syncross.vercel.app',
-  };
+const structuredData = {
+  '@context': 'http://schema.org/',
+  type: 'Person',
+  jobTitle: 'Frontend Developer',
+  name: 'SynCROSS',
+  telephone: '+82-10-9874-2668',
+  url: 'https://syncross.vercel.app',
+};
 
-  const IPHONE_RETINA_ICON_SIZE = '120x120';
-  const IPAD_ICON_SIZE = '157x157';
-  const IPAD_RETINA_ICON_SIZE = '167x167';
-  const IPHONE_ICON_SIZE = '180x180';
+const IPHONE_RETINA_ICON_SIZE = '120x120';
+const IPAD_ICON_SIZE = '157x157';
+const IPAD_RETINA_ICON_SIZE = '167x167';
+const IPHONE_ICON_SIZE = '180x180';
 
+// skipcq: JS-D1001
+export default function App({ Component }: AppProps): JSX.Element {
   return (
     <Layout>
       <Head>
@@ -90,22 +98,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="manifest" href="/manifest.json" />
 
         <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap&family=Poppins&display=swap"
-          rel="stylesheet preload prefetch"
-          as="style"
-        />
-
-        <link
           rel="apple-touch-icon"
           sizes={IPHONE_ICON_SIZE}
           href={`apple-touch-icon-${IPHONE_ICON_SIZE}.png`}
@@ -127,14 +119,13 @@ export default function App({ Component, pageProps }: AppProps) {
         />
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-
-        <Script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
       </Head>
-      <Component {...pageProps} />
-      <noscript>Your Browser Is Too Old To Use Javascript</noscript>
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <Component />
     </Layout>
   );
 }

@@ -1,15 +1,9 @@
 import styled from 'styled-components';
-import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faLinkedin,
-  faTwitterSquare,
-  faGithub,
-  faInstagram,
-} from '@fortawesome/free-brands-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { NavigationList, SnsNavigationList } from './NavigationList';
 
-const HeaderBlock = styled.div`
+const HeaderBlock = styled.header<Pick<HeaderProps, 'isOpened'>>`
   width: 100%;
   background: transparent;
   position: fixed;
@@ -19,21 +13,27 @@ const HeaderBlock = styled.div`
   padding: 15px 20px;
 
   @media only screen and (max-width: 600px) {
-    width: 100px;
+    width: ${({ isOpened }) => (isOpened ? '100px' : 0)};
     padding: 0;
   }
 `;
 
-const HeaderList = styled.div`
+const HeaderList = styled.div.attrs(({ isOpened }: HeaderProps) => ({
+  isOpened,
+  className: 'flex ai-center',
+}))`
   justify-content: space-between;
   width: 100%;
+
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
 
-    width: 0;
+    z-index: 10;
+
+    width: ${({ isOpened }) => (isOpened ? '100px' : 0)};
     height: 100%;
     position: fixed;
     top: 0;
@@ -51,153 +51,75 @@ const HeaderList = styled.div`
   }
 `;
 
-const ItemList = styled.ul`
-  list-style: none;
-`;
-
-const LinkItem = styled.li`
-  display: inline-flex;
-  margin: 0 1rem;
-
-  color: gray;
-  transition: 0.2s all ease-in-out;
-
-  &:hover {
-    color: #505050;
-  }
-
-  @media only screen and (max-width: 600px) {
-    line-height: 2rem;
-  }
-`;
-
-const FontAwesomeIconBlock = styled(FontAwesomeIcon)`
-  font-size: 1.5rem;
-`;
-
 const MenuButton = styled.button`
-  font-size: 2rem;
-  color: #aaa;
-  background: transparent;
-  float: left;
-  display: none;
-
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
+    background: transparent;
+    color: #aaa;
     display: block;
+    width: 2rem;
+    height: 2rem;
+    font-size: 2rem;
     margin: 15px 20px;
+
+    &::before {
+      content: '☰';
+    }
   }
 `;
 
 const CloseButton = styled.button`
-  display: none;
-  background: transparent;
-  color: #e0e0e0;
-
-  position: absolute;
-  top: 2rem;
-
   @media only screen and (max-width: 600px) {
+    background: transparent;
+    color: #e0e0e0;
+
+    position: absolute;
+    top: 2rem;
     display: block;
   }
 `;
 
-const Outside = styled.div`
-  display: none;
-  min-height: 100vh;
-  width: 0;
-  height: 100%;
-  transition: all 0.5s ease-in-out;
-
+const Outside = styled.div<Pick<HeaderProps, 'isOpened'>>`
   @media only screen and (max-width: 600px) {
-    display: block;
+    width: ${({ isOpened }) => (isOpened ? '100%' : 0)};
+    position: fixed;
+    inset: 0;
+    transition: all 0.5s ease-in-out;
     background-color: rgba(0, 0, 0, 0.7);
   }
 `;
 
-function Header() {
-  const openMenu = () => {
-    if (typeof document !== 'undefined') {
-      document.getElementById('header').style.width = '100px';
-      document.getElementById('headerBlock').style.width = '100%';
-      document.getElementById('outsideOfModal').style.width = '100%';
-    }
-  };
+type HeaderProps = {
+  isOpened: boolean;
+  screen: Pick<Screen, 'width' | 'height'>;
+  openMenu: VoidFunction;
+  closeMenu: VoidFunction;
+};
 
-  const closeMenu = () => {
-    if (typeof document !== 'undefined') {
-      document.getElementById('header').removeAttribute('style');
-      document.getElementById('headerBlock').removeAttribute('style');
-      document.getElementById('outsideOfModal').style.width = '0';
-    }
-  };
-
+// skipcq: JS-D1001
+function Header({
+  isOpened,
+  screen,
+  openMenu,
+  closeMenu,
+}: HeaderProps): JSX.Element {
   return (
-    <HeaderBlock id="headerBlock">
-      <MenuButton title="Menu Icon" onClick={openMenu}>
-        ☰
-      </MenuButton>
-      <HeaderList className="flex ai-center" id="header">
-        <CloseButton title="Close Menu Button" onClick={closeMenu}>
-          <FontAwesomeIcon icon={faTimes} />
-        </CloseButton>
-        <ItemList>
-          <LinkItem>
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-          </LinkItem>
-          <LinkItem>
-            <Link href="/About">
-              <a>About</a>
-            </Link>
-          </LinkItem>
-          <LinkItem>
-            <Link href="/Work">
-              <a>My Works</a>
-            </Link>
-          </LinkItem>
-        </ItemList>
-        <ItemList>
-          <LinkItem>
-            <Link href="https://www.linkedin.com/in/%EC%A4%80%EC%84%9D-%EB%B0%95-4a9866194/?locale=en_US">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <FontAwesomeIconBlock icon={faLinkedin} />
-              </a>
-            </Link>
-          </LinkItem>
-          <LinkItem>
-            <Link href="https://twitter.com/1MD3V3L0P3R">
-              <a target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <FontAwesomeIconBlock icon={faTwitterSquare} />
-              </a>
-            </Link>
-          </LinkItem>
-          <LinkItem>
-            <Link href="http://github.com/SynCROSS">
-              <a target="_blank" rel="noopener noreferrer" aria-label="Github">
-                <FontAwesomeIconBlock icon={faGithub} />
-              </a>
-            </Link>
-          </LinkItem>
-          <LinkItem>
-            <Link href="https://www.instagram.com/junseok3125/">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <FontAwesomeIconBlock icon={faInstagram} />
-              </a>
-            </Link>
-          </LinkItem>
-        </ItemList>
+    <HeaderBlock isOpened={isOpened}>
+      {screen?.width <= 600 && (
+        <MenuButton title="Menu Icon" onClick={openMenu} />
+      )}
+      <HeaderList isOpened={isOpened}>
+        {screen?.width <= 600 && (
+          <CloseButton title="Close Menu Button" onClick={closeMenu}>
+            <FontAwesomeIcon icon={faTimes} />
+          </CloseButton>
+        )}
+        <NavigationList />
+        <SnsNavigationList />
       </HeaderList>
-      <Outside id="outsideOfModal" onClick={closeMenu} />
+      {screen.width <= 600 && (
+        <Outside isOpened={isOpened} onClick={closeMenu} />
+      )}
     </HeaderBlock>
   );
 }

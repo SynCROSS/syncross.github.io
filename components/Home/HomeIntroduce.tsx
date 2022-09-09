@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
-const HomeIntroduceBlock = styled.section`
+const HomeIntroduceBlock = styled.section.attrs(props => ({
+  ...props,
+  className: 'flex jc-center ai-center',
+}))`
   width: 100%;
   padding: 10rem;
 
@@ -11,7 +14,9 @@ const HomeIntroduceBlock = styled.section`
   min-height: 100vh;
 `;
 
-const IntroWrapper = styled.div`
+const IntroWrapper = styled.div.attrs(() => ({
+  className: 'flex jc-center ai-center',
+}))`
   width: 60rem;
   margin: auto;
 `;
@@ -20,7 +25,7 @@ const IntroduceTitle = styled.h1`
   font-size: 5rem;
 `;
 
-const Introduce = styled.p`
+const IntroduceContent = styled.p`
   color: #acacac;
   font-size: 1.2rem;
 
@@ -32,29 +37,39 @@ const ImgBlock = styled(Image)`
   border-radius: 50%;
 `;
 
-function HomeIntroduce() {
+const introduce =
+  'Oh hi there! My name is SynCROSS,\n' +
+  'Frontend Developer and boy do I love learning new things.\n' +
+  "I've amassed a great deal of skills due to my passion for " +
+  'constantly learning new languages, frameworks, and other technologies. ' +
+  'I have experience with: ' +
+  'NextJS, TypeScript, Express, NestJS, MongoDB, MySQL, Oracle, Spring Boot.';
+
+// skipcq: JS-D1001
+function IntroduceText(): JSX.Element[] {
+  return introduce.split('\n').map(str => (
+    <>
+      {str} <br />
+    </>
+  ));
+}
+
+// skipcq: JS-D1001
+function Intro(): JSX.Element {
   return (
-    <HomeIntroduceBlock id="HomeIntroduce" className="flex jc-center ai-center">
-      <IntroWrapper className="flex jc-center ai-center">
-        <div
-          style={{ marginRight: '5rem' }}
-          className="flex flex-direction-col"
-        >
-          <IntroduceTitle>Introduce</IntroduceTitle>
-          <Introduce>
-            Oh hi there! My name is SynCROSS,
-            {' '}
-            <br />
-            Frontend Developer and boy do I love learning new things.
-            {' '}
-            <br />
-            {' '}
-            I've amassed a great deal of skills due to my passion for constantly
-            learning new languages, frameworks, and other technologies. I have
-            experience with: NextJS, TypeScript, Express, NestJS, MongoDB,
-            MySQL, Oracle, Spring Boot.
-          </Introduce>
-        </div>
+    <div style={{ marginRight: '5rem' }} className="flex flex-direction-col">
+      <IntroduceTitle>Introduce</IntroduceTitle>
+      <IntroduceContent>{IntroduceText()}</IntroduceContent>
+    </div>
+  );
+}
+
+// skipcq: JS-D1001
+function HomeIntroduce(): JSX.Element {
+  return (
+    <HomeIntroduceBlock id="HomeIntroduce">
+      <IntroWrapper>
+        <Intro />
         <ImgBlock
           src="/icon.svg"
           width={1000}

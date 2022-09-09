@@ -2,9 +2,11 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { useState, useCallback } from 'react';
 
-const HomeHeaderBlock = styled.header`
+const HomeHeaderBlock = styled.div.attrs(props => ({
+  ...props,
+  className: 'flex jc-center ai-center flex-direction-col',
+}))`
   min-height: 95vh;
   min-width: 100vw;
   background: linear-gradient(165deg, #e9e9e9 50%, #fff 50%);
@@ -24,7 +26,7 @@ const Job = styled.h3`
   color: #aaa;
 `;
 
-const RouterLink = styled.a`
+const RouterLink = styled.a.attrs(() => ({ className: 'flex ai-center' }))`
   background-color: #111;
   color: #fff;
   border: none;
@@ -46,9 +48,20 @@ const ArrowRightIcon = styled(FontAwesomeIcon)`
   transition: all 0.15s ease-in-out;
   opacity: 0.5;
   transform: translate(0, -50%);
+
+  right: 1.2rem;
+  opacity: 0.5;
+
+  &:hover {
+    right: 1rem;
+    opacity: 1;
+  }
 `;
 
-const ArrowButton = styled.button`
+const ArrowButton = styled.button.attrs(props => ({
+  ...props,
+  className: 'flex jc-center ai-center',
+}))`
   width: 5rem;
   height: 5rem;
   position: absolute;
@@ -70,58 +83,52 @@ const ArrowDownIcon = styled(FontAwesomeIcon)`
   width: 2rem;
 `;
 
-function HomeHeader() {
-  const [right, setRight] = useState(false);
-
-  const moveCurrentScroll = () =>
-    typeof document !== 'undefined' &&
+/**
+ * Scroll To 'HomeHeader' Component
+ */
+const scrollToHomeHeader = (): void => {
+  if (typeof document !== 'undefined') {
     window?.scrollTo({
-      top: document?.getElementById?.('HomeHeader')?.offsetHeight + 10,
+      top: document?.getElementById?.('HomeHeader')?.offsetHeight ?? 0 + 10,
       behavior: 'smooth',
     });
+  }
+};
 
-  const toggleRight = useCallback(() => setRight(right => !right), []);
-
+// skipcq: JS-D1001
+function MyWorksButton(): JSX.Element {
   return (
-    <HomeHeaderBlock
-      id="HomeHeader"
-      className="flex jc-center ai-center flex-direction-col"
-    >
-      <Job>Frontend Developer</Job>
+    <Link href="/Work" passHref>
+      <RouterLink>
+        <span
+          style={{
+            lineHeight: '1rem',
+            height: '1rem',
+            display: 'inline-block',
+          }}
+        >
+          My Works
+        </span>
+        &nbsp;
+        <ArrowRightIcon icon={faArrowRight} />
+      </RouterLink>
+    </Link>
+  );
+}
+
+// skipcq: JS-D1001
+function HomeHeader(): JSX.Element {
+  return (
+    <HomeHeaderBlock id="HomeHeader">
+      <Job>MERN Stack Developer</Job>
       <HeadLine>
         SynCROSS, <br /> The Knowledge Explorer
       </HeadLine>
-      <Link href="/Work" passHref>
-        <RouterLink
-          onMouseOver={toggleRight}
-          onMouseOut={toggleRight}
-          className="flex ai-center"
-        >
-          <span
-            style={{
-              lineHeight: '1rem',
-              height: '1rem',
-              display: 'inline-block',
-            }}
-          >
-            My Works
-          </span>
-          &nbsp;
-          <ArrowRightIcon
-            icon={faArrowRight}
-            style={
-              right
-                ? { right: '1rem', opacity: '1' }
-                : { right: '1.2rem', opacity: '.5' }
-            }
-          />
-        </RouterLink>
-      </Link>
+      <MyWorksButton />
       <ArrowButton
         id="arrowScrollButton"
-        className="flex jc-center ai-center"
         title="Scroll Down Button"
-        onClick={moveCurrentScroll}
+        onClick={scrollToHomeHeader}
       >
         <ArrowDownIcon icon={faArrowDown} />
       </ArrowButton>
