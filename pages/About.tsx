@@ -3,7 +3,9 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-const AboutBlock = styled.div`
+const AboutBlock = styled.div.attrs(() => ({
+  className: 'flex jc-center ai-center flex-direction-col',
+}))`
   width: 50%;
   margin: auto;
 
@@ -43,7 +45,7 @@ function About(): JSX.Element {
 
   if (loading) {
     return (
-      <AboutBlock className="flex jc-center ai-center flex-direction-col">
+      <AboutBlock>
         <Head>
           <title>About</title>
           <link rel="canonical" href="https://syncross.vercel.app/About" />
@@ -54,7 +56,7 @@ function About(): JSX.Element {
   }
 
   return (
-    <AboutBlock className="flex ai-center jc-center flex-direction-col">
+    <AboutBlock>
       <Head>
         <title>About</title>
         <link rel="canonical" href="https://syncross.vercel.app/About" />

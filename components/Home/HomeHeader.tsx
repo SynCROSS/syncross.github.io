@@ -3,7 +3,10 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-const HomeHeaderBlock = styled.header`
+const HomeHeaderBlock = styled.header.attrs(props => ({
+  ...props,
+  className: 'flex jc-center ai-center flex-direction-col',
+}))`
   min-height: 95vh;
   min-width: 100vw;
   background: linear-gradient(165deg, #e9e9e9 50%, #fff 50%);
@@ -23,7 +26,7 @@ const Job = styled.h3`
   color: #aaa;
 `;
 
-const RouterLink = styled.a`
+const RouterLink = styled.a.attrs(() => ({ className: 'flex ai-center' }))`
   background-color: #111;
   color: #fff;
   border: none;
@@ -55,7 +58,10 @@ const ArrowRightIcon = styled(FontAwesomeIcon)`
   }
 `;
 
-const ArrowButton = styled.button`
+const ArrowButton = styled.button.attrs(props => ({
+  ...props,
+  className: 'flex jc-center ai-center',
+}))`
   width: 5rem;
   height: 5rem;
   position: absolute;
@@ -87,16 +93,13 @@ const moveCurrentScroll = (): void => {
 };
 function HomeHeader(): JSX.Element {
   return (
-    <HomeHeaderBlock
-      id="HomeHeader"
-      className="flex jc-center ai-center flex-direction-col"
-    >
+    <HomeHeaderBlock id="HomeHeader">
       <Job>MERN Stack Developer</Job>
       <HeadLine>
         SynCROSS, <br /> The Knowledge Explorer
       </HeadLine>
       <Link href="/Work" passHref>
-        <RouterLink className="flex ai-center">
+        <RouterLink>
           <span
             style={{
               lineHeight: '1rem',
@@ -112,7 +115,6 @@ function HomeHeader(): JSX.Element {
       </Link>
       <ArrowButton
         id="arrowScrollButton"
-        className="flex jc-center ai-center"
         title="Scroll Down Button"
         onClick={moveCurrentScroll}
       >

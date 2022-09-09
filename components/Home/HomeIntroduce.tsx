@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
-const HomeIntroduceBlock = styled.section`
+const HomeIntroduceBlock = styled.section.attrs(props => ({
+  ...props,
+  className: 'flex jc-center ai-center',
+}))`
   width: 100%;
   padding: 10rem;
 
@@ -11,7 +14,9 @@ const HomeIntroduceBlock = styled.section`
   min-height: 100vh;
 `;
 
-const IntroWrapper = styled.div`
+const IntroWrapper = styled.div.attrs(() => ({
+  className: 'flex jc-center ai-center',
+}))`
   width: 60rem;
   margin: auto;
 `;
@@ -34,8 +39,8 @@ const ImgBlock = styled(Image)`
 
 function HomeIntroduce(): JSX.Element {
   return (
-    <HomeIntroduceBlock id="HomeIntroduce" className="flex jc-center ai-center">
-      <IntroWrapper className="flex jc-center ai-center">
+    <HomeIntroduceBlock id="HomeIntroduce">
+      <IntroWrapper>
         <div
           style={{ marginRight: '5rem' }}
           className="flex flex-direction-col"
@@ -43,7 +48,7 @@ function HomeIntroduce(): JSX.Element {
           <IntroduceTitle>Introduce</IntroduceTitle>
           <Introduce>
             Oh hi there! My name is SynCROSS, <br />
-            Frontend Developer and boy do I love learning new things. <br />{' '}
+            MERN Stack Developer and boy do I love learning new things. <br />{' '}
             I&apos;ve amassed a great deal of skills due to my passion for
             constantly learning new languages, frameworks, and other
             technologies. I have experience with: NextJS, TypeScript, Express,

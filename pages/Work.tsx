@@ -90,7 +90,7 @@ function Work(): JSX.Element {
 
   if (loading) {
     return (
-      <WorkBlock className="flex jc-center ai-center flex-direction-col">
+      <WorkBlock>
         <Head>
           <title>My Works</title>
           <link rel="canonical" href="https://syncross.vercel.app/Work" />
