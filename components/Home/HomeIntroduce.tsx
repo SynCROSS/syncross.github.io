@@ -48,9 +48,9 @@ const introduce =
 // skipcq: JS-D1001
 function IntroduceText(): JSX.Element[] {
   return introduce.split('\n').map(str => (
-    <>
+    <span key={str}>
       {str} <br />
-    </>
+    </span>
   ));
 }
 
