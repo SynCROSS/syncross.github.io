@@ -24,8 +24,8 @@ const securityHeaders = [
     value:
       `default-src 'self' 'unsafe-inline'; ` +
       `object-src 'none'; ` +
-      `report-uri 'none'; ` +
-      `report-to 'none'; ` +
+      `report-uri vitals.vercel-insights.com ; ` +
+      `report-to vitals.vercel-insights.com ; ` +
       `connect-src 'self' vitals.vercel-insights.co vitals.vercel-insights.com ; ` +
       `script-src 'self' 'unsafe-eval'; ` +
       `script-src-elem 'self' 'unsafe-inline'; ` +
