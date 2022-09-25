@@ -28,7 +28,7 @@ const securityHeaders = [
       `report-to 'none'; ` +
       `script-src 'self' 'unsafe-eval'; ` +
       `script-src-elem 'self' 'unsafe-inline'; ` +
-      `font-src syncross.vercel.app; ` +
+      `font-src self; ` +
       `style-src-elem 'self' fonts.googleapis.com 'unsafe-inline'; ` +
       `img-src 'self' unpkg.com github-readme-stats.vercel.app data:; ` +
       `frame-ancestors 'self'`,
