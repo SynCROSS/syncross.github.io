@@ -102,7 +102,9 @@ ${() =>
         ExtraBlack: 950,
         UltraBlack: 950,
       }[font.split('-')[1].replace('.ttf', '')] ?? 400
-    }}`,
+    };
+    font-display: swap;
+  }`,
       '',
     )}
   `}
