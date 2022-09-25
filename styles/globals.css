@@ -10,45 +10,30 @@ html {
 
 @font-face {
   font-family: 'Poppins';
-  src: local('/Poppins/Poppins-Black.ttf'),
-    local('/Poppins/Poppins-BlackItalic.ttf'),
-    local('/Poppins/Poppins-Bold.ttf'), local('/Poppins/Poppins-BoldItalic.ttf'),
-    local('/Poppins/Poppins-ExtraBold.ttf'),
-    local('/Poppins/Poppins-ExtraBoldItalic.ttf'),
-    local('/Poppins/Poppins-ExtraLight.ttf'),
-    local('/Poppins/Poppins-ExtraLight.ttf'),
-    local('/Poppins/Poppins-Italic.ttf'), local('/Poppins/Poppins-Light.ttf'),
-    local('/Poppins/Poppins-LightItalic.ttf'),
-    local('/Poppins/Poppins-Medium.ttf'),
-    local('/Poppins/Poppins-MediumItalic.ttf'),
-    local('/Poppins/Poppins-Regular.ttf'),
-    local('/Poppins/Poppins-SemiBold.ttf'),
-    local('/Poppins/Poppins-SemiBoldItalic.ttf'),
-    local('/Poppins/Poppins-Thin.ttf'), local('/Poppins/Poppins-ThinItalic.ttf');
+  src: local('Poppins-Black.ttf'), local('Poppins-BlackItalic.ttf'),
+    local('Poppins-Bold.ttf'), local('Poppins-BoldItalic.ttf'),
+    local('Poppins-ExtraBold.ttf'), local('Poppins-ExtraBoldItalic.ttf'),
+    local('Poppins-ExtraLight.ttf'), local('Poppins-ExtraLight.ttf'),
+    local('Poppins-Italic.ttf'), local('Poppins-Light.ttf'),
+    local('Poppins-LightItalic.ttf'), local('Poppins-Medium.ttf'),
+    local('Poppins-MediumItalic.ttf'), local('Poppins-Regular.ttf'),
+    local('Poppins-SemiBold.ttf'), local('Poppins-SemiBoldItalic.ttf'),
+    local('Poppins-Thin.ttf'), local('Poppins-ThinItalic.ttf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Montserrat';
-  src: local('/Montserrat/static/Montserrat-Black.ttf'),
-    local('/Montserrat/static/Montserrat-BlackItalic.ttf'),
-    local('/Montserrat/static/Montserrat-Bold.ttf'),
-    local('/Montserrat/static/Montserrat-BoldItalic.ttf'),
-    local('/Montserrat/static/Montserrat-ExtraBold.ttf'),
-    local('/Montserrat/static/Montserrat-ExtraBoldItalic.ttf'),
-    local('/Montserrat/static/Montserrat-ExtraLight.ttf'),
-    local('/Montserrat/static/Montserrat-ExtraLight.ttf'),
-    local('/Montserrat/static/Montserrat-Italic.ttf'),
-    local('/Montserrat/static/Montserrat-Light.ttf'),
-    local('/Montserrat/static/Montserrat-LightItalic.ttf'),
-    local('/Montserrat/static/Montserrat-Medium.ttf'),
-    local('/Montserrat/static/Montserrat-MediumItalic.ttf'),
-    local('/Montserrat/static/Montserrat-Regular.ttf'),
-    local('/Montserrat/static/Montserrat-SemiBold.ttf'),
-    local('/Montserrat/static/Montserrat-SemiBoldItalic.ttf'),
-    local('/Montserrat/static/Montserrat-Thin.ttf'),
-    local('/Montserrat/static/Montserrat-ThinItalic.ttf');
+  src: local('Montserrat-Black.ttf'), local('Montserrat-BlackItalic.ttf'),
+    local('Montserrat-Bold.ttf'), local('Montserrat-BoldItalic.ttf'),
+    local('Montserrat-ExtraBold.ttf'), local('Montserrat-ExtraBoldItalic.ttf'),
+    local('Montserrat-ExtraLight.ttf'), local('Montserrat-ExtraLight.ttf'),
+    local('Montserrat-Italic.ttf'), local('Montserrat-Light.ttf'),
+    local('Montserrat-LightItalic.ttf'), local('Montserrat-Medium.ttf'),
+    local('Montserrat-MediumItalic.ttf'), local('Montserrat-Regular.ttf'),
+    local('Montserrat-SemiBold.ttf'), local('Montserrat-SemiBoldItalic.ttf'),
+    local('Montserrat-Thin.ttf'), local('Montserrat-ThinItalic.ttf');
   font-weight: normal;
   font-style: normal;
 }
