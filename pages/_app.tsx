@@ -5,6 +5,7 @@ import Script from 'next/script';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import Layout from '../components/Layout';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import { createGlobalStyle, css } from 'styled-components';
 
 config.autoAddCss = false;
 
@@ -36,6 +37,76 @@ const IPHONE_RETINA_ICON_SIZE = '120x120';
 const IPAD_ICON_SIZE = '157x157';
 const IPAD_RETINA_ICON_SIZE = '167x167';
 const IPHONE_ICON_SIZE = '180x180';
+
+const GlobalStyles = createGlobalStyle`
+${() =>
+  css`
+    ${[
+      'Poppins-Black.ttf',
+      'Poppins-BlackItalic.ttf',
+      'Poppins-Bold.ttf',
+      'Poppins-BoldItalic.ttf',
+      'Poppins-ExtraBold.ttf',
+      'Poppins-ExtraBoldItalic.ttf',
+      'Poppins-ExtraLight.ttf',
+      'Poppins-Italic.ttf',
+      'Poppins-Light.ttf',
+      'Poppins-LightItalic.ttf',
+      'Poppins-Medium.ttf',
+      'Poppins-MediumItalic.ttf',
+      'Poppins-Regular.ttf',
+      'Poppins-SemiBold.ttf',
+      'Poppins-SemiBoldItalic.ttf',
+      'Poppins-Thin.ttf',
+      'Poppins-ThinItalic.ttf',
+      'Montserrat-Black.ttf',
+      'Montserrat-BlackItalic.ttf',
+      'Montserrat-Bold.ttf',
+      'Montserrat-BoldItalic.ttf',
+      'Montserrat-ExtraBold.ttf',
+      'Montserrat-ExtraBoldItalic.ttf',
+      'Montserrat-ExtraLight.ttf',
+      'Montserrat-ExtraLight.ttf',
+      'Montserrat-Italic.ttf',
+      'Montserrat-Light.ttf',
+      'Montserrat-LightItalic.ttf',
+      'Montserrat-Medium.ttf',
+      'Montserrat-MediumItalic.ttf',
+      'Montserrat-Regular.ttf',
+      'Montserrat-SemiBold.ttf',
+      'Montserrat-SemiBoldItalic.ttf',
+      'Montserrat-Thin.ttf',
+      'Montserrat-ThinItalic.ttf',
+    ].reduce(
+      (result, font) => `${result} @font-face {
+    font-family: ${font.replace('.ttf', '')};
+    src: url('/fonts/${font.split('-')[0]}/${font}');
+    font-style: ${font.includes('Italic') ? 'italic' : 'normal'};
+    font-weight: ${
+      {
+        Thin: 100,
+        Hairline: 100,
+        UltraLight: 200,
+        ExtraLight: 200,
+        Light: 300,
+        Normal: 400,
+        Regular: 400,
+        Medium: 500,
+        SemiBold: 600,
+        DemiBold: 600,
+        Bold: 700,
+        ExtraBold: 800,
+        UltraBold: 800,
+        Heavy: 900,
+        Black: 900,
+        ExtraBlack: 950,
+        UltraBlack: 950,
+      }[font.split('-')[1].replace('.ttf', '')] ?? 400
+    }}`,
+      '',
+    )}
+  `}
+`;
 
 // skipcq: JS-D1001
 export default function App({ Component }: AppProps): JSX.Element {
@@ -124,6 +195,7 @@ export default function App({ Component }: AppProps): JSX.Element {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <GlobalStyles />
       <Component />
     </Layout>
   );
