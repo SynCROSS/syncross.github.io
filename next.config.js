@@ -25,9 +25,10 @@ const securityHeaders = [
       `default-src 'self' fonts.googleapis.com vitals.vercel-insights.com 'unsafe-inline'; ` +
       `object-src 'none'; ` +
       `report-uri 'none'; ` +
+      `report-to 'none'; ` +
       `script-src 'self' 'unsafe-eval'; ` +
       `script-src-elem 'self' 'unsafe-inline'; ` +
-      `font-src fonts.googleapis.com fonts.gstatic.com; ` +
+      `font-src self; ` +
       `style-src-elem 'self' fonts.googleapis.com 'unsafe-inline'; ` +
       `img-src 'self' unpkg.com github-readme-stats.vercel.app data:; ` +
       `frame-ancestors 'self'`,
