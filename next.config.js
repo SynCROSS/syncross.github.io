@@ -22,10 +22,10 @@ const securityHeaders = [
   {
     key: 'Content-Security-Policy',
     value:
-      `default-src 'self' fonts.googleapis.com vitals.vercel-insights.com 'unsafe-inline'; ` +
+      `default-src 'self' 'unsafe-inline'; ` +
       `object-src 'none'; ` +
-      `report-uri 'none'; ` +
-      `report-to 'none'; ` +
+      `report-uri vitals.vercel-insights.co ; ` +
+      `report-to vitals.vercel-insights.co ; ` +
       `script-src 'self' 'unsafe-eval'; ` +
       `script-src-elem 'self' 'unsafe-inline'; ` +
       `font-src 'self'; ` +
