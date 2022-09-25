@@ -13,7 +13,6 @@ const HomeHeaderBlock = styled.div.attrs(props => ({
 `;
 
 const HeadLine = styled.h1`
-  font-weight: 900;
   font-size: 5rem;
 
   margin: 0 auto 20px;
@@ -22,7 +21,7 @@ const HeadLine = styled.h1`
 
 const Job = styled.h3`
   font-size: 1.5rem;
-  font-weight: 100;
+  font-weight: 300;
   color: #aaa;
 `;
 
@@ -102,9 +101,10 @@ function MyWorksButton(): JSX.Element {
       <RouterLink>
         <span
           style={{
-            lineHeight: '1rem',
-            height: '1rem',
             display: 'inline-block',
+            height: '1rem',
+            lineHeight: '1rem',
+            fontWeight: 500,
           }}
         >
           My Works
