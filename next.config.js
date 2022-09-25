@@ -22,7 +22,7 @@ const securityHeaders = [
   {
     key: 'Content-Security-Policy',
     value:
-      `default-src 'self' 'unsafe-inline'; ` +
+      `default-src 'self' vitals.vercel-insights.com 'unsafe-inline'; ` +
       `object-src 'none'; ` +
       `report-uri vitals.vercel-insights.com ; ` +
       `report-to vitals.vercel-insights.com ; ` +
