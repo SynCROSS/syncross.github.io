@@ -2,7 +2,15 @@
   "name": "SynCROSS - MERN Stack Developer",
   "short_name": "SynCROSS",
   "start_url": "/",
-  "display": "browser",
+  "display": "fullscreen",
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://syncross.vercel.app/",
+      "id": "app.vercel.syncross"
+    }
+  ],
   "background_color": "#ffffff",
   "description": "I'm MERN Stack Developer. I Hope You Feel Good And Please Contact Me. (\u25cf'\u25e1'\u25cf)",
   "dir": "ltr",
