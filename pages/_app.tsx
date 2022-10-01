@@ -1,11 +1,12 @@
-import '../styles/globals.css';
 import type { AppProps, NextWebVitalsMetric } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
 import { config } from '@fortawesome/fontawesome-svg-core';
-import Layout from '../components/Layout';
-import '@fortawesome/fontawesome-svg-core/styles.css';
 import { createGlobalStyle, css } from 'styled-components';
+import Layout from '../components/Layout';
+
+import '../styles/globals.css';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 config.autoAddCss = false;
 
