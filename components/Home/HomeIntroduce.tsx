@@ -46,12 +46,12 @@ const introduce =
   'NextJS, TypeScript, Express, NestJS, MongoDB, MySQL, Oracle, Spring Boot.';
 
 // skipcq: JS-D1001
-function IntroduceText(): JSX.Element[] {
-  return introduce.split('\n').map(str => (
+function IntroduceText({ str }: { str: string }): JSX.Element {
+  return (
     <span key={str}>
       {str} <br />
     </span>
-  ));
+  );
 }
 
 // skipcq: JS-D1001
@@ -59,7 +59,11 @@ function Intro(): JSX.Element {
   return (
     <div style={{ marginRight: '5rem' }} className="flex flex-direction-col">
       <IntroduceTitle>Introduce</IntroduceTitle>
-      <IntroduceContent>{IntroduceText()}</IntroduceContent>
+      <IntroduceContent>
+        {introduce.split('\n').map(str => (
+          <IntroduceText key={str} str={str} />
+        ))}
+      </IntroduceContent>
     </div>
   );
 }
