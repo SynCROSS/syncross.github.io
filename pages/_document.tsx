@@ -29,6 +29,7 @@ export default class MyDocument extends Document {
               sheet.collectStyles(
                 <App
                   Component={Component}
+                  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                   pageProps={pageProps}
                   router={router}
                   __N_SSP={__N_SSP}
