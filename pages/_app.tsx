@@ -81,7 +81,7 @@ ${() =>
     ].reduce(
       (result, font) => `${result} @font-face {
     font-family: ${font.replace('.ttf', '')};
-    src: url('/fonts/${font.split('-')[0]}/${font}');
+    src: url('/fonts/${font.split('-')[0]}/${font}') format('truetype');
     font-style: ${font.includes('Italic') ? 'italic' : 'normal'};
     font-weight: ${
       {
