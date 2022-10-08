@@ -25,14 +25,12 @@ export default class MyDocument extends Document {
         originalRenderPage({
           enhanceApp:
             App =>
-            ({ Component, pageProps, router, __N_RSC, __N_SSP, __N_SSG }) =>
+            ({ Component, pageProps, router, __N_SSP, __N_SSG }) =>
               sheet.collectStyles(
                 <App
                   Component={Component}
-                  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                   pageProps={pageProps}
                   router={router}
-                  __N_RSC={__N_RSC}
                   __N_SSP={__N_SSP}
                   __N_SSG={__N_SSG}
                 />,
