@@ -39,6 +39,36 @@ const IPAD_ICON_SIZE = '157x157';
 const IPAD_RETINA_ICON_SIZE = '167x167';
 const IPHONE_ICON_SIZE = '180x180';
 
+type FontWeight = keyof typeof fontWeights;
+const fontWeights = {
+  Thin: 100,
+  Hairline: 100,
+  UltraLight: 200,
+  ExtraLight: 200,
+  Light: 300,
+  Normal: 400,
+  Regular: 400,
+  Medium: 500,
+  SemiBold: 600,
+  DemiBold: 600,
+  Bold: 700,
+  ExtraBold: 800,
+  UltraBold: 800,
+  Heavy: 900,
+  Black: 900,
+  ExtraBlack: 950,
+  UltraBlack: 950,
+};
+
+const getFontName = (font: string, { separator = '-' } = {}) =>
+  font.split(separator)[0];
+
+const removeExtension = (font: string, { extension = 'ttf' } = {}) =>
+  font.replace(`.${extension}$`, '');
+
+const getFontWeight = (font: string, { separator = '-' } = {}): FontWeight =>
+  removeExtension(font.split(separator)[1]) as FontWeight;
+
 const GlobalStyles = createGlobalStyle`
 ${() =>
   css`
@@ -80,30 +110,10 @@ ${() =>
       'Montserrat-ThinItalic.ttf',
     ].reduce(
       (result, font) => `${result} @font-face {
-    font-family: ${font.replace('.ttf', '')};
-    src: url('/fonts/${font.split('-')[0]}/${font}') format('truetype');
+    font-family: ${removeExtension(font)};
+    src: url('/fonts/${getFontName(font)}/${font}') format('truetype');
     font-style: ${font.includes('Italic') ? 'italic' : 'normal'};
-    font-weight: ${
-      {
-        Thin: 100,
-        Hairline: 100,
-        UltraLight: 200,
-        ExtraLight: 200,
-        Light: 300,
-        Normal: 400,
-        Regular: 400,
-        Medium: 500,
-        SemiBold: 600,
-        DemiBold: 600,
-        Bold: 700,
-        ExtraBold: 800,
-        UltraBold: 800,
-        Heavy: 900,
-        Black: 900,
-        ExtraBlack: 950,
-        UltraBlack: 950,
-      }[font.split('-')[1].replace('.ttf', '')] ?? 400
-    };
+    font-weight: ${fontWeights[getFontWeight(font)] ?? 400};
     font-display: swap;
   }`,
       '',
