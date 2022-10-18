@@ -64,7 +64,7 @@ const getFontName = (font: string, { separator = '-' } = {}) =>
   font.split(separator)[0];
 
 const removeExtension = (font: string, { extension = 'ttf' } = {}) =>
-  font.replace(`.${extension}$`, '');
+  font.replace(new RegExp(`.${extension}$`, 'ig'), '');
 
 const getFontWeight = (font: string, { separator = '-' } = {}): FontWeight =>
   removeExtension(font.split(separator)[1]) as FontWeight;
