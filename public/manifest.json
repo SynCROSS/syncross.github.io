@@ -14,7 +14,7 @@
   "background_color": "#ffffff",
   "description": "I'm MERN Stack Developer. I Hope You Feel Good And Please Contact Me. (\u25cf'\u25e1'\u25cf)",
   "dir": "ltr",
-  "categories": "personalization",
+  "categories": ["personalization"],
   "lang": "en",
   "orientation": "portrait",
   "scope": "/",
