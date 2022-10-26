@@ -6,12 +6,13 @@ const FooterBlock = styled.footer.attrs(() => ({
   className: 'flex jc-center ai-center',
 }))`
   width: 100%;
-  padding: 20px 50px;
-  background-color: #333;
+  background-color: #000;
   color: #eee;
 `;
 
 const GithubLink = styled.a`
+  margin: 1rem 0;
+
   color: #ff6683;
 
   &:hover {
@@ -19,9 +20,10 @@ const GithubLink = styled.a`
   }
 `;
 
+const year = new Date().getFullYear();
+
 // skipcq: JS-D1001
 function Footer(): JSX.Element {
-  const year = new Date().getFullYear();
   return (
     <FooterBlock>
       Copyright &copy;&nbsp;
