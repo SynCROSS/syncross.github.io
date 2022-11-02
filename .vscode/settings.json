@@ -6,5 +6,13 @@
   "eslint.nodePath": ".yarn/sdks",
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "eslint.workingDirectories": ["/"]
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "sonarlint.connectedMode.project": {
+    "connectionId": "syncross",
+    "projectKey": "SynCROSS_syncross.github.io"
+  }
 }
