@@ -83,6 +83,8 @@ function RepoRow({
           width={rowWidth}
           height={rowHeight}
           quality={100}
+          loading="lazy"
+          placeholder="blur"
         />
       </a>
     </Link>

@@ -80,6 +80,7 @@ function HomeIntroduce(): JSX.Element {
           height={1000}
           alt="SynCROSS"
           loading="eager"
+          placeholder="blur"
         />
       </IntroWrapper>
     </HomeIntroduceBlock>
