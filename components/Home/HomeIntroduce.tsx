@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import icon from '../../public/icon.svg';
 
 const HomeIntroduceBlock = styled.section.attrs(props => ({
   ...props,
@@ -75,12 +76,11 @@ function HomeIntroduce(): JSX.Element {
       <IntroWrapper>
         <Intro />
         <ImgBlock
-          src="/icon.svg"
+          src={icon}
           width={1000}
           height={1000}
           alt="SynCROSS"
           loading="eager"
-          placeholder="blur"
         />
       </IntroWrapper>
     </HomeIntroduceBlock>

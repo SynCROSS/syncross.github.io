@@ -10,13 +10,13 @@ const FooterBlock = styled.footer.attrs(() => ({
   color: #eee;
 `;
 
-const GithubLink = styled.a`
+const GithubLink = styled(Link)`
   margin: 1rem 0;
 
   color: #ff6683;
 
   &:hover {
-    color: #ff7090;
+    color: #ff94a8;
   }
 `;
 
@@ -29,11 +29,13 @@ function Footer(): JSX.Element {
       Copyright &copy;&nbsp;
       <span className="year">{year}</span>
       &nbsp;Made by&nbsp;
-      <Link href="https://github.com/SynCROSS" passHref>
-        <GithubLink target="_blank" rel="noopener noreferrer">
-          SynCROSS
-        </GithubLink>
-      </Link>
+      <GithubLink
+        href="https://github.com/SynCROSS"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        SynCROSS
+      </GithubLink>
     </FooterBlock>
   );
 }

@@ -75,10 +75,16 @@ type NavigationItemProps = React.PropsWithChildren<{
 }>;
 
 // skipcq: JS-D1001
-function NavigationItem({ children, href }: NavigationItemProps): JSX.Element {
+function NavigationItem({
+  children,
+  href,
+  ...rest
+}: NavigationItemProps): JSX.Element {
   return (
     <LinkItem>
-      <Link href={href}>{children}</Link>
+      <Link href={href} {...rest}>
+        {children}
+      </Link>
     </LinkItem>
   );
 }
@@ -89,7 +95,7 @@ export function NavigationList(): JSX.Element {
     <ItemList>
       {pages?.map?.(page => (
         <NavigationItem key={page.name} href={page.href}>
-          <a>{page?.name}</a>
+          {page?.name}
         </NavigationItem>
       ))}
     </ItemList>
@@ -101,14 +107,14 @@ export function SnsNavigationList(): JSX.Element {
   return (
     <ItemList>
       {snsPages?.map?.(page => (
-        <NavigationItem key={page?.['aria-label']} href={page?.href}>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={page?.['aria-label']}
-          >
-            <FontAwesomeIconBlock icon={page?.icon} />
-          </a>
+        <NavigationItem
+          key={page?.['aria-label']}
+          href={page?.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={page?.['aria-label']}
+        >
+          <FontAwesomeIconBlock icon={page?.icon} />
         </NavigationItem>
       ))}
     </ItemList>

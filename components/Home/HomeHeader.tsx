@@ -13,6 +13,7 @@ const HomeHeaderBlock = styled.div.attrs(props => ({
 `;
 
 const HeadLine = styled.h1`
+  font-weight: 700;
   font-size: 5rem;
 
   margin: 0 auto 20px;
@@ -25,7 +26,7 @@ const Job = styled.h3`
   color: #aaa;
 `;
 
-const RouterLink = styled.a.attrs(() => ({ className: 'flex ai-center' }))`
+const RouterLink = styled(Link)`
   background-color: #111;
   color: #fff;
   border: none;
@@ -97,22 +98,20 @@ const scrollToHomeHeader = (): void => {
 // skipcq: JS-D1001
 function MyWorksButton(): JSX.Element {
   return (
-    <Link href="/Work" passHref>
-      <RouterLink>
-        <span
-          style={{
-            display: 'inline-block',
-            height: '1rem',
-            lineHeight: '1rem',
-            fontWeight: 500,
-          }}
-        >
-          My Works
-        </span>
-        &nbsp;
-        <ArrowRightIcon icon={faArrowRight} />
-      </RouterLink>
-    </Link>
+    <RouterLink href="/Work" className="flex ai-center">
+      <span
+        style={{
+          display: 'inline-block',
+          height: '1rem',
+          lineHeight: '1rem',
+          fontWeight: 500,
+        }}
+      >
+        My Works
+      </span>
+      &nbsp;
+      <ArrowRightIcon icon={faArrowRight} />
+    </RouterLink>
   );
 }
 

@@ -57,7 +57,6 @@ function HomeTechStack(): JSX.Element {
               layout="fixed"
               quality={100}
               loading="lazy"
-              placeholder="blur"
             />
           </TechListItem>
         ))}
