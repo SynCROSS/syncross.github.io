@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const ItemList = styled.ul`
   list-style: none;
 `;
+
 const LinkItem = styled.li`
   display: inline-flex;
   margin: 0 1rem;
@@ -69,34 +70,14 @@ const snsPages = [
   },
 ];
 
-type NavigationItemProps = React.PropsWithChildren<{
-  key: React.Key;
-  href: string;
-}>;
-
-// skipcq: JS-D1001
-function NavigationItem({
-  children,
-  href,
-  ...rest
-}: NavigationItemProps): JSX.Element {
-  return (
-    <LinkItem>
-      <Link href={href} {...rest}>
-        {children}
-      </Link>
-    </LinkItem>
-  );
-}
-
 // skipcq: JS-D1001
 export function NavigationList(): JSX.Element {
   return (
     <ItemList>
       {pages?.map?.(page => (
-        <NavigationItem key={page.name} href={page.href}>
-          {page?.name}
-        </NavigationItem>
+        <LinkItem key={page.name}>
+          <Link href={page.href}>{page?.name}</Link>
+        </LinkItem>
       ))}
     </ItemList>
   );
@@ -107,15 +88,16 @@ export function SnsNavigationList(): JSX.Element {
   return (
     <ItemList>
       {snsPages?.map?.(page => (
-        <NavigationItem
-          key={page?.['aria-label']}
-          href={page?.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={page?.['aria-label']}
-        >
-          <FontAwesomeIconBlock icon={page?.icon} />
-        </NavigationItem>
+        <LinkItem key={page?.['aria-label']}>
+          <Link
+            href={page?.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={page?.['aria-label']}
+          >
+            <FontAwesomeIconBlock icon={page?.icon} />
+          </Link>
+        </LinkItem>
       ))}
     </ItemList>
   );
