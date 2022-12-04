@@ -76,8 +76,8 @@ function HomeIntroduce(): JSX.Element {
         <Intro />
         <ImgBlock
           src="/icon.svg"
-          width={1000}
-          height={1000}
+          width={300}
+          height={300}
           alt="SynCROSS"
           loading="eager"
         />
