@@ -54,7 +54,6 @@ function HomeTechStack(): JSX.Element {
               alt={`${techStack}`}
               width={70}
               height={70}
-              layout="fixed"
               quality={100}
               loading="lazy"
             />
