@@ -1,3 +1,4 @@
+import { Children } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 
@@ -46,19 +47,22 @@ function HomeTechStack(): JSX.Element {
     <HomeTechStackBlock>
       <TechStackTitle>Tech Stack</TechStackTitle>
       <TechList>
-        {techStacks?.map?.(techStack => (
-          <TechListItem key={`${techStack}`}>
-            <Image
-              src={getIconURL(`${techStack}`)}
-              title={`${techStack}`}
-              alt={`${techStack}`}
-              width={70}
-              height={70}
-              quality={100}
-              loading="lazy"
-            />
-          </TechListItem>
-        ))}
+        {Array.isArray(techStacks) &&
+          Children.toArray(
+            techStacks.map(techStack => (
+              <TechListItem>
+                <Image
+                  src={getIconURL(`${techStack}`)}
+                  title={`${techStack}`}
+                  alt={`${techStack}`}
+                  width={70}
+                  height={70}
+                  quality={100}
+                  loading="lazy"
+                />
+              </TechListItem>
+            )),
+          )}
       </TechList>
     </HomeTechStackBlock>
   );
