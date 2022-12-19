@@ -60,14 +60,40 @@ const fontWeights = {
   UltraBlack: 950,
 };
 
-const getFontName = (font: string, { separator = '-' } = {}) =>
-  font.split(separator)[0];
+type ExtractFromFileNameOptions = {
+  separator?: string;
+};
 
-const removeExtension = (font: string, { extension = 'ttf' } = {}) =>
+/**
+ *
+ * @param {string} font full font name includes file extension (ex: Poppins-Black.ttf)
+ * @param {ExtractFromFileNameOptions} options
+ * @returns {string} font name
+ */
+const getFontName = (
+  font: string,
+  { separator = '-' }: ExtractFromFileNameOptions = {},
+): string => font.split(separator)[0];
+
+/**
+ *
+ * @param {string} font full font name includes file extension (ex: Poppins-Black.ttf)
+ * @param {{extension: string}} options
+ * @returns {string} File Name Without Extension
+ */
+const removeExtension = (font: string, { extension = 'ttf' } = {}): string =>
   font.replace(new RegExp(`.${extension}$`, 'ig'), '');
 
-const getFontWeight = (font: string, { separator = '-' } = {}): FontWeight =>
-  removeExtension(font.split(separator)[1]) as FontWeight;
+/**
+ *
+ * @param {string} font full font name includes file extension (ex: Poppins-Black.ttf)
+ * @param {ExtractFromFileNameOptions} options
+ * @returns {string} Font Weight
+ */
+const getFontWeight = (
+  font: string,
+  { separator = '-' }: ExtractFromFileNameOptions = {},
+): FontWeight => removeExtension(font.split(separator)[1]) as FontWeight;
 
 const GlobalStyles = createGlobalStyle`
 ${() =>
@@ -110,7 +136,7 @@ ${() =>
       'Montserrat-ThinItalic.ttf',
     ].reduce(
       (result, font) => `${result} @font-face {
-    font-family: ${removeExtension(font)};
+    font-family: ${getFontName(font)};
     src: url('/fonts/${getFontName(font)}/${font}') format('truetype');
     font-style: ${font.includes('Italic') ? 'italic' : 'normal'};
     font-weight: ${fontWeights[getFontWeight(font)] ?? 400};
