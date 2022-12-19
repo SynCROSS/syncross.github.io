@@ -1,20 +1,7 @@
 {
-  "search.exclude": {
-    "**/.yarn": true,
-    "**/.pnp.*": true
-  },
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "eslint.packageManager": "yarn",
-  "eslint.nodePath": ".yarn/sdks",
-  "eslint.workingDirectories": [
-    {
-      "mode": "auto"
-    }
-  ],
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
   "sonarlint.connectedMode.project": {
     "connectionId": "syncross",
     "projectKey": "SynCROSS_syncross.github.io"
   },
-  "typescript.tsdk": ".yarn/sdks/typescript/lib"
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
