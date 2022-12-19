@@ -74,19 +74,17 @@ function RepoRow({
   const repo = githubRepoArray?.[index] ?? '';
 
   return (
-    <Link href={getRepoURL(`${repo}`)}>
-      <a style={style} target="_blank" rel="noopener noreferrer">
-        <Image
-          src={getRepoImgURL(`${repo}`)}
-          alt={`${repo}`}
-          title={`${repo}`}
-          width={rowWidth}
-          height={rowHeight}
-          quality={100}
-          loading="lazy"
-          placeholder="blur"
-        />
-      </a>
+    <Link href={getRepoURL(`${repo}`)} style={style} target="_blank" rel="noopener noreferrer">
+      <Image
+        src={getRepoImgURL(`${repo}`)}
+        alt={`${repo}`}
+        title={`${repo}`}
+        width={rowWidth}
+        height={rowHeight}
+        quality={100}
+        loading="lazy"
+        placeholder="blur"
+      />
     </Link>
   );
 }
