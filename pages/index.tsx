@@ -1,43 +1,22 @@
-import { useRouter } from 'next/router';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import HomeHeader from '../components/Home/HomeHeader';
+
+// TODO Make Custom Skeleton UI For HomeIntroduce
+import HomeIntroduce from '../components/Home/HomeIntroduce';
+
+// TODO Make Custom Skeleton UI For HomeTechStack
+import HomeTechStack from '../components/Home/HomeTechStack';
 
 // skipcq: JS-D1001
 function Home(): JSX.Element {
-  const [loading, setLoading] = useState(true);
-  const { isReady } = useRouter();
-
-  useEffect(() => {
-    if (isReady) {
-      setLoading(false);
-    }
-  }, [isReady]);
-
-  if (loading) {
-    return (
-      <div className="flex jc-center ai-center flex-direction-col">
-        <Head>
-          <title>SynCROSS</title>
-          <link rel="canonical" href="https://syncross.vercel.app/" />
-        </Head>
-        <div>Loading Index . . .</div>
-      </div>
-    );
-  }
-
-  // TODO Make Custom Skeleton UI For HomeIntroduce
-  const HomeIntroduce = dynamic(
-    () => import('../components/Home/HomeIntroduce'),
-    // { loading: () => <p>Loading Introduce. . .</p> },
-  );
-
-  // TODO Make Custom Skeleton UI For HomeTechStack
-  const HomeTechStack = dynamic(
-    () => import('../components/Home/HomeTechStack'),
-    // { loading: () => <p>Loading Tech Stack. . .</p> },
-  );
+  const { ref: introduceRef, inView: isIntroduceInView } = useInView({
+    threshold: 0,
+  });
+  const { ref: techStackRef, inView: isTechStackInView } = useInView({
+    threshold: 0,
+  });
 
   return (
     <main className="flex jc-center ai-center flex-direction-col">
@@ -46,8 +25,12 @@ function Home(): JSX.Element {
         <link rel="canonical" href="https://syncross.vercel.app/" />
       </Head>
       <HomeHeader />
-      <HomeIntroduce />
-      <HomeTechStack />
+      <div ref={introduceRef} style={{ width: '100%' }}>
+        {isIntroduceInView && <HomeIntroduce />}
+      </div>
+      <div ref={techStackRef} style={{ width: '100%' }}>
+        {isTechStackInView && <HomeTechStack />}
+      </div>
     </main>
   );
 }
