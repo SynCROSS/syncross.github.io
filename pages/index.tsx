@@ -4,10 +4,20 @@ import { useInView } from 'react-intersection-observer';
 import HomeHeader from '../components/Home/HomeHeader';
 
 // TODO Make Custom Skeleton UI For HomeIntroduce
-import HomeIntroduce from '../components/Home/HomeIntroduce';
+const HomeIntroduce = dynamic(
+  () => import('../components/Home/HomeIntroduce'),
+  {
+    ssr: false,
+  },
+);
 
 // TODO Make Custom Skeleton UI For HomeTechStack
-import HomeTechStack from '../components/Home/HomeTechStack';
+const HomeTechStack = dynamic(
+  () => import('../components/Home/HomeTechStack'),
+  {
+    ssr: false,
+  },
+);
 
 // skipcq: JS-D1001
 function Home(): JSX.Element {
