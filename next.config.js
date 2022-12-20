@@ -52,6 +52,7 @@ const securityHeaders = [
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
+  reactStrictMode: true,
   swcMinify: true,
   images: {
     domains: ['unpkg.com', 'github-readme-stats.vercel.app'],
