@@ -17,11 +17,16 @@ function HeaderContainer(): JSX.Element {
   }, []);
 
   useEffect(() => {
-    setScreen(window.screen);
-
-    window.addEventListener('resize', () => {
+    const setCurrentScreen = () => {
       setScreen(window.screen);
-    });
+    };
+    setCurrentScreen();
+
+    window.addEventListener('resize', setCurrentScreen);
+
+    return () => {
+      window.removeEventListener('resize', setCurrentScreen);
+    };
   }, []);
 
   return (
