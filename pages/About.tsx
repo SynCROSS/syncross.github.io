@@ -1,6 +1,4 @@
-import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const AboutBlock = styled.main.attrs(() => ({
@@ -35,27 +33,6 @@ const AboutContext = styled.p`
 
 // skipcq: JS-D1001
 function About(): JSX.Element {
-  const [loading, setLoading] = useState(true);
-  const { isReady } = useRouter();
-
-  useEffect(() => {
-    if (isReady) {
-      setLoading(false);
-    }
-  }, [isReady]);
-
-  if (loading) {
-    return (
-      <AboutBlock>
-        <Head>
-          <title>About</title>
-          <link rel="canonical" href="https://syncross.vercel.app/About" />
-        </Head>
-        <div>Loading About . . .</div>
-      </AboutBlock>
-    );
-  }
-
   return (
     <AboutBlock>
       <Head>

@@ -1,7 +1,6 @@
-import styled, { CSSProperties } from 'styled-components';
-import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import type { CSSProperties } from 'styled-components';
 import { FixedSizeList } from 'react-window';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -95,27 +94,6 @@ function RepoRow({
 
 // skipcq: JS-D1001
 function Work(): JSX.Element {
-  const [loading, setLoading] = useState(true);
-  const { isReady } = useRouter();
-
-  useEffect(() => {
-    if (isReady) {
-      setLoading(false);
-    }
-  }, [isReady]);
-
-  if (loading) {
-    return (
-      <WorkBlock>
-        <Head>
-          <title>My Works</title>
-          <link rel="canonical" href="https://syncross.vercel.app/Work" />
-        </Head>
-        <div>Loading . . .</div>
-      </WorkBlock>
-    );
-  }
-
   return (
     <WorkBlock>
       <Head>
