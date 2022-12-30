@@ -105,11 +105,11 @@ function Header({
 }: HeaderProps): JSX.Element {
   return (
     <HeaderBlock isOpened={isOpened}>
-      {screen?.width <= 600 && (
+      {screen?.width <= 600 && !isOpened && (
         <MenuButton title="Menu Icon" onClick={openMenu} />
       )}
       <HeaderList isOpened={isOpened}>
-        {screen?.width <= 600 && (
+        {screen?.width <= 600 && isOpened && (
           <CloseButton title="Close Menu Button" onClick={closeMenu}>
             <FontAwesomeIcon icon={faTimes} />
           </CloseButton>
@@ -117,7 +117,7 @@ function Header({
         <NavigationList />
         <SnsNavigationList />
       </HeaderList>
-      {screen.width <= 600 && (
+      {screen.width <= 600 && isOpened && (
         <Outside isOpened={isOpened} onClick={closeMenu} />
       )}
     </HeaderBlock>
