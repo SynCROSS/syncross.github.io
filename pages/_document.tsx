@@ -1,12 +1,13 @@
 import Document, {
-  DocumentContext,
   Head,
   Html,
   Main,
   NextScript,
+  type DocumentContext,
+  type DocumentInitialProps,
 } from 'next/document';
-import type { DocumentInitialProps } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import { Children } from 'react';
 
 export default class MyDocument extends Document {
   /**
@@ -90,16 +91,17 @@ export default class MyDocument extends Document {
             'Montserrat-SemiBoldItalic.ttf',
             'Montserrat-Thin.ttf',
             'Montserrat-ThinItalic.ttf',
-          ].map(font => (
-            <link
-              key={font}
-              rel="preload"
-              href={`fonts/${font.split('-')[0]}/${font}`}
-              as="font"
-              type="font/tff"
-              crossOrigin=""
-            />
-          ))}
+          ].map(font =>
+            Children.toArray(
+              <link
+                rel="preload"
+                href={`fonts/${font.split('-')[0]}/${font}`}
+                as="font"
+                type="font/tff"
+                crossOrigin=""
+              />,
+            ),
+          )}
         </Head>
         <body>
           <Main />

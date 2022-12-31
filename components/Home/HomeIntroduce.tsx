@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import { Children } from 'react';
 
 const HomeIntroduceBlock = styled.section.attrs(props => ({
   ...props,
@@ -9,7 +10,7 @@ const HomeIntroduceBlock = styled.section.attrs(props => ({
   padding: 10rem;
 
   text-align: left;
-  background-color: #111;
+  background-color: #111111;
   color: #fefefe;
   min-height: 100vh;
 `;
@@ -48,7 +49,7 @@ const introduce =
 // skipcq: JS-D1001
 function IntroduceText({ str }: { str: string }): JSX.Element {
   return (
-    <span key={str}>
+    <span>
       {str} <br />
     </span>
   );
@@ -60,9 +61,9 @@ function Intro(): JSX.Element {
     <div style={{ marginRight: '5rem' }} className="flex flex-direction-col">
       <IntroduceTitle>Introduce</IntroduceTitle>
       <IntroduceContent>
-        {introduce.split('\n').map(str => (
-          <IntroduceText key={str} str={str} />
-        ))}
+        {Children.toArray(
+          introduce.split('\n').map(str => <IntroduceText str={str} />),
+        )}
       </IntroduceContent>
     </div>
   );

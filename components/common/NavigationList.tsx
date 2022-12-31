@@ -7,6 +7,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Children } from 'react';
 
 const ItemList = styled.ul`
   list-style: none;
@@ -54,7 +55,7 @@ const snsPages = [
     icon: faLinkedin,
   },
   {
-    href: 'https://twitter.com/1MD3V3L0P3R',
+    href: 'https://twitter.com/__nam3__',
     'aria-label': 'Twitter',
     icon: faTwitterSquare,
   },
@@ -74,11 +75,13 @@ const snsPages = [
 export function NavigationList(): JSX.Element {
   return (
     <ItemList>
-      {pages?.map?.(page => (
-        <LinkItem key={page.name}>
-          <Link href={page.href}>{page?.name}</Link>
-        </LinkItem>
-      ))}
+      {Children.toArray(
+        pages?.map?.(page => (
+          <LinkItem>
+            <Link href={page.href}>{page?.name}</Link>
+          </LinkItem>
+        )),
+      )}
     </ItemList>
   );
 }
@@ -87,18 +90,20 @@ export function NavigationList(): JSX.Element {
 export function SnsNavigationList(): JSX.Element {
   return (
     <ItemList>
-      {snsPages?.map?.(page => (
-        <LinkItem key={page?.['aria-label']}>
-          <Link
-            href={page?.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={page?.['aria-label']}
-          >
-            <FontAwesomeIconBlock icon={page?.icon} />
-          </Link>
-        </LinkItem>
-      ))}
+      {Children.toArray(
+        snsPages?.map?.(page => (
+          <LinkItem>
+            <Link
+              href={page?.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={page?.['aria-label']}
+            >
+              <FontAwesomeIconBlock icon={page?.icon} />
+            </Link>
+          </LinkItem>
+        )),
+      )}
     </ItemList>
   );
 }
