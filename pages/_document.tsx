@@ -97,7 +97,7 @@ export default class MyDocument extends Document {
                 rel="preload"
                 href={`fonts/${font.split('-')[0]}/${font}`}
                 as="font"
-                type="font/tff"
+                type="font/ttf"
                 crossOrigin=""
               />,
             ),
