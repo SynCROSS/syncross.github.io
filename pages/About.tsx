@@ -1,9 +1,7 @@
 import Head from 'next/head';
 import styled from 'styled-components';
 
-const AboutBlock = styled.main.attrs(() => ({
-  className: 'flex jc-center ai-center flex-direction-col',
-}))`
+const AboutBlock = styled.main`
   width: 50%;
   margin: auto;
 
@@ -34,7 +32,7 @@ const AboutContext = styled.p`
 // skipcq: JS-D1001
 function About(): JSX.Element {
   return (
-    <AboutBlock>
+    <AboutBlock className="flex jc-center ai-center flex-direction-col">
       <Head>
         <title>About</title>
         <link rel="canonical" href="https://syncross.vercel.app/About" />

@@ -2,10 +2,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import { Children } from 'react';
 
-const HomeIntroduceBlock = styled.section.attrs(props => ({
-  ...props,
-  className: 'flex jc-center ai-center',
-}))`
+const HomeIntroduceBlock = styled.section`
   width: 100%;
   padding: 10rem;
 
@@ -15,9 +12,7 @@ const HomeIntroduceBlock = styled.section.attrs(props => ({
   min-height: 100vh;
 `;
 
-const IntroWrapper = styled.div.attrs(() => ({
-  className: 'flex jc-center ai-center',
-}))`
+const IntroWrapper = styled.div`
   width: 60rem;
   margin: auto;
 `;
@@ -72,8 +67,8 @@ function Intro(): JSX.Element {
 // skipcq: JS-D1001
 function HomeIntroduce(): JSX.Element {
   return (
-    <HomeIntroduceBlock id="HomeIntroduce">
-      <IntroWrapper>
+    <HomeIntroduceBlock id="HomeIntroduce" className="flex jc-center ai-center">
+      <IntroWrapper className="flex jc-center ai-center">
         <Intro />
         <ImgBlock
           src="/icon.svg"

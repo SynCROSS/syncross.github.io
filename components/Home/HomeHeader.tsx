@@ -3,10 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-const HomeHeaderBlock = styled.div.attrs(props => ({
-  ...props,
-  className: 'flex jc-center ai-center flex-direction-col',
-}))`
+const HomeHeaderBlock = styled.div`
   min-height: 95vh;
   min-width: 100vw;
   background: linear-gradient(165deg, #e9e9e9 50%, #fff 50%);
@@ -58,10 +55,7 @@ const ArrowRightIcon = styled(FontAwesomeIcon)`
   }
 `;
 
-const ArrowButton = styled.button.attrs(props => ({
-  ...props,
-  className: 'flex jc-center ai-center',
-}))`
+const ArrowButton = styled.button`
   width: 5rem;
   height: 5rem;
   position: absolute;
@@ -118,7 +112,10 @@ function MyWorksButton(): JSX.Element {
 // skipcq: JS-D1001
 function HomeHeader(): JSX.Element {
   return (
-    <HomeHeaderBlock id="HomeHeader">
+    <HomeHeaderBlock
+      id="HomeHeader"
+      className="flex jc-center ai-center flex-direction-col"
+    >
       <Job>MERN Stack Developer</Job>
       <HeadLine>
         SynCROSS, <br /> The Knowledge Explorer
@@ -126,6 +123,7 @@ function HomeHeader(): JSX.Element {
       <MyWorksButton />
       <ArrowButton
         id="arrowScrollButton"
+        className="flex jc-center ai-center"
         title="Scroll Down Button"
         onClick={scrollToHomeHeader}
       >

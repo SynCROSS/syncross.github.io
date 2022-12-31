@@ -2,9 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 
-const FooterBlock = styled.footer.attrs(() => ({
-  className: 'flex jc-center ai-center',
-}))`
+const FooterBlock = styled.footer`
   width: 100%;
   background-color: #000;
   color: #eee;
@@ -25,7 +23,7 @@ const year = new Date().getFullYear();
 // skipcq: JS-D1001
 function Footer(): JSX.Element {
   return (
-    <FooterBlock>
+    <FooterBlock className="flex jc-center ai-center">
       Copyright &copy;&nbsp;
       <span className="year">{year}</span>
       &nbsp;Made by&nbsp;

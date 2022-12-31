@@ -11,9 +11,7 @@ const TechStackTitle = styled.h1`
   margin: 20px auto;
 `;
 
-const TechList = styled.ul.attrs(() => ({
-  className: 'flex jc-center ai-center',
-}))`
+const TechList = styled.ul`
   flex-wrap: wrap;
   flex-direction: column;
   list-style: none;
@@ -46,7 +44,7 @@ function HomeTechStack(): JSX.Element {
   return (
     <HomeTechStackBlock>
       <TechStackTitle>Tech Stack</TechStackTitle>
-      <TechList>
+      <TechList className="flex jc-center ai-center">
         {Array.isArray(techStacks) &&
           Children.toArray(
             techStacks.map(techStack => (

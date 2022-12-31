@@ -18,10 +18,7 @@ const HeaderBlock = styled.header<Pick<HeaderProps, 'isOpened'>>`
   }
 `;
 
-const HeaderList = styled.div.attrs(({ isOpened }: HeaderProps) => ({
-  isOpened,
-  className: 'flex ai-center',
-}))`
+const HeaderList = styled.div<Pick<HeaderProps, 'isOpened'>>`
   justify-content: space-between;
   width: 100%;
 
@@ -108,7 +105,7 @@ function Header({
       {screen?.width <= 600 && !isOpened && (
         <MenuButton title="Menu Icon" onClick={openMenu} />
       )}
-      <HeaderList isOpened={isOpened}>
+      <HeaderList isOpened={isOpened} className="flex ai-center">
         {screen?.width <= 600 && isOpened && (
           <CloseButton title="Close Menu Button" onClick={closeMenu}>
             <FontAwesomeIcon icon={faTimes} />
