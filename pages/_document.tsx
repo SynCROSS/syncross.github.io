@@ -94,7 +94,7 @@ export default class MyDocument extends Document {
           ].map(font =>
             Children.toArray(
               <link
-                rel="preload"
+                rel={font.startsWith('Poppins') ? "preload" : "prefetch"}
                 href={`fonts/${font.split('-')[0]}/${font}`}
                 as="font"
                 type="font/ttf"
