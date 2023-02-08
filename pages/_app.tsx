@@ -1,12 +1,12 @@
-import type { AppProps, NextWebVitalsMetric } from 'next/app';
-import Head from 'next/head';
-import Script from 'next/script';
-import { config } from '@fortawesome/fontawesome-svg-core';
-import { createGlobalStyle, css } from 'styled-components';
-import Layout from '../components/Layout';
+import type { AppProps, NextWebVitalsMetric } from "next/app";
+import Head from "next/head";
+import Script from "next/script";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import { createGlobalStyle, css } from "styled-components";
+import Layout from "../components/Layout";
 
-import '../styles/globals.css';
-import '@fortawesome/fontawesome-svg-core/styles.css';
+import "../styles/globals.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 config.autoAddCss = false;
 
@@ -16,28 +16,28 @@ config.autoAddCss = false;
  */
 export function reportWebVitals(metric: NextWebVitalsMetric): void {
   window?.console.log(
-    'file: _app.tsx ~ line 12 ~ reportWebVitals ~ metric',
-    metric,
+    "file: _app.tsx ~ line 12 ~ reportWebVitals ~ metric",
+    metric
   );
 }
 
-const TITLE = 'SynCROSS';
+const TITLE = "SynCROSS";
 const DESCRIPTION =
   "I'm MERN Stack Developer. Let's Work Together To Make Your Website Perfect.";
 
 const structuredData = {
-  '@context': 'http://schema.org/',
-  type: 'Person',
-  jobTitle: 'Frontend Developer',
-  name: 'SynCROSS',
-  telephone: '+82-10-9874-2668',
-  url: 'https://syncross.vercel.app',
+  "@context": "http://schema.org/",
+  type: "Person",
+  jobTitle: "Frontend Developer",
+  name: "SynCROSS",
+  telephone: "+82-10-9874-2668",
+  url: "https://syncross.vercel.app",
 };
 
-const IPHONE_RETINA_ICON_SIZE = '120x120';
-const IPAD_ICON_SIZE = '157x157';
-const IPAD_RETINA_ICON_SIZE = '167x167';
-const IPHONE_ICON_SIZE = '180x180';
+const IPHONE_RETINA_ICON_SIZE = "120x120";
+const IPAD_ICON_SIZE = "157x157";
+const IPAD_RETINA_ICON_SIZE = "167x167";
+const IPHONE_ICON_SIZE = "180x180";
 
 type FontWeight = keyof typeof fontWeights;
 const fontWeights = {
@@ -72,7 +72,7 @@ type ExtractFromFileNameOptions = {
  */
 const getFontName = (
   font: string,
-  { separator = '-' }: ExtractFromFileNameOptions = {},
+  { separator = "-" }: ExtractFromFileNameOptions = {}
 ): string => font.split(separator)[0];
 
 /**
@@ -81,8 +81,8 @@ const getFontName = (
  * @param {{extension: string}} options
  * @returns {string} File Name Without Extension
  */
-const removeExtension = (font: string, { extension = 'ttf' } = {}): string =>
-  font.replace(new RegExp(`.${extension}$`, 'ig'), '');
+const removeExtension = (font: string, { extension = "ttf" } = {}): string =>
+  font.replace(new RegExp(`.${extension}$`, "ig"), "");
 
 /**
  *
@@ -92,57 +92,57 @@ const removeExtension = (font: string, { extension = 'ttf' } = {}): string =>
  */
 const getFontWeight = (
   font: string,
-  { separator = '-' }: ExtractFromFileNameOptions = {},
+  { separator = "-" }: ExtractFromFileNameOptions = {}
 ): FontWeight => removeExtension(font.split(separator)[1]) as FontWeight;
 
 const GlobalStyles = createGlobalStyle`
 ${() =>
   css`
     ${[
-      'Poppins-Black.ttf',
-      'Poppins-BlackItalic.ttf',
-      'Poppins-Bold.ttf',
-      'Poppins-BoldItalic.ttf',
-      'Poppins-ExtraBold.ttf',
-      'Poppins-ExtraBoldItalic.ttf',
-      'Poppins-ExtraLight.ttf',
-      'Poppins-Italic.ttf',
-      'Poppins-Light.ttf',
-      'Poppins-LightItalic.ttf',
-      'Poppins-Medium.ttf',
-      'Poppins-MediumItalic.ttf',
-      'Poppins-Regular.ttf',
-      'Poppins-SemiBold.ttf',
-      'Poppins-SemiBoldItalic.ttf',
-      'Poppins-Thin.ttf',
-      'Poppins-ThinItalic.ttf',
-      'Montserrat-Black.ttf',
-      'Montserrat-BlackItalic.ttf',
-      'Montserrat-Bold.ttf',
-      'Montserrat-BoldItalic.ttf',
-      'Montserrat-ExtraBold.ttf',
-      'Montserrat-ExtraBoldItalic.ttf',
-      'Montserrat-ExtraLight.ttf',
-      'Montserrat-ExtraLight.ttf',
-      'Montserrat-Italic.ttf',
-      'Montserrat-Light.ttf',
-      'Montserrat-LightItalic.ttf',
-      'Montserrat-Medium.ttf',
-      'Montserrat-MediumItalic.ttf',
-      'Montserrat-Regular.ttf',
-      'Montserrat-SemiBold.ttf',
-      'Montserrat-SemiBoldItalic.ttf',
-      'Montserrat-Thin.ttf',
-      'Montserrat-ThinItalic.ttf',
+      "Poppins-Black.ttf",
+      "Poppins-BlackItalic.ttf",
+      "Poppins-Bold.ttf",
+      "Poppins-BoldItalic.ttf",
+      "Poppins-ExtraBold.ttf",
+      "Poppins-ExtraBoldItalic.ttf",
+      "Poppins-ExtraLight.ttf",
+      "Poppins-Italic.ttf",
+      "Poppins-Light.ttf",
+      "Poppins-LightItalic.ttf",
+      "Poppins-Medium.ttf",
+      "Poppins-MediumItalic.ttf",
+      "Poppins-Regular.ttf",
+      "Poppins-SemiBold.ttf",
+      "Poppins-SemiBoldItalic.ttf",
+      "Poppins-Thin.ttf",
+      "Poppins-ThinItalic.ttf",
+      "Montserrat-Black.ttf",
+      "Montserrat-BlackItalic.ttf",
+      "Montserrat-Bold.ttf",
+      "Montserrat-BoldItalic.ttf",
+      "Montserrat-ExtraBold.ttf",
+      "Montserrat-ExtraBoldItalic.ttf",
+      "Montserrat-ExtraLight.ttf",
+      "Montserrat-ExtraLight.ttf",
+      "Montserrat-Italic.ttf",
+      "Montserrat-Light.ttf",
+      "Montserrat-LightItalic.ttf",
+      "Montserrat-Medium.ttf",
+      "Montserrat-MediumItalic.ttf",
+      "Montserrat-Regular.ttf",
+      "Montserrat-SemiBold.ttf",
+      "Montserrat-SemiBoldItalic.ttf",
+      "Montserrat-Thin.ttf",
+      "Montserrat-ThinItalic.ttf",
     ].reduce(
       (result, font) => `${result} @font-face {
     font-family: ${getFontName(font)};
     src: url('/fonts/${getFontName(font)}/${font}') format('truetype');
-    font-style: ${font.includes('Italic') ? 'italic' : 'normal'};
+    font-style: ${font.includes("Italic") ? "italic" : "normal"};
     font-weight: ${fontWeights[getFontWeight(font)] ?? 400};
     font-display: swap;
   }`,
-      '',
+      ""
     )}
   `}
 `;
@@ -155,6 +155,7 @@ export default function App({ Component }: AppProps): JSX.Element {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="robots" content="all"></meta>
 
         <meta name="title" content={`${TITLE}`} />
         <meta name="description" content={`${DESCRIPTION}`} key="desc" />
