@@ -177,11 +177,11 @@ export default function App({ Component }: AppProps): JSX.Element {
         <meta property="og:description" content={`${DESCRIPTION}`} />
         <meta
           property="og:image"
-          content="https://syncross.vercel.app/icon.jpg"
+          content="/icon.jpg"
         />
         <meta
           property="og:image:secure_url"
-          content="https://syncross.vercel.app/icon.jpg"
+          content="/icon.jpg"
         />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="721" />
@@ -195,7 +195,7 @@ export default function App({ Component }: AppProps): JSX.Element {
         <meta property="twitter:description" content={`${DESCRIPTION}`} />
         <meta
           property="twitter:image"
-          content="https://syncross.vercel.app/icon.jpg"
+          content="/icon.jpg"
         />
 
         <meta name="referrer" content="strict-origin-when-cross-origin" />
