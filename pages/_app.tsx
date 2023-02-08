@@ -159,6 +159,7 @@ export default function App({ Component }: AppProps): JSX.Element {
 
         <meta name="title" content={`${TITLE}`} />
         <meta name="description" content={`${DESCRIPTION}`} key="desc" />
+        <meta name="author" content="SynCROSS" />
 
         <meta name="application-name" content={`${TITLE}`} />
         <meta name="apple-mobile-web-app-capable" content="yes" />
