@@ -28,11 +28,6 @@ const IntroduceContent = styled.p`
   padding: 0 7px;
 `;
 
-const ImgBlock = styled(Image)`
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-`;
-
 const introduce =
   'Oh hi there! My name is SynCROSS,\n' +
   'Frontend Developer and boy do I love learning new things.\n' +
@@ -70,12 +65,13 @@ function HomeIntroduce(): JSX.Element {
     <HomeIntroduceBlock id="HomeIntroduce" className="flex jc-center ai-center">
       <IntroWrapper className="flex jc-center ai-center">
         <Intro />
-        <ImgBlock
+        <Image
           src="/icon.svg"
           width={300}
           height={300}
           alt="SynCROSS"
-          loading="eager"
+          loading="lazy"
+          style={{aspectRatio: 1, borderRadius: .5}}
         />
       </IntroWrapper>
     </HomeIntroduceBlock>
