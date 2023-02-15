@@ -71,7 +71,7 @@ function HomeIntroduce(): JSX.Element {
           height={300}
           alt="SynCROSS"
           loading="lazy"
-          style={{aspectRatio: 1, borderRadius: .5}}
+          style={{ aspectRatio: 1, borderRadius: '50%' }}
         />
       </IntroWrapper>
     </HomeIntroduceBlock>
