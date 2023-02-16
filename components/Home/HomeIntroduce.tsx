@@ -6,7 +6,7 @@ const HomeIntroduceBlock = styled.section`
   width: 100%;
   padding: 10rem;
 
-  text-align: left;
+  text-align: start;
   background-color: #111111;
   color: #fefefe;
   min-height: 100vh;
