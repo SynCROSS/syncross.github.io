@@ -13,8 +13,7 @@ const HomeIntroduceBlock = styled.section`
 `;
 
 const IntroWrapper = styled.div`
-  width: 60rem;
-  margin: auto;
+  width: 60%;
 `;
 
 const IntroduceTitle = styled.h1`
