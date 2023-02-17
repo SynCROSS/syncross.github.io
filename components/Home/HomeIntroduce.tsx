@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const HomeIntroduceBlock = styled.section`
   width: 100%;
-  
+
   text-align: start;
   background-color: #111111;
   color: #fefefe;
@@ -13,6 +13,20 @@ const HomeIntroduceBlock = styled.section`
 
 const IntroWrapper = styled.div`
   width: 60%;
+
+  @media only screen and (max-width: 600px) {
+    flex-wrap: wrap-reverse;
+  }
+`;
+
+const IntroBlock = styled.div`
+  margin-right: 5rem;
+  margin-top: 0;
+
+  @media only screen and (max-width: 600px) {
+    margin-right: 0;
+    margin-top: 5rem;
+  }
 `;
 
 const IntroduceTitle = styled.h1`
@@ -29,17 +43,17 @@ const IntroduceContent = styled.p`
 // skipcq: JS-D1001
 function Intro(): JSX.Element {
   return (
-    <div style={{ marginRight: '5rem' }} className="flex flex-direction-col">
+    <IntroBlock className="flex flex-direction-col">
       <IntroduceTitle>Introduce</IntroduceTitle>
       <IntroduceContent>
         Oh hi there! My name is SynCROSS, <br />
         Frontend Developer and boy do I love learning new things. <br />
         I&apos;ve amassed a great deal of skills due to my passion for
-        constantly learning new languages, frameworks, and other technologies.
-        I have experience with:
-        NextJS, TypeScript, Express, NestJS, MongoDB, MySQL, Oracle, Spring Boot.,
+        constantly learning new languages, frameworks, and other technologies. I
+        have experience with: NextJS, TypeScript, Express, NestJS, MongoDB,
+        MySQL, Oracle, Spring Boot.,
       </IntroduceContent>
-    </div>
+    </IntroBlock>
   );
 }
 
