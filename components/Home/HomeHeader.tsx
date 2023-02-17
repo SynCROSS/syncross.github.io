@@ -32,7 +32,6 @@ const RouterLink = styled(Link)`
   cursor: pointer;
   padding: 1rem 40px 1rem 20px;
   position: relative;
-  width: auto;
 `;
 
 const ArrowRightIcon = styled(FontAwesomeIcon)`
