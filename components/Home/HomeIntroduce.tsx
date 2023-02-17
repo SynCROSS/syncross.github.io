@@ -46,7 +46,7 @@ function Intro(): JSX.Element {
 // skipcq: JS-D1001
 function HomeIntroduce(): JSX.Element {
   return (
-    <HomeIntroduceBlock id="HomeIntroduce" className="flex jc-center ai-center">
+    <HomeIntroduceBlock className="flex jc-center ai-center">
       <IntroWrapper className="flex jc-center ai-center">
         <Intro />
         <Image
