@@ -1,7 +1,7 @@
+import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const HomeHeaderBlock = styled.div`
   min-height: 95vh;
@@ -10,8 +10,7 @@ const HomeHeaderBlock = styled.div`
 `;
 
 const HeadLine = styled.h1`
-  font-weight: 700;
-  font-size: 5rem;
+  font-size: 4em;
 
   margin: 0 auto 20px;
   line-height: 1.2;

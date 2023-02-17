@@ -30,7 +30,7 @@ const IntroBlock = styled.div`
 `;
 
 const IntroduceTitle = styled.h1`
-  font-size: 5rem;
+  font-size: 4em;
 `;
 
 const IntroduceContent = styled.p`
