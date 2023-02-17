@@ -8,11 +8,11 @@ const HomeIntroduceBlock = styled.section`
   background-color: #111111;
   color: #fefefe;
   min-height: 100vh;
-  height: 100vh;
 `;
 
 const IntroWrapper = styled.div`
   width: 60%;
+  margin: 5rem auto;
 
   @media only screen and (max-width: 600px) {
     flex-wrap: wrap-reverse;
