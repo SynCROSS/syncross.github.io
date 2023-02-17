@@ -1,13 +1,13 @@
-import Link from 'next/link';
 import {
   faGithub,
   faInstagram,
   faLinkedin,
   faTwitterSquare,
 } from '@fortawesome/free-brands-svg-icons';
-import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 import { Children } from 'react';
+import styled from 'styled-components';
 
 const ItemList = styled.ul`
   list-style: none;
@@ -16,15 +16,17 @@ const ItemList = styled.ul`
 const LinkItem = styled.li`
   display: inline-flex;
   margin: 0 1rem;
-
   color: #808080;
+
   transition: 0.2s all ease-in-out;
 
   &:hover {
     color: #505050;
+    font-weight: 500;
   }
 
   @media only screen and (max-width: 600px) {
+    color: #bfbfbf;
     line-height: 2rem;
   }
 `;
