@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 const HomeIntroduceBlock = styled.section`
   width: 100%;
-  padding: 10rem;
-
+  
   text-align: start;
   background-color: #111111;
   color: #fefefe;
   min-height: 100vh;
+  height: 100vh;
 `;
 
 const IntroWrapper = styled.div`
