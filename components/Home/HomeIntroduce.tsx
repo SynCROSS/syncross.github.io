@@ -1,6 +1,5 @@
-import styled from 'styled-components';
 import Image from 'next/image';
-import { Children } from 'react';
+import styled from 'styled-components';
 
 const HomeIntroduceBlock = styled.section`
   width: 100%;
@@ -27,32 +26,18 @@ const IntroduceContent = styled.p`
   padding: 0 7px;
 `;
 
-const introduce =
-  'Oh hi there! My name is SynCROSS,\n' +
-  'Frontend Developer and boy do I love learning new things.\n' +
-  "I've amassed a great deal of skills due to my passion for " +
-  'constantly learning new languages, frameworks, and other technologies. ' +
-  'I have experience with: ' +
-  'NextJS, TypeScript, Express, NestJS, MongoDB, MySQL, Oracle, Spring Boot.';
-
-// skipcq: JS-D1001
-function IntroduceText({ str }: { str: string }): JSX.Element {
-  return (
-    <span>
-      {str} <br />
-    </span>
-  );
-}
-
 // skipcq: JS-D1001
 function Intro(): JSX.Element {
   return (
     <div style={{ marginRight: '5rem' }} className="flex flex-direction-col">
       <IntroduceTitle>Introduce</IntroduceTitle>
       <IntroduceContent>
-        {Children.toArray(
-          introduce.split('\n').map(str => <IntroduceText str={str} />),
-        )}
+        Oh hi there! My name is SynCROSS, <br />
+        Frontend Developer and boy do I love learning new things. <br />
+        I&apos;ve amassed a great deal of skills due to my passion for
+        constantly learning new languages, frameworks, and other technologies.
+        I have experience with:
+        NextJS, TypeScript, Express, NestJS, MongoDB, MySQL, Oracle, Spring Boot.,
       </IntroduceContent>
     </div>
   );
