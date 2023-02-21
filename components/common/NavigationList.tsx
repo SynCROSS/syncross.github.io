@@ -18,17 +18,84 @@ const LinkItem = styled.li`
   margin: 0 1rem;
   color: #808080;
 
-  transition: 0.2s all ease-in-out;
+  @media (hover: hover) {
+    transition: 0.2s all ease-in-out;
 
-  &:hover {
-    color: #505050;
-    font-weight: 500;
+    &:hover {
+      color: #505050;
+      font-weight: 500;
+    }
   }
 
-  @media only screen and (max-width: 600px) {
-    color: #bfbfbf;
-    line-height: 2rem;
+  /*------------------------------------------
+  Responsive Grid Media Queries - 1280, 1024, 768, 480
+   1280-1024   - desktop (default grid)
+   1024-768    - tablet landscape
+   768-480     - tablet 
+   480-less    - phone landscape & smaller
+--------------------------------------------*/
+  /* @media all and (min-width: 1024px) and (max-width: 1280px) {
+    background-color: #111;
+  } */
+
+  /* @media all and (min-width: 768px) and (max-width: 1024px) {
+    background-color: #222;
+  } */
+
+  /* @media all and (min-width: 480px) and (max-width: 768px) {
+    background-color: #333;
+  } */
+
+  /* @media all and (max-width: 480px) {
+    background-color: #444;
+  } */
+
+  /* Portrait */
+  /* @media screen and (orientation: portrait) {
+    background-color: #555;
+  } */
+  /* Landscape */
+  /* @media screen and (orientation: landscape) {
+    background-color: #666;
+  } */
+
+  /* CSS for iPhone, iPad, and Retina Displays */
+
+  /* Non-Retina */
+  /* @media screen and (-webkit-max-device-pixel-ratio: 1) {
+    background-color: #777;
+  } */
+
+  /* Retina */
+  /* @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min--moz-device-pixel-ratio: 1.5),
+    only screen and (min-device-pixel-ratio: 1.5) {
+    background-color: #888;
+  } */
+
+  /* iPhone Portrait */
+  @media screen and (max-device-width: 480px) and (orientation: portrait) {
+    & > a {
+      color: #bfbfbf;
+    }
+    margin: 0.5rem 0;
   }
+
+  /* iPhone Landscape */
+  /* @media screen and (max-device-width: 480px) and (orientation: landscape) {
+    background-color: #aaa;
+  } */
+
+  /* iPad Portrait */
+  /* @media screen and (min-device-width: 481px) and (orientation: portrait) {
+    background-color: #bbb;
+  } */
+
+  /* iPad Landscape */
+  /* @media screen and (min-device-width: 481px) and (orientation: landscape) {
+    background-color: #ccc;
+  } */
 `;
 
 const FontAwesomeIconBlock = styled(FontAwesomeIcon)`

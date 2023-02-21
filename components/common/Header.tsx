@@ -1,94 +1,346 @@
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styled from 'styled-components';
 import { NavigationList, SnsNavigationList } from './NavigationList';
 
 const HeaderBlock = styled.header<Pick<HeaderProps, 'isOpened'>>`
   width: 100%;
-  background: transparent;
+  padding: 15px 20px;
+
+  z-index: 2;
+
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
-  padding: 15px 20px;
 
-  @media only screen and (max-width: 600px) {
-    width: ${({ isOpened }) => (isOpened ? '100px' : 0)};
-    padding: 0;
-  }
-`;
-
-const HeaderList = styled.div<Pick<HeaderProps, 'isOpened'>>`
   justify-content: space-between;
-  width: 100%;
+  background: transparent;
 
-  /* Extra small devices (phones, 600px and down) */
-  @media only screen and (max-width: 600px) {
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
+  /*------------------------------------------
+  Responsive Grid Media Queries - 1280, 1024, 768, 480
+   1280-1024   - desktop (default grid)
+   1024-768    - tablet landscape
+   768-480     - tablet 
+   480-less    - phone landscape & smaller
+--------------------------------------------*/
+  /* @media all and (min-width: 1024px) and (max-width: 1280px) {
+    background-color: #111;
+  } */
 
-    z-index: 10;
+  /* @media all and (min-width: 768px) and (max-width: 1024px) {
+    background-color: #222;
+  } */
 
+  /* @media all and (min-width: 480px) and (max-width: 768px) {
+    background-color: #333;
+  } */
+
+  /* @media all and (max-width: 480px) {
+    background-color: #444;
+  } */
+
+  /* Portrait */
+  /* @media screen and (orientation: portrait) {
+    background-color: #555;
+  } */
+  /* Landscape */
+  /* @media screen and (orientation: landscape) {
+    background-color: #666;
+  } */
+
+  /* CSS for iPhone, iPad, and Retina Displays */
+
+  /* Non-Retina */
+  /* @media screen and (-webkit-max-device-pixel-ratio: 1) {
+    background-color: #777;
+  } */
+
+  /* Retina */
+  /* @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min--moz-device-pixel-ratio: 1.5),
+    only screen and (min-device-pixel-ratio: 1.5) {
+    background-color: #888;
+  } */
+
+  /* iPhone Portrait */
+  @media screen and (max-device-width: 480px) and (orientation: portrait) {
     width: ${({ isOpened }) => (isOpened ? '100px' : 0)};
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 0;
+    height: 100vh;
+
+    padding: ${({ isOpened }) => (isOpened ? '15px 20px' : 0)};
+
+    visibility: ${({ isOpened }) => (isOpened ? 'visible' : 'hidden')};
+
     overflow-x: hidden;
 
-    background-color: #111;
+    flex-direction: column;
+
+    background-color: #121212;
     transition: all 0.5s ease-in-out;
+
+    & > ul {
+      flex: 1;
+
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
   }
 
-  /* Small devices (portrait tablets and large phones, 600px and up) */
-  @media only screen and (min-width: 600px) {
-    width: 100%;
-  }
+  /* iPhone Landscape */
+  /* @media screen and (max-device-width: 480px) and (orientation: landscape) {
+    background-color: #aaa;
+  } */
+
+  /* iPad Portrait */
+  /* @media screen and (min-device-width: 481px) and (orientation: portrait) {
+    background-color: #bbb;
+  } */
+
+  /* iPad Landscape */
+  /* @media screen and (min-device-width: 481px) and (orientation: landscape) {
+    background-color: #ccc;
+  } */
 `;
 
 const MenuButton = styled.button`
-  /* Extra small devices (phones, 600px and down) */
-  @media only screen and (max-width: 600px) {
-    background: transparent;
-    color: #aaa;
-    display: block;
+  /*------------------------------------------
+  Responsive Grid Media Queries - 1280, 1024, 768, 480
+   1280-1024   - desktop (default grid)
+   1024-768    - tablet landscape
+   768-480     - tablet 
+   480-less    - phone landscape & smaller
+--------------------------------------------*/
+  /* @media all and (min-width: 1024px) and (max-width: 1280px) {
+    background-color: #111;
+  } */
+
+  /* @media all and (min-width: 768px) and (max-width: 1024px) {
+    background-color: #222;
+  } */
+
+  /* @media all and (min-width: 480px) and (max-width: 768px) {
+    background-color: #333;
+  } */
+
+  /* @media all and (max-width: 480px) {
+    background-color: #444;
+  } */
+
+  /* Portrait */
+  /* @media screen and (orientation: portrait) {
+    background-color: #555;
+  } */
+  /* Landscape */
+  /* @media screen and (orientation: landscape) {
+    background-color: #666;
+  } */
+
+  /* CSS for iPhone, iPad, and Retina Displays */
+
+  /* Non-Retina */
+  /* @media screen and (-webkit-max-device-pixel-ratio: 1) {
+    background-color: #777;
+  } */
+
+  /* Retina */
+  /* @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min--moz-device-pixel-ratio: 1.5),
+    only screen and (min-device-pixel-ratio: 1.5) {
+    background-color: #888;
+  } */
+
+  /* iPhone Portrait */
+  @media screen and (max-device-width: 480px) and (orientation: portrait) {
     width: 2rem;
     height: 2rem;
+
+    position: fixed;
+    top: 1rem;
+    left: 1.2rem;
+
+    z-index: 2;
+
+    background: transparent;
+
     font-size: 2rem;
-    margin: 15px 20px;
+    color: #aaa;
 
     &::before {
       content: '☰';
     }
   }
+
+  /* iPhone Landscape */
+  /* @media screen and (max-device-width: 480px) and (orientation: landscape) {
+    background-color: #aaa;
+  } */
+
+  /* iPad Portrait */
+  /* @media screen and (min-device-width: 481px) and (orientation: portrait) {
+    background-color: #bbb;
+  } */
+
+  /* iPad Landscape */
+  /* @media screen and (min-device-width: 481px) and (orientation: landscape) {
+    background-color: #ccc;
+  } */
 `;
 
 const CloseButton = styled.button`
-  @media only screen and (max-width: 600px) {
+  /*------------------------------------------
+  Responsive Grid Media Queries - 1280, 1024, 768, 480
+   1280-1024   - desktop (default grid)
+   1024-768    - tablet landscape
+   768-480     - tablet 
+   480-less    - phone landscape & smaller
+--------------------------------------------*/
+  /* @media all and (min-width: 1024px) and (max-width: 1280px) {
+    background-color: #111;
+  } */
+
+  /* @media all and (min-width: 768px) and (max-width: 1024px) {
+    background-color: #222;
+  } */
+
+  /* @media all and (min-width: 480px) and (max-width: 768px) {
+    background-color: #333;
+  } */
+
+  /* @media all and (max-width: 480px) {
+    background-color: #444;
+  } */
+
+  /* Portrait */
+  /* @media screen and (orientation: portrait) {
+    background-color: #555;
+  } */
+  /* Landscape */
+  /* @media screen and (orientation: landscape) {
+    background-color: #666;
+  } */
+
+  /* CSS for iPhone, iPad, and Retina Displays */
+
+  /* Non-Retina */
+  /* @media screen and (-webkit-max-device-pixel-ratio: 1) {
+    background-color: #777;
+  } */
+
+  /* Retina */
+  /* @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min--moz-device-pixel-ratio: 1.5),
+    only screen and (min-device-pixel-ratio: 1.5) {
+    background-color: #888;
+  } */
+
+  /* iPhone Portrait */
+  @media screen and (max-device-width: 480px) and (orientation: portrait) {
     background: transparent;
     color: #e0e0e0;
-
-    position: absolute;
-    top: 2rem;
-    display: block;
+    margin-top: 2rem;
   }
+
+  /* iPhone Landscape */
+  /* @media screen and (max-device-width: 480px) and (orientation: landscape) {
+    background-color: #aaa;
+  } */
+
+  /* iPad Portrait */
+  /* @media screen and (min-device-width: 481px) and (orientation: portrait) {
+    background-color: #bbb;
+  } */
+
+  /* iPad Landscape */
+  /* @media screen and (min-device-width: 481px) and (orientation: landscape) {
+    background-color: #ccc;
+  } */
 `;
 
 const Outside = styled.div<Pick<HeaderProps, 'isOpened'>>`
-  @media only screen and (max-width: 600px) {
+  /*------------------------------------------
+  Responsive Grid Media Queries - 1280, 1024, 768, 480
+   1280-1024   - desktop (default grid)
+   1024-768    - tablet landscape
+   768-480     - tablet 
+   480-less    - phone landscape & smaller
+--------------------------------------------*/
+  /* @media all and (min-width: 1024px) and (max-width: 1280px) {
+    background-color: #111;
+  } */
+
+  /* @media all and (min-width: 768px) and (max-width: 1024px) {
+    background-color: #222;
+  } */
+
+  /* @media all and (min-width: 480px) and (max-width: 768px) {
+    background-color: #333;
+  } */
+
+  /* @media all and (max-width: 480px) {
+    background-color: #444;
+  } */
+
+  /* Portrait */
+  /* @media screen and (orientation: portrait) {
+    background-color: #555;
+  } */
+  /* Landscape */
+  /* @media screen and (orientation: landscape) {
+    background-color: #666;
+  } */
+
+  /* CSS for iPhone, iPad, and Retina Displays */
+
+  /* Non-Retina */
+  /* @media screen and (-webkit-max-device-pixel-ratio: 1) {
+    background-color: #777;
+  } */
+
+  /* Retina */
+  /* @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min--moz-device-pixel-ratio: 1.5),
+    only screen and (min-device-pixel-ratio: 1.5) {
+    background-color: #888;
+  } */
+
+  /* iPhone Portrait */
+  @media screen and (max-device-width: 480px) and (orientation: portrait) {
     width: ${({ isOpened }) => (isOpened ? '100%' : 0)};
+
     position: fixed;
     inset: 0;
-    transition: all 0.5s ease-in-out;
+
+    z-index: 1;
+
     background-color: rgba(0, 0, 0, 0.7);
+    transition: all 0.5s ease-in-out;
   }
+
+  /* iPhone Landscape */
+  /* @media screen and (max-device-width: 480px) and (orientation: landscape) {
+    background-color: #aaa;
+  } */
+
+  /* iPad Portrait */
+  /* @media screen and (min-device-width: 481px) and (orientation: portrait) {
+    background-color: #bbb;
+  } */
+
+  /* iPad Landscape */
+  /* @media screen and (min-device-width: 481px) and (orientation: landscape) {
+    background-color: #ccc;
+  } */
 `;
 
 type HeaderProps = {
   isOpened: boolean;
-  screen: Pick<Screen, 'width' | 'height'>;
+  width: number;
   openMenu: VoidFunction;
   closeMenu: VoidFunction;
 };
@@ -96,28 +348,26 @@ type HeaderProps = {
 // skipcq: JS-D1001
 function Header({
   isOpened,
-  screen,
+  width,
   openMenu,
   closeMenu,
 }: HeaderProps): JSX.Element {
   return (
-    <HeaderBlock isOpened={isOpened}>
-      {screen?.width <= 600 && !isOpened && (
-        <MenuButton title="Menu Icon" onClick={openMenu} />
-      )}
-      <HeaderList isOpened={isOpened} className="flex ai-center">
-        {screen?.width <= 600 && isOpened && (
+    <>
+      {width <= 480 && <MenuButton title="Menu Icon" onClick={openMenu} />}
+      <HeaderBlock isOpened={isOpened} className="flex ai-center">
+        {width <= 480 && isOpened && (
           <CloseButton title="Close Menu Button" onClick={closeMenu}>
             <FontAwesomeIcon icon={faTimes} />
           </CloseButton>
         )}
         <NavigationList />
         <SnsNavigationList />
-      </HeaderList>
-      {screen.width <= 600 && isOpened && (
+      </HeaderBlock>
+      {width <= 480 && isOpened && (
         <Outside isOpened={isOpened} onClick={closeMenu} />
       )}
-    </HeaderBlock>
+    </>
   );
 }
 

@@ -12,8 +12,10 @@ const GithubLink = styled(Link)`
 
   color: #ff6683;
 
-  &:hover {
-    color: #ff94a8;
+  @media (hover: hover) {
+    &:hover {
+      color: #ff94a8;
+    }
   }
 `;
 
