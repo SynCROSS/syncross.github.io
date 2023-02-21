@@ -8,7 +8,6 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
@@ -36,9 +35,6 @@ ul {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: none;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 }
 
 *::-webkit-scrollbar {
