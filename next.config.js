@@ -21,8 +21,7 @@ const securityHeaders = [
   },
   {
     key: 'Content-Security-Policy',
-    value:
-      `default-src 'self' https://vitals.vercel-insights.com 'unsafe-inline'; 
+    value: `default-src 'self' https://vitals.vercel-insights.com 'unsafe-inline'; 
       object-src 'none'; 
       report-uri https://vitals.vercel-insights.com; 
       report-to https://vitals.vercel-insights.com; 
@@ -32,7 +31,7 @@ const securityHeaders = [
       font-src 'self'; 
       style-src-elem 'self' fonts.googleapis.com 'unsafe-inline'; 
       img-src 'self' unpkg.com github-readme-stats.vercel.app data:; 
-      frame-ancestors 'self'`
+      frame-ancestors 'self'`,
   },
   {
     key: 'Permissions-Policy',
