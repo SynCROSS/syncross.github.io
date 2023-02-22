@@ -1,9 +1,27 @@
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { NavigationList, SnsNavigationList } from './NavigationList';
 
-const HeaderBlock = styled.header<Pick<HeaderProps, 'isOpened'>>`
+type CenterAlignedHeaderProps = PropsWithChildren<
+  Pick<HeaderProps, 'isOpened'> & {
+    className?: HTMLAttributes<HTMLElement>['className'];
+  }
+>;
+
+const CenterAlignedHeader: FC<CenterAlignedHeaderProps> =
+  function CenterAlignedHeader({ children, className = '' }) {
+    return (
+      <header className={`flex ai-center ${className}`}>{children}</header>
+    );
+  };
+
+CenterAlignedHeader.defaultProps = {
+  className: '',
+};
+
+const HeaderBlock = styled(CenterAlignedHeader)`
   width: 100%;
   padding: 15px 20px;
 
@@ -355,7 +373,7 @@ function Header({
   return (
     <>
       {width <= 480 && <MenuButton title="Menu Icon" onClick={openMenu} />}
-      <HeaderBlock isOpened={isOpened} className="flex ai-center">
+      <HeaderBlock isOpened={isOpened}>
         {width <= 480 && isOpened && (
           <CloseButton title="Close Menu Button" onClick={closeMenu}>
             <FontAwesomeIcon icon={faTimes} />

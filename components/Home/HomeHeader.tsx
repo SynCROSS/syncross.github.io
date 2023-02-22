@@ -1,10 +1,35 @@
 import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
-import { useCallback, useRef } from 'react';
+import {
+  forwardRef,
+  useCallback,
+  useRef,
+  type HTMLAttributes,
+  type PropsWithChildren,
+} from 'react';
 import styled from 'styled-components';
 
-const HomeHeaderBlock = styled.div`
+type CenteredVerticalBlockProps = PropsWithChildren<{
+  className?: HTMLAttributes<HTMLElement>['className'];
+}>;
+const CenteredVerticalBlock = forwardRef<
+  HTMLElement,
+  CenteredVerticalBlockProps
+>(({ children, className = '' }, ref) => (
+  <section
+    ref={ref}
+    className={`flex jc-center ai-center flex-direction-col ${className}`}
+  >
+    {children}
+  </section>
+));
+
+CenteredVerticalBlock.defaultProps = {
+  className: '',
+};
+
+const HomeHeaderBlock = styled(CenteredVerticalBlock)`
   width: 100vw;
   min-height: 90vh;
 
@@ -161,7 +186,7 @@ function MyWorksButton(): JSX.Element {
 
 // skipcq: JS-D1001
 function HomeHeader(): JSX.Element {
-  const headerRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
   /**
    * Scroll To 'HomeHeader' Component
    */
@@ -175,10 +200,7 @@ function HomeHeader(): JSX.Element {
   }, []);
 
   return (
-    <HomeHeaderBlock
-      ref={headerRef}
-      className="flex jc-center ai-center flex-direction-col"
-    >
+    <HomeHeaderBlock ref={headerRef}>
       <Job>MERN Stack Developer</Job>
       <HeadLine>
         SynCROSS, <br /> The Knowledge Explorer

@@ -1,6 +1,11 @@
-import { Children } from 'react';
-import styled from 'styled-components';
 import Image from 'next/image';
+import {
+  Children,
+  type FC,
+  type HTMLAttributes,
+  type PropsWithChildren,
+} from 'react';
+import styled from 'styled-components';
 
 const HomeTechStackBlock = styled.div`
   margin: 20px auto;
@@ -11,7 +16,21 @@ const TechStackTitle = styled.h1`
   margin: 20px auto;
 `;
 
-const TechList = styled.ul`
+type CenteredListProps = PropsWithChildren<{
+  className?: HTMLAttributes<HTMLUListElement>['className'];
+}>;
+const CenteredList: FC<CenteredListProps> = function CenteredSection({
+  children,
+  className = '',
+}) {
+  return <ul className={`flex ai-center ${className}`}>{children}</ul>;
+};
+
+CenteredList.defaultProps = {
+  className: '',
+};
+
+const TechList = styled(CenteredList)`
   flex-wrap: wrap;
   flex-direction: column;
   list-style: none;
@@ -44,7 +63,7 @@ function HomeTechStack(): JSX.Element {
   return (
     <HomeTechStackBlock>
       <TechStackTitle>Tech Stack</TechStackTitle>
-      <TechList className="flex jc-center ai-center">
+      <TechList>
         {Array.isArray(techStacks) &&
           Children.toArray(
             techStacks.map(techStack => (

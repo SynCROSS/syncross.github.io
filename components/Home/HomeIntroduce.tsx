@@ -1,7 +1,42 @@
 import Image from 'next/image';
+import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
-const HomeIntroduceBlock = styled.section`
+type CenteredSectionProps = PropsWithChildren<{
+  className?: HTMLAttributes<HTMLElement>['className'];
+}>;
+const CenteredSection: FC<CenteredSectionProps> = function CenteredSection({
+  children,
+  className = '',
+}) {
+  return (
+    <section className={`flex ai-center jc-center ${className}`}>
+      {children}
+    </section>
+  );
+};
+
+CenteredSection.defaultProps = {
+  className: '',
+};
+
+type CenteredBlockProps = PropsWithChildren<{
+  className?: HTMLAttributes<HTMLDivElement>['className'];
+}>;
+const CenteredBlock: FC<CenteredBlockProps> = function CenteredBlock({
+  children,
+  className = '',
+}) {
+  return (
+    <div className={`flex ai-center jc-center ${className}`}>{children}</div>
+  );
+};
+
+CenteredBlock.defaultProps = {
+  className: '',
+};
+
+const HomeIntroduceBlock = styled(CenteredSection)`
   width: 100%;
 
   text-align: start;
@@ -10,9 +45,8 @@ const HomeIntroduceBlock = styled.section`
   min-height: 100vh;
 `;
 
-const IntroWrapper = styled.div`
+const IntroWrapper = styled(CenteredBlock)`
   width: 60%;
-  margin: 5rem auto;
 
   @media only screen and (max-width: 600px) {
     flex-wrap: wrap-reverse;
@@ -60,8 +94,8 @@ function Intro(): JSX.Element {
 // skipcq: JS-D1001
 function HomeIntroduce(): JSX.Element {
   return (
-    <HomeIntroduceBlock className="flex jc-center ai-center">
-      <IntroWrapper className="flex jc-center ai-center">
+    <HomeIntroduceBlock>
+      <IntroWrapper>
         <Intro />
         <Image
           src="/icon.svg"
