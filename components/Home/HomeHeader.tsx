@@ -1,7 +1,7 @@
 import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
-import { useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import styled from 'styled-components';
 
 const HomeHeaderBlock = styled.div`
@@ -104,6 +104,10 @@ const RouterLink = styled(Link)`
   position: relative;
 `;
 
+const InlineMediumText = styled.span`
+  font-weight: 500;
+`;
+
 const ArrowRightIcon = styled(FontAwesomeIcon)`
   margin-left: 0.5rem;
 
@@ -149,17 +153,7 @@ const ArrowDownIcon = styled(FontAwesomeIcon)`
 function MyWorksButton(): JSX.Element {
   return (
     <RouterLink href="/Work" className="flex ai-center">
-      <span
-        style={{
-          display: 'inline-block',
-          height: '1rem',
-          lineHeight: '1rem',
-          fontWeight: 500,
-        }}
-      >
-        My Works
-      </span>
-      &nbsp;
+      <InlineMediumText>My Works</InlineMediumText>
       <ArrowRightIcon icon={faArrowRight} />
     </RouterLink>
   );
@@ -171,14 +165,15 @@ function HomeHeader(): JSX.Element {
   /**
    * Scroll To 'HomeHeader' Component
    */
-  const scrollToHomeHeader = () => {
+  const scrollToHomeHeader = useCallback(() => {
     if (typeof window !== 'undefined') {
       window?.scrollTo({
         top: (headerRef.current?.offsetHeight ?? 0) + 70,
         behavior: 'smooth',
       });
     }
-  };
+  }, []);
+
   return (
     <HomeHeaderBlock
       ref={headerRef}

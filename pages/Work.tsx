@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import type { CSSProperties } from 'styled-components';
-import { FixedSizeList } from 'react-window';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FixedSizeList } from 'react-window';
+import type { CSSProperties } from 'styled-components';
+import styled from 'styled-components';
 import { getRandomTheme } from '../lib/theme/work/github/GithubRepository';
 
 const WorkBlock = styled.main`
@@ -18,6 +18,10 @@ const WorkTitle = styled.h1`
   @media only screen and (max-width: 600px) {
     font-size: 2.4rem;
   }
+`;
+
+const ListWrapper = styled.div`
+  margin: 2rem auto;
 `;
 
 const githubRepoArray = [
@@ -102,7 +106,7 @@ function Work(): JSX.Element {
       </Head>
       <WorkTitle>My Works</WorkTitle>
       <p>&#x28;Theme is Random&#x29;</p>
-      <div style={{ margin: '2rem auto' }}>
+      <ListWrapper>
         <FixedSizeList
           width={rowWidth}
           height={rowHeight * rowCount}
@@ -111,7 +115,7 @@ function Work(): JSX.Element {
         >
           {RepoRow}
         </FixedSizeList>
-      </div>
+      </ListWrapper>
     </WorkBlock>
   );
 }
