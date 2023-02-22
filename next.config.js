@@ -55,9 +55,21 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['unpkg.com', 'github-readme-stats.vercel.app'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'unpkg.com',
+        pathname: '/simple-icons@v5/icons/*.svg',
+      },
+      {
+        protocol: 'https',
+        hostname: 'github-readme-stats.vercel.app',
+        pathname: '/api/pin',
+      },
+    ],
     dangerouslyAllowSVG: true,
-    // contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    minimumCacheTTL: 60 * 60 * 24 * 30,
   },
   compiler: {
     styledComponents: true,
