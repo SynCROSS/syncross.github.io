@@ -25,6 +25,7 @@ const CenteredVerticalBlock = forwardRef<
   </section>
 ));
 
+CenteredVerticalBlock.displayName = 'CenteredVerticalBlock';
 CenteredVerticalBlock.defaultProps = {
   className: '',
 };
