@@ -90,7 +90,6 @@ function RepoRow({
         title={`${repo}`}
         width={rowWidth}
         height={rowHeight}
-        quality={100}
         loading="lazy"
       />
     </Link>

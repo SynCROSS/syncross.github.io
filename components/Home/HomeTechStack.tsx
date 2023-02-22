@@ -77,7 +77,6 @@ function HomeTechStack(): JSX.Element {
                   alt={`${techStack}`}
                   width={70}
                   height={70}
-                  quality={100}
                   loading="lazy"
                 />
               </TechListItem>
