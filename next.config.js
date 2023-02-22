@@ -30,6 +30,7 @@ const securityHeaders = [
       "script-src 'self' https://vitals.vercel-insights.com 'unsafe-eval'; " +
       "script-src-elem 'self' https://vitals.vercel-insights.com 'unsafe-eval'; " +
       "font-src 'self'; " +
+      "style-src 'self' fonts.googleapis.com 'unsafe-inline'; " +
       "style-src-elem 'self' fonts.googleapis.com 'unsafe-inline'; " +
       "img-src 'self' unpkg.com github-readme-stats.vercel.app data:; " +
       "frame-ancestors 'self'",
