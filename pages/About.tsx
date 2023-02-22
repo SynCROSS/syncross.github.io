@@ -2,16 +2,10 @@ import Head from 'next/head';
 import styled from 'styled-components';
 
 const AboutBlock = styled.main`
-  width: 50%;
   margin: auto;
-
-  @media only screen and (max-width: 600px) {
-    width: 90%;
-  }
 `;
 
 const AboutTitle = styled.h1`
-  margin: 1rem;
   font-size: 3rem;
 
   @media only screen and (max-width: 600px) {
@@ -22,7 +16,7 @@ const AboutTitle = styled.h1`
 const AboutContext = styled.p`
   text-align: left;
   font-size: 1.5rem;
-  margin: 1rem;
+  margin: 0 1.5rem;
 
   @media only screen and (max-width: 600px) {
     font-size: 1.2rem;
