@@ -134,10 +134,10 @@ const ArrowButton = styled.button`
   font-size: 2rem;
   color: #f8f8f8;
   background-color: #000;
-  
+
   @media (hover: hover) {
     transition: all 0.2s ease-in-out;
-    transform: translate()
+    transform: translate();
     &:hover {
       background-color: #222;
       color: #fff;
