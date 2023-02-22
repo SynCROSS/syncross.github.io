@@ -79,6 +79,7 @@ function RepoRow({
   return (
     <Link
       href={getRepoURL(`${repo}`)}
+      // skipcq: JS-0394
       style={style}
       target="_blank"
       rel="noopener noreferrer"
