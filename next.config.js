@@ -22,13 +22,13 @@ const securityHeaders = [
   {
     key: 'Content-Security-Policy',
     value:
-      "default-src 'self' https://vitals.vercel-insights.com 'unsafe-inline'; " +
+      "default-src 'self';" +
       "object-src 'none'; " +
       'report-uri https://vitals.vercel-insights.com; ' +
       'report-to https://vitals.vercel-insights.com; ' +
       "connect-src 'self' https://vitals.vercel-insights.com; " +
-      "script-src 'self' 'unsafe-eval'; " +
-      "script-src-elem 'self' 'unsafe-inline'; " +
+      "script-src 'self' https://vitals.vercel-insights.com 'unsafe-eval'; " +
+      "script-src-elem 'self' https://vitals.vercel-insights.com 'unsafe-eval'; " +
       "font-src 'self'; " +
       "style-src-elem 'self' fonts.googleapis.com 'unsafe-inline'; " +
       "img-src 'self' unpkg.com github-readme-stats.vercel.app data:; " +
