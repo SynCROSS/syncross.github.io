@@ -1,7 +1,28 @@
 import Link from 'next/link';
+import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
-const FooterBlock = styled.footer`
+type CenteredFooterProps = PropsWithChildren<{
+  className?: HTMLAttributes<HTMLElement>['className'];
+}>;
+
+// skipcq: JS-D1001
+const CenteredFooter: FC<CenteredFooterProps> = function CenteredFooter({
+  children,
+  className = '',
+}) {
+  return (
+    <footer className={`flex jc-center ai-center ${className}`}>
+      {children}
+    </footer>
+  );
+};
+
+CenteredFooter.defaultProps = {
+  className: '',
+};
+
+const FooterBlock = styled(CenteredFooter)`
   width: 100%;
   background-color: #000;
   color: #eee;
@@ -24,7 +45,7 @@ const year = new Date().getFullYear();
 // skipcq: JS-D1001
 function Footer(): JSX.Element {
   return (
-    <FooterBlock className="flex jc-center ai-center">
+    <FooterBlock>
       Copyright &copy;&nbsp;
       <span className="year">{year}</span>
       &nbsp;Made by&nbsp;

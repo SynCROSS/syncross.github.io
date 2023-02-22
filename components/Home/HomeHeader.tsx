@@ -1,10 +1,36 @@
 import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
-import { useCallback, useRef } from 'react';
+import {
+  forwardRef,
+  useCallback,
+  useRef,
+  type HTMLAttributes,
+  type PropsWithChildren,
+} from 'react';
 import styled from 'styled-components';
 
-const HomeHeaderBlock = styled.div`
+type CenteredVerticalBlockProps = PropsWithChildren<{
+  className?: HTMLAttributes<HTMLElement>['className'];
+}>;
+const CenteredVerticalBlock = forwardRef<
+  HTMLElement,
+  CenteredVerticalBlockProps
+>(({ children, className = '' }, ref) => (
+  <section
+    ref={ref}
+    className={`flex jc-center ai-center flex-direction-col ${className}`}
+  >
+    {children}
+  </section>
+));
+
+CenteredVerticalBlock.displayName = 'CenteredVerticalBlock';
+CenteredVerticalBlock.defaultProps = {
+  className: '',
+};
+
+const HomeHeaderBlock = styled(CenteredVerticalBlock)`
   width: 100vw;
   min-height: 90vh;
 
@@ -134,10 +160,10 @@ const ArrowButton = styled.button`
   font-size: 2rem;
   color: #f8f8f8;
   background-color: #000;
-  
+
   @media (hover: hover) {
     transition: all 0.2s ease-in-out;
-    transform: translate()
+    transform: translate();
     &:hover {
       background-color: #222;
       color: #fff;
@@ -152,7 +178,7 @@ const ArrowDownIcon = styled(FontAwesomeIcon)`
 // skipcq: JS-D1001
 function MyWorksButton(): JSX.Element {
   return (
-    <RouterLink href="/Work" className="flex ai-center">
+    <RouterLink href="/Work">
       <InlineMediumText>My Works</InlineMediumText>
       <ArrowRightIcon icon={faArrowRight} />
     </RouterLink>
@@ -161,7 +187,7 @@ function MyWorksButton(): JSX.Element {
 
 // skipcq: JS-D1001
 function HomeHeader(): JSX.Element {
-  const headerRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
   /**
    * Scroll To 'HomeHeader' Component
    */
@@ -175,20 +201,13 @@ function HomeHeader(): JSX.Element {
   }, []);
 
   return (
-    <HomeHeaderBlock
-      ref={headerRef}
-      className="flex jc-center ai-center flex-direction-col"
-    >
+    <HomeHeaderBlock ref={headerRef}>
       <Job>MERN Stack Developer</Job>
       <HeadLine>
         SynCROSS, <br /> The Knowledge Explorer
       </HeadLine>
       <MyWorksButton />
-      <ArrowButton
-        className="flex jc-center ai-center"
-        title="Scroll Down Button"
-        onClick={scrollToHomeHeader}
-      >
+      <ArrowButton title="Scroll Down Button" onClick={scrollToHomeHeader}>
         <ArrowDownIcon icon={faArrowDown} />
       </ArrowButton>
     </HomeHeaderBlock>
