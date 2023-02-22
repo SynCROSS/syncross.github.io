@@ -45,8 +45,10 @@ const TechListItem = styled.li`
   margin: 1rem;
   transition: all 0.2s ease-in-out;
 
-  &:hover {
-    background-color: #fcfcfc;
+  @media (hover: hover) {
+    &:hover {
+      background-color: #fcfcfc;
+    }
   }
 `;
 
