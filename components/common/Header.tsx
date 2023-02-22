@@ -10,6 +10,7 @@ type CenterAlignedHeaderProps = PropsWithChildren<
   }
 >;
 
+// skipcq: JS-D1001
 const CenterAlignedHeader: FC<CenterAlignedHeaderProps> =
   function CenterAlignedHeader({ children, className = '' }) {
     return (

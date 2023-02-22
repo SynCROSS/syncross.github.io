@@ -5,6 +5,7 @@ import styled from 'styled-components';
 type CenteredVerticalBlockProps = PropsWithChildren<{
   className?: HTMLAttributes<HTMLElement>['className'];
 }>;
+// skipcq: JS-D1001
 const CenteredVerticalBlock: FC<CenteredVerticalBlockProps> =
   function CenteredVerticalBlock({ children, className = '' }) {
     return (

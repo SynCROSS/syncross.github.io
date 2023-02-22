@@ -5,6 +5,7 @@ import styled from 'styled-components';
 type CenteredSectionProps = PropsWithChildren<{
   className?: HTMLAttributes<HTMLElement>['className'];
 }>;
+// skipcq: JS-D1001
 const CenteredSection: FC<CenteredSectionProps> = function CenteredSection({
   children,
   className = '',
@@ -23,6 +24,7 @@ CenteredSection.defaultProps = {
 type CenteredBlockProps = PropsWithChildren<{
   className?: HTMLAttributes<HTMLDivElement>['className'];
 }>;
+// skipcq: JS-D1001
 const CenteredBlock: FC<CenteredBlockProps> = function CenteredBlock({
   children,
   className = '',

@@ -6,6 +6,7 @@ type CenteredFooterProps = PropsWithChildren<{
   className?: HTMLAttributes<HTMLElement>['className'];
 }>;
 
+// skipcq: JS-D1001
 const CenteredFooter: FC<CenteredFooterProps> = function CenteredFooter({
   children,
   className = '',

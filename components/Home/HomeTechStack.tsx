@@ -19,6 +19,7 @@ const TechStackTitle = styled.h1`
 type CenteredListProps = PropsWithChildren<{
   className?: HTMLAttributes<HTMLUListElement>['className'];
 }>;
+// skipcq: JS-D1001
 const CenteredList: FC<CenteredListProps> = function CenteredSection({
   children,
   className = '',
