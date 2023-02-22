@@ -47,7 +47,7 @@ const TechListItem = styled.li`
 
   @media (hover: hover) {
     &:hover {
-      background-color: #fcfcfc;
+      background-color: #eee;
     }
   }
 `;
