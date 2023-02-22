@@ -206,11 +206,7 @@ function HomeHeader(): JSX.Element {
         SynCROSS, <br /> The Knowledge Explorer
       </HeadLine>
       <MyWorksButton />
-      <ArrowButton
-        className="flex jc-center ai-center"
-        title="Scroll Down Button"
-        onClick={scrollToHomeHeader}
-      >
+      <ArrowButton title="Scroll Down Button" onClick={scrollToHomeHeader}>
         <ArrowDownIcon icon={faArrowDown} />
       </ArrowButton>
     </HomeHeaderBlock>
