@@ -1,7 +1,26 @@
 import Head from 'next/head';
+import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
-const AboutBlock = styled.main`
+type CenteredVerticalBlockProps = PropsWithChildren<{
+  className?: HTMLAttributes<HTMLElement>['className'];
+}>;
+const CenteredVerticalBlock: FC<CenteredVerticalBlockProps> =
+  function CenteredVerticalBlock({ children, className = '' }) {
+    return (
+      <main
+        className={`flex jc-center ai-center flex-direction-col ${className}`}
+      >
+        {children}
+      </main>
+    );
+  };
+
+CenteredVerticalBlock.defaultProps = {
+  className: '',
+};
+
+const AboutBlock = styled(CenteredVerticalBlock)`
   margin: auto;
 `;
 
@@ -26,7 +45,7 @@ const AboutContext = styled.p`
 // skipcq: JS-D1001
 function About(): JSX.Element {
   return (
-    <AboutBlock className="flex jc-center ai-center flex-direction-col">
+    <AboutBlock>
       <Head>
         <title>About</title>
         <link rel="canonical" href="https://syncross.vercel.app/About" />
