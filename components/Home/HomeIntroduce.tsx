@@ -43,7 +43,7 @@ const IntroduceContent = styled.p`
 // skipcq: JS-D1001
 function Intro(): JSX.Element {
   return (
-    <IntroBlock className="flex flex-direction-col">
+    <IntroBlock>
       <IntroduceTitle>Introduce</IntroduceTitle>
       <IntroduceContent>
         Oh hi there! My name is SynCROSS, <br />
