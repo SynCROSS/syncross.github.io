@@ -22,17 +22,17 @@ const securityHeaders = [
   {
     key: 'Content-Security-Policy',
     value:
-      `default-src 'self' vitals.vercel-insights.com 'unsafe-inline'; ` +
-      `object-src 'none'; ` +
-      `report-uri vitals.vercel-insights.com ; ` +
-      `report-to vitals.vercel-insights.com ; ` +
-      `connect-src 'self' vitals.vercel-insights.co vitals.vercel-insights.com ; ` +
-      `script-src 'self' 'unsafe-eval'; ` +
-      `script-src-elem 'self' 'unsafe-inline'; ` +
-      `font-src 'self'; ` +
-      `style-src-elem 'self' fonts.googleapis.com 'unsafe-inline'; ` +
-      `img-src 'self' unpkg.com github-readme-stats.vercel.app data:; ` +
-      `frame-ancestors 'self'`,
+      `default-src 'self' https://vitals.vercel-insights.com 'unsafe-inline'; 
+      object-src 'none'; 
+      report-uri https://vitals.vercel-insights.com; 
+      report-to https://vitals.vercel-insights.com; 
+      connect-src 'self' https://vitals.vercel-insights.com; 
+      script-src 'self' 'unsafe-eval'; 
+      script-src-elem 'self' 'unsafe-inline'; 
+      font-src 'self'; 
+      style-src-elem 'self' fonts.googleapis.com 'unsafe-inline'; 
+      img-src 'self' unpkg.com github-readme-stats.vercel.app data:; 
+      frame-ancestors 'self'`
   },
   {
     key: 'Permissions-Policy',
