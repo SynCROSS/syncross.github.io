@@ -103,6 +103,7 @@ function HomeIntroduce(): JSX.Element {
           height={300}
           alt="SynCROSS"
           loading="lazy"
+          // skipcq: JS-0394
           style={{ aspectRatio: 1, borderRadius: '50%' }}
         />
       </IntroWrapper>
