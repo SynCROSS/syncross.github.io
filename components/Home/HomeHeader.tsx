@@ -152,7 +152,7 @@ const ArrowDownIcon = styled(FontAwesomeIcon)`
 // skipcq: JS-D1001
 function MyWorksButton(): JSX.Element {
   return (
-    <RouterLink href="/Work" className="flex ai-center">
+    <RouterLink href="/Work">
       <InlineMediumText>My Works</InlineMediumText>
       <ArrowRightIcon icon={faArrowRight} />
     </RouterLink>
