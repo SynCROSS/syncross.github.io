@@ -40,11 +40,11 @@ CenteredBlock.defaultProps = {
 
 const HomeIntroduceBlock = styled(CenteredSection)`
   width: 100%;
+  min-height: 100vh;
 
   text-align: start;
   background-color: #111111;
   color: #fefefe;
-  min-height: 100vh;
 `;
 
 const IntroWrapper = styled(CenteredBlock)`
@@ -52,6 +52,7 @@ const IntroWrapper = styled(CenteredBlock)`
 
   @media only screen and (max-width: 600px) {
     flex-wrap: wrap-reverse;
+    margin: 7rem auto;
   }
 `;
 
