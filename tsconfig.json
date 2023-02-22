@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "typeRoots": ["node_modules/@total-typescript"],
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": false,
@@ -20,6 +21,12 @@
       }
     ]
   },
-  "include": [".eslintrc.js", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    ".eslintrc.js",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "@total-typescript/ts-reset"
+  ],
   "exclude": ["node_modules"]
 }
