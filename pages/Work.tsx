@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Children } from 'react';
 import { FixedSizeList } from 'react-window';
 import type { CSSProperties } from 'styled-components';
 import styled from 'styled-components';
@@ -31,36 +32,6 @@ const githubRepoArray = [
 
 const GITHUB_USERNAME = 'SynCROSS';
 
-/**
- * Get Repository Card Image URL
- * @param {string} repo Repository name
- * @returns {string} Repository Card Image URL
- */
-const getRepoImgURL = (repo: string): string => {
-  if (!repo) {
-    return '';
-  }
-
-  const params = new URLSearchParams({
-    username: GITHUB_USERNAME,
-    repo,
-    theme: getRandomTheme(),
-    hide_border: 'true',
-    show_icons: 'true',
-    count_private: 'true',
-  }).toString();
-
-  return `https://github-readme-stats.vercel.app/api/pin?${params}`;
-};
-
-/**
- * Get Full Repository URL
- * @param {string} repo Repository name
- * @returns {string} Full repository url
- */
-const getRepoURL = (repo: string): string =>
-  repo && `https://github.com/${GITHUB_USERNAME}/${repo}`;
-
 const rowWidth = 300;
 const rowHeight = 90;
 const itemCount = githubRepoArray?.length || 0;
@@ -78,19 +49,29 @@ function RepoRow({
 
   return (
     <Link
-      href={getRepoURL(`${repo}`)}
+      href={`https://github.com/${GITHUB_USERNAME}/${repo}`}
       // skipcq: JS-0394
       style={style}
       target="_blank"
       rel="noopener noreferrer"
     >
       <Image
-        src={getRepoImgURL(`${repo}`)}
+        src={`https://github-readme-stats.vercel.app/api/pin?${new URLSearchParams(
+          {
+            username: GITHUB_USERNAME,
+            repo,
+            theme: getRandomTheme(),
+            hide_border: 'true',
+            show_icons: 'true',
+            count_private: 'true',
+          },
+        ).toString()}`}
         alt={`${repo}`}
         title={`${repo}`}
         width={rowWidth}
         height={rowHeight}
-        loading="lazy"
+        // loading="lazy"
+        priority
       />
     </Link>
   );
@@ -103,6 +84,24 @@ function Work(): JSX.Element {
       <Head>
         <title>My Works</title>
         <link rel="canonical" href="https://syncross.vercel.app/Work" />
+        {Children.toArray(
+          githubRepoArray.map(repo => (
+            <link
+              rel="preload"
+              href={`https://github-readme-stats.vercel.app/api/pin?${new URLSearchParams(
+                {
+                  username: GITHUB_USERNAME,
+                  repo,
+                  theme: getRandomTheme(),
+                  hide_border: 'true',
+                  show_icons: 'true',
+                  count_private: 'true',
+                },
+              ).toString()}`}
+              as="image"
+            />
+          )),
+        )}
       </Head>
       <WorkTitle>My Works</WorkTitle>
       <p>&#x28;Theme is Random&#x29;</p>
