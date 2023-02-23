@@ -2,25 +2,25 @@ import Head from 'next/head';
 import Script from 'next/script';
 
 interface SeoProps {
-  title: string;
-  siteTitle: string;
-  description: string;
+  title?: string;
+  siteTitle?: string;
+  description?: string;
 
   /**
    * Must Start With '/'
    */
-  canonicalHref: string;
+  canonicalHref?: string;
 }
 
 export default function SEO({
   title = 'SynCROSS',
-  siteTitle,
+  siteTitle = '',
   description = "I'm MERN Stack Developer. Let's Work Together To Make Your Website Perfect.",
   canonicalHref = '/',
 }: SeoProps) {
   return (
     <Head>
-      <title>{`${title} | ${siteTitle}`}</title>
+      <title>{`${title}${!!siteTitle && ' | '}${siteTitle}`}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta charSet="UTF-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
