@@ -66,8 +66,8 @@ function RepoRow({
             count_private: 'true',
           },
         ).toString()}`}
-        alt={`${repo}`}
-        title={`${repo}`}
+        alt={repo}
+        title={repo}
         width={rowWidth}
         height={rowHeight}
         // loading="lazy"

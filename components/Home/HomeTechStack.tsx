@@ -72,9 +72,9 @@ function HomeTechStack(): JSX.Element {
             techStacks.map(techStack => (
               <TechListItem>
                 <Image
-                  src={getIconURL(`${techStack}`)}
-                  title={`${techStack}`}
-                  alt={`${techStack}`}
+                  src={getIconURL(techStack)}
+                  alt={techStack}
+                  title={techStack}
                   width={70}
                   height={70}
                   loading="lazy"
