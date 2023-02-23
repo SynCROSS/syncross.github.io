@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import Head from 'next/head';
+import SEO from '../components/common/Seo';
 import HomeHeader from '../components/Home/HomeHeader';
 
 // TODO Make Custom Skeleton UI For HomeIntroduce
@@ -22,10 +22,7 @@ const HomeTechStack = dynamic(
 function Home(): JSX.Element {
   return (
     <main className="flex jc-center ai-center flex-direction-col">
-      <Head>
-        <title>SynCROSS</title>
-        <link rel="canonical" href="https://syncross.vercel.app/" />
-      </Head>
+      <SEO />
       <HomeHeader />
       <HomeIntroduce />
       <HomeTechStack />

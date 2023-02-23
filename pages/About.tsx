@@ -1,6 +1,6 @@
-import Head from 'next/head';
 import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
 import styled from 'styled-components';
+import SEO from '../components/common/Seo';
 
 type CenteredVerticalBlockProps = PropsWithChildren<{
   className?: HTMLAttributes<HTMLElement>['className'];
@@ -47,10 +47,7 @@ const AboutContext = styled.p`
 function About(): JSX.Element {
   return (
     <AboutBlock>
-      <Head>
-        <title>About</title>
-        <link rel="canonical" href="https://syncross.vercel.app/About" />
-      </Head>
+      <SEO siteTitle="About" canonicalHref="/About" />
       <AboutTitle>About</AboutTitle>
       <AboutContext>
         Hello, I&apos;m <strong>SynCROSS</strong>,

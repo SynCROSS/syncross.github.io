@@ -1,9 +1,9 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FixedSizeList } from 'react-window';
 import type { CSSProperties } from 'styled-components';
 import styled from 'styled-components';
+import SEO from '../components/common/Seo';
 import { getRandomTheme } from '../lib/theme/work/github/GithubRepository';
 
 const WorkBlock = styled.main`
@@ -79,10 +79,7 @@ function RepoRow({
 function Work(): JSX.Element {
   return (
     <WorkBlock>
-      <Head>
-        <title>My Works</title>
-        <link rel="canonical" href="https://syncross.vercel.app/Work" />
-      </Head>
+      <SEO siteTitle="My Works" canonicalHref="/Work" />
       <WorkTitle>My Works</WorkTitle>
       <p>&#x28;Theme is Random&#x29;</p>
       <ListWrapper>
