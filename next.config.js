@@ -26,7 +26,7 @@ const securityHeaders = [
       "object-src 'none'; " +
       'report-uri https://vitals.vercel-insights.com; ' +
       'report-to https://vitals.vercel-insights.com; ' +
-      "connect-src 'self' https://vitals.vercel-insights.com; " +
+      "connect-src 'self' https://vitals.vercel-insights.com https://github-readme-stats.vercel.app; " +
       "script-src 'self' https://vitals.vercel-insights.com 'unsafe-eval'; " +
       "script-src-elem 'self' https://vitals.vercel-insights.com 'unsafe-eval'; " +
       "font-src 'self'; " +
@@ -53,7 +53,7 @@ const securityHeaders = [
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
   images: {
     remotePatterns: [
