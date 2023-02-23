@@ -16,10 +16,7 @@ config.autoAddCss = false;
  * @param metric Metrics Of Website
  */
 export function reportWebVitals(metric: NextWebVitalsMetric): void {
-  window?.console.log(
-    'file: _app.tsx ~ line 12 ~ reportWebVitals ~ metric',
-    metric,
-  );
+  console.log('file: _app.tsx ~ line 12 ~ reportWebVitals ~ metric', metric);
 }
 
 const TITLE = 'SynCROSS';
