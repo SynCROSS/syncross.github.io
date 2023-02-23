@@ -1,8 +1,8 @@
 import { config } from '@fortawesome/fontawesome-svg-core';
+import { Poppins } from '@next/font/google';
 import type { AppProps, NextWebVitalsMetric } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
-import { createGlobalStyle, css } from 'styled-components';
 import Layout from '../components/Layout';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -26,109 +26,10 @@ const TITLE = 'SynCROSS';
 const DESCRIPTION =
   "I'm MERN Stack Developer. Let's Work Together To Make Your Website Perfect.";
 
-const structuredData = {
-  '@context': 'http://schema.org/',
-  type: 'Person',
-  jobTitle: 'Frontend Developer',
-  name: 'SynCROSS',
-  telephone: '+82-10-9874-2668',
-  url: 'https://syncross.vercel.app',
-};
-
-const IPHONE_RETINA_ICON_SIZE = '120x120';
-const IPAD_ICON_SIZE = '157x157';
-const IPAD_RETINA_ICON_SIZE = '167x167';
-const IPHONE_ICON_SIZE = '180x180';
-
-type FontWeight = keyof typeof fontWeights;
-const fontWeights = {
-  Thin: 100,
-  Hairline: 100,
-  UltraLight: 200,
-  ExtraLight: 200,
-  Light: 300,
-  Normal: 400,
-  Regular: 400,
-  Medium: 500,
-  SemiBold: 600,
-  DemiBold: 600,
-  Bold: 700,
-  ExtraBold: 800,
-  UltraBold: 800,
-  Heavy: 900,
-  Black: 900,
-  ExtraBlack: 950,
-  UltraBlack: 950,
-};
-
-type ExtractFromFileNameOptions = {
-  separator?: string;
-};
-
-/**
- *
- * @param {string} font full font name includes file extension (ex: Poppins-Black.ttf)
- * @param {ExtractFromFileNameOptions} options
- * @returns {string} font name
- */
-const getFontName = (
-  font: string,
-  { separator = '-' }: ExtractFromFileNameOptions = {},
-): string => font.split(separator)[0];
-
-/**
- *
- * @param {string} font full font name includes file extension (ex: Poppins-Black.ttf)
- * @param {{extension: string}} options
- * @returns {string} File Name Without Extension
- */
-const removeExtension = (font: string, { extension = 'ttf' } = {}): string =>
-  font.replace(new RegExp(`.${extension}$`, 'ig'), '');
-
-/**
- *
- * @param {string} font full font name includes file extension (ex: Poppins-Black.ttf)
- * @param {ExtractFromFileNameOptions} options
- * @returns {string} Font Weight
- */
-const getFontWeight = (
-  font: string,
-  { separator = '-' }: ExtractFromFileNameOptions = {},
-): FontWeight => removeExtension(font.split(separator)[1]) as FontWeight;
-
-const GlobalStyles = createGlobalStyle`
-${() =>
-  css`
-    ${[
-      'Poppins-Black.ttf',
-      'Poppins-BlackItalic.ttf',
-      'Poppins-Bold.ttf',
-      'Poppins-BoldItalic.ttf',
-      'Poppins-ExtraBold.ttf',
-      'Poppins-ExtraBoldItalic.ttf',
-      'Poppins-ExtraLight.ttf',
-      'Poppins-Italic.ttf',
-      'Poppins-Light.ttf',
-      'Poppins-LightItalic.ttf',
-      'Poppins-Medium.ttf',
-      'Poppins-MediumItalic.ttf',
-      'Poppins-Regular.ttf',
-      'Poppins-SemiBold.ttf',
-      'Poppins-SemiBoldItalic.ttf',
-      'Poppins-Thin.ttf',
-      'Poppins-ThinItalic.ttf',
-    ].reduce(
-      (result, font) => `${result} @font-face {
-    font-family: ${getFontName(font)};
-    src: url('/fonts/${getFontName(font)}/${font}') format('truetype');
-    font-style: ${font.includes('Italic') ? 'italic' : 'normal'};
-    font-weight: ${fontWeights[getFontWeight(font)] ?? 400};
-    font-display: swap;
-  }`,
-      '',
-    )}
-  `}
-`;
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+});
 
 // skipcq: JS-D1001
 export default function App({ Component }: AppProps): JSX.Element {
@@ -144,17 +45,17 @@ export default function App({ Component }: AppProps): JSX.Element {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="robots" content="all" />
 
-          <meta name="title" content={`${TITLE}`} />
-          <meta name="description" content={`${DESCRIPTION}`} key="desc" />
+          <meta name="title" content={TITLE} />
+          <meta name="description" content={DESCRIPTION} key="desc" />
           <meta name="author" content="SynCROSS" />
 
-          <meta name="application-name" content={`${TITLE}`} />
+          <meta name="application-name" content={TITLE} />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
             name="apple-mobile-web-app-status-bar-style"
             content="default"
           />
-          <meta name="apple-mobile-web-app-title" content={`${TITLE}`} />
+          <meta name="apple-mobile-web-app-title" content={TITLE} />
 
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
@@ -163,8 +64,8 @@ export default function App({ Component }: AppProps): JSX.Element {
           <meta name="msapplication-tap-highlight" content="no" />
 
           <meta property="og:type" content="website" />
-          <meta property="og:title" content={`${TITLE}`} />
-          <meta property="og:description" content={`${DESCRIPTION}`} />
+          <meta property="og:title" content={TITLE} />
+          <meta property="og:description" content={DESCRIPTION} />
           <meta property="og:image" content="/icon.jpg" />
           <meta property="og:image:secure_url" content="/icon.jpg" />
           <meta property="og:image:type" content="image/jpeg" />
@@ -175,8 +76,8 @@ export default function App({ Component }: AppProps): JSX.Element {
 
           <meta property="twitter:card" content="summary" />
           <meta property="twitter:url" content="https://syncross.vercel.app/" />
-          <meta property="twitter:title" content={`${TITLE}`} />
-          <meta property="twitter:description" content={`${DESCRIPTION}`} />
+          <meta property="twitter:title" content={TITLE} />
+          <meta property="twitter:description" content={DESCRIPTION} />
           <meta property="twitter:image" content="/icon.jpg" />
 
           <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -191,33 +92,40 @@ export default function App({ Component }: AppProps): JSX.Element {
 
           <link
             rel="apple-touch-icon"
-            sizes={IPHONE_ICON_SIZE}
-            href={`apple-touch-icon-${IPHONE_ICON_SIZE}.png`}
+            sizes="180x180"
+            href="apple-touch-icon-180x180.png"
           />
           <link
             rel="apple-touch-icon"
-            sizes={IPAD_ICON_SIZE}
-            href={`apple-touch-icon-${IPAD_ICON_SIZE}.png`}
+            sizes="157x157"
+            href="apple-touch-icon-157x157.png"
           />
           <link
             rel="apple-touch-icon"
-            sizes={IPHONE_RETINA_ICON_SIZE}
-            href={`apple-touch-icon-${IPHONE_RETINA_ICON_SIZE}.png`}
+            sizes="120x120"
+            href="apple-touch-icon-120x120.png"
           />
           <link
             rel="apple-touch-icon"
-            sizes={IPAD_RETINA_ICON_SIZE}
-            href={`apple-touch-icon-${IPAD_RETINA_ICON_SIZE}.png`}
+            sizes="167x167"
+            href="apple-touch-icon-167x167.png"
           />
 
           <link rel="apple-touch-icon" href="apple-touch-icon.png" />
         </Head>
+        <style jsx global>{`
+          html {
+            font-family: ${poppins.style.fontFamily};
+          }
+        `}</style>
         <Script
           id="structured-data"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{
+            __html:
+              '{"@context":"http://schema.org/","type":"Person","jobTitle":"Frontend Developer","name":"SynCROSS","telephone":"+82-10-9874-2668","url":"https://syncross.vercel.app"}',
+          }}
         />
-        <GlobalStyles />
         <Component />
       </Layout>
     </ViewportProvider>
