@@ -47,6 +47,7 @@ module.exports = {
       },
     ],
     'react/jsx-props-no-spreading': 'warn',
+    'react/no-unknown-property': ['error', { ignore: ['jsx', 'global'] }],
     'no-param-reassign': 'warn',
     'no-nested-ternary': 'warn',
     'import/extensions': [
