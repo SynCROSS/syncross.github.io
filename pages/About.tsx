@@ -50,24 +50,24 @@ function About(): JSX.Element {
       <SEO siteTitle="About" canonicalHref="/About" />
       <AboutTitle>About</AboutTitle>
       <AboutContext>
-        Hello, I&apos;m <strong>SynCROSS</strong>,
+        Hello, I&apos;m <b>SynCROSS</b>,
         <br />
-        The <strong>MERN</strong> Stack Developer.
+        The <b>MERN</b> Stack Developer.
         <br />I Love&nbsp;
-        <strong>Learning New Things</strong>
+        <b>Learning New Things</b>
         <br />
-        So I Learnt&nbsp;<strong>Javascript</strong>, &nbsp;
-        <strong>Typescript</strong>,&nbsp;
+        So I Learnt&nbsp;<b>Javascript</b>, &nbsp;
+        <b>Typescript</b>,&nbsp;
         <br />
-        <strong>React</strong>, &nbsp;<strong>Next.js</strong>, &nbsp;
-        <strong>Node.js</strong>, &nbsp;<strong>PostgreSQL</strong>, etc.
+        <b>React</b>, &nbsp;<b>Next.js</b>, &nbsp;
+        <b>Node.js</b>, &nbsp;<b>PostgreSQL</b>, etc.
         <br />
         If&nbsp;
-        <strong>U Wanna Hire</strong>
+        <b>U Wanna Hire</b>
         &nbsp;Me
         <br />
         Please&nbsp;
-        <strong>Contact</strong>
+        <b>Contact</b>
         .
         <br />I Hope You Feel So Good. (●&apos;◡&apos;●)
       </AboutContext>
