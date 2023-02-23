@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Children } from 'react';
 import { FixedSizeList } from 'react-window';
 import type { CSSProperties } from 'styled-components';
 import styled from 'styled-components';
@@ -46,7 +45,6 @@ function RepoRow({
   style: CSSProperties;
 }): JSX.Element {
   const repo = githubRepoArray?.[index] ?? '';
-
   return (
     <Link
       href={`https://github.com/${GITHUB_USERNAME}/${repo}`}
@@ -84,24 +82,6 @@ function Work(): JSX.Element {
       <Head>
         <title>My Works</title>
         <link rel="canonical" href="https://syncross.vercel.app/Work" />
-        {Children.toArray(
-          githubRepoArray.map(repo => (
-            <link
-              rel="preload"
-              href={`https://github-readme-stats.vercel.app/api/pin?${new URLSearchParams(
-                {
-                  username: GITHUB_USERNAME,
-                  repo,
-                  theme: getRandomTheme(),
-                  hide_border: 'true',
-                  show_icons: 'true',
-                  count_private: 'true',
-                },
-              ).toString()}`}
-              as="image"
-            />
-          )),
-        )}
       </Head>
       <WorkTitle>My Works</WorkTitle>
       <p>&#x28;Theme is Random&#x29;</p>
