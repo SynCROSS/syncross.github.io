@@ -6,8 +6,8 @@ import Document, {
   type DocumentContext,
   type DocumentInitialProps,
 } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
 import { Children } from 'react';
+import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
   /**
@@ -73,29 +73,11 @@ export default class MyDocument extends Document {
             'Poppins-SemiBoldItalic.ttf',
             'Poppins-Thin.ttf',
             'Poppins-ThinItalic.ttf',
-            'Montserrat-Black.ttf',
-            'Montserrat-BlackItalic.ttf',
-            'Montserrat-Bold.ttf',
-            'Montserrat-BoldItalic.ttf',
-            'Montserrat-ExtraBold.ttf',
-            'Montserrat-ExtraBoldItalic.ttf',
-            'Montserrat-ExtraLight.ttf',
-            'Montserrat-ExtraLight.ttf',
-            'Montserrat-Italic.ttf',
-            'Montserrat-Light.ttf',
-            'Montserrat-LightItalic.ttf',
-            'Montserrat-Medium.ttf',
-            'Montserrat-MediumItalic.ttf',
-            'Montserrat-Regular.ttf',
-            'Montserrat-SemiBold.ttf',
-            'Montserrat-SemiBoldItalic.ttf',
-            'Montserrat-Thin.ttf',
-            'Montserrat-ThinItalic.ttf',
           ].map(font =>
             Children.toArray(
               <link
-                rel={font.startsWith('Poppins') ? "preload" : "prefetch"}
-                href={`fonts/${font.split('-')[0]}/${font}`}
+                rel="preload"
+                href={`fonts/Poppins/${font}`}
                 as="font"
                 type="font/ttf"
                 crossOrigin=""
