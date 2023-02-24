@@ -27,6 +27,7 @@ function App({ Component }: AppProps) {
   return (
     <ViewportProvider>
       <Layout>
+        {/* skipcq: JS-0455 */}
         <style jsx global>{`
           html {
             font-family: ${poppins.style.fontFamily};
