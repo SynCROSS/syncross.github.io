@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 import type { FC } from 'react';
 
-interface SeoProps {
+type SeoProps = {
   title?: string;
   siteTitle?: string;
   description?: string;
@@ -11,7 +11,7 @@ interface SeoProps {
    * Must Start With '/'
    */
   canonicalHref?: string;
-}
+};
 
 const SEO: FC<SeoProps> = function SEO({
   title = 'SynCROSS',
@@ -31,6 +31,8 @@ const SEO: FC<SeoProps> = function SEO({
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="robots" content="all" />
+        <meta name="googlebot" content="all" />
+        <meta name="google" content="nositelinkssearchbox" key="sitelinks" />
         <meta name="title" content={title} />
         <meta name="description" content={description} key="desc" />
         <meta name="author" content="SynCROSS" />
@@ -90,6 +92,7 @@ const SEO: FC<SeoProps> = function SEO({
         <link
           rel="canonical"
           href={`https://syncross.vercel.app${canonicalHref}`}
+          key="canonical"
         />
       </Head>
       <Script
