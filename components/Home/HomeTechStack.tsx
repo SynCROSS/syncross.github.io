@@ -80,7 +80,7 @@ const techStacks = ['mongodb', 'express', 'react', 'nodedotjs'];
 const getIconURL = (techStack: string): string =>
   `https://unpkg.com/simple-icons@v5/icons/${techStack}.svg`;
 // skipcq: JS-D1001
-function HomeTechStack(): JSX.Element {
+function HomeTechStack() {
   return (
     <HomeTechStackBlock>
       <TechStackTitle>Tech Stack</TechStackTitle>

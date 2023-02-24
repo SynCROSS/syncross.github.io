@@ -1,3 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 // @ts-check
 
 const withPwa = require('next-pwa')({
@@ -80,15 +85,15 @@ const nextConfig = {
     styledComponents: true,
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  async headers() {
-    return [
+  headers() {
+    return Promise.resolve([
       {
         // * Apply these headers to all routes in application.
         source: '/(.*)',
         headers: securityHeaders,
       },
-    ];
+    ]);
   },
 };
 
-module.exports = withBundleAnalyzer(withPwa(nextConfig));
+export default withBundleAnalyzer(withPwa(nextConfig));

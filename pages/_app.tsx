@@ -23,7 +23,7 @@ const poppins = Poppins({
 });
 
 // skipcq: JS-D1001
-function App({ Component }: AppProps): JSX.Element {
+function App({ Component }: AppProps) {
   return (
     <ViewportProvider>
       <Layout>

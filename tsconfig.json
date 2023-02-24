@@ -26,8 +26,8 @@
     // ".eslintrc.js",
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
-    "@total-typescript/ts-reset"
+    "**/*.tsx"
+    // "@total-typescript/ts-reset"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "**/*.js"]
 }

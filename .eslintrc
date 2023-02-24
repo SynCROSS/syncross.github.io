@@ -6,10 +6,11 @@
     "node": true
   },
   "extends": [
-    "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "standard-with-typescript",
+    "plugin:@next/next/recommended",
+    "next/core-web-vitals",
     "prettier"
   ],
   "overrides": [],
@@ -24,6 +25,28 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
+    "@typescript-eslint/explicit-function-return-type": [
+      "warn",
+      {
+        "allowExpressions": true,
+        "allowTypedFunctionExpressions": false,
+        "allowHigherOrderFunctions": false,
+        "allowDirectConstAssertionInArrowFunctions": true
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "parameter",
+        "format": ["strictCamelCase"],
+        "filter": {
+          // you can expand this regex as you find more cases that require quoting that you want to allow
+          "regex": "App|Component|__N_SSP|__N_SSG",
+          "match": false
+        }
+      }
+    ],
+    "@typescript-eslint/consistent-type-definitions": ["warn", "type"]
     // "jsx-a11y/anchor-is-valid": [
     //   "error",
     //   {

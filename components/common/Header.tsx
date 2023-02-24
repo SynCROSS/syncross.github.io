@@ -365,12 +365,7 @@ type HeaderProps = {
 };
 
 // skipcq: JS-D1001
-function Header({
-  isOpened,
-  width,
-  openMenu,
-  closeMenu,
-}: HeaderProps): JSX.Element {
+function Header({ isOpened, width, openMenu, closeMenu }: HeaderProps) {
   return (
     <>
       {width <= 480 && <MenuButton title="Menu Icon" onClick={openMenu} />}

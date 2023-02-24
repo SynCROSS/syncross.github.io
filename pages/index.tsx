@@ -20,7 +20,7 @@ const HomeTechStack = dynamic(
 ) as FC;
 
 // skipcq: JS-D1001
-function Home(): JSX.Element {
+function Home() {
   return (
     <main className="flex jc-center ai-center flex-direction-col">
       <SEO />

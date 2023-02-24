@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FixedSizeList } from 'react-window';
-import type { CSSProperties } from 'styled-components';
+import { FixedSizeList, type ListChildComponentProps } from 'react-window';
 import styled from 'styled-components';
 import SEO from '../components/common/Seo';
 import { getRandomTheme } from '../lib/theme/work/github/GithubRepository';
@@ -37,13 +36,7 @@ const itemCount = githubRepoArray.length;
 const rowCount = itemCount > 5 ? 5 : itemCount;
 
 // skipcq: JS-D1001
-function RepoRow({
-  index = 0,
-  style = {},
-}: {
-  index: number;
-  style: CSSProperties;
-}): JSX.Element {
+function RepoRow({ index = 0, style = {} }: ListChildComponentProps) {
   const repo = githubRepoArray?.[index] ?? '';
   return (
     <Link
@@ -76,7 +69,7 @@ function RepoRow({
 }
 
 // skipcq: JS-D1001
-function Work(): JSX.Element {
+function Work() {
   return (
     <WorkBlock>
       <SEO siteTitle="My Works" canonicalHref="/Work" />

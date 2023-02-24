@@ -141,7 +141,7 @@ const snsPages = [
 ];
 
 // skipcq: JS-D1001
-export function NavigationList(): JSX.Element {
+export function NavigationList() {
   return (
     <ItemList>
       {Children.toArray(
@@ -156,7 +156,7 @@ export function NavigationList(): JSX.Element {
 }
 
 // skipcq: JS-D1001
-export function SnsNavigationList(): JSX.Element {
+export function SnsNavigationList() {
   return (
     <ItemList>
       {Children.toArray(

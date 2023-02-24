@@ -44,7 +44,7 @@ const AboutContext = styled.p`
 `;
 
 // skipcq: JS-D1001
-function About(): JSX.Element {
+function About() {
   return (
     <AboutBlock>
       <SEO siteTitle="About" canonicalHref="/About" />

@@ -176,7 +176,7 @@ const ArrowDownIcon = styled(FontAwesomeIcon)`
 `;
 
 // skipcq: JS-D1001
-function MyWorksButton(): JSX.Element {
+function MyWorksButton() {
   return (
     <RouterLink href="/Work">
       <InlineMediumText>My Works</InlineMediumText>
@@ -186,18 +186,16 @@ function MyWorksButton(): JSX.Element {
 }
 
 // skipcq: JS-D1001
-function HomeHeader(): JSX.Element {
+function HomeHeader() {
   const headerRef = useRef<HTMLElement>(null);
   /**
    * Scroll To 'HomeHeader' Component
    */
   const scrollToHomeHeader = useCallback(() => {
-    if (typeof window !== 'undefined') {
-      window?.scrollTo({
-        top: (headerRef.current?.offsetHeight ?? 0) + 70,
-        behavior: 'smooth',
-      });
-    }
+    scrollTo({
+      top: (headerRef.current?.offsetHeight ?? 0) + 70,
+      behavior: 'smooth',
+    });
   }, []);
 
   return (

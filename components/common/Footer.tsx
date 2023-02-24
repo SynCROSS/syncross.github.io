@@ -43,7 +43,7 @@ const GithubLink = styled(Link)`
 const year = new Date().getFullYear();
 
 // skipcq: JS-D1001
-function Footer(): JSX.Element {
+function Footer() {
   return (
     <FooterBlock>
       Copyright &copy;&nbsp;
