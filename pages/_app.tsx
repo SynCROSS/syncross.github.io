@@ -1,5 +1,5 @@
 import { config } from '@fortawesome/fontawesome-svg-core';
-import { Poppins } from "next/font/google";
+import { Poppins } from 'next/font/google';
 import Layout from 'components/Layout';
 import type { AppProps, NextWebVitalsMetric } from 'next/app';
 
