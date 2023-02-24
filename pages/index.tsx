@@ -1,7 +1,7 @@
+import SEO from 'components/common/Seo';
+import HomeHeader from 'components/Home/HomeHeader';
 import dynamic from 'next/dynamic';
-import { type FC } from 'react';
-import SEO from '../components/common/Seo';
-import HomeHeader from '../components/Home/HomeHeader';
+import type { FC } from 'react';
 
 // TODO Make Custom Skeleton UI For HomeIntroduce
 const HomeIntroduce = dynamic(

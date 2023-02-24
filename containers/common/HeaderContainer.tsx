@@ -1,8 +1,6 @@
-'use client';
-
+import Header from 'components/common/Header';
+import { useViewport } from 'lib/utility/viewport';
 import { useCallback, useState } from 'react';
-import Header from '../../components/common/Header';
-import { useViewport } from '../../lib/utility/viewport';
 
 // skipcq: JS-D1001
 function HeaderContainer() {

@@ -1,6 +1,6 @@
+import SEO from 'components/common/Seo';
 import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import SEO from '../components/common/Seo';
 
 type CenteredVerticalBlockProps = PropsWithChildren<{
   className?: HTMLAttributes<HTMLElement>['className'];

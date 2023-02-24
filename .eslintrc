@@ -48,7 +48,9 @@
         }
       }
     ],
-    "@typescript-eslint/consistent-type-definitions": ["warn", "type"]
+    "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
+    "@typescript-eslint/no-unsafe-assignment": "warn",
+    "@typescript-eslint/no-unsafe-call": "warn"
     // "jsx-a11y/anchor-is-valid": [
     //   "error",
     //   {

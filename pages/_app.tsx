@@ -1,12 +1,12 @@
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { Poppins } from '@next/font/google';
+import Layout from 'components/Layout';
 import type { AppProps, NextWebVitalsMetric } from 'next/app';
-import Layout from '../components/Layout';
 
-import { ViewportProvider } from '../lib/utility/viewport';
+import { ViewportProvider } from 'lib/utility/viewport';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import '../styles/globals.css';
+import 'styles/globals.css';
 
 config.autoAddCss = false;
 

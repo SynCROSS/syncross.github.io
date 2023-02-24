@@ -1,6 +1,6 @@
+import Footer from 'components/common/Footer';
+import HeaderContainer from 'containers/common/HeaderContainer';
 import type { PropsWithChildren } from 'react';
-import HeaderContainer from '../containers/common/HeaderContainer';
-import Footer from './common/Footer';
 
 type LayoutProps<T = Record<string, unknown>> = PropsWithChildren<T>;
 

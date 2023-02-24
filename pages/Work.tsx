@@ -1,9 +1,9 @@
+import SEO from 'components/common/Seo';
+import { getRandomTheme } from 'lib/theme/work/github/GithubRepository';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FixedSizeList, type ListChildComponentProps } from 'react-window';
 import styled from 'styled-components';
-import SEO from '../components/common/Seo';
-import { getRandomTheme } from '../lib/theme/work/github/GithubRepository';
 
 const WorkBlock = styled.main`
   align-items: baseline;
