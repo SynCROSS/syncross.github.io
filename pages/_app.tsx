@@ -3,8 +3,9 @@ import { Poppins } from '@next/font/google';
 import type { AppProps, NextWebVitalsMetric } from 'next/app';
 import Layout from '../components/Layout';
 
-import '@fortawesome/fontawesome-svg-core/styles.css';
 import { ViewportProvider } from '../lib/utility/viewport';
+
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import '../styles/globals.css';
 
 config.autoAddCss = false;
