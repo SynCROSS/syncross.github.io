@@ -1,8 +1,4 @@
 import Document, {
-  Head,
-  Html,
-  Main,
-  NextScript,
   type DocumentContext,
   type DocumentInitialProps,
 } from 'next/document';
@@ -46,19 +42,5 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
-  }
-
-  // skipcq: JS-D1001
-  render(): JSX.Element {
-    return (
-      <Html lang="en-US">
-        <Head />
-        <body>
-          <Main />
-          <NextScript />
-          <noscript>Your Browser Is Too Old To Use Javascript</noscript>
-        </body>
-      </Html>
-    );
   }
 }
