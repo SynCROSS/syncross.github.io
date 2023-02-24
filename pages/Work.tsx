@@ -33,7 +33,7 @@ const GITHUB_USERNAME = 'SynCROSS';
 
 const rowWidth = 300;
 const rowHeight = 90;
-const itemCount = githubRepoArray?.length || 0;
+const itemCount = githubRepoArray.length;
 const rowCount = itemCount > 5 ? 5 : itemCount;
 
 // skipcq: JS-D1001
