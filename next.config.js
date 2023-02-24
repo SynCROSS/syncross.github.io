@@ -96,4 +96,4 @@ const nextConfig = {
   },
 };
 
-export default withBundleAnalyzer(withPwa(nextConfig));
+module.exports = withBundleAnalyzer(withPwa(nextConfig));
