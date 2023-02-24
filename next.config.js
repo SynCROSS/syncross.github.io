@@ -32,8 +32,8 @@ const securityHeaders = [
       'report-uri https://vitals.vercel-insights.com; ' +
       'report-to https://vitals.vercel-insights.com; ' +
       "connect-src 'self' https://vitals.vercel-insights.com https://github-readme-stats.vercel.app; " +
-      "script-src 'self'" +
-      "script-src-elem 'self'" +
+      "script-src 'self';" +
+      "script-src-elem 'self';" +
       "font-src 'self'; " +
       "style-src 'self' fonts.googleapis.com 'unsafe-inline'; " +
       "style-src-elem 'self' fonts.googleapis.com 'unsafe-inline'; " +
