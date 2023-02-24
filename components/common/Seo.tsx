@@ -22,11 +22,7 @@ const SEO: FC<SeoProps> = function SEO({
   return (
     <>
       <Head>
-        <title>
-          {title}
-          {siteTitle !== '' && ' | '}
-          {siteTitle}
-        </title>
+        <title>{`${title}${siteTitle !== '' ? ' | ' : ''}${siteTitle}`}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
