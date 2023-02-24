@@ -1,22 +1,23 @@
 import dynamic from 'next/dynamic';
+import { type FC } from 'react';
 import SEO from '../components/common/Seo';
 import HomeHeader from '../components/Home/HomeHeader';
 
 // TODO Make Custom Skeleton UI For HomeIntroduce
 const HomeIntroduce = dynamic(
-  () => import('../components/Home/HomeIntroduce'),
+  async () => await import('../components/Home/HomeIntroduce'),
   {
     ssr: false,
   },
-);
+) as FC;
 
 // TODO Make Custom Skeleton UI For HomeTechStack
 const HomeTechStack = dynamic(
-  () => import('../components/Home/HomeTechStack'),
+  async () => await import('../components/Home/HomeTechStack'),
   {
     ssr: false,
   },
-);
+) as FC;
 
 // skipcq: JS-D1001
 function Home(): JSX.Element {
