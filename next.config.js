@@ -72,6 +72,10 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
   compiler: {
     styledComponents: true,
     removeConsole: process.env.NODE_ENV === 'production',
