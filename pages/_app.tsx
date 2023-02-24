@@ -23,7 +23,7 @@ const poppins = Poppins({
 });
 
 // skipcq: JS-D1001
-export default function App({ Component }: AppProps): JSX.Element {
+function App({ Component }: AppProps): JSX.Element {
   return (
     <ViewportProvider>
       <Layout>
@@ -37,3 +37,5 @@ export default function App({ Component }: AppProps): JSX.Element {
     </ViewportProvider>
   );
 }
+
+export default App;
