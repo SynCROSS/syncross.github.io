@@ -96,7 +96,10 @@ const HeaderBlock = styled(CenterAlignedHeader)`
     flex-direction: column;
 
     background-color: #121212;
-    transition: all 0.5s ease-in-out;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: all 0.4s ease-in-out;
+    }
 
     & > ul {
       flex: 1;
@@ -338,7 +341,10 @@ const Outside = styled.div<Pick<HeaderProps, 'isOpened'>>`
     z-index: 1;
 
     background-color: rgba(0, 0, 0, 0.7);
-    transition: all 0.5s ease-in-out;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: all 0.4s ease-in-out;
+    }
   }
 
   /* iPhone Landscape */

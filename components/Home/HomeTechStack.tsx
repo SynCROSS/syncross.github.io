@@ -61,7 +61,10 @@ const TechListItem = styled(CenteredListItem)`
   width: 7rem;
   height: 7rem;
   margin: 1rem;
-  transition: all 0.2s ease-in-out;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: all 0.2s ease-in-out;
+  }
 
   @media (hover: hover) {
     &:hover {

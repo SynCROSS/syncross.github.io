@@ -18,9 +18,11 @@ const LinkItem = styled.li`
   margin: 0 1rem;
   color: #808080;
 
-  @media (hover: hover) {
-    transition: 0.2s all ease-in-out;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: all 0.2s ease-in-out;
+  }
 
+  @media (hover: hover) {
     &:hover {
       color: #505050;
       font-weight: 500;
