@@ -22,16 +22,47 @@ const SEO: FC<SeoProps> = function SEO({
   return (
     <>
       <Head>
-        <title>{`${title}${siteTitle !== '' ? ' | ' : ''}${siteTitle}`}</title>
+        <title>{`${title}${
+          siteTitle !== '' ? ' | ' : ', The Knowledge Explorer'
+        }${siteTitle}`}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="robots" content="all" />
         <meta name="googlebot" content="all" />
         <meta name="google" content="nositelinkssearchbox" key="sitelinks" />
-        <meta name="title" content={title} />
+        {/* Primary Meta Tags */}
+        <meta name="title" content="SynCROSS, The Knowledge Explorer" />
         <meta name="description" content={description} key="desc" />
         <meta name="author" content="SynCROSS" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://syncross.vercel.app/" />
+        <meta
+          property="og:title"
+          content={`${title}, The Knowledge Explorer`}
+        />
+        <meta property="og:site_name" content={siteTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content="/image.jpg" />
+        <meta property="og:image:secure_url" content="/image.jpg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="SynCROSS" />
+        <meta property="og:url" content="https://syncross.vercel.app" />
+        {/* Twitter */}
+        <meta
+          property="twitter:title"
+          content={`${title}, The Knowledge Explorer`}
+        />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content="/image.jpg" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://syncross.vercel.app/" />
+        <meta property="twitter:description" content={description} />
+
         <meta name="application-name" content={title} />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -41,22 +72,6 @@ const SEO: FC<SeoProps> = function SEO({
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="msapplication-TileColor" content="#333333" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta property="og:site_name" content={siteTitle} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content="/icon.jpg" />
-        <meta property="og:image:secure_url" content="/icon.jpg" />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:width" content="721" />
-        <meta property="og:image:height" content="721" />
-        <meta property="og:image:alt" content="SynCROSS" />
-        <meta property="og:url" content="https://syncross.vercel.app" />
-        <meta property="twitter:card" content="summary" />
-        <meta property="twitter:url" content="https://syncross.vercel.app/" />
-        <meta property="twitter:title" content={title} />
-        <meta property="twitter:description" content={description} />
-        <meta property="twitter:image" content="/icon.jpg" />
         <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta
           name="google-site-verification"
@@ -85,6 +100,18 @@ const SEO: FC<SeoProps> = function SEO({
           href="apple-touch-icon-167x167.png"
         />
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
         <link
           rel="canonical"
           href={`https://syncross.vercel.app${canonicalHref}`}
