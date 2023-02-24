@@ -125,6 +125,7 @@ const SEO: FC<SeoProps> = function SEO({
           __html:
             '{"@context":"http://schema.org/","type":"Person","jobTitle":"Frontend Developer","name":"SynCROSS","telephone":"+82-10-9874-2668","url":"https://syncross.vercel.app"}',
         }}
+        key="product-jsonld"
       />
     </>
   );
