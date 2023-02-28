@@ -1,4 +1,4 @@
-import SEO from 'components/common/Seo';
+import Seo from 'components/common/Seo';
 import HomeHeader from 'components/Home/HomeHeader';
 import dynamic from 'next/dynamic';
 import type { FC } from 'react';
@@ -23,7 +23,7 @@ const HomeTechStack = dynamic(
 function Home() {
   return (
     <main className="flex jc-center ai-center flex-direction-col">
-      <SEO />
+      <Seo />
       <HomeHeader />
       <HomeIntroduce />
       <HomeTechStack />

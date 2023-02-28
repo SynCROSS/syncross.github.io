@@ -1,4 +1,4 @@
-import SEO from 'components/common/Seo';
+import Seo from 'components/common/Seo';
 import { getRandomTheme } from 'lib/theme/work/github/GithubRepository';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -72,7 +72,7 @@ function RepoRow({ index = 0, style = {} }: ListChildComponentProps) {
 function Work() {
   return (
     <WorkBlock>
-      <SEO siteTitle="My Works" canonicalHref="/Work" />
+      <Seo siteTitle="My Works" canonicalHref="/Work" />
       <WorkTitle>My Works</WorkTitle>
       <p>&#x28;Theme is Random&#x29;</p>
       <ListWrapper>

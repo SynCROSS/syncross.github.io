@@ -1,4 +1,4 @@
-import SEO from 'components/common/Seo';
+import Seo from 'components/common/Seo';
 import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
@@ -47,7 +47,7 @@ const AboutContext = styled.p`
 function About() {
   return (
     <AboutBlock>
-      <SEO siteTitle="About" canonicalHref="/About" />
+      <Seo siteTitle="About" canonicalHref="/About" />
       <AboutTitle>About</AboutTitle>
       <AboutContext>
         Hello, I&apos;m <b>SynCROSS</b>,
