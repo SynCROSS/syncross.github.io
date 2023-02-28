@@ -1,5 +1,5 @@
 // skipcq: JS-D1001
-function Offline(): JSX.Element {
+function Offline() {
   return <p>You&apos;re Offline</p>;
 }
 

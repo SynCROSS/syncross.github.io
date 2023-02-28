@@ -4,6 +4,7 @@
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": false,
+    "strictNullChecks": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -19,14 +20,15 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "baseUrl": "."
   },
   "include": [
-    ".eslintrc.js",
+    // ".eslintrc.js",
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
-    "@total-typescript/ts-reset"
+    "**/*.tsx"
+    // "@total-typescript/ts-reset"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "**/*.js"]
 }
