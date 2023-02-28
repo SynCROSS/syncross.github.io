@@ -13,7 +13,7 @@ type SeoProps = {
   canonicalHref?: string;
 };
 
-const SEO: FC<SeoProps> = function SEO({
+const Seo: FC<SeoProps> = function Seo({
   title = 'SynCROSS',
   siteTitle = '',
   description = "I'm MERN Stack Developer. Let's Work Together To Make Your Website Perfect.",
@@ -131,7 +131,7 @@ const SEO: FC<SeoProps> = function SEO({
   );
 };
 
-SEO.defaultProps = {
+Seo.defaultProps = {
   title: 'SynCROSS',
   siteTitle: '',
   description:
@@ -139,4 +139,4 @@ SEO.defaultProps = {
   canonicalHref: '/',
 };
 
-export default SEO;
+export default Seo;
