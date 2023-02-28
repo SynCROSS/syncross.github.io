@@ -18,9 +18,11 @@ const LinkItem = styled.li`
   margin: 0 1rem;
   color: #808080;
 
-  @media (hover: hover) {
-    transition: 0.2s all ease-in-out;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: all 0.2s ease-in-out;
+  }
 
+  @media (hover: hover) {
     &:hover {
       color: #505050;
       font-weight: 500;
@@ -141,7 +143,7 @@ const snsPages = [
 ];
 
 // skipcq: JS-D1001
-export function NavigationList(): JSX.Element {
+export function NavigationList() {
   return (
     <ItemList>
       {Children.toArray(
@@ -156,7 +158,7 @@ export function NavigationList(): JSX.Element {
 }
 
 // skipcq: JS-D1001
-export function SnsNavigationList(): JSX.Element {
+export function SnsNavigationList() {
   return (
     <ItemList>
       {Children.toArray(

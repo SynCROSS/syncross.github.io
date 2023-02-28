@@ -43,7 +43,9 @@ export function ViewportProvider({ children }: PropsWithChildren) {
     handleWindowResize();
 
     window.addEventListener('resize', handleWindowResize);
-    return () => window.removeEventListener('resize', handleWindowResize);
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
   }, []);
 
   return (

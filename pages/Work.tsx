@@ -1,11 +1,9 @@
-import Head from 'next/head';
+import Seo from 'components/common/Seo';
+import { getRandomTheme } from 'lib/theme/work/github/GithubRepository';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Children } from 'react';
-import { FixedSizeList } from 'react-window';
-import type { CSSProperties } from 'styled-components';
+import { FixedSizeList, type ListChildComponentProps } from 'react-window';
 import styled from 'styled-components';
-import { getRandomTheme } from '../lib/theme/work/github/GithubRepository';
 
 const WorkBlock = styled.main`
   align-items: baseline;
@@ -34,19 +32,12 @@ const GITHUB_USERNAME = 'SynCROSS';
 
 const rowWidth = 300;
 const rowHeight = 90;
-const itemCount = githubRepoArray?.length || 0;
+const itemCount = githubRepoArray.length;
 const rowCount = itemCount > 5 ? 5 : itemCount;
 
 // skipcq: JS-D1001
-function RepoRow({
-  index = 0,
-  style = {},
-}: {
-  index: number;
-  style: CSSProperties;
-}): JSX.Element {
+function RepoRow({ index = 0, style = {} }: ListChildComponentProps) {
   const repo = githubRepoArray?.[index] ?? '';
-
   return (
     <Link
       href={`https://github.com/${GITHUB_USERNAME}/${repo}`}
@@ -78,31 +69,10 @@ function RepoRow({
 }
 
 // skipcq: JS-D1001
-function Work(): JSX.Element {
+function Work() {
   return (
     <WorkBlock>
-      <Head>
-        <title>My Works</title>
-        <link rel="canonical" href="https://syncross.vercel.app/Work" />
-        {Children.toArray(
-          githubRepoArray.map(repo => (
-            <link
-              rel="preload"
-              href={`https://github-readme-stats.vercel.app/api/pin?${new URLSearchParams(
-                {
-                  username: GITHUB_USERNAME,
-                  repo,
-                  theme: getRandomTheme(),
-                  hide_border: 'true',
-                  show_icons: 'true',
-                  count_private: 'true',
-                },
-              ).toString()}`}
-              as="image"
-            />
-          )),
-        )}
-      </Head>
+      <Seo siteTitle="My Works" canonicalHref="/Work" />
       <WorkTitle>My Works</WorkTitle>
       <p>&#x28;Theme is Random&#x29;</p>
       <ListWrapper>
