@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /Work/
 Sitemap: https://syncross.vercel.app/sitemap.xml
 
 User-agent: Googlebot-Image

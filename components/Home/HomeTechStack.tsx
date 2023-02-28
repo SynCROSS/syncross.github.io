@@ -20,7 +20,7 @@ type CenteredListProps = PropsWithChildren<{
   className?: HTMLAttributes<HTMLUListElement>['className'];
 }>;
 // skipcq: JS-D1001
-const CenteredList: FC<CenteredListProps> = function CenteredSection({
+const CenteredList: FC<CenteredListProps> = function CenteredList({
   children,
   className = '',
 }) {
@@ -37,13 +37,34 @@ const TechList = styled(CenteredList)`
   list-style: none;
 `;
 
-const TechListItem = styled.li`
-  border-radius: 50px;
+type CenteredListItemProps = PropsWithChildren<{
+  className?: HTMLAttributes<HTMLLIElement>['className'];
+}>;
+// skipcq: JS-D1001
+const CenteredListItem: FC<CenteredListItemProps> = function CenteredListItem({
+  children,
+  className = '',
+}) {
+  return (
+    <li className={`flex jc-center ai-center ${className}`}>{children}</li>
+  );
+};
+
+CenteredListItem.defaultProps = {
+  className: '',
+};
+
+const TechListItem = styled(CenteredListItem)`
+  border-radius: 50%;
   background: #f8f8f8;
   box-shadow: 10px 10px 20px #cccccc, -10px -10px 20px #ffffff;
-  padding: 20px;
+  width: 7rem;
+  height: 7rem;
   margin: 1rem;
-  transition: all 0.2s ease-in-out;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: all 0.2s ease-in-out;
+  }
 
   @media (hover: hover) {
     &:hover {
@@ -62,7 +83,7 @@ const techStacks = ['mongodb', 'express', 'react', 'nodedotjs'];
 const getIconURL = (techStack: string): string =>
   `https://unpkg.com/simple-icons@v5/icons/${techStack}.svg`;
 // skipcq: JS-D1001
-function HomeTechStack(): JSX.Element {
+function HomeTechStack() {
   return (
     <HomeTechStackBlock>
       <TechStackTitle>Tech Stack</TechStackTitle>

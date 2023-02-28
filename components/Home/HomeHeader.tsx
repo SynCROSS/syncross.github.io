@@ -137,17 +137,28 @@ const InlineMediumText = styled.span`
 const ArrowRightIcon = styled(FontAwesomeIcon)`
   margin-left: 0.5rem;
 
-  @media (hover: hover) {
+  @media (prefers-reduced-motion: no-preference) {
     transition: all 0.15s ease-in-out;
+  }
+
+  @media (hover: hover) {
     opacity: 0.5;
 
     opacity: 0.5;
 
     &:hover {
-      transform: translate(0.5rem, 0);
+      transform: translate(5px, 0);
       opacity: 1;
     }
   }
+`;
+
+const ArrowDownIcon = styled(FontAwesomeIcon)`
+  @media (prefers-reduced-motion: no-preference) {
+    transition: all 0.2s ease-in-out;
+  }
+
+  width: 2rem;
 `;
 
 const ArrowButton = styled.button`
@@ -162,21 +173,18 @@ const ArrowButton = styled.button`
   background-color: #000;
 
   @media (hover: hover) {
-    transition: all 0.2s ease-in-out;
-    transform: translate();
     &:hover {
-      background-color: #222;
-      color: #fff;
+      background-color: #1c1c1c;
+
+      & > ${ArrowDownIcon} {
+        transform: translate(0, 5px);
+      }
     }
   }
 `;
 
-const ArrowDownIcon = styled(FontAwesomeIcon)`
-  width: 2rem;
-`;
-
 // skipcq: JS-D1001
-function MyWorksButton(): JSX.Element {
+function MyWorksButton() {
   return (
     <RouterLink href="/Work">
       <InlineMediumText>My Works</InlineMediumText>
@@ -186,18 +194,16 @@ function MyWorksButton(): JSX.Element {
 }
 
 // skipcq: JS-D1001
-function HomeHeader(): JSX.Element {
+function HomeHeader() {
   const headerRef = useRef<HTMLElement>(null);
   /**
    * Scroll To 'HomeHeader' Component
    */
   const scrollToHomeHeader = useCallback(() => {
-    if (typeof window !== 'undefined') {
-      window?.scrollTo({
-        top: (headerRef.current?.offsetHeight ?? 0) + 70,
-        behavior: 'smooth',
-      });
-    }
+    scrollTo({
+      top: (headerRef.current?.offsetHeight ?? 0) + 70,
+      behavior: 'smooth',
+    });
   }, []);
 
   return (

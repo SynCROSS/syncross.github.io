@@ -1,31 +1,29 @@
+import Seo from 'components/common/Seo';
+import HomeHeader from 'components/Home/HomeHeader';
 import dynamic from 'next/dynamic';
-import Head from 'next/head';
-import HomeHeader from '../components/Home/HomeHeader';
+import type { FC } from 'react';
 
 // TODO Make Custom Skeleton UI For HomeIntroduce
 const HomeIntroduce = dynamic(
-  () => import('../components/Home/HomeIntroduce'),
+  async () => await import('../components/Home/HomeIntroduce'),
   {
     ssr: false,
   },
-);
+) as FC;
 
 // TODO Make Custom Skeleton UI For HomeTechStack
 const HomeTechStack = dynamic(
-  () => import('../components/Home/HomeTechStack'),
+  async () => await import('../components/Home/HomeTechStack'),
   {
     ssr: false,
   },
-);
+) as FC;
 
 // skipcq: JS-D1001
-function Home(): JSX.Element {
+function Home() {
   return (
     <main className="flex jc-center ai-center flex-direction-col">
-      <Head>
-        <title>SynCROSS</title>
-        <link rel="canonical" href="https://syncross.vercel.app/" />
-      </Head>
+      <Seo />
       <HomeHeader />
       <HomeIntroduce />
       <HomeTechStack />

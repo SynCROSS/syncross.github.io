@@ -1,4 +1,4 @@
-const GithubRepoThemes: ReadonlyArray<string> = [
+const GithubRepoThemes: readonly string[] = [
   'default',
   'default_repocard',
   'dark',
