@@ -78,7 +78,7 @@ const IntroduceContent = styled.p`
 `;
 
 // skipcq: JS-D1001
-function Intro(): JSX.Element {
+function Intro() {
   return (
     <IntroBlock>
       <IntroduceTitle>Introduce</IntroduceTitle>
@@ -95,7 +95,7 @@ function Intro(): JSX.Element {
 }
 
 // skipcq: JS-D1001
-function HomeIntroduce(): JSX.Element {
+function HomeIntroduce() {
   return (
     <HomeIntroduceBlock>
       <IntroWrapper>

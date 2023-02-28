@@ -1,3 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 // @ts-check
 
 const withPwa = require('next-pwa')({
@@ -26,9 +31,9 @@ const securityHeaders = [
       "object-src 'none'; " +
       'report-uri https://vitals.vercel-insights.com; ' +
       'report-to https://vitals.vercel-insights.com; ' +
-      "connect-src 'self' https://vitals.vercel-insights.com; " +
-      "script-src 'self' https://vitals.vercel-insights.com 'unsafe-eval'; " +
-      "script-src-elem 'self' https://vitals.vercel-insights.com 'unsafe-eval'; " +
+      "connect-src 'self' https://vitals.vercel-insights.com https://github-readme-stats.vercel.app; " +
+      "script-src 'self';" +
+      "script-src-elem 'self';" +
       "font-src 'self'; " +
       "style-src 'self' fonts.googleapis.com 'unsafe-inline'; " +
       "style-src-elem 'self' fonts.googleapis.com 'unsafe-inline'; " +
@@ -72,17 +77,22 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
   compiler: {
     styledComponents: true,
+    removeConsole: process.env.NODE_ENV === 'production',
   },
-  async headers() {
-    return [
+  headers() {
+    return Promise.resolve([
       {
         // * Apply these headers to all routes in application.
         source: '/(.*)',
         headers: securityHeaders,
       },
-    ];
+    ]);
   },
 };
 
