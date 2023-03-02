@@ -75,13 +75,6 @@ const TechListItem = styled(CenteredListItem)`
 
 const techStacks = ['mongodb', 'express', 'react', 'nodedotjs'];
 
-/**
- * Get Tech Stack Icon URL
- * @param techStack Tech Stack name
- * @returns {string} Tech Stack Icon URL
- */
-const getIconURL = (techStack: string): string =>
-  `https://unpkg.com/simple-icons@v5/icons/${techStack}.svg`;
 // skipcq: JS-D1001
 function HomeTechStack() {
   return (
@@ -93,7 +86,7 @@ function HomeTechStack() {
             techStacks.map(techStack => (
               <TechListItem>
                 <Image
-                  src={getIconURL(techStack)}
+                  src={`https://unpkg.com/simple-icons@v5/icons/${techStack}.svg`}
                   alt={techStack}
                   title={techStack}
                   width={70}
