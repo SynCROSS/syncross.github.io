@@ -3,25 +3,6 @@ import { getRandomTheme } from 'lib/theme/work/github/GithubRepository';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FixedSizeList, type ListChildComponentProps } from 'react-window';
-import styled from 'styled-components';
-
-const WorkBlock = styled.main`
-  align-items: baseline;
-  margin: auto;
-`;
-
-const WorkTitle = styled.h1`
-  margin: 0 auto;
-  font-size: 3rem;
-
-  @media only screen and (max-width: 600px) {
-    font-size: 2.4rem;
-  }
-`;
-
-const ListWrapper = styled.div`
-  margin: 2rem auto;
-`;
 
 const githubRepoArray = [
   'nextjs-typescript-setting',
@@ -71,11 +52,11 @@ function RepoRow({ index = 0, style = {} }: ListChildComponentProps) {
 // skipcq: JS-D1001
 function Work() {
   return (
-    <WorkBlock>
+    <main className="work">
       <Seo siteTitle="My Works" canonicalHref="/Work" />
-      <WorkTitle>My Works</WorkTitle>
+      <h1 className="work-title">My Works</h1>
       <p>&#x28;Theme is Random&#x29;</p>
-      <ListWrapper>
+      <div className="list-wrapper">
         <FixedSizeList
           width={rowWidth}
           height={rowHeight * rowCount}
@@ -84,8 +65,28 @@ function Work() {
         >
           {RepoRow}
         </FixedSizeList>
-      </ListWrapper>
-    </WorkBlock>
+      </div>
+      <style jsx>
+        {`
+          .work {
+            align-items: baseline;
+            margin: auto;
+          }
+          .work-title {
+            margin: 0 auto;
+            font-size: 3rem;
+          }
+          .list-wrapper {
+            margin: 2rem auto;
+          }
+          @media only screen and (max-width: 600px) {
+            .work-title {
+              font-size: 2.4rem;
+            }
+          }
+        `}
+      </style>
+    </main>
   );
 }
 
