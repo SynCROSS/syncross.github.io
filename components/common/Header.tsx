@@ -35,6 +35,7 @@ function Header({ isOpened, width, openMenu, closeMenu }: HeaderProps) {
           tabIndex={-1}
           className="backdrop"
           onClick={closeMenu}
+          aria-hidden="true"
         />
       )}
       <style jsx>
