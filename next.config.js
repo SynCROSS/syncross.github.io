@@ -52,6 +52,10 @@ const securityHeaders = [
     key: 'Referrer-Policy',
     value: 'origin-when-cross-origin',
   },
+  {
+    key: 'Access-Control-Allow-Origin',
+    value: 'https://vitals.vercel-insights.com',
+  },
 ];
 
 /**
