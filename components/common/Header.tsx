@@ -30,7 +30,12 @@ function Header({ isOpened, width, openMenu, closeMenu }: HeaderProps) {
         <SnsNavigationList />
       </header>
       {width <= 767 && isOpened && (
-        <div className="backdrop" onClick={closeMenu} />
+        <div
+          role="button"
+          tabIndex={-1}
+          className="backdrop"
+          onClick={closeMenu}
+        />
       )}
       <style jsx>
         {`
