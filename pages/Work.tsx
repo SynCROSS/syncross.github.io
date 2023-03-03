@@ -79,7 +79,7 @@ function Work() {
           .list-wrapper {
             margin: 2rem auto;
           }
-          @media only screen and (max-width: 600px) {
+          @media only screen and (max-width: 767px) {
             .work-title {
               font-size: 2.4rem;
             }

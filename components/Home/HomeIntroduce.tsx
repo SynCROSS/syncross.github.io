@@ -29,10 +29,13 @@ function Intro() {
             color: #acacac;
             font-size: 1.2rem;
           }
-          @media only screen and (max-width: 600px) {
+          @media only screen and (max-width: 767px) {
             .intro {
               margin-right: 0;
               margin-top: 5rem;
+            }
+            .intro-title {
+              font-size: 3.5rem;
             }
           }
         `}
@@ -76,7 +79,7 @@ function HomeIntroduce() {
           .intro-wrapper {
             width: 60%;
           }
-          @media only screen and (max-width: 600px) {
+          @media only screen and (max-width: 767px) {
             .intro-wrapper {
               flex-wrap: wrap-reverse;
               margin: 7rem auto;

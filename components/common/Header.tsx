@@ -13,11 +13,11 @@ type HeaderProps = {
 function Header({ isOpened, width, openMenu, closeMenu }: HeaderProps) {
   return (
     <>
-      {width <= 480 && (
+      {width <= 767 && (
         <button className="menu-button" title="Menu Icon" onClick={openMenu} />
       )}
       <header className="flex ai-center header-block">
-        {width <= 480 && isOpened && (
+        {width <= 767 && isOpened && (
           <button
             className="close-button"
             title="Close Menu Button"
@@ -29,7 +29,7 @@ function Header({ isOpened, width, openMenu, closeMenu }: HeaderProps) {
         <NavigationList />
         <SnsNavigationList />
       </header>
-      {width <= 480 && isOpened && (
+      {width <= 767 && isOpened && (
         <div className="backdrop" onClick={closeMenu} />
       )}
       <style jsx>
@@ -53,8 +53,7 @@ function Header({ isOpened, width, openMenu, closeMenu }: HeaderProps) {
               transition: all 0.4s ease-in-out;
             }
           }
-          /* iPhone Portrait */
-          @media screen and (max-device-width: 480px) and (orientation: portrait) {
+          @media screen and (max-device-width: 767px) {
             .header-block {
               width: ${isOpened ? '100px' : 0};
               height: 100vh;

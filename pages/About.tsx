@@ -41,7 +41,7 @@ function About() {
             font-size: 1.5rem;
             margin: 0 1.5rem;
           }
-          @media only screen and (max-width: 600px) {
+          @media only screen and (max-width: 767px) {
             .about-title {
               font-size: 2.4rem;
             }
