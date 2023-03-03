@@ -1,184 +1,52 @@
 import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
-import {
-  forwardRef,
-  useCallback,
-  useRef,
-  type HTMLAttributes,
-  type PropsWithChildren,
-} from 'react';
-import styled from 'styled-components';
+import { useCallback, useRef } from 'react';
+import css from 'styled-jsx/css';
 
-type CenteredVerticalBlockProps = PropsWithChildren<{
-  className?: HTMLAttributes<HTMLElement>['className'];
-}>;
-const CenteredVerticalBlock = forwardRef<
-  HTMLElement,
-  CenteredVerticalBlockProps
->(({ children, className = '' }, ref) => (
-  <section
-    ref={ref}
-    className={`flex jc-center ai-center flex-direction-col ${className}`}
-  >
-    {children}
-  </section>
-));
-
-CenteredVerticalBlock.displayName = 'CenteredVerticalBlock';
-CenteredVerticalBlock.defaultProps = {
-  className: '',
-};
-
-const HomeHeaderBlock = styled(CenteredVerticalBlock)`
-  width: 100vw;
-  min-height: 90vh;
-
-  background: linear-gradient(165deg, #e9e9e9 50%, #fff 50%);
-
-  position: relative;
-`;
-
-const HeadLine = styled.h1`
-  font-size: 5rem;
-
-  margin: 0 auto 20px;
-  line-height: 1.2;
-
-  /*------------------------------------------
-  Responsive Grid Media Queries - 1280, 1024, 768, 480
-   1280-1024   - desktop (default grid)
-   1024-768    - tablet landscape
-   768-480     - tablet 
-   480-less    - phone landscape & smaller
---------------------------------------------*/
-  /* @media all and (min-width: 1024px) and (max-width: 1280px) {
+const routerLink = css.resolve`
+  a {
     background-color: #111;
-  } */
+    color: #fff;
+    border-radius: 50px;
+    font-size: 1.2rem;
 
-  /* @media all and (min-width: 768px) and (max-width: 1024px) {
-    background-color: #222;
-  } */
-
-  @media all and (min-width: 480px) and (max-width: 768px) {
-    font-size: 3rem !important;
-  }
-
-  /* @media all and (max-width: 480px) {
-    background-color: #444;
-  } */
-
-  /* Portrait */
-  /* @media screen and (orientation: portrait) {
-    background-color: #555;
-  } */
-  /* Landscape */
-  /* @media screen and (orientation: landscape) {
-    background-color: #666;
-  } */
-
-  /* CSS for iPhone, iPad, and Retina Displays */
-
-  /* Non-Retina */
-  /* @media screen and (-webkit-max-device-pixel-ratio: 1) {
-    background-color: #777;
-  } */
-
-  /* Retina */
-  /* @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-    only screen and (-o-min-device-pixel-ratio: 3/2),
-    only screen and (min--moz-device-pixel-ratio: 1.5),
-    only screen and (min-device-pixel-ratio: 1.5) {
-    background-color: #888;
-  } */
-
-  /* iPhone Portrait */
-  @media screen and (max-device-width: 480px) and (orientation: portrait) {
-    font-size: 3rem;
-  }
-
-  /* iPhone Landscape */
-  @media screen and (max-device-width: 480px) and (orientation: landscape) {
-    font-size: 3rem;
-  }
-
-  /* iPad Portrait */
-  /* @media screen and (min-device-width: 481px) and (orientation: portrait) {
-    background-color: #bbb;
-  } */
-
-  /* iPad Landscape */
-  @media screen and (min-device-width: 481px) and (orientation: landscape) {
-    font-size: 4rem;
+    cursor: pointer;
+    padding: 1.2rem 1.5rem;
+    position: relative;
   }
 `;
 
-const Job = styled.h3`
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: #aaa;
-`;
-
-const RouterLink = styled(Link)`
-  background-color: #111;
-  color: #fff;
-  border-radius: 50px;
-  font-size: 1.2rem;
-
-  cursor: pointer;
-  padding: 1.2rem 1.5rem;
-  position: relative;
-`;
-
-const InlineMediumText = styled.span`
-  font-weight: 500;
-`;
-
-const ArrowRightIcon = styled(FontAwesomeIcon)`
-  margin-left: 0.5rem;
+const arrowRightIcon = css.resolve`
+  svg {
+    margin-left: 0.5rem;
+  }
 
   @media (prefers-reduced-motion: no-preference) {
-    transition: all 0.15s ease-in-out;
+    svg {
+      transition: all 0.15s ease-in-out;
+    }
   }
 
   @media (hover: hover) {
-    opacity: 0.5;
+    svg {
+      opacity: 0.5;
+    }
 
-    opacity: 0.5;
-
-    &:hover {
+    svg:hover {
       transform: translate(5px, 0);
       opacity: 1;
     }
   }
 `;
 
-const ArrowDownIcon = styled(FontAwesomeIcon)`
-  @media (prefers-reduced-motion: no-preference) {
-    transition: all 0.2s ease-in-out;
+const arrowDownIcon = css.resolve`
+  svg {
+    width: 2rem;
   }
-
-  width: 2rem;
-`;
-
-const ArrowButton = styled.button`
-  width: 5rem;
-  height: 5rem;
-
-  position: absolute;
-  bottom: -3rem;
-
-  font-size: 2rem;
-  color: #f8f8f8;
-  background-color: #000;
-
-  @media (hover: hover) {
-    &:hover {
-      background-color: #1c1c1c;
-
-      & > ${ArrowDownIcon} {
-        transform: translate(0, 5px);
-      }
+  @media (prefers-reduced-motion: no-preference) {
+    svg {
+      transition: all 0.2s ease-in-out;
     }
   }
 `;
@@ -186,10 +54,22 @@ const ArrowButton = styled.button`
 // skipcq: JS-D1001
 function MyWorksButton() {
   return (
-    <RouterLink href="/Work">
-      <InlineMediumText>My Works</InlineMediumText>
-      <ArrowRightIcon icon={faArrowRight} />
-    </RouterLink>
+    <Link className={routerLink.className} href="/Work">
+      <span className="inline-medium-text">My Works</span>
+      <FontAwesomeIcon
+        className={arrowRightIcon.className}
+        icon={faArrowRight}
+      />
+      <style jsx>
+        {`
+          .inline-medium-text {
+            font-weight: 500;
+          }
+        `}
+      </style>
+      {routerLink.styles}
+      {arrowRightIcon.styles}
+    </Link>
   );
 }
 
@@ -207,16 +87,92 @@ function HomeHeader() {
   }, []);
 
   return (
-    <HomeHeaderBlock ref={headerRef}>
-      <Job>MERN Stack Developer</Job>
-      <HeadLine>
+    <section
+      ref={headerRef}
+      className="flex jc-center ai-center flex-direction-col home-header"
+    >
+      <h3 className="job">MERN Stack Developer</h3>
+      <h1 className="headline">
         SynCROSS, <br /> The Knowledge Explorer
-      </HeadLine>
+      </h1>
       <MyWorksButton />
-      <ArrowButton title="Scroll Down Button" onClick={scrollToHomeHeader}>
-        <ArrowDownIcon icon={faArrowDown} />
-      </ArrowButton>
-    </HomeHeaderBlock>
+      <button
+        className="arrow-button"
+        title="Scroll Down Button"
+        onClick={scrollToHomeHeader}
+      >
+        <FontAwesomeIcon
+          className={arrowDownIcon.className}
+          icon={faArrowDown}
+        />
+      </button>
+      <style jsx>
+        {`
+          .home-header {
+            width: 100vw;
+            min-height: 90vh;
+
+            background: linear-gradient(165deg, #e9e9e9 50%, #fff 50%);
+
+            position: relative;
+          }
+          .headline {
+            font-size: 5rem;
+
+            margin: 0 auto 20px;
+            line-height: 1.2;
+          }
+          .job {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #aaa;
+          }
+          .arrow-button {
+            width: 5rem;
+            height: 5rem;
+
+            position: absolute;
+            bottom: -3rem;
+
+            font-size: 2rem;
+            color: #f8f8f8;
+            background-color: #000;
+          }
+          @media (hover: hover) {
+            .arrow-button:hover {
+              background-color: #1c1c1c;
+            }
+            .arrow-button:hover > :global(svg) {
+              transform: translate(0, 5px);
+            }
+          }
+          @media all and (min-width: 480px) and (max-width: 768px) {
+            .headline {
+              font-size: 3rem !important;
+            }
+          }
+          /* iPhone Portrait */
+          @media screen and (max-device-width: 480px) and (orientation: portrait) {
+            .headline {
+              font-size: 3rem;
+            }
+          }
+          /* iPhone Landscape */
+          @media screen and (max-device-width: 480px) and (orientation: landscape) {
+            .headline {
+              font-size: 3rem;
+            }
+          }
+          /* iPad Landscape */
+          @media screen and (min-device-width: 481px) and (orientation: landscape) {
+            .headline {
+              font-size: 4rem;
+            }
+          }
+        `}
+      </style>
+      {arrowDownIcon.styles}
+    </section>
   );
 }
 

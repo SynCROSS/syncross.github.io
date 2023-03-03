@@ -1,62 +1,48 @@
 import Link from 'next/link';
-import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
-import styled from 'styled-components';
 
-type CenteredFooterProps = PropsWithChildren<{
-  className?: HTMLAttributes<HTMLElement>['className'];
-}>;
+import css from 'styled-jsx/css';
 
-// skipcq: JS-D1001
-const CenteredFooter: FC<CenteredFooterProps> = function CenteredFooter({
-  children,
-  className = '',
-}) {
-  return (
-    <footer className={`flex jc-center ai-center ${className}`}>
-      {children}
-    </footer>
-  );
-};
+const year = new Date().getFullYear();
 
-CenteredFooter.defaultProps = {
-  className: '',
-};
+const { className, styles } = css.resolve`
+  a {
+    margin: 1rem 0;
 
-const FooterBlock = styled(CenteredFooter)`
-  width: 100%;
-  background-color: #000;
-  color: #eee;
-`;
-
-const GithubLink = styled(Link)`
-  margin: 1rem 0;
-
-  color: #ff6683;
-
+    color: #ff6683;
+  }
   @media (hover: hover) {
-    &:hover {
+    a:hover {
       color: #ff94a8;
     }
   }
 `;
 
-const year = new Date().getFullYear();
-
 // skipcq: JS-D1001
 function Footer() {
   return (
-    <FooterBlock>
+    <footer className="flex jc-center ai-center footer-block">
       Copyright &copy;&nbsp;
       <span className="year">{year}</span>
       &nbsp;Made by&nbsp;
-      <GithubLink
+      <Link
+        className={className}
         href="https://github.com/SynCROSS"
         target="_blank"
         rel="noopener noreferrer"
       >
         SynCROSS
-      </GithubLink>
-    </FooterBlock>
+      </Link>
+      <style jsx>
+        {`
+          .footer-block {
+            width: 100%;
+            background-color: #000;
+            color: #eee;
+          }
+        `}
+      </style>
+      {styles}
+    </footer>
   );
 }
 
