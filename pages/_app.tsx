@@ -1,12 +1,11 @@
 import { config } from '@fortawesome/fontawesome-svg-core';
-import { Poppins } from "next/font/google";
 import Layout from 'components/Layout';
 import type { AppProps, NextWebVitalsMetric } from 'next/app';
+import { Poppins } from 'next/font/google';
 
 import { ViewportProvider } from 'lib/utility/viewport';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import 'styles/globals.css';
 
 config.autoAddCss = false;
 
@@ -30,8 +29,74 @@ function App({ Component }: AppProps) {
       <Layout>
         {/* skipcq: JS-0455 */}
         <style jsx global>{`
+          *,
+          *:before,
+          *:after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
           html {
             font-family: ${poppins.style.fontFamily};
+            scroll-behavior: smooth;
+          }
+
+          body {
+            height: 100%;
+            min-height: 100vh;
+            text-align: center;
+          }
+
+          a {
+            color: inherit;
+            text-decoration: none;
+          }
+
+          button {
+            cursor: pointer;
+            border: none;
+          }
+
+          ul {
+            list-style: none;
+          }
+
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          *::-webkit-scrollbar {
+            opacity: 0;
+            width: 0;
+            height: 0;
+          }
+
+          .flex {
+            display: flex;
+          }
+
+          .flex-direction-col {
+            flex-direction: column;
+          }
+
+          .ai-center {
+            align-items: center;
+          }
+
+          .ai-baseline {
+            align-items: baseline;
+          }
+
+          .jc-center {
+            justify-content: center;
+          }
+
+          #__next {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
           }
         `}</style>
         <Component />
