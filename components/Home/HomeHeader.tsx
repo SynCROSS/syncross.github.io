@@ -15,6 +15,15 @@ const routerLink = css.resolve`
     padding: 1.2rem 1.5rem;
     position: relative;
   }
+  @media (hover: hover) {
+    a > :global(svg) {
+      opacity: 0.5;
+    }
+    a:hover > :global(svg) {
+      opacity: 1;
+      transform: translate(5px, 0);
+    }
+  }
 `;
 
 const arrowRightIcon = css.resolve`
@@ -25,17 +34,6 @@ const arrowRightIcon = css.resolve`
   @media (prefers-reduced-motion: no-preference) {
     svg {
       transition: all 0.15s ease-in-out;
-    }
-  }
-
-  @media (hover: hover) {
-    svg {
-      opacity: 0.5;
-    }
-
-    svg:hover {
-      transform: translate(5px, 0);
-      opacity: 1;
     }
   }
 `;
