@@ -1,4 +1,3 @@
-import { config } from '@fortawesome/fontawesome-svg-core';
 import Layout from 'components/Layout';
 import type { AppProps, NextWebVitalsMetric } from 'next/app';
 import { Poppins } from 'next/font/google';
@@ -6,8 +5,6 @@ import { Poppins } from 'next/font/google';
 import { ViewportProvider } from 'lib/utility/viewport';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
-
-config.autoAddCss = false;
 
 /**
  * Log Metrics
