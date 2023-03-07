@@ -107,7 +107,7 @@ function HomeHeader() {
       <style jsx>
         {`
           .home-header {
-            width: 100vw;
+            width: 100%;
             min-height: 90vh;
 
             background: linear-gradient(165deg, #e9e9e9 50%, #fff 50%);
