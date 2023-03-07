@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Script from 'next/script';
 import type { FC } from 'react';
-
 type SeoProps = {
   title?: string;
   siteTitle?: string;
@@ -19,6 +18,10 @@ const Seo: FC<SeoProps> = function Seo({
   description = "I'm MERN Stack Developer. Let's Work Together To Make Your Website Perfect.",
   canonicalHref = '/',
 }) {
+  if (!canonicalHref?.startsWith('/')) {
+    canonicalHref = `/${canonicalHref}`;
+  }
+
   return (
     <>
       <Head>
