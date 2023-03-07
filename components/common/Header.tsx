@@ -87,6 +87,7 @@ function Header({ isOpened, width, openMenu, closeMenu }: HeaderProps) {
               background: transparent;
 
               font-size: 2rem;
+              line-height: 1;
               color: #aaa;
             }
             .menu-button::before {
