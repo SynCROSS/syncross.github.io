@@ -1,82 +1,35 @@
+import { bindStyle } from 'lib/utility/style';
 import Image from 'next/image';
-import css from 'styled-jsx/css';
 
-const { className, styles } = css.resolve`
-  img {
-    aspect-ratio: 1;
-    border-radius: 50%;
-  }
-`;
+import styles from 'styles/home/HomeIntroduce.module.css';
+
+const cx = bindStyle(styles);
 
 // skipcq: JS-D1001
 function HomeIntroduce() {
   return (
-    <section className="flex ai-center jc-center home-introduce">
-      <div className="flex ai-center jc-center intro-wrapper">
-        <div className="intro">
-          <h1 className="intro-title">Introduce</h1>
-          <p className="intro-description">
+    <section className={cx('flex ai-center jc-center', 'home-introduce')}>
+      <div className={cx('flex ai-center jc-center', 'intro-wrapper')}>
+        <div className={cx('intro')}>
+          <h1 className={cx('intro-title')}>About Me</h1>
+          <p className={cx('intro-description')}>
             Oh hi there! My name is SynCROSS, <br />
             Frontend Developer and boy do I love learning new things. <br />
             I&apos;ve amassed a great deal of skills due to my passion for
             constantly learning new languages, frameworks, and other
             technologies. I have experience with: NextJS, TypeScript, Express,
-            NestJS, MongoDB, MySQL, Oracle, Spring Boot.,
+            NestJS, MongoDB, MySQL, Oracle, Spring Boot.
           </p>
         </div>
         <Image
           src="/icon.svg"
-          className={className}
+          className={cx('profile-icon')}
           width={300}
           height={300}
           alt="SynCROSS"
-          loading="lazy"
+          priority
         />
       </div>
-      <style jsx>
-        {`
-          .home-introduce {
-            width: 100%;
-            min-height: 100vh;
-
-            text-align: start;
-            background-color: #111111;
-            color: #fefefe;
-          }
-          .intro-wrapper {
-            width: 60%;
-          }
-          .intro {
-            margin-right: 5rem;
-            margin-top: 0;
-          }
-          .intro-title {
-            font-size: 4rem;
-          }
-          .intro-description {
-            padding: 0 7px;
-
-            color: #acacac;
-            font-size: 1.2rem;
-          }
-          @media only screen and (max-width: 767px) {
-            .intro {
-              margin-right: 0;
-              margin-top: 5rem;
-            }
-            .intro-title {
-              font-size: 3.5rem;
-            }
-          }
-          @media only screen and (max-width: 767px) {
-            .intro-wrapper {
-              flex-wrap: wrap-reverse;
-              margin: 7rem auto;
-            }
-          }
-        `}
-      </style>
-      {styles}
     </section>
   );
 }

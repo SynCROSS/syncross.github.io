@@ -1,6 +1,10 @@
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { NavigationList, SnsNavigationList } from './NavigationList';
+import NavigationList from 'components/common/NavigationList';
+import SnsNavigationList from 'components/common/SnsNavigationList';
+
+import { bindStyle } from 'lib/utility/style';
+import styles from 'styles/common/Header.module.css';
 
 type HeaderProps = {
   isOpened: boolean;
@@ -9,17 +13,27 @@ type HeaderProps = {
   closeMenu: VoidFunction;
 };
 
+const cx = bindStyle(styles);
+
 // skipcq: JS-D1001
 function Header({ isOpened, width, openMenu, closeMenu }: HeaderProps) {
   return (
     <>
-      {width <= 767 && (
-        <button className="menu-button" title="Menu Icon" onClick={openMenu} />
+      {width < 768 && (
+        <button
+          className={cx('menu-button')}
+          title="Menu Icon"
+          onClick={openMenu}
+        />
       )}
-      <header className="flex ai-center header-block">
-        {width <= 767 && isOpened && (
+      <header
+        className={cx('flex', 'ai-center', 'header', {
+          open: isOpened,
+        })}
+      >
+        {width < 768 && isOpened && (
           <button
-            className="close-button"
+            className={cx('close-button')}
             title="Close Menu Button"
             onClick={closeMenu}
           >
@@ -29,88 +43,15 @@ function Header({ isOpened, width, openMenu, closeMenu }: HeaderProps) {
         <NavigationList />
         <SnsNavigationList />
       </header>
-      {width <= 767 && isOpened && (
+      {width < 768 && isOpened && (
         <div
           role="button"
           tabIndex={-1}
-          className="backdrop"
+          className={cx('backdrop', { open: isOpened })}
           onClick={closeMenu}
           aria-hidden="true"
         />
       )}
-      <style jsx>
-        {`
-          .header-block {
-            width: 100%;
-            padding: 15px 20px;
-
-            z-index: 2;
-
-            position: fixed;
-            top: 0;
-            left: 0;
-
-            justify-content: space-between;
-            background: transparent;
-          }
-          @media (prefers-reduced-motion: no-preference) {
-            .header-block,
-            .backdrop {
-              transition: all 0.4s ease-in-out;
-            }
-          }
-          @media screen and (max-device-width: 767px) {
-            .header-block {
-              width: ${isOpened ? '100px' : 0};
-              height: 100vh;
-
-              padding: ${isOpened ? '15px 20px' : 0};
-
-              visibility: ${isOpened ? 'visible' : 'hidden'};
-
-              overflow-x: hidden;
-
-              flex-direction: column;
-
-              background-color: #121212;
-            }
-            .menu-button {
-              width: 2rem;
-              height: 2rem;
-
-              position: fixed;
-              top: 1rem;
-              left: 1.2rem;
-
-              z-index: 2;
-
-              background: transparent;
-
-              font-size: 2rem;
-              line-height: 1;
-              color: #aaa;
-            }
-            .menu-button::before {
-              content: '☰';
-            }
-            .close-button {
-              background: transparent;
-              color: #e0e0e0;
-              margin-top: 2rem;
-            }
-            .backdrop {
-              width: ${isOpened ? '100%' : 0};
-
-              position: fixed;
-              inset: 0;
-
-              z-index: 1;
-
-              background-color: rgba(0, 0, 0, 0.7);
-            }
-          }
-        `}
-      </style>
     </>
   );
 }

@@ -1,0 +1,41 @@
+.work {
+  align-items: baseline;
+  margin: auto;
+}
+.work-title {
+  margin: 0 auto;
+  font-size: 3rem;
+}
+.repo-list {
+  margin: 2rem auto;
+}
+.repo-item {
+  width: 15rem;
+  height: 5rem;
+
+  position: relative;
+}
+@media only screen and (max-width: 767px) {
+  .work-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .work-title {
+    font-size: 4rem;
+  }
+  .repo-item {
+    width: 30rem;
+    height: 9rem;
+  }
+}
+@media screen and (min-width: 3840px) {
+  .work-title {
+    font-size: 8rem;
+  }
+  .repo-item {
+    width: 50rem;
+    height: 15rem;
+  }
+}

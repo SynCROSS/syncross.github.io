@@ -82,6 +82,8 @@ const Seo: FC<SeoProps> = function Seo({
         />
         <meta name="theme-color" content="#333333" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="mask-icon" href="/icon.svg" color="#ffffff" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

@@ -1,12 +1,19 @@
 import Seo from 'components/common/Seo';
+import { bindStyle } from 'lib/utility/style';
+
+import styles from 'styles/About.module.css';
+
+const cx = bindStyle(styles);
 
 // skipcq: JS-D1001
 function About() {
   return (
-    <main className="flex jc-center ai-center flex-direction-col about">
+    <main
+      className={cx('flex jc-center ai-center flex-direction-col', 'about')}
+    >
       <Seo siteTitle="About" canonicalHref="/About" />
-      <h1 className="about-title">About</h1>
-      <p className="about-description">
+      <h1 className={cx('about-title')}>About</h1>
+      <p className={cx('about-description')}>
         Hello, I&apos;m <b>SynCROSS</b>,
         <br />
         The <b>MERN</b> Stack Developer.
@@ -28,29 +35,6 @@ function About() {
         .
         <br />I Hope You Feel So Good. (●&apos;◡&apos;●)
       </p>
-      <style jsx>
-        {`
-          .about {
-            margin: auto;
-          }
-          .about-title {
-            font-size: 3rem;
-          }
-          .about-description {
-            text-align: left;
-            font-size: 1.5rem;
-            margin: 0 1.5rem;
-          }
-          @media only screen and (max-width: 767px) {
-            .about-title {
-              font-size: 2.4rem;
-            }
-            .about-description {
-              font-size: 1.2rem;
-            }
-          }
-        `}
-      </style>
     </main>
   );
 }

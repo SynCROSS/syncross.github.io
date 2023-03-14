@@ -5,6 +5,8 @@ import { Poppins } from 'next/font/google';
 import { ViewportProvider } from 'lib/utility/viewport';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import 'normalize.css';
+
 import 'styles/global.css';
 
 const poppins = Poppins({
