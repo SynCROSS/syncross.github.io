@@ -3,17 +3,14 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-// @ts-check
-
 const withPwa = require('next-pwa')({
   disable: process.env.NODE_ENV === 'development',
   dest: 'public',
-  sw: 'service-worker.js',
 });
 
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: false,
-});
+// const withBundleAnalyzer = require('@next/bundle-analyzer')({
+//   enabled: process.env.NODE_ENV === 'development',
+// });
 
 const securityHeaders = [
   {
@@ -99,4 +96,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withBundleAnalyzer(withPwa(nextConfig));
+module.exports = withPwa(nextConfig);
