@@ -24,27 +24,27 @@ function now() {
 
 /**
  * Build cache storage key that includes namespace, url and record version
- * @param {String} url
- * @returns {String}
+ * @param {string} url
+ * @returns {string}
  */
-function buildKey(url) {
-  return NS + SEPARATOR + url + SEPARATOR + VERSION;
+function buildKey(url: string) {
+  return `${NS}${SEPARATOR}${url}${SEPARATOR}${VERSION}`;
 }
 
 /**
  * The complete Triforce, or one or more components of the Triforce.
  * @typedef {Object} RecordKey
- * @property {String} ns - namespace
- * @property {String} url - request identifier
- * @property {String} ver - record varsion
+ * @property {string} ns - namespace
+ * @property {string} url - request identifier
+ * @property {string} ver - record varsion
  */
 
 /**
  * Parse cache key
- * @param {String} key
+ * @param {string} key
  * @returns {RecordKey}
  */
-function parseKey(key) {
+function parseKey(key: string) {
   const parts = key.split(SEPARATOR);
   return {
     ns: parts[0],
@@ -107,7 +107,7 @@ async function proxyRequest(caches: CacheStorage, request: Request) {
           cache.put(request, networkResponse.clone());
           return networkResponse;
         })
-        .catch(async function () {
+        .catch(function () {
           console.error('Failed to fetch', request?.url);
           // Placeholder image for the fallback
           // return await fetch('./placeholder.jpg', { mode: 'no-cors' });
