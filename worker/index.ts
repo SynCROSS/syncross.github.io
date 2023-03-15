@@ -81,7 +81,10 @@ async function purgeExpiredRecords(caches: CacheStorage) {
  * @param {Request} request
  * @returns {Promise}
  */
-async function proxyRequest(caches: CacheStorage, request: Request) {
+async function proxyRequest(
+  caches: CacheStorage,
+  request: Request,
+): Promise<Response> {
   const key = buildKey(request?.url);
   // set namespace
   return await caches.open(key).then(async function (cache) {
@@ -107,10 +110,10 @@ async function proxyRequest(caches: CacheStorage, request: Request) {
           cache.put(request, networkResponse.clone());
           return networkResponse;
         })
-        .catch(function () {
+        .catch(async function () {
           console.error('Failed to fetch', request?.url);
           // Placeholder image for the fallback
-          // return await fetch('./placeholder.jpg', { mode: 'no-cors' });
+          return await fetch('./icon.svg', { mode: 'no-cors' });
         });
     });
   });
