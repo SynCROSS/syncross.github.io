@@ -9,9 +9,11 @@
 .repo-list {
   margin: 2rem auto;
 }
-.repo-item {
+.repo-link {
   width: 15rem;
-  height: 5rem;
+  height: 4.5rem;
+
+  display: inline-block;
 
   position: relative;
 }
@@ -25,7 +27,7 @@
   .work-title {
     font-size: 4rem;
   }
-  .repo-item {
+  .repo-link {
     width: 30rem;
     height: 9rem;
   }
@@ -34,7 +36,7 @@
   .work-title {
     font-size: 8rem;
   }
-  .repo-item {
+  .repo-link {
     width: 50rem;
     height: 15rem;
   }
