@@ -24,13 +24,15 @@ function Work() {
       <ul className={cx('repo-list')}>
         {Children.toArray(
           githubRepoArray.map(repo => (
-            <li className={cx('repo-item')}>
+            <li>
               <Link
                 href={`https://github.com/SynCROSS/${repo}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                className={cx('repo-link')}
               >
                 <Image
+                  key={repo}
                   src={`https://github-readme-stats.vercel.app/api/pin?${new URLSearchParams(
                     {
                       username: 'SynCROSS',
@@ -45,7 +47,8 @@ function Work() {
                   title={repo}
                   fill
                   // loading="lazy"
-                  priority
+                  // priority
+                  sizes="(max-width: 768px) 100vw,(max-width: 1024px) 50vw,33vw"
                 />
               </Link>
             </li>
