@@ -20,6 +20,9 @@
   height: 7rem;
   margin-bottom: 1rem;
 }
+.tech-stack-icon {
+  aspect-ratio: 1;
+}
 @media (prefers-reduced-motion: no-preference) {
   .tech-list-item {
     transition: all 0.2s ease-in-out;
