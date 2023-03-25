@@ -3,12 +3,10 @@ import HomeHeader from 'components/Home/HomeHeader';
 import dynamic from 'next/dynamic';
 import type { FC } from 'react';
 
-// TODO Make Custom Skeleton UI For HomeIntroduce
 const HomeIntroduce = dynamic(
   async () => await import('../components/Home/HomeIntroduce'),
 ) as FC;
 
-// TODO Make Custom Skeleton UI For HomeTechStack
 const HomeTechStack = dynamic(
   async () => await import('../components/Home/HomeTechStack'),
 ) as FC;
