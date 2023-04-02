@@ -11,16 +11,7 @@ self.__WB_DISABLE_DEV_LOGS = true;
 const INVALIDATION_INTERVAL = 30 * 24 * 60 * 60 * 1000; // 30 days
 const NS = 'MAGE';
 const SEPARATOR = '|';
-const VERSION = Math.ceil(now() / INVALIDATION_INTERVAL);
-
-/**
- * Helper to get current timestamp
- * @returns {Number}
- */
-function now() {
-  const d = new Date();
-  return d.getTime();
-}
+const VERSION = Math.ceil(Date.now() / INVALIDATION_INTERVAL);
 
 /**
  * Build cache storage key that includes namespace, url and record version
