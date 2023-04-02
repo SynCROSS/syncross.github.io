@@ -61,9 +61,9 @@ function parseKey(key: string) {
  */
 async function purgeExpiredRecords(caches: CacheStorage) {
   console.log('Purging...');
-  return await caches.keys().then(async function (keys) {
+  return await caches.keys().then(async keys => {
     return await Promise.all(
-      keys.map(async function (key) {
+      keys.map(async key => {
         const record = parseKey(key);
         if (record.ns === NS && record.ver !== VERSION) {
           console.log('deleting', key);
@@ -87,10 +87,10 @@ async function proxyRequest(
 ): Promise<Response> {
   const key = buildKey(request?.url);
   // set namespace
-  return await caches.open(key).then(async function (cache) {
+  return await caches.open(key).then(async cache => {
     // check cache
-    return await cache.match(request).then(async function (cachedResponse) {
-      if (cachedResponse != null) {
+    return await cache.match(request).then(async cachedResponse => {
+      if (cachedResponse !== null && cachedResponse !== undefined) {
         console.info('Take it from cache', request?.url);
         return cachedResponse;
       }
@@ -98,7 +98,7 @@ async function proxyRequest(
       // https://fetch.spec.whatwg.org/#concept-filtered-response-opaque
       // so we cannot get info about response status
       return await fetch(request?.clone())
-        .then(function (networkResponse) {
+        .then(networkResponse => {
           if (networkResponse.type !== 'opaque' && !networkResponse.ok) {
             throw new Error('Resource not available');
           }
@@ -110,7 +110,7 @@ async function proxyRequest(
           cache.put(request, networkResponse.clone());
           return networkResponse;
         })
-        .catch(async function () {
+        .catch(async () => {
           console.error('Failed to fetch', request?.url);
           // Placeholder image for the fallback
           return await fetch('./icon.svg', { mode: 'no-cors' });
@@ -119,22 +119,22 @@ async function proxyRequest(
   });
 }
 
-self.addEventListener('install', function (event) {
+self.addEventListener('install', event => {
   event?.waitUntil(self.skipWaiting());
 });
 
-self.addEventListener('activate', function (event) {
+self.addEventListener('activate', event => {
   event?.waitUntil(purgeExpiredRecords(caches));
 });
 
-self.addEventListener('fetch', function (event) {
+self.addEventListener('fetch', event => {
   const request = event?.request;
 
   console.log('Detected request', request?.url);
 
   if (
     request?.method !== 'GET' ||
-    request?.url.match(/\.(jpe?g|png|gif|svg)$/) == null
+    request?.url.match(/\.(jpe?g|png|gif|svg)$/) === null
   ) {
     return;
   }
