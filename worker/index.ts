@@ -98,7 +98,7 @@ async function proxyRequest(
             request?.url,
             networkResponse.type,
           );
-          cache.put(request, networkResponse.clone());
+          void cache.put(request, networkResponse.clone());
           return networkResponse;
         })
         .catch(async () => {
