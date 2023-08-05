@@ -1,8 +1,14 @@
 {
   "compilerOptions": {
-    "typeRoots": ["node_modules/@total-typescript"],
+    "typeRoots": [
+      "node_modules/@total-typescript"
+    ],
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": false,
     "strictNullChecks": true,
     "skipLibCheck": true,
@@ -29,6 +35,11 @@
     "**/*.ts",
     "**/*.tsx"
     // "@total-typescript/ts-reset"
+    ,
+    ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "**/*.js"]
+  "exclude": [
+    "node_modules",
+    "**/*.js"
+  ]
 }

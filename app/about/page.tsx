@@ -1,7 +1,12 @@
-import Seo from 'components/common/Seo';
+import { getMetadata } from 'lib/utility/seo';
 import { bindStyle } from 'lib/utility/style';
 
 import styles from 'styles/About.module.css';
+
+export const metadata = getMetadata({
+  siteTitle: 'About',
+  canonicalHref: '/about',
+});
 
 const cx = bindStyle(styles);
 
@@ -11,7 +16,6 @@ function About() {
     <main
       className={cx('flex jc-center ai-center flex-direction-col', 'about')}
     >
-      <Seo siteTitle="About" canonicalHref="/About" />
       <h1 className={cx('about-title')}>About</h1>
       <p className={cx('about-description')}>
         Hello, I&apos;m <b>SynCROSS</b>,

@@ -1,11 +1,16 @@
-import Seo from 'components/common/Seo';
 import { getRandomTheme } from 'lib/theme/work/github/GithubRepository';
+import { getMetadata } from 'lib/utility/seo';
 import { bindStyle } from 'lib/utility/style';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Children } from 'react';
 
 import styles from 'styles/Work.module.css';
+
+export const metadata = getMetadata({
+  siteTitle: 'My Works',
+  canonicalHref: '/work',
+});
 
 const cx = bindStyle(styles);
 
@@ -18,7 +23,6 @@ const githubRepoArray = [
 function Work() {
   return (
     <main className={cx('work')}>
-      <Seo siteTitle="My Works" canonicalHref="/Work" />
       <h1 className={cx('work-title')}>My Works</h1>
       <p>&#x28;Theme is Random&#x29;</p>
       <ul className={cx('repo-list')}>
@@ -30,6 +34,7 @@ function Work() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cx('repo-link')}
+                legacyBehavior
               >
                 <Image
                   key={repo}

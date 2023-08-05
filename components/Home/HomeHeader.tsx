@@ -1,3 +1,5 @@
+'use client';
+
 import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { bindStyle } from 'lib/utility/style';
@@ -32,12 +34,14 @@ function HomeHeader() {
       <h1 className={cx('headline')}>
         SynCROSS, <br /> The Knowledge Explorer
       </h1>
-      <Link className={cx('link-button')} href="/Work">
-        <span className={cx('inline-medium-text')}>My Works</span>
-        <FontAwesomeIcon
-          className={cx('arrow-right-icon')}
-          icon={faArrowRight}
-        />
+      <Link className={cx('link-button')} href="/work" legacyBehavior>
+        <span className={cx('inline-medium-text')}>
+          My Works
+          <FontAwesomeIcon
+            className={cx('arrow-right-icon')}
+            icon={faArrowRight}
+          />
+        </span>
       </Link>
       <button
         className={cx('arrow-button')}

@@ -12,10 +12,10 @@ function NavigationList() {
         <Link href="/">Home</Link>
       </li>
       <li className={cx('link-item')}>
-        <Link href="/About">About</Link>
+        <Link href="/about">About</Link>
       </li>
       <li className={cx('link-item')}>
-        <Link href="/Work">My Works</Link>
+        <Link href="/work">My Works</Link>
       </li>
     </ul>
   );
