@@ -1,7 +1,6 @@
 import HomeHeader from 'components/Home/HomeHeader';
 import { getMetadata } from 'lib/utility/seo';
 import { Suspense, lazy } from 'react';
-import { css } from 'styled-system/css';
 
 export const metadata = getMetadata();
 
@@ -16,7 +15,7 @@ const HomeTechStack = lazy(
 // skipcq: JS-D1001
 export default function Home() {
   return (
-    <main className={css({})}>
+    <main className={'flex jc-center ai-center flex-direction-col'}>
       <HomeHeader />
       <Suspense fallback={<p>loading...</p>}>
         <HomeIntroduce />
