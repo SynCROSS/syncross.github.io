@@ -34,7 +34,6 @@ function Work() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cx('repo-link')}
-                legacyBehavior
               >
                 <Image
                   key={repo}
