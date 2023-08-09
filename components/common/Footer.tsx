@@ -1,29 +1,29 @@
-import { bindStyle } from 'lib/utility/style';
+import classNames from 'classnames';
 import Link from 'next/link';
 
-import styles from 'styles/common/Footer.module.css';
-
 const year = new Date().getFullYear();
-
-const cx = bindStyle(styles);
 
 // skipcq: JS-D1001
 function Footer() {
   return (
-    <footer className={cx('footer')}>
-      <p className={cx('copyright')}>
-        Copyright &copy;&nbsp;
-        <span>{year}</span>
-        &nbsp;Made by&nbsp;
-        <Link
-          className={cx('github-link')}
-          href="https://github.com/SynCROSS"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          SynCROSS
-        </Link>
-      </p>
+    <footer
+      className={classNames(
+        'bg-black text-neutral-100 py-4 text-center',
+        'min-[2560px]:text-2xl',
+        'min-[3840px]:text-5xl',
+      )}
+    >
+      Copyright &copy;&nbsp;
+      <span>{year}</span>
+      &nbsp;Made by&nbsp;
+      <Link
+        className={'text-[#ff6683] hover:text-[#ff94a8]'}
+        href="https://github.com/SynCROSS"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        SynCROSS
+      </Link>
     </footer>
   );
 }
