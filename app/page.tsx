@@ -15,7 +15,7 @@ const HomeTechStack = lazy(
 // skipcq: JS-D1001
 export default function Home() {
   return (
-    <main className={'flex jc-center ai-center flex-direction-col'}>
+    <>
       <HomeHeader />
       <Suspense fallback={<p>loading...</p>}>
         <HomeIntroduce />
@@ -23,6 +23,6 @@ export default function Home() {
       <Suspense fallback={<p>loading...</p>}>
         <HomeTechStack />
       </Suspense>
-    </main>
+    </>
   );
 }
