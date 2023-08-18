@@ -5,10 +5,10 @@
 @layer components {
   @media (hover: hover) {
     /* * Home Header */
-    .link-button:hover > .font-medium > [data-icon='arrow-right'] {
+    .arrow-right-link-button:hover > .font-medium > [data-icon='arrow-right'] {
       @apply translate-x-1;
     }
-    .scroll-down-button:hover > [data-icon='arrow-down'] {
+    .arrow-down-scroll-button:hover > [data-icon='arrow-down'] {
       @apply translate-y-1;
     }
   }
