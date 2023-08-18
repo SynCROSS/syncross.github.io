@@ -1,18 +1,14 @@
+import classNames from 'classnames';
 import { getRandomTheme } from 'lib/theme/work/github/GithubRepository';
 import { getMetadata } from 'lib/utility/seo';
-import { bindStyle } from 'lib/utility/style';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Children } from 'react';
-
-import styles from 'styles/Work.module.css';
 
 export const metadata = getMetadata({
   siteTitle: 'My Works',
   canonicalHref: '/work',
 });
-
-const cx = bindStyle(styles);
 
 const githubRepoArray = [
   'nextjs-typescript-setting',
@@ -22,10 +18,18 @@ const githubRepoArray = [
 // skipcq: JS-D1001
 function Work() {
   return (
-    <main className={cx('work')}>
-      <h1 className={cx('work-title')}>My Works</h1>
+    <>
+      <h1
+        className={classNames(
+          'text-5xl mb-2',
+          'max-[640px]:text-4xl',
+          'min-[2560px]:text-6xl',
+        )}
+      >
+        My Works
+      </h1>
       <p>&#x28;Theme is Random&#x29;</p>
-      <ul className={cx('repo-list')}>
+      <ul className={classNames('my-4')}>
         {Children.toArray(
           githubRepoArray.map(repo => (
             <li>
@@ -33,7 +37,7 @@ function Work() {
                 href={`https://github.com/SynCROSS/${repo}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={cx('repo-link')}
+                className={classNames('w-80 h-24 inline-block relative')}
               >
                 <Image
                   key={repo}
@@ -59,7 +63,7 @@ function Work() {
           )),
         )}
       </ul>
-    </main>
+    </>
   );
 }
 
