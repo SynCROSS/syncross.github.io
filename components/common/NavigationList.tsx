@@ -1,10 +1,6 @@
 import classNames from 'classnames';
-import { bindStyle } from 'lib/utility/style';
 import Link from 'next/link';
 import { Children } from 'react';
-import styles from 'styles/common/NavigationList.module.css';
-
-const cx = bindStyle(styles);
 
 const navigationMap = {
   '/': 'Home',
