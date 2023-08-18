@@ -3,12 +3,8 @@
 import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
-import { bindStyle } from 'lib/utility/style';
 import Link from 'next/link';
-import { ElementRef, useCallback, useRef } from 'react';
-import styles from 'styles/home/HomeHeader.module.css';
-
-const cx = bindStyle(styles);
+import { type ElementRef, useCallback, useRef } from 'react';
 
 // skipcq: JS-D1001
 function HomeHeader() {
@@ -58,7 +54,7 @@ function HomeHeader() {
       </h1>
       <Link
         className={classNames(
-          'link-button',
+          'arrow-right-link-button',
           ' bg-neutral-950 text-white cursor-pointer relative leading-3 p-3 rounded-full mt-2 text-sm',
           'md:mt-4',
           'xl:px-4 xl:text-lg xl:mt-5',
@@ -82,12 +78,18 @@ function HomeHeader() {
         </span>
       </Link>
       <button
-        className={cx('arrow-button')}
+        className={classNames(
+          'arrow-down-scroll-button',
+          'w-12 h-12 absolute bottom-[-1.5em] text-xl text-neutral-100 bg-black hover:bg-neutral-900',
+          'xl:w-20 xl:h-20 xl:text-3xl',
+          'min-[2560px]:w-28 min-[2560px]:h-28 min-[2560px]:bottom-[-1.4em] min-[2560px]:text-5xl',
+          'min-[3840px]:w-40 min-[3840px]:h-40 min-[3840px]:bottom-[-1.5em] min-[3840px]:text-6xl',
+        )}
         title="Scroll Down Button"
         onClick={scrollToHomeHeader}
       >
         <FontAwesomeIcon
-          className={cx('arrow-down-icon motion-safe:transition-all')}
+          className={classNames('motion-safe:transition-all')}
           icon={faArrowDown}
         />
       </button>

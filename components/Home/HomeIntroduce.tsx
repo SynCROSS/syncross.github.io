@@ -1,18 +1,44 @@
-import { bindStyle } from 'lib/utility/style';
+import classNames from 'classnames';
 import Image from 'next/image';
-
-import styles from 'styles/home/HomeIntroduce.module.css';
-
-const cx = bindStyle(styles);
 
 // skipcq: JS-D1001
 function HomeIntroduce() {
   return (
-    <section className={cx('flex ai-center jc-center', 'home-introduce')}>
-      <div className={cx('flex ai-center jc-center', 'intro-wrapper')}>
-        <div className={cx('intro')}>
-          <h1 className={cx('intro-title')}>About Me</h1>
-          <p className={cx('intro-description')}>
+    <section
+      className={
+        'flex items-center justify-center w-full min-h-screen text-start bg-neutral-950 text-neutral-50'
+      }
+    >
+      <div
+        className={classNames(
+          'flex items-center justify-center w-[80%] ',
+          'max-[640px]:flex-wrap-reverse max-[640px]:my-20 max-[640px]:mx-auto',
+          'sm:my-12 sm:mx-0',
+          'md:my-20',
+          'max-lg:flex-wrap-reverse',
+          'lg:flex-nowrap',
+          'xl:w-3/5',
+        )}
+      >
+        <div className={classNames('mr-0 mt-8 flex-1', 'md:mt-0')}>
+          <h1
+            className={classNames(
+              'text-5xl mb-4',
+              'max-[640px]:text-4xl',
+              'min-[2560px]:text-7xl',
+              'min-[3840px]:text-8xl',
+            )}
+          >
+            About Me
+          </h1>
+          <p
+            className={classNames(
+              'py-0 text-neutral-400',
+              'md:w-[90%]',
+              'min-[2560px]:text-2xl',
+              'min-[3840px]:text-3xl',
+            )}
+          >
             Oh hi there! My name is SynCROSS, <br />
             Frontend Developer and boy do I love learning new things. <br />
             I&apos;ve amassed a great deal of skills due to my passion for
@@ -23,7 +49,13 @@ function HomeIntroduce() {
         </div>
         <Image
           src="/icon.svg"
-          className={cx('profile-icon')}
+          className={classNames(
+            'aspect-square w-full h-full rounded-full flex-1',
+            'md:w-1/2 md:h-1/2',
+            'lg:max-w-[35%]',
+            'min-[2560px]:max-w-[30%]',
+            'min-[3840px]:max-w-[25%]',
+          )}
           width={300}
           height={300}
           alt="SynCROSS"
