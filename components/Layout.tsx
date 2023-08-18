@@ -9,7 +9,9 @@ function Layout({ children }: LayoutProps) {
   return (
     <>
       <HeaderContainer />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 flex flex-col justify-center items-center">
+        {children}
+      </main>
       <Footer />
     </>
   );
