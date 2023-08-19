@@ -13,14 +13,14 @@ import Script from 'next/script';
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['300', '500', '700'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   fallback: ['system-ui', 'arial'],
 });
 
 // skipcq: JS-D1001
 function App({ children }: { children: React.ReactNode }) {
   return (
-    <html>
+    <html className={poppins.className}>
       <head>
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -44,12 +44,6 @@ function App({ children }: { children: React.ReactNode }) {
         />
         <ViewportProvider>
           <Layout>
-            {/* skipcq: JS-0455 */}
-            <style jsx global>{`
-              html {
-                font-family: ${poppins.style.fontFamily};
-              }
-            `}</style>
             {children}
             <Analytics />
           </Layout>
