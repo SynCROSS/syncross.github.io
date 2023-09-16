@@ -5,11 +5,11 @@ import { Suspense, lazy } from 'react';
 export const metadata = getMetadata();
 
 const HomeIntroduce = lazy(
-  async () => await import('../components/Home/HomeIntroduce'),
+  async () => await import('components/Home/HomeIntroduce'),
 );
 
 const HomeTechStack = lazy(
-  async () => await import('../components/Home/HomeTechStack'),
+  async () => await import('components/Home/HomeTechStack'),
 );
 
 // skipcq: JS-D1001
