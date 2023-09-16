@@ -23,7 +23,7 @@ function HomeHeader() {
     <section
       ref={headerRef}
       className={
-        'flex justify-center items-center flex-col w-full min-h-[90vh] py-8 px-0 relative'
+        'relative flex min-h-[90vh] w-full flex-col items-center justify-center px-0 py-8'
       }
       style={{
         backgroundImage: 'linear-gradient(165deg, #e9e9e9 50%, #fff 50%)',
@@ -42,7 +42,7 @@ function HomeHeader() {
       </h3>
       <h1
         className={classNames(
-          'text-center text-3xl mx-1',
+          'mx-1 text-center text-3xl font-medium',
           'md:text-5xl',
           'xl:text-6xl',
           '2xl:text-7xl',
@@ -55,12 +55,12 @@ function HomeHeader() {
       <Link
         className={classNames(
           'arrow-right-link-button',
-          ' bg-neutral-950 text-white cursor-pointer relative leading-3 p-3 rounded-full mt-2 text-sm',
+          ' relative mt-2 cursor-pointer rounded-full bg-neutral-950 p-3 text-sm leading-3 text-white',
           'md:mt-4',
-          'xl:px-4 xl:text-lg xl:mt-5',
-          '2xl:py-4 2xl:px-7 2xl:text-xl',
-          'min-[2560px]:py-6 min-[2560px]:px-8 min-[2560px]:text-2xl',
-          'min-[3840px]:py-10 min-[3840px]:px-11 min-[3840px]:text-4xl min-[3840px]:mt-10',
+          'xl:mt-5 xl:px-4 xl:text-lg',
+          '2xl:px-7 2xl:py-4 2xl:text-xl',
+          'min-[2560px]:px-8 min-[2560px]:py-6 min-[2560px]:text-2xl',
+          'min-[3840px]:mt-10 min-[3840px]:px-11 min-[3840px]:py-10 min-[3840px]:text-4xl',
         )}
         href="/work"
       >
@@ -80,10 +80,10 @@ function HomeHeader() {
       <button
         className={classNames(
           'arrow-down-scroll-button',
-          'w-12 h-12 absolute bottom-[-1.5em] text-xl text-neutral-100 bg-black hover:bg-neutral-900',
-          'xl:w-20 xl:h-20 xl:text-3xl',
-          'min-[2560px]:w-28 min-[2560px]:h-28 min-[2560px]:bottom-[-1.4em] min-[2560px]:text-5xl',
-          'min-[3840px]:w-40 min-[3840px]:h-40 min-[3840px]:bottom-[-1.5em] min-[3840px]:text-6xl',
+          'absolute bottom-[-1.5em] h-12 w-12 bg-black text-xl text-neutral-100 hover:bg-neutral-900',
+          'xl:h-20 xl:w-20 xl:text-3xl',
+          'min-[2560px]:bottom-[-1.4em] min-[2560px]:h-28 min-[2560px]:w-28 min-[2560px]:text-5xl',
+          'min-[3840px]:bottom-[-1.5em] min-[3840px]:h-40 min-[3840px]:w-40 min-[3840px]:text-6xl',
         )}
         title="Scroll Down Button"
         onClick={scrollToHomeHeader}

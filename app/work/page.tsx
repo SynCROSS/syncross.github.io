@@ -21,7 +21,7 @@ function Work() {
     <>
       <h1
         className={classNames(
-          'text-5xl mb-2',
+          'mb-2 text-5xl font-medium',
           'max-[640px]:text-4xl',
           'min-[2560px]:text-6xl',
         )}
@@ -37,7 +37,7 @@ function Work() {
                 href={`https://github.com/SynCROSS/${repo}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={classNames('w-80 h-24 inline-block relative')}
+                className={classNames('relative inline-block h-24 w-80')}
               >
                 <Image
                   key={repo}

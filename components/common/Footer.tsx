@@ -8,7 +8,7 @@ function Footer() {
   return (
     <footer
       className={classNames(
-        'bg-black text-neutral-100 py-4 text-center',
+        'bg-black py-4 text-center font-medium text-neutral-100',
         'min-[2560px]:text-2xl',
         'min-[3840px]:text-5xl',
       )}

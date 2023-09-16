@@ -6,14 +6,14 @@ function HomeIntroduce() {
   return (
     <section
       className={
-        'flex items-center justify-center w-full min-h-screen text-start bg-neutral-950 text-neutral-50'
+        'flex min-h-screen w-full items-center justify-center bg-neutral-950 text-start text-neutral-50'
       }
     >
       <div
         className={classNames(
-          'flex items-center justify-center w-[80%] ',
-          'max-[640px]:flex-wrap-reverse max-[640px]:my-20 max-[640px]:mx-auto',
-          'sm:my-12 sm:mx-0',
+          'flex w-[80%] items-center justify-center ',
+          'max-[640px]:mx-auto max-[640px]:my-20 max-[640px]:flex-wrap-reverse',
+          'sm:mx-0 sm:my-12',
           'md:my-20',
           'max-lg:flex-wrap-reverse',
           'lg:flex-nowrap',
@@ -23,7 +23,7 @@ function HomeIntroduce() {
         <div className={classNames('mr-0 mt-8 flex-1', 'md:mt-0')}>
           <h1
             className={classNames(
-              'text-5xl mb-4',
+              'mb-4 text-5xl font-medium',
               'max-[640px]:text-4xl',
               'min-[2560px]:text-7xl',
               'min-[3840px]:text-8xl',
@@ -50,8 +50,8 @@ function HomeIntroduce() {
         <Image
           src="/icon.svg"
           className={classNames(
-            'aspect-square w-full h-full rounded-full flex-1',
-            'md:w-1/2 md:h-1/2',
+            'aspect-square h-full w-full flex-1 rounded-full',
+            'md:h-1/2 md:w-1/2',
             'lg:max-w-[35%]',
             'min-[2560px]:max-w-[30%]',
             'min-[3840px]:max-w-[25%]',
