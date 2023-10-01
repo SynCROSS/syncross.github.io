@@ -29,8 +29,8 @@ const securityHeaders = [
       'report-uri https://vitals.vercel-insights.com; ' +
       'report-to https://vitals.vercel-insights.com; ' +
       "connect-src 'self' https://vitals.vercel-insights.com https://github-readme-stats.vercel.app; " +
-      "script-src 'self';" +
-      "script-src-elem 'self';" +
+      "script-src 'self' 'unsafe-eval';" +
+      "script-src-elem 'self' 'unsafe-inline' https://va.vercel-scripts.com; " +
       "font-src 'self'; " +
       "style-src 'self' fonts.googleapis.com 'unsafe-inline'; " +
       "style-src-elem 'self' fonts.googleapis.com 'unsafe-inline'; " +
@@ -86,7 +86,7 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   async headers() {
-    return Promise.resolve([
+    return await Promise.resolve([
       {
         // * Apply these headers to all routes in application.
         source: '/(.*)',
