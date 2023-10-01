@@ -20,7 +20,7 @@ const poppins = Poppins({
 // skipcq: JS-D1001
 function App({ children }: { children: React.ReactNode }) {
   return (
-    <html className={poppins.className}>
+    <html lang="en" className={poppins.className}>
       <head>
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />

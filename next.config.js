@@ -78,14 +78,14 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
-  },
+  // i18n: {
+  //   locales: ['en'],
+  //   defaultLocale: 'en',
+  // },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  headers() {
+  async headers() {
     return Promise.resolve([
       {
         // * Apply these headers to all routes in application.
