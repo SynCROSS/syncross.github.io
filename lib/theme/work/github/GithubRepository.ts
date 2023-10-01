@@ -1,4 +1,4 @@
-const GithubRepoThemes: readonly string[] = [
+const GithubRepoThemes = [
   'default',
   'default_repocard',
   'dark',
@@ -53,18 +53,18 @@ const GithubRepoThemes: readonly string[] = [
   'panda',
   'noctis_minimus',
   'cobalt2',
-];
+] as const;
 
 /**
  * Get Random Theme From GithubRandomThemes
  * @returns {string} Random Theme From GithubRepoThemes
  */
-const getRandomTheme = (): string => {
+const getRandomTheme = () => {
   const themes = [...GithubRepoThemes];
 
   for (let i = themes.length - 1; i > 0; i -= 1) {
     const j = Math.floor(Math.random() * (i + 1));
-    [themes[i], themes[j]] = [themes[j], themes[i]];
+    [themes[i] = 'default', themes[j] = 'default'] = [themes[j], themes[i]];
   }
 
   return themes[Math.floor(Math.random() * themes.length)];
