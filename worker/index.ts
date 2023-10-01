@@ -40,7 +40,7 @@ function parseKey(key: string) {
   return {
     ns: parts[0],
     key: parts[1],
-    ver: parseInt(parts[2], 10),
+    ver: parseInt(parts[2] ?? '', 10),
   };
 }
 
