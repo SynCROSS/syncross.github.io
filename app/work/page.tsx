@@ -15,6 +15,15 @@ const githubRepoArray = [
   'react-typescript-setting',
 ];
 
+const getSearchParams = (repo: string): Record<string, string> => ({
+  username: 'SynCROSS',
+  repo,
+  theme: getRandomTheme(),
+  hide_border: 'true',
+  show_icons: 'true',
+  count_private: 'true',
+});
+
 // skipcq: JS-D1001
 function Work() {
   return (
@@ -42,14 +51,7 @@ function Work() {
                 <Image
                   key={repo}
                   src={`https://github-readme-stats.vercel.app/api/pin?${new URLSearchParams(
-                    {
-                      username: 'SynCROSS',
-                      repo,
-                      theme: getRandomTheme(),
-                      hide_border: 'true',
-                      show_icons: 'true',
-                      count_private: 'true',
-                    },
+                    getSearchParams(repo),
                   ).toString()}`}
                   alt={repo}
                   title={repo}

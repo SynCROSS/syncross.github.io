@@ -67,7 +67,7 @@ const getRandomTheme = () => {
     [themes[i] = 'default', themes[j] = 'default'] = [themes[j], themes[i]];
   }
 
-  return themes[Math.floor(Math.random() * themes.length)];
+  return themes[Math.floor(Math.random() * themes.length)] ?? 'default';
 };
 
 export { GithubRepoThemes, getRandomTheme };
