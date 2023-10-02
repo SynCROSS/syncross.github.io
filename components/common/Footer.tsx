@@ -8,14 +8,17 @@ function Footer() {
   return (
     <footer
       className={classNames(
-        'bg-black py-4 text-center font-medium text-neutral-100',
+        'bg-black py-4 text-center font-medium',
         'min-[2560px]:text-2xl',
         'min-[3840px]:text-5xl',
       )}
     >
-      Copyright &copy;&nbsp;
-      <span>{year}</span>
-      &nbsp;Made by&nbsp;
+      <p className="text-neutral-100 inline-block">
+        Copyright &copy;&nbsp;
+        <span>{year}</span>
+        &nbsp;Made by
+      </p>
+      &nbsp;
       <Link
         className={'text-[#ff6683] hover:text-[#ff94a8]'}
         href="https://github.com/SynCROSS"
