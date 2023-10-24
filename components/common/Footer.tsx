@@ -20,7 +20,7 @@ function Footer() {
       </p>
       &nbsp;
       <Link
-        className={'text-[#ff6683] hover:text-[#ff94a8]'}
+        className={'text-[#ff6683] hover:text-[#ff94a8] hover:underline'}
         href="https://github.com/SynCROSS"
         target="_blank"
         rel="noopener noreferrer"
