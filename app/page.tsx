@@ -1,28 +1,26 @@
 import HomeHeader from 'components/Home/HomeHeader';
 import { getMetadata } from 'lib/utility/seo';
-import { Suspense, lazy } from 'react';
+import dynamic from 'next/dynamic';
 
 export const metadata = getMetadata();
 
-const HomeIntroduce = lazy(
-  async () => await import('components/Home/HomeIntroduce'),
-);
+const HomeIntroduce = dynamic(() => import('components/Home/HomeIntroduce'), {
+  loading: () => <p>loading...</p>,
+  ssr: false,
+});
 
-const HomeTechStack = lazy(
-  async () => await import('components/Home/HomeTechStack'),
-);
+const HomeTechStack = dynamic(() => import('components/Home/HomeTechStack'), {
+  loading: () => <p>loading...</p>,
+  ssr: false,
+});
 
 // skipcq: JS-D1001
 export default function Home() {
   return (
     <>
       <HomeHeader />
-      <Suspense fallback={<p>loading...</p>}>
-        <HomeIntroduce />
-      </Suspense>
-      <Suspense fallback={<p>loading...</p>}>
-        <HomeTechStack />
-      </Suspense>
+      <HomeIntroduce />
+      <HomeTechStack />
     </>
   );
 }
