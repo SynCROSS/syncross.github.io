@@ -4,15 +4,21 @@ import dynamic from 'next/dynamic';
 
 export const metadata = getMetadata();
 
-const HomeIntroduce = dynamic(() => import('components/Home/HomeIntroduce'), {
-  loading: () => <p>loading...</p>,
-  ssr: false,
-});
+const HomeIntroduce = dynamic(
+  async () => await import('components/Home/HomeIntroduce'),
+  {
+    loading: () => <p>loading...</p>,
+    ssr: false,
+  },
+);
 
-const HomeTechStack = dynamic(() => import('components/Home/HomeTechStack'), {
-  loading: () => <p>loading...</p>,
-  ssr: false,
-});
+const HomeTechStack = dynamic(
+  async () => await import('components/Home/HomeTechStack'),
+  {
+    loading: () => <p>loading...</p>,
+    ssr: false,
+  },
+);
 
 // skipcq: JS-D1001
 export default function Home() {
