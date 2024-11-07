@@ -2,10 +2,12 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+const runtimeCaching = require('next-pwa/cache.js');
 
 const withPwa = require('next-pwa')({
   disable: process.env.NODE_ENV === 'development',
   dest: 'public',
+  runtimeCaching,
 });
 
 // const withBundleAnalyzer = require('@next/bundle-analyzer')({
