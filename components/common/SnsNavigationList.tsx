@@ -7,7 +7,6 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Link from 'next/link';
-import { Children } from 'react';
 
 const snsNavigationArray = [
   {
@@ -43,29 +42,28 @@ function SnsNavigationList() {
         'min-[3840px]:text-5xl',
       )}
     >
-      {Children.toArray(
-        snsNavigationArray.map(snsNavigation => (
-          <li
-            className={classNames(
-              'my-0 mx-4 motion-safe:transition-all hover:text-neutral-600 hover:font-medium text-neutral-500',
-              'max-sm:portrait:my-2 max-sm:portrait:mx-0',
-              'sm:my-0 sm:mx-2',
-              'md:mx-4',
-              'min-[3840px]:mx-6',
-            )}
+      {snsNavigationArray.map(snsNavigation => (
+        <li
+          key={snsNavigation.href}
+          className={classNames(
+            'my-0 mx-4 motion-safe:transition-all hover:text-neutral-600 hover:font-medium text-neutral-500',
+            'max-sm:portrait:my-2 max-sm:portrait:mx-0',
+            'sm:my-0 sm:mx-2',
+            'md:mx-4',
+            'min-[3840px]:mx-6',
+          )}
+        >
+          <Link
+            className={classNames('max-sm:text-neutral-300')}
+            href={snsNavigation.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={snsNavigation['aria-label']}
           >
-            <Link
-              className={classNames('max-sm:text-neutral-300')}
-              href={snsNavigation.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={snsNavigation['aria-label']}
-            >
-              <FontAwesomeIcon icon={snsNavigation.icon} />
-            </Link>
-          </li>
-        )),
-      )}
+            <FontAwesomeIcon icon={snsNavigation.icon} />
+          </Link>
+        </li>
+      ))}
     </ul>
   );
 }
