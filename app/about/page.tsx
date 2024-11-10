@@ -3,7 +3,7 @@ import { getMetadata } from 'lib/utility/seo';
 
 export const metadata = getMetadata({
   siteTitle: 'About',
-  canonicalHref: '/about',
+  canonicalHref: '/about'
 });
 
 // skipcq: JS-D1001
