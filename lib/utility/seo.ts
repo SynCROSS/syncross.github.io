@@ -1,4 +1,13 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+
+export const getViewport = (): Viewport => ({
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#333333' },
+    { media: '(prefers-color-scheme: light)', color: '#e9e9e9' },
+  ],
+});
 
 export const getMetadata = ({
   title = 'SynCROSS',
@@ -15,10 +24,6 @@ export const getMetadata = ({
       url: 'https://github.com/SynCROSS',
     },
   ],
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
@@ -64,10 +69,6 @@ export const getMetadata = ({
     telephone: false,
   },
   referrer: 'strict-origin-when-cross-origin',
-  themeColor: [
-    { media: '(prefers-color-scheme: dark)', color: '#333333' },
-    { media: '(prefers-color-scheme: light)', color: '#e9e9e9' },
-  ],
   manifest: '/manifest.json',
   verification: {
     google: 'yPjEuhxg0wZLY4uNjzQnetrY9IDRmyer0VTV3aDVJZo',
