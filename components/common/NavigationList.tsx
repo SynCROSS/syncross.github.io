@@ -1,6 +1,5 @@
 import classNames from 'classnames';
 import Link from 'next/link';
-import { Children } from 'react';
 
 const navigationMap = {
   '/': 'Home',
@@ -19,21 +18,20 @@ function NavigationList() {
         'min-[3840px]:text-4xl',
       )}
     >
-      {Children.toArray(
-        Object.entries(navigationMap).map(([href, title]) => (
-          <li
-            className={classNames(
-              'motion-safe:transition-all hover:text-neutral-600 font-medium',
-              'max-sm:text-neutral-300 max-sm:my-2 max-sm:mx-0',
-              'sm:my-0 sm:mx-2 sm:text-neutral-500',
-              'md:mx-4',
-              'min-[3840px]:mx-6',
-            )}
-          >
-            <Link href={href}>{title}</Link>
-          </li>
-        )),
-      )}
+      {Object.entries(navigationMap).map(([href, title]) => (
+        <li
+          key={href}
+          className={classNames(
+            'motion-safe:transition-all hover:text-neutral-600 font-medium',
+            'max-sm:text-neutral-300 max-sm:my-2 max-sm:mx-0',
+            'sm:my-0 sm:mx-2 sm:text-neutral-500',
+            'md:mx-4',
+            'min-[3840px]:mx-6',
+          )}
+        >
+          <Link href={href}>{title}</Link>
+        </li>
+      ))}
     </ul>
   );
 }

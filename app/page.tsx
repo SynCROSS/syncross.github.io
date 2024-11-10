@@ -8,7 +8,7 @@ const HomeIntroduce = dynamic(
   async () => await import('components/Home/HomeIntroduce'),
   {
     loading: () => <p>loading...</p>,
-    ssr: false,
+    ssr: true,
   },
 );
 
@@ -16,7 +16,7 @@ const HomeTechStack = dynamic(
   async () => await import('components/Home/HomeTechStack'),
   {
     loading: () => <p>loading...</p>,
-    ssr: false,
+    ssr: true,
   },
 );
 
