@@ -7,7 +7,7 @@ import { Children } from 'react';
 
 export const metadata = getMetadata({
   siteTitle: 'My Works',
-  canonicalHref: '/work'
+  canonicalHref: '/work',
 });
 
 const githubRepoArray = [
