@@ -1,27 +1,25 @@
 {
   "compilerOptions": {
-    // * Base Settings
-    "typeRoots": ["node_modules/@total-typescript"],
+    /* Base Options: */
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "target": "es5",
-    "verbatimModuleSyntax": true,
-    "allowJs": false,
+    "target": "ESNext",
+    "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
 
-    // * Strictness
+    /* Strictness */
     "strict": true,
-    "strictNullChecks": true,
     "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
 
-    "moduleResolution": "Bundler",
-    "module": "ESNext",
+    /* If NOT transpiling with TypeScript: */
+    "module": "preserve",
     "noEmit": true,
 
     "incremental": true,
-    "isolatedModules": true,
     "jsx": "preserve",
     "plugins": [
       {
